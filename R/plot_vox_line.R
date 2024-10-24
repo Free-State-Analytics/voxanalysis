@@ -17,7 +17,7 @@
 #'
 #'
 
-plot_vox_line <- function(df_input_response, hide_heading = TRUE) {
+plot_vox_line <- function(df_input_response, hide_heading = TRUE, doc_version_ind = FALSE) {
 
   response_inputs <- df_input_response %>%
     transmute(
@@ -69,23 +69,41 @@ plot_vox_line <- function(df_input_response, hide_heading = TRUE) {
   ebony <- "#545343ff"
   green <- "#2FC1D3"
 
-  p <- ggplot(by_session, aes(.data$session, y = .data$value)) +
-    geom_line(aes(color = .data$type), linewidth = 2) +
-    geom_point(aes(fill = .data$type), size = 7, pch = 21, color = "white", stroke = 1) +
-    geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
-    scale_color_manual(values = plot_color_mapping, name = NULL) +
-    scale_fill_manual(values = plot_color_mapping, name = NULL) +
-    xlab(NULL) +
-    ylab("Response") +
-    ggthemes::theme_pander(
-      base_family = "Lato",
-      nomargin = FALSE
-    )
+  p <- ggplot(by_session, aes(.data$session, y = .data$value))
+
+ if (doc_version_ind) {
+   p <- p +
+     geom_line(aes(color = .data$type), linewidth = .75) +
+     geom_point(aes(fill = .data$type), size = 5, pch = 21, color = "white", stroke = 1) +
+     geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
+     scale_color_manual(values = plot_color_mapping, name = NULL) +
+     scale_fill_manual(values = plot_color_mapping, name = NULL) +
+     xlab(NULL) +
+     ylab("Response") +
+     ggthemes::theme_pander(
+       base_size = 7,
+       nomargin = FALSE
+     )
+ } else {
+   p <- p +
+     geom_line(aes(color = .data$type), linewidth = 2) +
+     geom_point(aes(fill = .data$type), size = 7, pch = 21, color = "white", stroke = 1) +
+     geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
+     scale_color_manual(values = plot_color_mapping, name = NULL) +
+     scale_fill_manual(values = plot_color_mapping, name = NULL) +
+     xlab(NULL) +
+     ylab("Response") +
+     ggthemes::theme_pander(
+       base_family = "Lato",
+       nomargin = FALSE
+     )
+ }
+
 
   if (!hide_heading) {
     p <- p +
-      ggtitle(label = "VOX Chart",
-              subtitle = "Results by session")
+      labs(title = "VOX Chart",
+              subtitle = "Results by Verbal Episode")
   }
 
   return(p)

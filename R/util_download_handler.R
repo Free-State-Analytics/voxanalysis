@@ -35,6 +35,12 @@ util_download_handler_word <- function(df_input_speaker_info, df_input_response,
     },
     content = function(file) {
 
+
+      showModal(
+        modalDialog(tagList(p(em("Downloading report...")), p(style = "font-size: .75rem;","(This may take a minute)")), footer = NULL)
+      )
+      on.exit(removeModal())
+
       temp_file <-paste0("temp_report_", Sys.Date(), ".docx")
 
       util_generate_word_doc_report(

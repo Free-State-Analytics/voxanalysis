@@ -15,8 +15,7 @@
 #' data("df_input_response_example")
 #' util_generate_word_doc_report(
 #'   df_input_speaker_info = df_input_speaker_info_example,
-#'   df_input_response = df_input_response_example,
-#'   df_summarized_response = df_summarized_response_example)
+#'   df_input_response = df_input_response_example)
 #'
 #'
 
@@ -37,7 +36,7 @@ util_generate_word_doc_report <- function(
   )
 
   quarto_render(
-    "inst/printable_report.qmd",
+    "inst/reports/printable_report.qmd",
     execute_params = params,
     output_file = file_name
   )
