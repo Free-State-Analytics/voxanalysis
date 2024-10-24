@@ -4,7 +4,7 @@
 \alias{plot_vox_line}
 \title{Plot a Vox Line Chart}
 \usage{
-plot_vox_line(df_input_response, hide_heading = TRUE)
+plot_vox_line(df_input_response, hide_heading = TRUE, doc_version_ind = FALSE)
 }
 \arguments{
 \item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}

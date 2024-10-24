@@ -24,8 +24,7 @@ data("df_input_speaker_info_example")
 data("df_input_response_example")
 util_generate_word_doc_report(
   df_input_speaker_info = df_input_speaker_info_example,
-  df_input_response = df_input_response_example,
-  df_summarized_response = df_summarized_response_example)
+  df_input_response = df_input_response_example)
 
 
 }
