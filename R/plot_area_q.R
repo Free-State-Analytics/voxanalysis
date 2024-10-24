@@ -45,35 +45,34 @@ plot_area_q <- function(df_summarized_response, v_primary_date, doc_version_ind 
   }
 
   if (doc_version_ind) {
-        p <- ggradar(
-      dat_for_plot,
-      values.radar = c(0, grid_size / 2, grid_size),
-      grid.min = 0,
-      grid.mid = grid_size / 2,
-      grid.max = grid_size,
-      axis.label.size = 3.5,
-      group.colours = colors,
-      legend.position = "bottom"
-    )
-    p <- ggradar(
-      dat_for_plot,
-      base.size = 9,
-      values.radar = c(0, grid_size / 2, grid_size),
-      grid.min = 0,
-      grid.mid = grid_size / 2,
-      grid.max = grid_size,
-      grid.line.width = .25,
-      group.line.width = .75,
-      group.point.size = 3,
-      axis.label.size = 2,
-      legend.text.size = 9,
-      grid.label.size = 2,
-      group.colours = colors,
-      legend.position = "bottom"
-    )
-  } else {
+      p <- ggradar(
+        dat_for_plot,
+        base.size = 9,
+        values.radar = c(0, grid_size / 2, grid_size),
+        grid.min = 0,
+        grid.mid = grid_size / 2,
+        grid.max = grid_size,
+        grid.line.width = .25,
+        group.line.width = .75,
+        group.point.size = 3,
+        axis.label.size = 2,
+        legend.text.size = 9,
+        grid.label.size = 2,
+        group.colours = colors,
+        legend.position = "bottom"
+      )
+    } else {
+      p <- ggradar(
+        dat_for_plot,
+        values.radar = c(0, grid_size / 2, grid_size),
+        grid.min = 0,
+        grid.mid = grid_size / 2,
+        grid.max = grid_size,
+        axis.label.size = 3.5,
+        group.colours = colors,
+        legend.position = "bottom")
 
-  }
+    }
 
   return(p)
 

@@ -45,7 +45,28 @@ During a session, `r speaker_full_name` was supplied with several referants to i
 The table below shows the way `r speaker_full_name` responded:
 
 ```{r}
-flextable(df_input_response)
+
+if (unique(df_input_response$date_of_evaluation) > 1) {
+  data_to_pass <- df_input_response %>% 
+    rename(`Evaluation Date` = "date_of_evaluation",
+           Referent = "referent",
+           Conversing = "conversing",
+           Labeling = "labeling",
+           Echoing = "echoing",
+           Requesting = "requesting")
+} else {
+  data_to_pass <- df_input_response %>% 
+    select(-"date_of_evaluation") %>% 
+    rename(Referent = "referent",
+           Conversing = "conversing",
+           Labeling = "labeling",
+           Echoing = "echoing",
+           Requesting = "requesting")
+}
+
+flextable(data_to_pass, cwidth =1.1) %>%
+  theme_zebra()
+
 ```
 
 ### Area Q Plot
@@ -92,7 +113,10 @@ flextable(
     df_input_response = df_input_response %>%
       filter(.data$date_of_evaluation == max(.data$date_of_evaluation))
     )
-)
+  , cwidth = 1.5
+) %>%
+  delete_part(part = "header") %>%
+  theme_zebra()
 ```
 
 ### SCoRE
@@ -117,11 +141,13 @@ plot_vox_piechart(
 ### Prompt Hierarchy
 
 ```{r}
-knitr::kable(
+flextable(
   table_prompt_hierarchy(
     df_summarized_response = df_summarized_response %>%
       filter(.data$date_of_evaluation == max(.data$date_of_evaluation))
-  )
-)
+  ),
+  cwidth = 1.1
+) %>%
+  theme_zebra()
 ```
 
