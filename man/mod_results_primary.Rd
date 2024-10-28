@@ -14,9 +14,9 @@ mod_results_primary_ui(id)
 \arguments{
 \item{id}{The namespace id.}
 
-\item{df_input_speaker_info}{A \code{data.frame} that contains general info about a speaker, provided by the user. Run \code{data("df_input_speaker_info")} to produce an example.}
+\item{df_input_speaker_info}{A `data.frame` that contains general info about a speaker, provided by the user. Run `data("df_input_speaker_info")` to produce an example.}
 
-\item{df_input_response}{A \code{data.frame} containing the referent names and their response. Run \code{data("df_input_response_example")} or \code{data("df_input_response_previous_example")} for example.}
+\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
 }
 \description{
 A module that generates a UI and server function to generate a summary report.
