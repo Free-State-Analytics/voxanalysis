@@ -17,3 +17,28 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(voxanalysis)
 ```
+
+The `voxanalysis` package uses standardized data definitions. These are used in both the user prompts on the VOX Analysis Application and individual functions.
+
+**VOX Analysis**: a *verbal operant experimental* analysis that measures the balance of language development in a speaker. A listener will record responses from a verbal episode (typically play therapy) for each verbal operant. The session will include at least two verbal episodes, each with three referents at one time. This will then be analyzed with several visualizations and calculations to determine the variance.
+
+**Evaluation**: play therapy session that includes at least two verbal episodes.
+
+**Speaker:** the subject of the VOX analysis.
+
+**Listener**: the person who gathers the observations and conducts the vox analysis.
+
+**User:** the person who uses the tool. Could be an analyst, could be a listener.
+
+**Referent**: the object a listener interacts with during the analysis.
+
+**Verbal Operant**: a type of response (conversing, labeling, echoing, and requesting) to the referent. Frequently summarized by acronym "CLEaR".
+
+- Conversing
+- Labeling
+- Echoing
+- Requesting
+
+**Response:** A 1 or 0 to indicate whether the speaker responded to the verbal operant.
+
+**Verbal Episode** has three referents to solicit a response to a verbal operant. Typically, 2-4 verbal episodes happen during an evaluation.
