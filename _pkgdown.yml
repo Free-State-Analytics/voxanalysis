@@ -1,4 +1,22 @@
 url: https://free-state-analytics.github.io/voxanalysis/
+'package:': voxanalysis
+title: VOX Analysis
+description: An R package and shiny application for autism spectrum disorder diagnosis
 template:
   bootstrap: 5
+navbar:
+  structure:
+    left:
+    - text: Reference
+      href: reference/index.html
+    - text: Articles
+      href: articles/index.html
+  components:
+    repo_link: yes
+sidebar:
+  structure:
+  - title: Getting Started
+    contents: index
+  - title: Reference
+    contents: reference
 
