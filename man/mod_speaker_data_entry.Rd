@@ -20,6 +20,9 @@ A module that allows the user to enter speaker data via a prompt.
 It subsequently triggers a data entry prompt and a report output.
 }
 \examples{
+
+if (interactive()) {
+
 ui <- page(
   useShinyjs(),
   mod_speaker_data_entry_ui("speaker_entry")
@@ -31,7 +34,10 @@ server <- function(input, output, session) {
 
 shinyApp(ui, server)
 
+}
+
 ### Alternative: include previous speaker data
+if (interactive()) {
 data("df_input_speaker_info_example")
 
 ui <- page(
@@ -46,5 +52,6 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
+}
 
 }

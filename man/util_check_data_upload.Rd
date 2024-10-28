@@ -7,14 +7,14 @@
 util_check_data_upload(df_input_response)
 }
 \arguments{
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A \code{data.frame} containing the referent names and their response. Run \code{data("df_input_response_example")} or \code{data("df_input_response_previous_example")} for example.}
 }
 \description{
-A helpful function to ensure that `df_input_response` follows the right data model.
+A helpful function to ensure that \code{df_input_response} follows the right data model.
 
-This is particular useful with quality checking data the user uploaded via `mod_upload_data_set`.
+This is particular useful with quality checking data the user uploaded via \code{mod_upload_data_set}.
 
-Returns `Good` or `Bad` to avoid ambiguity.
+Returns \code{Good} or \code{Bad} to avoid ambiguity.
 }
 \examples{
 data("df_input_response_example")

@@ -17,5 +17,5 @@ tag_custom_input(
 \item{value}{A numeric value}
 }
 \description{
-This function is used in `tag_table_response_inputs` to produce a matrix-like data entry input.
+This function is used in \code{tag_table_response_inputs} to produce a matrix-like data entry input.
 }

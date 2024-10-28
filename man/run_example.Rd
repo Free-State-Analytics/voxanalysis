@@ -23,12 +23,20 @@ Example data is included within the functions.
 }
 \examples{
 # Runs the results page
-run_example_results_app()
+if (interactive()) {
+  run_example_results_app()
+}
+
 
 # Runs the response input page
-run_example_response_entry_app()
+if (interactive()) {
+  run_example_response_entry_app()
+}
 
 # Runs the upload data page. Change add_new_data_ind = TRUE to include response_entry page
-run_example_upload_data_set_app(add_new_data_ind = FALSE)
+
+if (interactive()) {
+  run_example_upload_data_set_app(add_new_data_ind = FALSE)
+}
 
 }

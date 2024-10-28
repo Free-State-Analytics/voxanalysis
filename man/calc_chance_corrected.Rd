@@ -7,10 +7,10 @@
 calc_chance_corrected(df_input_response)
 }
 \arguments{
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A \code{data.frame} containing the referent names and their response. Run \code{data("df_input_response_example")} or \code{data("df_input_response_previous_example")} for example.}
 }
 \value{
-A `vector`.
+A \code{vector}.
 }
 \description{
 Calculate the chance corrected R calculation for the language assessment.

@@ -10,6 +10,8 @@
 #' @importFrom shinycssloaders withSpinner
 #'
 #' @examples
+#'
+#' if (interactive()) {
 #' data("df_input_response_example")
 #'
 #' ui <- page(
@@ -26,7 +28,7 @@
 #' }
 #'
 #' shinyApp(ui, server)
-#'
+#' }
 #'
 #' @name mod_results_section_area_q
 NULL

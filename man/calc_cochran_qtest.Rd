@@ -7,19 +7,19 @@
 calc_cochran_qtest(formula, data, alpha = 0.05, p.method = "fdr")
 }
 \arguments{
-\item{formula}{A formula to pass through. The app currently uses `value ~ name | referent`.}
+\item{formula}{A formula to pass through. The app currently uses \code{value ~ name | referent}.}
 
-\item{data}{A `data.frame` containing `Conversing`, `Labeling`, `Echoing`, and `Requesting`. Must have `pivot_longer` applied, with `name` and `value` being the two new columns.}
+\item{data}{A \code{data.frame} containing \code{Conversing}, \code{Labeling}, \code{Echoing}, and \code{Requesting}. Must have \code{pivot_longer} applied, with \code{name} and \code{value} being the two new columns.}
 
 \item{alpha}{alpha level.}
 
 \item{p.method}{p method. Recommend "fdr".}
 }
 \value{
-A `list`.
+A \code{list}.
 }
 \description{
-This is heavily based on Cochran's Q Test from `RVAideMemoire` package.
+This is heavily based on Cochran's Q Test from \code{RVAideMemoire} package.
 
 There were several dependency issues with the package, so it was re-written to be a built-in function for this package with some modification.
 }

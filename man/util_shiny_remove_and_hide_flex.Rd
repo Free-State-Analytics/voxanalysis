@@ -10,7 +10,7 @@ util_shiny_remove_and_hide_flex(inputId)
 \item{inputId}{The tag ID}
 }
 \description{
-Whenever a class of `d-flex flex-fill` is used in an HTML tag `class`, `shinyjs::hide()` does not work.
+Whenever a class of \verb{d-flex flex-fill} is used in an HTML tag \code{class}, \code{shinyjs::hide()} does not work.
 
 This utility function removes the classes and hides the tag.
 }

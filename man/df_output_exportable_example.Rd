@@ -7,17 +7,17 @@
 \format{
 A data frame with 7 rows and 9 variables:
 \describe{
-  \item{first_name}{Speaker's first name.}
-  \item{last_name}{Speaker's last name.}
-  \item{date_of_birth}{The speaker's date of birth.}
-  \item{language_spoken}{The language spoken during the evaluation.}
-  \item{gender}{The speaker's gender.}
-  \item{date_of_evaluation}{The date of the evaluation.}
-  \item{referent}{Name of the referent associated with the response.}
-  \item{conversing}{A binary indicator showing whether a speaker provided a thematic response to an object (1 = Yes, 0 = No).}
-  \item{labeling}{A binary indicator showing whether the speaker could label an object (1 = Yes, 0 = No).}
-  \item{echoing}{A binary indicator showing whether the speaker could repeat an object name (1 = Yes, 0 = No).}
-  \item{requesting}{A binary indicator showing whether the speaker could request an object name (1 = Yes, 0 = No).}
+\item{first_name}{Speaker's first name.}
+\item{last_name}{Speaker's last name.}
+\item{date_of_birth}{The speaker's date of birth.}
+\item{language_spoken}{The language spoken during the evaluation.}
+\item{gender}{The speaker's gender.}
+\item{date_of_evaluation}{The date of the evaluation.}
+\item{referent}{Name of the referent associated with the response.}
+\item{conversing}{A binary indicator showing whether a speaker provided a thematic response to an object (1 = Yes, 0 = No).}
+\item{labeling}{A binary indicator showing whether the speaker could label an object (1 = Yes, 0 = No).}
+\item{echoing}{A binary indicator showing whether the speaker could repeat an object name (1 = Yes, 0 = No).}
+\item{requesting}{A binary indicator showing whether the speaker could request an object name (1 = Yes, 0 = No).}
 }
 }
 \usage{
