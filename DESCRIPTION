@@ -6,6 +6,8 @@ Authors@R:
 Description: An autism diagnosis application that evaluates the language
     development of a speaker.
 License: MIT + file LICENSE
+Remotes:
+    ricardo-bion/ggradar
 Imports: 
     bslib,
     config,
@@ -15,7 +17,6 @@ Imports:
     ggthemes,
     golem,
     gt,
-    language.assessment,
     magrittr,
     quarto,
     shiny,
