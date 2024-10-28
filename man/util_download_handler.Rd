@@ -15,16 +15,16 @@ util_download_handler_word(
 util_download_handler_dataset(df_input_speaker_info, df_input_response)
 }
 \arguments{
-\item{df_input_speaker_info}{A `data.frame` that contains general info about a speaker, provided by the user. Run `data("df_input_speaker_info")` to produce an example.}
+\item{df_input_speaker_info}{A \code{data.frame} that contains general info about a speaker, provided by the user. Run \code{data("df_input_speaker_info")} to produce an example.}
 
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A \code{data.frame} containing the referent names and their response. Run \code{data("df_input_response_example")} or \code{data("df_input_response_previous_example")} for example.}
 
-\item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `summarize_response` for how to produce.}
+\item{df_summarized_response}{A \code{data.frame} that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See \code{summarize_response} for how to produce.}
 }
 \description{
-`util_download_handler_word` and `util_download_handler_dataset` pass params on to `downloadHandler`.
+\code{util_download_handler_word} and \code{util_download_handler_dataset} pass params on to \code{downloadHandler}.
 
-`util_download_handler_word` generates a Word version of the results page.
+\code{util_download_handler_word} generates a Word version of the results page.
 
-`util_download_handler_dataset` generates a `.csv` with the inputs provided by the user.
+\code{util_download_handler_dataset} generates a \code{.csv} with the inputs provided by the user.
 }

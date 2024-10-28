@@ -18,6 +18,8 @@ mod_starting_page_ui(id)
 A Shiny module containing the home page for the application (basically the entire app).
 }
 \examples{
+
+if (interactive()) {
 ui <- page(
    useShinyjs(),
    mod_starting_page_ui("home_page")
@@ -27,5 +29,7 @@ server <- function(input, output, session) {
    mod_starting_page_server("home_page")
 }
 shinyApp(ui, server)
+}
+
 
 }

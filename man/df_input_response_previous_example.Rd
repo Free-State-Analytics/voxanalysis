@@ -7,24 +7,24 @@
 \format{
 A data frame with 7 rows and 6 variables:
 \describe{
-  \item{date_of_evaluation}{The date of the evaluation.}
-  \item{referent}{Name of the referent associated with the response.}
-  \item{conversing}{Indicates whether the speaker provided a thematic response to an object (1 = Yes, 0 = No).}
-  \item{labeling}{Indicates whether the speaker could label an object (1 = Yes, 0 = No).}
-  \item{echoing}{Indicates whether the speaker could repeat an object name (1 = Yes, 0 = No).}
-  \item{requesting}{Indicates whether the speaker could request an object name (1 = Yes, 0 = No).}
+\item{date_of_evaluation}{The date of the evaluation.}
+\item{referent}{Name of the referent associated with the response.}
+\item{conversing}{Indicates whether the speaker provided a thematic response to an object (1 = Yes, 0 = No).}
+\item{labeling}{Indicates whether the speaker could label an object (1 = Yes, 0 = No).}
+\item{echoing}{Indicates whether the speaker could repeat an object name (1 = Yes, 0 = No).}
+\item{requesting}{Indicates whether the speaker could request an object name (1 = Yes, 0 = No).}
 }
 }
 \usage{
 data(df_input_response_previous_example)
 }
 \description{
-This sample data set is similar to `df_input_response_example`, but contains two previous set of evaluations. It is useful for producing examples of plots or analysis containing previous evaluation dates.
+This sample data set is similar to \code{df_input_response_example}, but contains two previous set of evaluations. It is useful for producing examples of plots or analysis containing previous evaluation dates.
 }
 \details{
 Each entry is a 1 or 0, which indicates whether a speaker responded to the referent.
 }
 \seealso{
-[df_input_response_example]
+\link{df_input_response_example}
 }
 \keyword{datasets}

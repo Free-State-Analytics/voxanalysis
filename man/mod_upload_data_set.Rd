@@ -18,6 +18,8 @@ mod_upload_data_set_ui(id)
 A Shiny module to allow the user to upload a .csv file with a speaker's data, via a user-interface.
 }
 \examples{
+
+if (interactive()) {
 data("df_input_speaker_info_example")
 
 ui <- page(
@@ -29,9 +31,12 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
+}
 
 ## Alternative
-
+if (interactive()) {
 run_example_upload_data_set_app <- function(add_new_data_ind = TRUE)
+}
+
 
 }

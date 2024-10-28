@@ -7,7 +7,7 @@
 table_cochrans_q_test(df_input_response)
 }
 \arguments{
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A \code{data.frame} containing the referent names and their response. Run \code{data("df_input_response_example")} or \code{data("df_input_response_previous_example")} for example.}
 }
 \description{
 Produces data.frame with cochran's q test, chance-corrected R, and p-value.

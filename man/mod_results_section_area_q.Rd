@@ -14,12 +14,14 @@ mod_results_section_area_q_ui(id)
 \arguments{
 \item{id}{The namespace id.}
 
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A \code{data.frame} containing the referent names and their response. Run \code{data("df_input_response_example")} or \code{data("df_input_response_previous_example")} for example.}
 }
 \description{
-A Shiny module that generates an Area Q summary section, intended to be used in `mod_results_primary`.
+A Shiny module that generates an Area Q summary section, intended to be used in \code{mod_results_primary}.
 }
 \examples{
+
+if (interactive()) {
 data("df_input_response_example")
 
 ui <- page(
@@ -36,6 +38,6 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
-
+}
 
 }

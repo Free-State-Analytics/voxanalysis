@@ -7,10 +7,10 @@
 tag_table_response_results(df_input_response)
 }
 \arguments{
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A \code{data.frame} containing the referent names and their response. Run \code{data("df_input_response_example")} or \code{data("df_input_response_previous_example")} for example.}
 }
 \description{
 A custom html table that reports the response.
 
-Unlike `tag_table_response_input`, this cannot be interacted with by the user in a Shiny session and is a static rendering.
+Unlike \code{tag_table_response_input}, this cannot be interacted with by the user in a Shiny session and is a static rendering.
 }
