@@ -13,7 +13,9 @@ output: github_document
 )
 ```
 
-# `{voxanalysis}`
+# `voxanalysis`
+
+`voxanalysis` is an R package and R Shiny application for autism spectrum diagnosis. It provides a user-interface that allows for user inputs following the VOX Analysis evaluation process defined here. Its data visualization functions are also available for analysts to use for custom requirements.
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
@@ -23,8 +25,13 @@ output: github_document
 
 You can install the development version of `{voxanalysis}` like so:
 
-```{r}
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+```{r, eval = FALSE}
+# If devtools is not installed, first install it
+install.packages("devtools")
+
+# Install PackageName from GitHub
+devtools::install_github("Free-State-Analytics/voxanalysis")
+
 ```
 
 ## Run
@@ -37,13 +44,9 @@ voxanalysis::run_app()
 
 ## About
 
-You are reading the doc about version : `r golem::pkg_version()`
+You are reading the doc about version : `r golem::pkg_version()`.
 
-This README has been compiled on the
-
-```{r}
-Sys.time()
-```
+This README has been compiled on `r Sys.time()`.
 
 Here are the tests results and package coverage:
 
