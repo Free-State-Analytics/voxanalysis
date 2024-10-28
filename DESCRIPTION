@@ -3,7 +3,8 @@ Title: VOX Analysis
 Version: 0.0.0.9000
 Authors@R: 
     person("Taylor", "Rodgers", , "taylor.rodgers@freestateanalytics.com", role = c("aut", "cre"))
-Description: An autism diagnosis application that evaluates the language development of a speaker.
+Description: An autism diagnosis application that evaluates the language
+    development of a speaker.
 License: MIT + file LICENSE
 Imports: 
     bslib,
@@ -11,20 +12,29 @@ Imports:
     dplyr,
     ggplot2,
     ggradar,
+    ggthemes,
     golem,
     gt,
+    language.assessment,
+    magrittr,
     quarto,
     shiny,
+    shinycssloaders,
+    shinyjs,
+    stats,
     stringr,
-    tidyr
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.2.3
+    tidyr,
+    utils
 Suggests: 
     knitr,
     rmarkdown,
     spelling,
     testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
 Config/testthat/edition: 3
+Encoding: UTF-8
 Language: en-US
-VignetteBuilder: knitr
+LazyData: true
+RoxygenNote: 7.2.3
+URL: https://free-state-analytics.github.io/voxanalysis/

@@ -9,13 +9,21 @@
 #'
 #' @examples
 #' # Runs the results page
-#' run_example_results_app()
+#' if (interactive()) {
+#'   run_example_results_app()
+#' }
+#'
 #'
 #' # Runs the response input page
-#' run_example_response_entry_app()
+#' if (interactive()) {
+#'   run_example_response_entry_app()
+#' }
 #'
 #' # Runs the upload data page. Change add_new_data_ind = TRUE to include response_entry page
-#' run_example_upload_data_set_app(add_new_data_ind = FALSE)
+#'
+#' if (interactive()) {
+#'   run_example_upload_data_set_app(add_new_data_ind = FALSE)
+#' }
 #'
 #' @name run_example
 NULL
@@ -26,10 +34,8 @@ NULL
 #' @importFrom shinyjs useShinyjs
 #' @export
 run_example_results_app <- function() {
-  # addResourcePath("www", system.file("www", package = "language.assessment"))
-  # style_sheet <- "www/style.css"
-  df_input_speaker_info_example <- language.assessment::df_input_speaker_info_example
-  df_input_response_previous_example <- language.assessment::df_input_response_previous_example
+  df_input_speaker_info_example <- voxanalysis::df_input_speaker_info_example
+  df_input_response_previous_example <- voxanalysis::df_input_response_previous_example
 
   ui <- page(
     useShinyjs(),
@@ -57,9 +63,7 @@ run_example_results_app <- function() {
 #' @importFrom shinyjs useShinyjs
 #' @export
 run_example_response_entry_app <- function() {
-  # addResourcePath("www", system.file("www", package = "language.assessment"))
-  # style_sheet <- "www/style.css"
-  df_input_speaker_info_example <- language.assessment::df_input_speaker_info_example
+  df_input_speaker_info_example <- voxanalysis::df_input_speaker_info_example
   ui <- page(
     useShinyjs(),
     tags$head(
@@ -79,8 +83,6 @@ run_example_response_entry_app <- function() {
 #' @importFrom shinyjs useShinyjs
 #' @export
 run_example_upload_data_set_app <- function(add_new_data_ind = TRUE) {
-  # addResourcePath("www", system.file("www", package = "language.assessment"))
-  # style_sheet <- "www/style.css"
   ui <- page(
     useShinyjs(),
     tags$head(

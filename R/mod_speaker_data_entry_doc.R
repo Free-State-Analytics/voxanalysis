@@ -12,6 +12,9 @@
 #' @import bslib
 #'
 #' @examples
+#'
+#' if (interactive()) {
+#'
 #' ui <- page(
 #'   useShinyjs(),
 #'   mod_speaker_data_entry_ui("speaker_entry")
@@ -23,7 +26,10 @@
 #'
 #' shinyApp(ui, server)
 #'
+#' }
+#'
 #' ### Alternative: include previous speaker data
+#' if (interactive()) {
 #' data("df_input_speaker_info_example")
 #'
 #' ui <- page(
@@ -38,6 +44,7 @@
 #' }
 #'
 #' shinyApp(ui, server)
+#' }
 #'
 #' @name mod_speaker_data_entry
 NULL

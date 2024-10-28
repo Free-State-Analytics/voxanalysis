@@ -11,6 +11,9 @@
 #' @import bslib
 #'
 #' @examples
+#'
+#' if (interactive()) {
+#'
 #' data("df_input_speaker_info_example")
 #' data("df_input_response_example")
 #'
@@ -29,8 +32,13 @@
 #'
 #' shinyApp(ui, server)
 #'
+#' }
+#'
+#' if (interactive()) {
 #' ### Alternative
 #' run_example_results_app()
+#'
+#' }
 #'
 #' @name mod_results_primary
 NULL

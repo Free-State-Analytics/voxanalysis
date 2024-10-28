@@ -9,6 +9,8 @@
 #' @import shiny
 #'
 #' @examples
+#'
+#' if (interactive()) {
 #' ui <- page(
 #'    useShinyjs(),
 #'    mod_starting_page_ui("home_page")
@@ -18,6 +20,8 @@
 #'    mod_starting_page_server("home_page")
 #' }
 #' shinyApp(ui, server)
+#' }
+#'
 #'
 #' @name mod_starting_page
 NULL
