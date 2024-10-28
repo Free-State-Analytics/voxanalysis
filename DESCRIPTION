@@ -2,7 +2,11 @@ Package: voxanalysis
 Title: VOX Analysis
 Version: 0.0.0.9000
 Authors@R: 
-    person("Taylor", "Rodgers", , "taylor.rodgers@freestateanalytics.com", role = c("aut", "cre"))
+  c(
+    person("Taylor", "Rodgers", ,"taylor.rodgers@freestateanalytics.com", role = c("aut", "cre")),
+    person("Lee", "Mason", , "Lee.Mason@cookchildrens.org", role = c("aut", "cph")),
+    person("Alonzo", "Andrews", , "Alonzo.Andrews@utsa.edu",  role = "ctb") 
+  )
 Description: An autism diagnosis application that evaluates the language
     development of a speaker.
 License: MIT + file LICENSE
