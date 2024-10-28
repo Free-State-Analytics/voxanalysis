@@ -53,16 +53,21 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="voxanalysis">
-<code>{voxanalysis}</code><a class="anchor" aria-label="anchor" href="#voxanalysis"></a>
+<code>voxanalysis</code><a class="anchor" aria-label="anchor" href="#voxanalysis"></a>
 </h1></div>
+<p><code>voxanalysis</code> is an R package and R Shiny application for autism spectrum diagnosis. It provides a user-interface that allows for user inputs following the VOX Analysis evaluation process defined here. Its data visualization functions are also available for analysts to use for custom requirements.</p>
 <!-- badges: start -->
-<!-- badges: end -->
+
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>You can install the development version of <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> like so:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># If devtools is not installed, first install it</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Install PackageName from GitHub</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"Free-State-Analytics/voxanalysis"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="run">Run<a class="anchor" aria-label="anchor" href="#run"></a>
@@ -74,22 +79,124 @@
 <div class="section level2">
 <h2 id="about">About<a class="anchor" aria-label="anchor" href="#about"></a>
 </h2>
-<p>You are reading the doc about version : 0.0.0.9000</p>
-<p>This README has been compiled on the</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "2024-10-22 11:10:16 CDT"</span></span></code></pre></div>
+<p>You are reading the doc about version : 0.0.0.9000.</p>
+<p>This README has been compiled on 2024-10-28 12:40:26.</p>
 <p>Here are the tests results and package coverage:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">check</span><span class="op">(</span>quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span><span class="co">#&gt; ══ Documenting ═════════════════════════════════════════════════════════════════</span></span>
-<span><span class="co">#&gt; ℹ Installed roxygen2 version (7.2.3) doesn't match required (7.1.1)</span></span>
-<span><span class="co">#&gt; ✖ `check()` will not re-document this package</span></span>
+<span><span class="co">#&gt; ℹ Loading voxanalysis</span></span>
 <span><span class="co">#&gt; ── R CMD check results ───────────────────────────── voxanalysis 0.0.0.9000 ────</span></span>
-<span><span class="co">#&gt; Duration: 34s</span></span>
+<span><span class="co">#&gt; Duration: 1m 18.5s</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; 0 errors ✔ | 0 warnings ✔ | 0 notes ✔</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<span><span class="co">#&gt; ❯ checking examples ... ERROR</span></span>
+<span><span class="co">#&gt;   Running examples in ‘voxanalysis-Ex.R’ failed</span></span>
+<span><span class="co">#&gt;   The error most likely occurred in:</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   &gt; base::assign(".ptime", proc.time(), pos = "CheckExEnv")</span></span>
+<span><span class="co">#&gt;   &gt; ### Name: calc_centroid</span></span>
+<span><span class="co">#&gt;   &gt; ### Title: Calculate the centroid, centroidal distance, and area Q</span></span>
+<span><span class="co">#&gt;   &gt; ### Aliases: calc_centroid</span></span>
+<span><span class="co">#&gt;   &gt; </span></span>
+<span><span class="co">#&gt;   &gt; ### ** Examples</span></span>
+<span><span class="co">#&gt;   &gt; </span></span>
+<span><span class="co">#&gt;   &gt; data("df_input_response_example")</span></span>
+<span><span class="co">#&gt;   &gt; calc_centroid(df_input_response_example)</span></span>
+<span><span class="co">#&gt;   Error in calc_centroid(df_input_response_example) : </span></span>
+<span><span class="co">#&gt;     could not find function "calc_centroid"</span></span>
+<span><span class="co">#&gt;   Execution halted</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ❯ checking for missing documentation entries ... WARNING</span></span>
+<span><span class="co">#&gt;   Undocumented code objects:</span></span>
+<span><span class="co">#&gt;     ‘df_summarized_response_example’</span></span>
+<span><span class="co">#&gt;   Undocumented data sets:</span></span>
+<span><span class="co">#&gt;     ‘df_summarized_response_example’</span></span>
+<span><span class="co">#&gt;   All user-level objects in a package should have documentation entries.</span></span>
+<span><span class="co">#&gt;   See chapter ‘Writing R documentation files’ in the ‘Writing R</span></span>
+<span><span class="co">#&gt;   Extensions’ manual.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ❯ checking Rd \usage sections ... WARNING</span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'mod_response_entry'</span></span>
+<span><span class="co">#&gt;     ‘df_input_response_previous’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'mod_results_section_area_q'</span></span>
+<span><span class="co">#&gt;     ‘v_primary_date’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'mod_results_section_detailed_analysis'</span></span>
+<span><span class="co">#&gt;     ‘df_input_response’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'mod_upload_data_set'</span></span>
+<span><span class="co">#&gt;     ‘add_new_data_ind’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'plot_area_q'</span></span>
+<span><span class="co">#&gt;     ‘v_primary_date’ ‘doc_version_ind’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'plot_vox_line'</span></span>
+<span><span class="co">#&gt;     ‘doc_version_ind’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'plot_vox_piechart'</span></span>
+<span><span class="co">#&gt;     ‘doc_version_ind’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'run_example'</span></span>
+<span><span class="co">#&gt;     ‘add_new_data_ind’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'tag_custom_input'</span></span>
+<span><span class="co">#&gt;     ‘align_center’ ‘placeholder’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'tag_table_prompt_hierarchy'</span></span>
+<span><span class="co">#&gt;     ‘table_prompt_hierarchy’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Undocumented arguments in documentation object 'util_generate_word_doc_report'</span></span>
+<span><span class="co">#&gt;     ‘file_name’ ‘temp_file’</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   Functions with \usage entries need to have the appropriate \alias</span></span>
+<span><span class="co">#&gt;   entries, and all their arguments documented.</span></span>
+<span><span class="co">#&gt;   The \usage entries must correspond to syntactically valid R code.</span></span>
+<span><span class="co">#&gt;   See chapter ‘Writing R documentation files’ in the ‘Writing R</span></span>
+<span><span class="co">#&gt;   Extensions’ manual.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ❯ checking for unstated dependencies in examples ... WARNING</span></span>
+<span><span class="co">#&gt;   Warning: parse error in file 'lines':</span></span>
+<span><span class="co">#&gt;   1: unexpected '}'</span></span>
+<span><span class="co">#&gt;   400: run_example_upload_data_set_app &lt;- function(add_new_data_ind = TRUE)</span></span>
+<span><span class="co">#&gt;   401: }</span></span>
+<span><span class="co">#&gt;        ^</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ❯ checking top-level files ... NOTE</span></span>
+<span><span class="co">#&gt;   Non-standard file/directory found at top level:</span></span>
+<span><span class="co">#&gt;     ‘temp_report_2024-10-24.docx’</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ❯ checking R code for possible problems ... NOTE</span></span>
+<span><span class="co">#&gt;   mod_speaker_data_entry_server : &lt;anonymous&gt;: no visible binding for</span></span>
+<span><span class="co">#&gt;     global variable ‘value’</span></span>
+<span><span class="co">#&gt;   mod_speaker_data_entry_server : &lt;anonymous&gt;: no visible binding for</span></span>
+<span><span class="co">#&gt;     global variable ‘name’</span></span>
+<span><span class="co">#&gt;   mod_speaker_data_info_server : &lt;anonymous&gt;: no visible binding for</span></span>
+<span><span class="co">#&gt;     global variable ‘value’</span></span>
+<span><span class="co">#&gt;   mod_upload_data_set_server : &lt;anonymous&gt;: no visible global function</span></span>
+<span><span class="co">#&gt;     definition for ‘read.csv’</span></span>
+<span><span class="co">#&gt;   mod_upload_data_set_server : &lt;anonymous&gt;: no visible binding for global</span></span>
+<span><span class="co">#&gt;     variable ‘date_of_evaluation’</span></span>
+<span><span class="co">#&gt;   mod_upload_data_set_server : &lt;anonymous&gt;: no visible binding for global</span></span>
+<span><span class="co">#&gt;     variable ‘date_of_birth’</span></span>
+<span><span class="co">#&gt;   table_prompt_hierarchy: no visible binding for global variable ‘.’</span></span>
+<span><span class="co">#&gt;   tag_custom_file_upload: no visible global function definition for</span></span>
+<span><span class="co">#&gt;     ‘toJSON’</span></span>
+<span><span class="co">#&gt;   Undefined global functions or variables:</span></span>
+<span><span class="co">#&gt;     . date_of_birth date_of_evaluation name read.csv toJSON value</span></span>
+<span><span class="co">#&gt;   Consider adding</span></span>
+<span><span class="co">#&gt;     importFrom("utils", "read.csv")</span></span>
+<span><span class="co">#&gt;   to your NAMESPACE file.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ❯ checking Rd line widths ... NOTE</span></span>
+<span><span class="co">#&gt;   Rd file 'plot_area_q.Rd':</span></span>
+<span><span class="co">#&gt;     \examples lines wider than 100 characters:</span></span>
+<span><span class="co">#&gt;        plot_area_q(df_summarized_response = df_summarized_response_example[1:2,], v_primary_date = "2024-08-23")</span></span>
+<span><span class="co">#&gt;   </span></span>
+<span><span class="co">#&gt;   These lines will be truncated in the PDF manual.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; 1 error ✖ | 3 warnings ✖ | 3 notes ✖</span></span>
+<span><span class="co">#&gt; Error: R CMD check found ERRORs</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">covr</span><span class="fu">::</span><span class="fu">package_coverage</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Error in loadNamespace(x): there is no package called 'covr'</span></span></code></pre></div>
 </div>
@@ -120,17 +227,24 @@
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Taylor Rodgers <br><small class="roles"> Author, maintainer </small>  </li>
+<li>Lee Mason <br><small class="roles"> Author, copyright holder </small>  </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://lifecycle.r-lib.org/articles/stages.html#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></li>
+</ul>
+</div>
 
   </aside>
 </div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Taylor Rodgers.</p>
+  <p>Developed by Taylor Rodgers, Lee Mason.</p>
 </div>
 
 <div class="pkgdown-footer-right">
