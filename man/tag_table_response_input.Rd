@@ -7,12 +7,12 @@
 tag_table_response_input(ns_prefix, row_count)
 }
 \arguments{
-\item{ns_prefix}{The namespace. Pass \code{session$ns(id)} to make the user inputs available in the session via \code{input}. This will ensure that the inputs are accessible in the same module.}
+\item{ns_prefix}{The namespace. Pass `session$ns(id)` to make the user inputs available in the session via `input`. This will ensure that the inputs are accessible in the same module.}
 
 \item{row_count}{The number of rows to include}
 }
 \description{
-This function generate an html table, which uses various tags and classes, as well as \code{tag_custom_input}, to allow for data entry.
+This function generate an html table, which uses various tags and classes, as well as `tag_custom_input`, to allow for data entry.
 
-Data that is collected during the session will be made available to on the server-side via \code{input}.
+Data that is collected during the session will be made available to on the server-side via `input`.
 }

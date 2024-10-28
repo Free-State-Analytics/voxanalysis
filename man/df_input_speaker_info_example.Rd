@@ -7,18 +7,18 @@
 \format{
 A data frame with 1 rows and 4 variables:
 \describe{
-\item{first_name}{Speaker's first name.}
-\item{last_name}{Speaker's last name.}
-\item{date_of_birth}{The speaker's date of birth.}
-\item{date_of_evaluation}{The date of the evaluation.}
-\item{language_spoken}{The language spoken during the evaluation.}
-\item{gender}{The speaker's gender.}
-}
+  \item{first_name}{Speaker's first name.}
+  \item{last_name}{Speaker's last name.}
+  \item{date_of_birth}{The speaker's date of birth.}
+  \item{date_of_evaluation}{The date of the evaluation.}
+  \item{language_spoken}{The language spoken during the evaluation.}
+  \item{gender}{The speaker's gender.}
+  }
 }
 \usage{
 data(df_input_speaker_info_example)
 }
 \description{
-This data set shows the expected structure for \code{df_input_speaker_info}, which is a common input required for function found in this package.
+This data set shows the expected structure for `df_input_speaker_info`, which is a common input required for function found in this package.
 }
 \keyword{datasets}

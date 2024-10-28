@@ -7,7 +7,7 @@
 plot_area_q(df_summarized_response, v_primary_date, doc_version_ind = FALSE)
 }
 \arguments{
-\item{df_summarized_response}{A \code{data.frame} that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See \code{summarize_response} for how to produce.}
+\item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `summarize_response` for how to produce.}
 }
 \description{
 Produces an area Q plot over time for the data set provided.
