@@ -16,7 +16,7 @@ mod_results_section_detailed_analysis_ui(id)
 \item{id}{The namespace id.}
 }
 \description{
-A Shiny module to generate a detailed analysis section, intended to be used in \code{mod_results_primary}.
+A Shiny module to generate a detailed analysis section, intended to be used in `mod_results_primary`.
 
 This module will generate Vox pie chart, Vox line chart, Cochran's Q test, and prompt hierarchy table.
 }

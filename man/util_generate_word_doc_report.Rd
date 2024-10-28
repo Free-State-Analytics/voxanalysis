@@ -12,12 +12,12 @@ util_generate_word_doc_report(
 )
 }
 \arguments{
-\item{df_input_speaker_info}{A \code{data.frame} that contains general info about a speaker, provided by the user. Run \code{data("df_input_speaker_info")} to produce an example.}
+\item{df_input_speaker_info}{A `data.frame` that contains general info about a speaker, provided by the user. Run `data("df_input_speaker_info")` to produce an example.}
 
-\item{df_input_response}{A \code{data.frame} containing the referent names and their response. Run \code{data("df_input_response_example")} or \code{data("df_input_response_previous_example")} for example.}
+\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
 }
 \description{
-Produces a word doc report using the \code{printable_report.qmd} found in the \code{inst} folder.
+Produces a word doc report using the `printable_report.qmd` found in the `inst` folder.
 }
 \examples{
 data("df_input_speaker_info_example")
