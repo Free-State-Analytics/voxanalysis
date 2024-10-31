@@ -25,12 +25,12 @@ mod_results_section_area_q_server <- function(
 
     rct_summarize_response <- eventReactive(input$filter_secondary_date, {
       if (length(unique(df_input_response$date_of_evaluation)) != 1) {
-        data_to_return <- summarize_response(
+        data_to_return <- util_summarize_response(
           df_input_response %>%
             filter(.data$date_of_evaluation %in% c(as.Date(v_primary_date), as.Date(input$filter_secondary_date)))
         )
       } else {
-        data_to_return <- summarize_response(
+        data_to_return <- util_summarize_response(
           df_input_response
         )
       }

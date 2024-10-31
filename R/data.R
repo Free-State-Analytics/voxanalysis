@@ -84,7 +84,7 @@
 #'
 #' This data set is a summation of the four response (conversing, labeling, echoing, and requesting). It is often used as an input for several plot functions.
 #'
-#' It can be produced using `summarize_response`. (See `?summarize_meausurments`.)
+#' It can be produced using `util_summarize_response`. (See `?util_summarize_meausurments`.)
 #'
 #'
 #' @format

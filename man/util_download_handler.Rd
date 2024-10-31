@@ -19,7 +19,7 @@ util_download_handler_dataset(df_input_speaker_info, df_input_response)
 
 \item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
 
-\item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `summarize_response` for how to produce.}
+\item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `util_summarize_response` for how to produce.}
 }
 \description{
 `util_download_handler_word` and `util_download_handler_dataset` pass params on to `downloadHandler`.

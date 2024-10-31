@@ -6,12 +6,12 @@
 #' @inherit common-params
 #'
 #' @examples
-#' summarize_response(
+#' util_summarize_response(
 #'   df_input_response = df_input_response_example
 #'   )
 
 
-summarize_response <- function(df_input_response) {
+util_summarize_response <- function(df_input_response) {
 
     dat <- df_input_response %>%
       dplyr::select("date_of_evaluation", "labeling", "echoing", "requesting", "conversing") %>%

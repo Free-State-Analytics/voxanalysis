@@ -25,7 +25,7 @@ util_generate_word_doc_report <- function(
     file_name,
     temp_file = TRUE) {
 
-  df_summarized_response <- summarize_response(df_input_response) %>%
+  df_summarized_response <- util_summarize_response(df_input_response) %>%
       slice_max(.data$date_of_evaluation,
                 n = 2)
 

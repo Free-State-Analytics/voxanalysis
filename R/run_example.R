@@ -95,7 +95,7 @@ run_example_upload_data_set_app <- function(add_new_data_ind = TRUE) {
     mod_upload_data_set_server("upload", add_new_data_ind = add_new_data_ind)
   }
 
-shinyApp(ui, server)
+  shinyApp(ui, server)
 
 }
 
