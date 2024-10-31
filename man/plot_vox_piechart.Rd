@@ -4,10 +4,12 @@
 \alias{plot_vox_piechart}
 \title{Plot a Vox Pie Chart}
 \usage{
-plot_vox_piechart(df_summarized_response, doc_version_ind = FALSE)
+plot_vox_piechart(df_summarized_response, ind_doc_version = FALSE)
 }
 \arguments{
 \item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `util_summarize_response` for how to produce.}
+
+\item{ind_doc_version}{`TRUE` or `FALSE` value to indicate whether a plot needs to be rendered for a Word doc. Passing `TRUE` will change various font sizes and other aesthetic parameters of the plot to make it more Word-friendly.}
 }
 \description{
 Produces a Vox pie chart.

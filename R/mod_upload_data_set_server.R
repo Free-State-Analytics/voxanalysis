@@ -1,8 +1,9 @@
 #' @rdname mod_upload_data_set
 #' @importFrom shinyjs hidden show hide
+#' @importFrom utils read.csv
 #' @export
 
-mod_upload_data_set_server <- function(id, add_new_data_ind = FALSE) {
+mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
   moduleServer(id, function(input, output, session) {
 
     rv <- reactiveValues(
@@ -45,7 +46,7 @@ mod_upload_data_set_server <- function(id, add_new_data_ind = FALSE) {
           return()
         }
 
-        if (add_new_data_ind) {
+        if (ind_add_new_data) {
           shinyjs::hide("error_message")
           shinyjs::show("button_continue",
                         anim = TRUE,
@@ -53,7 +54,7 @@ mod_upload_data_set_server <- function(id, add_new_data_ind = FALSE) {
         }
 
 
-        if (!add_new_data_ind) {
+        if (!ind_add_new_data) {
           shinyjs::hide("error_message")
           shinyjs::show("div_run_report_buttons",
                         anim = TRUE,
@@ -61,14 +62,14 @@ mod_upload_data_set_server <- function(id, add_new_data_ind = FALSE) {
         }
 
         rv$df_input_response <- result$df_to_upload %>%
-          mutate(date_of_evaluation = as.Date(date_of_evaluation)) %>%
+          mutate(date_of_evaluation = as.Date(.data$date_of_evaluation)) %>%
           select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
         ## Sometimes, the date that's uploaded is read as a character, causing disruption in future modules
 
         rv$df_input_speaker_info <- result$df_to_upload %>%
           filter(.data$date_of_evaluation == max(.data$date_of_evaluation)) %>%
-          mutate(date_of_evaluation = as.Date(date_of_evaluation),
-                 date_of_birth = as.Date(date_of_birth)) %>%
+          mutate(date_of_evaluation = as.Date(.data$date_of_evaluation),
+                 date_of_birth = as.Date(.data$date_of_birth)) %>%
           select(any_of(c("first_name", "last_name", "date_of_birth", "date_of_evaluation", "language_spoken", "gender"))) %>%
           distinct(.data$first_name,
                    .data$last_name,
@@ -77,7 +78,7 @@ mod_upload_data_set_server <- function(id, add_new_data_ind = FALSE) {
                    .data$language_spoken,
                    .data$gender)
 
-        if (add_new_data_ind && rv$df_input_speaker_info$date_of_evaluation == Sys.Date()) {
+        if (ind_add_new_data && rv$df_input_speaker_info$date_of_evaluation == Sys.Date()) {
           shinyjs::show("same_date_message")
         } else {
           shinyjs::hide("same_date_message")

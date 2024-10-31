@@ -19,6 +19,8 @@ mod_response_entry_ui(id)
 \item{id}{The namespace id.}
 
 \item{df_input_speaker_info}{A `data.frame` that contains general info about a speaker, provided by the user. Run `data("df_input_speaker_info")` to produce an example.}
+
+\item{df_input_response_previous}{A `data.frame` similar to `df_summarized_response`. It is used to distinguish past evaluations that were uploaded by the end user.}
 }
 \description{
 A module that generates a UI and server function to allow the user to enter speaker data and render a report.

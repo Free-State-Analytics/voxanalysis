@@ -23,7 +23,7 @@
 #'   mod_results_section_area_q_server(
 #'     "section_area_q",
 #'     df_input_response_example,
-#'     v_primary_date = max(df_input_response_example$date_of_evaluation))
+#'     date_primary = max(df_input_response_example$date_of_evaluation))
 #'
 #' }
 #'

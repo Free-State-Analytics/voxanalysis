@@ -96,4 +96,4 @@
 #'  \item{requesting}
 #' }
 #' @usage data(df_summarized_response_example)
-#' "df_summarized_response_example"
+"df_summarized_response_example"

@@ -17,6 +17,6 @@ Calculate the centroid, centroidal distance, and area Q
 }
 \examples{
 data("df_input_response_example")
-calc_centroid(df_input_response_example)
+calc_centroid(df_input_response = df_input_response_example)
 
 }

@@ -12,9 +12,12 @@ run_example_results_app()
 
 run_example_response_entry_app()
 
-run_example_upload_data_set_app(add_new_data_ind = TRUE)
+run_example_upload_data_set_app(ind_add_new_data = TRUE)
 
 run_example_speaker_data_entry_app()
+}
+\arguments{
+\item{ind_add_new_data}{`TRUE` or `FALSE` value to indicate whether a user workflow should include `mod_speaker_data_entry`. In other words, `TRUE` will be passed by the user behavior, because they indicated that they wanted to hand-type new data entries.}
 }
 \description{
 A series of helper functions to allow easy demonstration of various application / module combos.
@@ -33,10 +36,10 @@ if (interactive()) {
   run_example_response_entry_app()
 }
 
-# Runs the upload data page. Change add_new_data_ind = TRUE to include response_entry page
+# Runs the upload data page. Change ind_add_new_data = TRUE to include response_entry page
 
 if (interactive()) {
-  run_example_upload_data_set_app(add_new_data_ind = FALSE)
+  run_example_upload_data_set_app(ind_add_new_data = FALSE)
 }
 
 }

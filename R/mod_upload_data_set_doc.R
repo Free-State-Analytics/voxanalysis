@@ -19,7 +19,7 @@
 #' )
 #'
 #' server <- function(input, output, session) {
-#'   mod_upload_data_set_server("upload", df_input_speaker_info_example, add_new_data_ind = TRUE)
+#'   mod_upload_data_set_server("upload", df_input_speaker_info_example, ind_add_new_data = TRUE)
 #' }
 #'
 #' shinyApp(ui, server)
@@ -27,7 +27,7 @@
 #'
 #' ## Alternative
 #' if (interactive()) {
-#' run_example_upload_data_set_app <- function(add_new_data_ind = TRUE)
+#' run_example_upload_data_set_app <- function(ind_add_new_data = TRUE)
 #' }
 #'
 #'

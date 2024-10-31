@@ -78,7 +78,7 @@ mod_speaker_data_info_server <- function(id, df_input_speaker_info) {
             cell_text(align = "right", color = "#212529")
           ),
           locations = cells_body(
-            columns = value
+            columns = .data$value
           )
         ) %>%
         tab_options(

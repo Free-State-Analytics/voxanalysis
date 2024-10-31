@@ -9,7 +9,7 @@
 #'
 #' @examples
 #' data("df_input_response_example")
-#' calc_centroid(df_input_response_example)
+#' calc_centroid(df_input_response = df_input_response_example)
 #'
 #' @returns A `list`.
 

@@ -12,9 +12,13 @@ tag_custom_input(
 )
 }
 \arguments{
-\item{input_id}{An id}
+\item{input_id}{An id.}
 
-\item{value}{A numeric value}
+\item{value}{A numeric value.}
+
+\item{align_center}{A `TRUE` or `FALSE` to indicate whether the alignment should be centered.}
+
+\item{placeholder}{A `str` value for the placeholder.}
 }
 \description{
 This function is used in `tag_table_response_inputs` to produce a matrix-like data entry input.

@@ -4,12 +4,14 @@
 \alias{plot_vox_line}
 \title{Plot a Vox Line Chart}
 \usage{
-plot_vox_line(df_input_response, hide_heading = TRUE, doc_version_ind = FALSE)
+plot_vox_line(df_input_response, hide_heading = TRUE, ind_doc_version = FALSE)
 }
 \arguments{
 \item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
 
 \item{hide_heading}{A logical indicator to hide the heading. It defaults to TRUE.}
+
+\item{ind_doc_version}{`TRUE` or `FALSE` value to indicate whether a plot needs to be rendered for a Word doc. Passing `TRUE` will change various font sizes and other aesthetic parameters of the plot to make it more Word-friendly.}
 }
 \description{
 Produces a Vox line chart

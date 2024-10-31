@@ -4,16 +4,22 @@
 \alias{plot_area_q}
 \title{Area Q Plot}
 \usage{
-plot_area_q(df_summarized_response, v_primary_date, doc_version_ind = FALSE)
+plot_area_q(df_summarized_response, date_primary, ind_doc_version = FALSE)
 }
 \arguments{
 \item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `util_summarize_response` for how to produce.}
+
+\item{date_primary}{A single entry `vector` containing a date. This field helps a function or module where multiple evaluation dates are present. The date chosen as primary will determine which will be calculated or highlighted in the function.}
+
+\item{ind_doc_version}{`TRUE` or `FALSE` value to indicate whether a plot needs to be rendered for a Word doc. Passing `TRUE` will change various font sizes and other aesthetic parameters of the plot to make it more Word-friendly.}
 }
 \description{
 Produces an area Q plot over time for the data set provided.
 }
 \examples{
 data("df_summarized_response_example")
-plot_area_q(df_summarized_response = df_summarized_response_example[1:2,], v_primary_date = "2024-08-23")
+plot_area_q(
+  df_summarized_response = df_summarized_response_example[1:2,],
+  date_primary = "2024-08-23")
 
 }

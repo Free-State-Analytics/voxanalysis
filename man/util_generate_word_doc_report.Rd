@@ -7,14 +7,15 @@
 util_generate_word_doc_report(
   df_input_speaker_info = NULL,
   df_input_response,
-  file_name,
-  temp_file = TRUE
+  file_name
 )
 }
 \arguments{
 \item{df_input_speaker_info}{A `data.frame` that contains general info about a speaker, provided by the user. Run `data("df_input_speaker_info")` to produce an example.}
 
 \item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+
+\item{file_name}{The name of the file to be exported.}
 }
 \description{
 Produces a word doc report using the `printable_report.qmd` found in the `inst` folder.

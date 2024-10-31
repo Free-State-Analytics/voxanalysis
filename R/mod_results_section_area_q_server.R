@@ -5,13 +5,13 @@
 mod_results_section_area_q_server <- function(
     id,
     df_input_response,
-    v_primary_date) {
+    date_primary) {
   moduleServer(id, function(input, output, session) {
 
     if (length(unique(df_input_response$date_of_evaluation)) != 1) {
       shinyjs::show("filter_date_div")
       dates_to_pass <- df_input_response %>%
-        filter(.data$date_of_evaluation != as.Date(v_primary_date))
+        filter(.data$date_of_evaluation != as.Date(date_primary))
       dates_to_pass <- unique(dates_to_pass$date_of_evaluation)
       updateSelectInput(session,
                         "filter_secondary_date",
@@ -27,7 +27,7 @@ mod_results_section_area_q_server <- function(
       if (length(unique(df_input_response$date_of_evaluation)) != 1) {
         data_to_return <- util_summarize_response(
           df_input_response %>%
-            filter(.data$date_of_evaluation %in% c(as.Date(v_primary_date), as.Date(input$filter_secondary_date)))
+            filter(.data$date_of_evaluation %in% c(as.Date(date_primary), as.Date(input$filter_secondary_date)))
         )
       } else {
         data_to_return <- util_summarize_response(
@@ -39,13 +39,13 @@ mod_results_section_area_q_server <- function(
     }, ignoreNULL = TRUE)
 
     output$analysis_results_area_q_plot <- renderPlot({
-      plot_area_q(rct_summarize_response(), v_primary_date)
-    }) %>% bindCache(v_primary_date, input$filter_secondary_date)
+      plot_area_q(rct_summarize_response(), date_primary)
+    }) %>% bindCache(date_primary, input$filter_secondary_date)
 
     output$centroids <- renderUI({
 
       centroids_metrics <- calc_centroid(df_input_response %>%
-                                           filter(.data$date_of_evaluation == as.Date(v_primary_date)))
+                                           filter(.data$date_of_evaluation == as.Date(date_primary)))
 
       div(class = "info-div",
         tag_kpi(paste0("(", centroids_metrics$centroid[1], ", ", centroids_metrics$centroid[2], ")"), "Centroid"),
@@ -56,7 +56,7 @@ mod_results_section_area_q_server <- function(
       )
 
     }) %>%
-      bindCache(v_primary_date)
+      bindCache(date_primary)
 
 
   })

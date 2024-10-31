@@ -41,7 +41,7 @@ mod_starting_page_server <- function(id) {
                       animType = "fade")
         mod_upload_data_set_server(
           "upload_data_no_new_entries",
-          add_new_data_ind = FALSE
+          ind_add_new_data = FALSE
         )
       }
 
@@ -59,7 +59,7 @@ mod_starting_page_server <- function(id) {
                       animType = "fade")
         mod_upload_data_set_server(
           "upload_data_with_new_entries",
-          add_new_data_ind = TRUE)
+          ind_add_new_data = TRUE)
       }
 
 

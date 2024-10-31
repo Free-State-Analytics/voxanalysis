@@ -7,7 +7,7 @@
 \alias{mod_results_section_area_q_ui}
 \title{A module for an Area Q summary section}
 \usage{
-mod_results_section_area_q_server(id, df_input_response, v_primary_date)
+mod_results_section_area_q_server(id, df_input_response, date_primary)
 
 mod_results_section_area_q_ui(id)
 }
@@ -15,6 +15,8 @@ mod_results_section_area_q_ui(id)
 \item{id}{The namespace id.}
 
 \item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+
+\item{date_primary}{A single entry `vector` containing a date. This field helps a function or module where multiple evaluation dates are present. The date chosen as primary will determine which will be calculated or highlighted in the function.}
 }
 \description{
 A Shiny module that generates an Area Q summary section, intended to be used in `mod_results_primary`.
@@ -33,7 +35,7 @@ server <- function(input, output, session) {
   mod_results_section_area_q_server(
     "section_area_q",
     df_input_response_example,
-    v_primary_date = max(df_input_response_example$date_of_evaluation))
+    date_primary = max(df_input_response_example$date_of_evaluation))
 
 }
 

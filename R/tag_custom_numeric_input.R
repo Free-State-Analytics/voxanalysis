@@ -4,8 +4,10 @@
 #' This function is used in `tag_table_response_inputs` to produce a matrix-like data entry input.
 #'
 #'
-#' @param input_id An id
-#' @param value A numeric value
+#' @param input_id An id.
+#' @param value A numeric value.
+#' @param align_center A `TRUE` or `FALSE` to indicate whether the alignment should be centered.
+#' @param placeholder A `str` value for the placeholder.
 
 
 tag_custom_input <- function (input_id, value = 0, align_center = TRUE, placeholder = "Enter value")

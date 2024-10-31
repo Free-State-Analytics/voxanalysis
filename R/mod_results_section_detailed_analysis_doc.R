@@ -6,7 +6,7 @@
 #' This module will generate Vox pie chart, Vox line chart, Cochran's Q test, and prompt hierarchy table.
 #'
 #'
-#' @param id The namespace id.
+#' @inherit common-params
 #'
 #' @import shiny
 #' @import bslib

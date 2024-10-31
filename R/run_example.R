@@ -19,10 +19,10 @@
 #'   run_example_response_entry_app()
 #' }
 #'
-#' # Runs the upload data page. Change add_new_data_ind = TRUE to include response_entry page
+#' # Runs the upload data page. Change ind_add_new_data = TRUE to include response_entry page
 #'
 #' if (interactive()) {
-#'   run_example_upload_data_set_app(add_new_data_ind = FALSE)
+#'   run_example_upload_data_set_app(ind_add_new_data = FALSE)
 #' }
 #'
 #' @name run_example
@@ -82,7 +82,7 @@ run_example_response_entry_app <- function() {
 #' @import bslib
 #' @importFrom shinyjs useShinyjs
 #' @export
-run_example_upload_data_set_app <- function(add_new_data_ind = TRUE) {
+run_example_upload_data_set_app <- function(ind_add_new_data = TRUE) {
   ui <- page(
     useShinyjs(),
     tags$head(
@@ -92,7 +92,7 @@ run_example_upload_data_set_app <- function(add_new_data_ind = TRUE) {
   )
 
   server <- function(input, output, session) {
-    mod_upload_data_set_server("upload", add_new_data_ind = add_new_data_ind)
+    mod_upload_data_set_server("upload", ind_add_new_data = ind_add_new_data)
   }
 
   shinyApp(ui, server)

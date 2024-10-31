@@ -17,7 +17,7 @@
 #'
 #'
 
-plot_vox_line <- function(df_input_response, hide_heading = TRUE, doc_version_ind = FALSE) {
+plot_vox_line <- function(df_input_response, hide_heading = TRUE, ind_doc_version = FALSE) {
 
   response_inputs <- df_input_response %>%
     transmute(
@@ -71,7 +71,7 @@ plot_vox_line <- function(df_input_response, hide_heading = TRUE, doc_version_in
 
   p <- ggplot(by_session, aes(.data$session, y = .data$value))
 
- if (doc_version_ind) {
+ if (ind_doc_version) {
    p <- p +
      geom_line(aes(color = .data$type), linewidth = .75) +
      geom_point(aes(fill = .data$type), size = 5, pch = 21, color = "white", stroke = 1) +

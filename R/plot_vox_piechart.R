@@ -18,7 +18,7 @@
 #'
 #'
 
-plot_vox_piechart <- function(df_summarized_response, doc_version_ind = FALSE) {
+plot_vox_piechart <- function(df_summarized_response, ind_doc_version = FALSE) {
 
    if (length(unique(df_summarized_response$date_of_evaluation)) != 1) {
      stop("The df_summarized_response input should only have one row of data for this function.")
@@ -45,7 +45,7 @@ plot_vox_piechart <- function(df_summarized_response, doc_version_ind = FALSE) {
       theme(legend.position = "none") +
       scale_fill_manual(values = plot_color_mapping)
 
-    if (doc_version_ind) {
+    if (ind_doc_version) {
       p <- p + geom_text(aes(y = .data$ypos,
                              label = paste0(.data$name,":","\n", .data$value, " (", .data$perc, "%)")),
                          color = "white", size = 3)

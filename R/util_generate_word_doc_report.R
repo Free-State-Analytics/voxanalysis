@@ -5,6 +5,8 @@
 #'
 #'
 #' @inherit common-params
+#' @param file_name The name of the file to be exported.
+#' @param temp_file
 #' @import quarto
 #' @import dplyr
 #'
@@ -22,8 +24,7 @@
 util_generate_word_doc_report <- function(
     df_input_speaker_info = NULL,
     df_input_response,
-    file_name,
-    temp_file = TRUE) {
+    file_name) {
 
   df_summarized_response <- util_summarize_response(df_input_response) %>%
       slice_max(.data$date_of_evaluation,

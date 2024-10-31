@@ -7,12 +7,14 @@
 \alias{mod_upload_data_set_ui}
 \title{A Shiny module to upload a csv file}
 \usage{
-mod_upload_data_set_server(id, add_new_data_ind = FALSE)
+mod_upload_data_set_server(id, ind_add_new_data = FALSE)
 
 mod_upload_data_set_ui(id)
 }
 \arguments{
 \item{id}{The namespace id.}
+
+\item{ind_add_new_data}{`TRUE` or `FALSE` value to indicate whether a user workflow should include `mod_speaker_data_entry`. In other words, `TRUE` will be passed by the user behavior, because they indicated that they wanted to hand-type new data entries.}
 }
 \description{
 A Shiny module to allow the user to upload a .csv file with a speaker's data, via a user-interface.
@@ -27,7 +29,7 @@ ui <- page(
 )
 
 server <- function(input, output, session) {
-  mod_upload_data_set_server("upload", df_input_speaker_info_example, add_new_data_ind = TRUE)
+  mod_upload_data_set_server("upload", df_input_speaker_info_example, ind_add_new_data = TRUE)
 }
 
 shinyApp(ui, server)
@@ -35,7 +37,7 @@ shinyApp(ui, server)
 
 ## Alternative
 if (interactive()) {
-run_example_upload_data_set_app <- function(add_new_data_ind = TRUE)
+run_example_upload_data_set_app <- function(ind_add_new_data = TRUE)
 }
 
 
