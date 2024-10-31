@@ -10,6 +10,7 @@
 #' @param alpha alpha level.
 #' @param p.method p method. Recommend "fdr".
 #' @returns A `list`.
+#' @export
 
 calc_cochran_qtest <- function (formula, data, alpha = 0.05, p.method = "fdr")
 {

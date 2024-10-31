@@ -2,7 +2,7 @@
 % Please edit documentation in R/table_prompt_hierarchy.R
 \name{table_prompt_hierarchy}
 \alias{table_prompt_hierarchy}
-\title{Prompt Hierachy Data Farme}
+\title{Prompt Hierachy Table}
 \usage{
 table_prompt_hierarchy(df_summarized_response)
 }
@@ -18,6 +18,5 @@ data("df_summarized_response_example")
 dat <- df_summarized_response_example \%>\%
     filter(date_of_evaluation == max(date_of_evaluation))
 table_prompt_hierarchy(df_summarized_response = dat)
-
 
 }

@@ -61,7 +61,6 @@
 #' @usage data(df_output_exportable_example)
 "df_output_exportable_example"
 
-
 #' Speaker Info (Example)
 #'
 #' This data set shows the expected structure for `df_input_speaker_info`, which is a common input required for function found in this package.
@@ -74,7 +73,7 @@
 #'   \item{date_of_evaluation}{The date of the evaluation.}
 #'   \item{language_spoken}{The language spoken during the evaluation.}
 #'   \item{gender}{The speaker's gender.}
-#'   }
+#' }
 #'
 #' @usage data(df_input_speaker_info_example)
 "df_input_speaker_info_example"
@@ -84,16 +83,15 @@
 #'
 #' This data set is a summation of the four response (conversing, labeling, echoing, and requesting). It is often used as an input for several plot functions.
 #'
-#' It can be produced using `util_summarize_response`. (See `?util_summarize_meausurments`.)
+#' It can be produced using `util_summarize_response`. (See `?util_summarize_response`.)
 #'
-#'
-#' @format
+#' @format A data frame with 3 rows and 5 variables:
 #' \describe{
-#'  \item{date_of_evaluation}
-#'  \item{conversing}
-#'  \item{labeling}
-#'  \item{echoing}
-#'  \item{requesting}
+#'  \item{date_of_evaluation}{The date of the evaluation.}
+#'   \item{conversing}{The sum of the positive conversing entries for a particular evaluation date.}
+#'   \item{labeling}{The sum of positive labeling entries for a particular evaluation date.}
+#'   \item{echoing}{The sum of positive echoing entries for a particular evaluation date.}
+#'   \item{requesting}{The sum of positive requesting entries for a particular evaluation date.}
 #' }
 #' @usage data(df_summarized_response_example)
 "df_summarized_response_example"

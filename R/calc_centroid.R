@@ -11,8 +11,13 @@
 #' data("df_input_response_example")
 #' calc_centroid(df_input_response = df_input_response_example)
 #'
-#' @returns A `list`.
-
+#' @return A `list` with the following components:
+#'   \describe{
+#'     \item{centroid}{A numeric vector of length 2, giving the x and y coordinates of the centroid.}
+#'     \item{distance}{The centroidal distance (numeric).}
+#'     \item{moment}{The area moment (numeric), often referred to as area Q.}
+#'   }
+#' @export
 calc_centroid <- function(df_input_response) {
 
   prep_for_calculations <- df_input_response %>%

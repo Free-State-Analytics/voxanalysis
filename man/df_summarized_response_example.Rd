@@ -5,12 +5,13 @@
 \alias{df_summarized_response_example}
 \title{Summarized response}
 \format{
+A data frame with 3 rows and 5 variables:
 \describe{
- \item{date_of_evaluation}
- \item{conversing}
- \item{labeling}
- \item{echoing}
- \item{requesting}
+ \item{date_of_evaluation}{The date of the evaluation.}
+  \item{conversing}{The sum of the positive conversing entries for a particular evaluation date.}
+  \item{labeling}{The sum of positive labeling entries for a particular evaluation date.}
+  \item{echoing}{The sum of positive echoing entries for a particular evaluation date.}
+  \item{requesting}{The sum of positive requesting entries for a particular evaluation date.}
 }
 }
 \usage{
@@ -20,6 +21,6 @@ data(df_summarized_response_example)
 This data set is a summation of the four response (conversing, labeling, echoing, and requesting). It is often used as an input for several plot functions.
 }
 \details{
-It can be produced using `util_summarize_response`. (See `?util_summarize_meausurments`.)
+It can be produced using `util_summarize_response`. (See `?util_summarize_response`.)
 }
 \keyword{datasets}

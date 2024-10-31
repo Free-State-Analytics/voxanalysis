@@ -1,7 +1,7 @@
-#' Calculate the speaker's SCoRE
+#' Calculate the Speaker's SCoRE
 #'
 #' @description
-#' Produces a data.frame with the prompt hierarchy
+#' Produces a vector with the Speaker's SCoRE
 #'
 #' @inherit common-params
 #' @import dplyr
@@ -10,14 +10,12 @@
 #'
 #' @examples
 #' data("df_summarized_response_example")
-#'  ## Function only works with one date at a time
+#' # Must be limited to one date.
 #' dat <- df_summarized_response_example %>%
-#'     filter(date_of_evaluation == max(date_of_evaluation))
+#'   filter(date_of_evaluation == max(date_of_evaluation))
 #' calc_speakers_SCoRE(df_summarized_response = dat)
-#'
-#'
-
-
+#' @return A vector with the Speaker's SCoRE
+#' @export
 
 calc_speakers_SCoRE <- function(df_summarized_response) {
 

@@ -10,7 +10,12 @@ calc_centroid(df_input_response)
 \item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
 }
 \value{
-A `list`.
+A `list` with the following components:
+  \describe{
+    \item{centroid}{A numeric vector of length 2, giving the x and y coordinates of the centroid.}
+    \item{distance}{The centroidal distance (numeric).}
+    \item{moment}{The area moment (numeric), often referred to as area Q.}
+  }
 }
 \description{
 Calculate the centroid, centroidal distance, and area Q

@@ -1,4 +1,4 @@
-#' Prompt Hierachy Data Farme
+#' Prompt Hierachy Table
 #'
 #' @description
 #' Produces a data.frame with the prompt hierarchy
@@ -8,8 +8,6 @@
 #' @import tidyr
 #' @import stringr
 #'
-#' @export
-#'
 #' @examples
 #' data("df_summarized_response_example")
 #'  ## Table only works with one date at a time
@@ -17,7 +15,7 @@
 #'     filter(date_of_evaluation == max(date_of_evaluation))
 #' table_prompt_hierarchy(df_summarized_response = dat)
 #'
-#'
+#' @export
 
 table_prompt_hierarchy <- function(df_summarized_response) {
 
@@ -43,20 +41,23 @@ table_prompt_hierarchy <- function(df_summarized_response) {
   )
 
   hierarchy_filter <- colnames(hierarchy)
-
-  data_to_return <- merge(hierarchy[hierarchy_filter[1]], initial_data) %>%
-    mutate(matcher = str_detect(.[,1], .data$initials)) %>%
+  data_to_return <- merge(hierarchy[hierarchy_filter[1]], initial_data)
+  to_match <- data_to_return[,hierarchy_filter[1]]
+  data_to_return <- data_to_return %>%
+    mutate(matcher = str_detect(to_match, .data$initials)) %>%
     filter(.data$matcher == TRUE) %>%
-    group_by(.[hierarchy_filter[1]]) %>%
+    group_by(across(all_of(hierarchy_filter[1]))) %>%
     summarize(Perc = sum(.data$perc)) %>%
     select("Perc", "Conversing")
 
   for (i in 2:4) {
 
-    additional_data <- merge(hierarchy[hierarchy_filter[i]], initial_data) %>%
-      mutate(matcher = str_detect(.[,1], .data$initials)) %>%
+    additional_data <- merge(hierarchy[hierarchy_filter[i]], initial_data)
+    to_match <- additional_data[,hierarchy_filter[i]]
+    additional_data <- additional_data %>%
+      mutate(matcher = str_detect(to_match, .data$initials)) %>%
       filter(.data$matcher == TRUE) %>%
-      group_by(.[hierarchy_filter[i]]) %>%
+      group_by(across(all_of(hierarchy_filter[i]))) %>%
       summarize(Perc = sum(.data$perc)) %>%
       select("Perc", matches(hierarchy_filter[i]))
 
@@ -86,12 +87,12 @@ table_prompt_hierarchy <- function(df_summarized_response) {
       cols_to_filter
 
       for (n in 1:length(cols_to_filter)) {
-
         matcher <- data_to_return %>%
           select("Percent", cols_to_filter[n]) %>%
-          as.data.frame() %>%
-          mutate(matcher = str_detect(.[,2], missing_initials$initials[m])) %>%
-          .$matcher
+          as.data.frame()
+        to_match <- data_to_return[,2]
+          mutate(matcher = str_detect(to_match, missing_initials$initials[m])) %>%
+            pull(matcher)
 
         data_to_return <- data_to_return[!matcher,]
       }

@@ -7,6 +7,7 @@
 #'
 #' @param inputId The tag ID
 #' @importFrom shinyjs hide
+#' @export
 
 
 

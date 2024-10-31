@@ -9,6 +9,7 @@
 #' util_summarize_response(
 #'   df_input_response = df_input_response_example
 #'   )
+#' @export
 
 
 util_summarize_response <- function(df_input_response) {

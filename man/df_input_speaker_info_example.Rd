@@ -13,7 +13,7 @@ A data frame with 1 rows and 4 variables:
   \item{date_of_evaluation}{The date of the evaluation.}
   \item{language_spoken}{The language spoken during the evaluation.}
   \item{gender}{The speaker's gender.}
-  }
+}
 }
 \usage{
 data(df_input_speaker_info_example)

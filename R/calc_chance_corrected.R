@@ -14,6 +14,7 @@
 #' \url{https://peterstatistics.com/CrashCourse/5-ThreeVarPair/binary/MultipleBinaryPaired3c.html}
 #'
 #' @returns A `vector`.
+#' @export
 
 calc_chance_corrected <- function(df_input_response) {
   dat <- df_input_response  %>%

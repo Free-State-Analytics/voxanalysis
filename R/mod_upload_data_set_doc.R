@@ -27,7 +27,7 @@
 #'
 #' ## Alternative
 #' if (interactive()) {
-#' run_example_upload_data_set_app <- function(ind_add_new_data = TRUE)
+#' run_example_upload_data_set_app(ind_add_new_data = TRUE)
 #' }
 #'
 #'
