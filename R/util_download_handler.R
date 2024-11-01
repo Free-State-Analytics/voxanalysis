@@ -1,21 +1,22 @@
-#' Download handlers for producing .csv and Word exports
+#' Download Handlers for Generating .csv and Word Exports
 #'
 #' @description
-#' `util_download_handler_word` and `util_download_handler_dataset` pass params on to `downloadHandler`.
+#' These functions provide download handlers for exporting data in `.csv` and Word document formats:
 #'
-#' `util_download_handler_word` generates a Word version of the results page.
+#' \itemize{
+#'   \item `util_download_handler_word`: Generates a Word version of the results page, formatted for reporting and easy sharing of VOX Analysis outputs.
+#'   \item `util_download_handler_dataset`: Creates a `.csv` file containing the input data provided by the user, allowing for quick data export and further analysis.
+#' }
 #'
-#' `util_download_handler_dataset` generates a `.csv` with the inputs provided by the user.
+#' Both functions pass parameters to `downloadHandler`, enabling customization of file output within the VOX Analysis app.
 #'
 #' @inheritParams common-params
-#'
 #' @import shiny
 #' @import bslib
+#' @seealso [util_generate_word_doc_report] for generating a Word document report based on VOX Analysis data.
 #' @name util_download_handler
 NULL
 
-#' @rdname util_download_handler
-#' @export
 
 util_download_handler_word <- function(df_input_speaker_info, df_input_response, df_summarized_response) {
 

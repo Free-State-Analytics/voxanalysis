@@ -1,21 +1,23 @@
 #' Area Q Plot
 #'
 #' @description
-#' Produces an area Q plot over time for the data set provided.
+#' This function generates an Area Q plot to visualize response types (e.g., Conversing, Labeling, Echoing, Requesting) for VOX Analysis. The plot can display data for a single evaluation (e.g., a play therapy session) or compare multiple evaluations over time to reveal changes in language development patterns. This flexibility allows users to analyze individual sessions or observe trends across multiple sessions.
 #'
-#' @inherit common-params
+#' @inheritParams common-params
 #' @import ggplot2
 #' @import ggradar
 #' @import dplyr
 #' @export
-#' @examples
-#' data("df_summarized_response_example")
-#' plot_area_q(
-#'   df_summarized_response = df_summarized_response_example[1:2,],
-#'   date_primary = "2024-08-23")
 #'
-
-
+#' @examples
+#' # Load example data
+#' data("df_summarized_response_example")
+#'
+#' # Generate an Area Q plot for selected dates
+#' plot_area_q(
+#'   df_summarized_response = df_summarized_response_example[1:2, ],
+#'   date_primary = "2024-08-23"
+#' )
 
 plot_area_q <- function(df_summarized_response, date_primary, ind_doc_version = FALSE) {
 

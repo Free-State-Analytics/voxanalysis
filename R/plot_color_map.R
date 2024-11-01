@@ -1,11 +1,7 @@
-#' Color map for charts
+#' Color Map for Response Type Charts
 #'
 #' @description
-#' Produces hexadecimal color codes for plotting.
-#'
-#'
-#' @examples
-#' plot_color_mapping
+#' A predefined set of hexadecimal color codes for use in VOX Analysis charts, mapped to specific response types (Conversing, Labeling, Echoing, Requesting). This color map ensures consistent and visually distinguishable colors across charts, enhancing interpretability.
 #'
 #' @export
 

@@ -2,24 +2,28 @@
 % Please edit documentation in R/calc_speakers_score.R
 \name{calc_speakers_SCoRE}
 \alias{calc_speakers_SCoRE}
-\title{Calculate the Speaker's SCoRE}
+\title{Calculate the Speaker's SCoRE (Speech Coefficient of Reliability and Engagement)}
 \usage{
 calc_speakers_SCoRE(df_summarized_response)
 }
 \arguments{
-\item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `util_summarize_response` for how to produce.}
+\item{df_summarized_response}{A `data.frame` summarizing each verbal operant (Conversing, Labeling, Echoing, Requesting) for a given evaluation date. This summary provides a condensed view of responses and can be produced using the `util_summarize_response` function.}
 }
 \value{
-A vector with the Speaker's SCoRE
+A numeric vector containing the SCoRE values, representing the degree of language engagement and response reliability across verbal episodes.
 }
 \description{
-Produces a vector with the Speaker's SCoRE
+This function calculates the Speaker's SCoRE, a metric used in VOX Analysis to evaluate the balance of language development. SCoRE reflects the consistency and reliability of the speaker's responses (e.g., Conversing, Labeling, Echoing, and Requesting) within an evaluation session. This score aids the listener or user in analyzing the speaker's engagement with each verbal operant during verbal episodes.
 }
 \examples{
 library(dplyr)
 data("df_summarized_response_example")
-# Must be limited to one date.
+
+# Filter the data to a single evaluation date for accurate SCoRE calculation
 dat <- df_summarized_response_example \%>\%
   filter(date_of_evaluation == max(date_of_evaluation))
+
+# Calculate the Speaker's SCoRE
 calc_speakers_SCoRE(df_summarized_response = dat)
+
 }

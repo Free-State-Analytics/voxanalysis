@@ -1,12 +1,15 @@
-#' A custom html table to reports response
+#' Custom HTML Table for Reporting Responses
 #'
 #' @description
-#' A custom html table that reports the response.
-#'
-#' Unlike `tag_table_response_input`, this cannot be interacted with by the user in a Shiny session and is a static rendering.
+#' This function creates a custom HTML table to display response data in a static, non-interactive format. Unlike `tag_table_response_input`, this table is not intended for data entry or modification by the user in a Shiny session. It provides a read-only view, ideal for reporting or summarizing response data within the VOX Analysis application.
 #'
 #' @inheritParams common-params
+#'
+#' @seealso [tag_table_response_input] for an interactive version that allows data entry.
+#' @return An HTML table for displaying response data in a static format.
+#'
 #' @export
+
 
 tag_table_response_results <- function(df_input_response) {
 

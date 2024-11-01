@@ -1,7 +1,7 @@
-#' Calculate the centroid, centroidal distance, and area Q
+#' Calculate the Centroid, Centroidal Distance, and Area Moment (Q)
 #'
 #' @description
-#' Calculate the centroid, centroidal distance, and area Q
+#' This function calculates the centroid (geometric center), the distance from a reference point to the centroid (centroidal distance), and the area moment (Q) of a given shape or set of data points.
 #'
 #' @inheritParams common-params
 #'
@@ -13,9 +13,9 @@
 #'
 #' @return A `list` with the following components:
 #'   \describe{
-#'     \item{centroid}{A numeric vector of length 2, giving the x and y coordinates of the centroid.}
-#'     \item{distance}{The centroidal distance (numeric).}
-#'     \item{moment}{The area moment (numeric), often referred to as area Q.}
+#'     \item{centroid}{A numeric vector of length 2, providing the x and y coordinates of the centroid. This represents the geometric center of the input data.}
+#'     \item{distance}{A numeric value representing the centroidal distance, which is the distance between a reference point and the calculated centroid.}
+#'     \item{moment}{A numeric value for the area moment (often referred to as area Q), representing the product of the area and the distance to a reference axis.}
 #'   }
 #' @export
 calc_centroid <- function(df_input_response) {

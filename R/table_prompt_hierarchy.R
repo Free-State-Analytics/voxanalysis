@@ -1,22 +1,27 @@
-#' Prompt Hierachy Table
+#' Prompt Hierarchy Table
 #'
 #' @description
-#' Produces a data.frame with the prompt hierarchy
+#' This function generates a `data.frame` representing the prompt hierarchy, which outlines the structured intervention steps that a speaker is expected to follow during VOX Analysis. The hierarchy helps assess the progression of responses, providing insights into how prompts are followed or adjusted based on the speaker's responses. This table accepts only one unique evaluation date at a time.
 #'
-#' @inherit common-params
+#' @inheritParams common-params
 #' @import dplyr
 #' @import tidyr
 #' @import stringr
 #'
 #' @examples
+#' # Load example data
 #' library(dplyr)
 #' data("df_summarized_response_example")
-#'  ## Table only works with one date at a time
+#'
+#' # Filter to a single evaluation date, as the table works with one date at a time
 #' dat <- df_summarized_response_example %>%
 #'     filter(date_of_evaluation == max(date_of_evaluation))
+#'
+#' # Generate the prompt hierarchy table
 #' table_prompt_hierarchy(df_summarized_response = dat)
 #'
 #' @export
+
 
 table_prompt_hierarchy <- function(df_summarized_response) {
 

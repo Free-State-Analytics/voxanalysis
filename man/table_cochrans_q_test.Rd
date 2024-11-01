@@ -2,19 +2,20 @@
 % Please edit documentation in R/table_cochrans_q_test.R
 \name{table_cochrans_q_test}
 \alias{table_cochrans_q_test}
-\title{Create summary table with cochran's q test and supporting tests}
+\title{Create Summary Table with Cochran's Q Test and Supporting Statistics}
 \usage{
 table_cochrans_q_test(df_input_response)
 }
 \arguments{
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
 }
 \description{
-Produces data.frame with cochran's q test, chance-corrected R, and p-value.
+This function generates a `data.frame` containing the results of Cochran's Q test, chance-corrected R, and corresponding p-values. The resulting table is intended for integration into VOX analysis application.
 }
 \examples{
+# Load example response data
 data("df_input_response_example")
+
+# Generate a summary table with Cochran's Q test and supporting statistics
 table_cochrans_q_test(df_input_response = df_input_response_example)
-
-
 }

@@ -5,41 +5,43 @@
 \alias{mod_results_section_area_q}
 \alias{mod_results_section_area_q_server}
 \alias{mod_results_section_area_q_ui}
-\title{A module for an Area Q summary section}
+\title{Area Q Summary Section Module}
 \usage{
 mod_results_section_area_q_server(id, df_input_response, date_primary)
 
 mod_results_section_area_q_ui(id)
 }
 \arguments{
-\item{id}{The namespace id.}
+\item{id}{The namespace `id`, used to uniquely identify Shiny modules and UI components within the VOX Analysis package.}
 
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
 
-\item{date_primary}{A single entry `vector` containing a date. This field helps a function or module where multiple evaluation dates are present. The date chosen as primary will determine which will be calculated or highlighted in the function.}
+\item{date_primary}{A single date `vector` specifying the primary evaluation date. This parameter is essential when multiple evaluation dates are available, as it determines which date will be prioritized for calculations or highlights within the function.}
 }
 \description{
-A Shiny module that generates an Area Q summary section, intended to be used in `mod_results_primary`.
+This Shiny module generates an Area Q summary section, intended for use within the `mod_results_primary` module. It provides a focused view of the Area Q calculations, offering insights into the spatial distribution and centroidal properties of responses in a VOX Analysis session.
 }
 \examples{
-
 if (interactive()) {
-data("df_input_response_example")
+  # Load example response data
+  data("df_input_response_example")
 
-ui <- page(
-  mod_results_section_area_q_ui("section_area_q")
-)
+  # Define the UI with the Area Q summary section
+  ui <- page(
+    mod_results_section_area_q_ui("section_area_q")
+  )
 
-server <- function(input, output, session) {
+  # Set up the server to include Area Q summary functionality
+  server <- function(input, output, session) {
+    mod_results_section_area_q_server(
+      "section_area_q",
+      df_input_response_example,
+      date_primary = max(df_input_response_example$date_of_evaluation)
+    )
+  }
 
-  mod_results_section_area_q_server(
-    "section_area_q",
-    df_input_response_example,
-    date_primary = max(df_input_response_example$date_of_evaluation))
-
-}
-
-shinyApp(ui, server)
+  # Run the Shiny app
+  shinyApp(ui, server)
 }
 
 }

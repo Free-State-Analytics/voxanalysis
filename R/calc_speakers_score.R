@@ -1,22 +1,28 @@
-#' Calculate the Speaker's SCoRE
+#' Calculate the Speaker's SCoRE (Speech Coefficient of Reliability and Engagement)
 #'
 #' @description
-#' Produces a vector with the Speaker's SCoRE
+#' This function calculates the Speaker's SCoRE, a metric used in VOX Analysis to evaluate the balance of language development. SCoRE reflects the consistency and reliability of the speaker's responses (e.g., Conversing, Labeling, Echoing, and Requesting) within an evaluation session. This score aids the listener or user in analyzing the speaker's engagement with each verbal operant during verbal episodes.
 #'
-#' @inherit common-params
+#' @inheritParams common-params
 #' @import dplyr
 #' @import tidyr
 #' @import stringr
 #'
+#' @return A numeric vector containing the SCoRE values, representing the degree of language engagement and response reliability across verbal episodes.
+#'
 #' @examples
 #' library(dplyr)
 #' data("df_summarized_response_example")
-#' # Must be limited to one date.
+#'
+#' # Filter the data to a single evaluation date for accurate SCoRE calculation
 #' dat <- df_summarized_response_example %>%
 #'   filter(date_of_evaluation == max(date_of_evaluation))
+#'
+#' # Calculate the Speaker's SCoRE
 #' calc_speakers_SCoRE(df_summarized_response = dat)
-#' @return A vector with the Speaker's SCoRE
+#'
 #' @export
+
 
 calc_speakers_SCoRE <- function(df_summarized_response) {
 

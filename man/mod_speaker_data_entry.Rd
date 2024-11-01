@@ -5,53 +5,30 @@
 \alias{mod_speaker_data_entry}
 \alias{mod_speaker_data_entry_server}
 \alias{mod_speaker_data_entry_ui}
-\title{A Shiny module to input speaker data}
+\title{Speaker Data Entry Module}
 \usage{
 mod_speaker_data_entry_server(id)
 
 mod_speaker_data_entry_ui(id)
 }
 \arguments{
-\item{id}{The namespace id.}
+\item{id}{The namespace `id`, used to uniquely identify Shiny modules and UI components within the VOX Analysis package.}
 }
 \description{
-A module that allows the user to enter speaker data via a prompt.
-
-It subsequently triggers a data entry prompt and a report output.
+This Shiny module provides a user interface for entering speaker data, triggering a data entry prompt followed by a report output. It can be used to collect speaker information for VOX Analysis.
 }
 \examples{
-
 if (interactive()) {
+  # Basic usage example
+  ui <- page(
+    useShinyjs(),
+    mod_speaker_data_entry_ui("speaker_entry")
+  )
 
-ui <- page(
-  useShinyjs(),
-  mod_speaker_data_entry_ui("speaker_entry")
-)
+  server <- function(input, output, session) {
+    mod_speaker_data_entry_server("speaker_entry")
+  }
 
-server <- function(input, output, session) {
-  mod_speaker_data_entry_server("speaker_entry")
+  shinyApp(ui, server)
 }
-
-shinyApp(ui, server)
-
-}
-
-### Alternative: include previous speaker data
-if (interactive()) {
-data("df_input_speaker_info_example")
-
-ui <- page(
-  useShinyjs(),
-  mod_speaker_data_entry_ui("speaker_entry")
-)
-
-server <- function(input, output, session) {
-  mod_speaker_data_entry_server(
-  "speaker_entry",
-  df_input_speaker_info = df_input_speaker_info_example)
-}
-
-shinyApp(ui, server)
-}
-
 }

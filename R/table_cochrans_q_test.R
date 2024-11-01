@@ -1,19 +1,20 @@
-#' Create summary table with cochran's q test and supporting tests
+#' Create Summary Table with Cochran's Q Test and Supporting Statistics
 #'
 #' @description
-#' Produces data.frame with cochran's q test, chance-corrected R, and p-value.
+#' This function generates a `data.frame` containing the results of Cochran's Q test, chance-corrected R, and corresponding p-values. The resulting table is intended for integration into VOX analysis application.
 #'
-#' @inherit common-params
+#' @inheritParams common-params
 #' @import dplyr
 #' @import tidyr
 #'
 #' @export
 #'
 #' @examples
+#' # Load example response data
 #' data("df_input_response_example")
+#'
+#' # Generate a summary table with Cochran's Q test and supporting statistics
 #' table_cochrans_q_test(df_input_response = df_input_response_example)
-#'
-#'
 
 table_cochrans_q_test <- function(df_input_response) {
 

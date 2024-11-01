@@ -2,23 +2,28 @@
 % Please edit documentation in R/plot_vox_piechart.R
 \name{plot_vox_piechart}
 \alias{plot_vox_piechart}
-\title{Plot a Vox Pie Chart}
+\title{Plot a VOX Pie Chart}
 \usage{
 plot_vox_piechart(df_summarized_response, ind_doc_version = FALSE)
 }
 \arguments{
-\item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `util_summarize_response` for how to produce.}
+\item{df_summarized_response}{A `data.frame` summarizing each verbal operant (Conversing, Labeling, Echoing, Requesting) for a given evaluation date. This summary provides a condensed view of responses and can be produced using the `util_summarize_response` function.}
 
-\item{ind_doc_version}{`TRUE` or `FALSE` value to indicate whether a plot needs to be rendered for a Word doc. Passing `TRUE` will change various font sizes and other aesthetic parameters of the plot to make it more Word-friendly.}
+\item{ind_doc_version}{Logical. If `TRUE`, adjusts font sizes for Word document compatibility. Defaults to `FALSE`.}
 }
 \description{
-Produces a Vox pie chart.
+This function generates a VOX pie chart that visualizes the distribution of response types (Conversing, Labeling, Echoing, Requesting) for a single evaluation date.
 }
 \examples{
+# Load example data
 library(dplyr)
 data("df_summarized_response_example")
+
+# Filter to a single evaluation date, as the pie chart works with one date at a time
 dat <- df_summarized_response_example \%>\%
-    filter(date_of_evaluation == max(date_of_evaluation)) ## Plot only works with one date at a time
+    filter(date_of_evaluation == max(date_of_evaluation))
+
+# Generate the VOX pie chart
 plot_vox_piechart(df_summarized_response = dat)
 
 

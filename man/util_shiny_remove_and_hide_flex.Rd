@@ -2,15 +2,13 @@
 % Please edit documentation in R/util_shiny_remove_and_hide_flex.R
 \name{util_shiny_remove_and_hide_flex}
 \alias{util_shiny_remove_and_hide_flex}
-\title{Removes flex classes from interfering with hide function}
+\title{Remove Flex Classes for Compatibility with `shinyjs::hide()`}
 \usage{
 util_shiny_remove_and_hide_flex(inputId)
 }
 \arguments{
-\item{inputId}{The tag ID}
+\item{inputId}{The ID of the HTML tag to modify and hide.}
 }
 \description{
-Whenever a class of `d-flex flex-fill` is used in an HTML tag `class`, `shinyjs::hide()` does not work.
-
-This utility function removes the classes and hides the tag.
+When an HTML tag has the `d-flex flex-fill` classes applied, it can interfere with the functionality of `shinyjs::hide()`. This utility function removes these classes from the specified tag, ensuring `shinyjs::hide()` works as expected to hide the element.
 }

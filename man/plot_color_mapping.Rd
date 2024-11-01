@@ -3,7 +3,7 @@
 \docType{data}
 \name{plot_color_mapping}
 \alias{plot_color_mapping}
-\title{Color map for charts}
+\title{Color Map for Response Type Charts}
 \format{
 An object of class \code{character} of length 4.
 }
@@ -11,10 +11,6 @@ An object of class \code{character} of length 4.
 plot_color_mapping
 }
 \description{
-Produces hexadecimal color codes for plotting.
-}
-\examples{
-plot_color_mapping
-
+A predefined set of hexadecimal color codes for use in VOX Analysis charts, mapped to specific response types (Conversing, Labeling, Echoing, Requesting). This color map ensures consistent and visually distinguishable colors across charts, enhancing interpretability.
 }
 \keyword{datasets}

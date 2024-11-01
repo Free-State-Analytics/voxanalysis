@@ -3,27 +3,30 @@
 \docType{data}
 \name{df_output_exportable_example}
 \alias{df_output_exportable_example}
-\title{Export Data (Example)}
+\title{Export Data Structure (Example)}
 \format{
-A data frame with 7 rows and 9 variables:
+A data frame with 11 columns:
 \describe{
-  \item{first_name}{Speaker's first name.}
-  \item{last_name}{Speaker's last name.}
+  \item{first_name}{The speaker's first name.}
+  \item{last_name}{The speaker's last name.}
   \item{date_of_birth}{The speaker's date of birth.}
-  \item{language_spoken}{The language spoken during the evaluation.}
+  \item{language_spoken}{The language spoken by the speaker during the evaluation.}
   \item{gender}{The speaker's gender.}
-  \item{date_of_evaluation}{The date of the evaluation.}
-  \item{referent}{Name of the referent associated with the response.}
-  \item{conversing}{A binary indicator showing whether a speaker provided a thematic response to an object (1 = Yes, 0 = No).}
-  \item{labeling}{A binary indicator showing whether the speaker could label an object (1 = Yes, 0 = No).}
-  \item{echoing}{A binary indicator showing whether the speaker could repeat an object name (1 = Yes, 0 = No).}
-  \item{requesting}{A binary indicator showing whether the speaker could request an object name (1 = Yes, 0 = No).}
+  \item{date_of_evaluation}{The date on which the evaluation was conducted.}
+  \item{referent}{The name of the referent associated with the response, representing the object or entity involved in the verbal episode.}
+  \item{conversing}{Binary indicator showing if the speaker provided a conversational response to the referent (1 = Yes, 0 = No).}
+  \item{labeling}{Binary indicator showing if the speaker could label the referent (1 = Yes, 0 = No).}
+  \item{echoing}{Binary indicator showing if the speaker could repeat the referent's name (1 = Yes, 0 = No).}
+  \item{requesting}{Binary indicator showing if the speaker could request the referent's name (1 = Yes, 0 = No).}
 }
 }
 \usage{
 data(df_output_exportable_example)
 }
 \description{
-This data set resembles the export of an evaluation. Any data that is re-imported to append new data will need to follow this structure.
+This data set represents the structure required for exporting evaluation data. Any data re-imported into the application to append new records must follow this format to ensure compatibility and accurate processing.
+}
+\seealso{
+See [df_input_response_example] for an example of individual response input data.
 }
 \keyword{datasets}

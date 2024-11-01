@@ -3,24 +3,26 @@
 \docType{data}
 \name{df_summarized_response_example}
 \alias{df_summarized_response_example}
-\title{Summarized response}
+\title{Summarized Response Data (Example)}
 \format{
 A data frame with 3 rows and 5 variables:
 \describe{
- \item{date_of_evaluation}{The date of the evaluation.}
-  \item{conversing}{The sum of the positive conversing entries for a particular evaluation date.}
-  \item{labeling}{The sum of positive labeling entries for a particular evaluation date.}
-  \item{echoing}{The sum of positive echoing entries for a particular evaluation date.}
-  \item{requesting}{The sum of positive requesting entries for a particular evaluation date.}
+  \item{date_of_evaluation}{The date on which the evaluation was conducted.}
+  \item{conversing}{The total count of positive conversing responses for the given evaluation date.}
+  \item{labeling}{The total count of positive labeling responses for the given evaluation date.}
+  \item{echoing}{The total count of positive echoing responses for the given evaluation date.}
+  \item{requesting}{The total count of positive requesting responses for the given evaluation date.}
 }
 }
 \usage{
 data(df_summarized_response_example)
 }
 \description{
-This data set is a summation of the four response (conversing, labeling, echoing, and requesting). It is often used as an input for several plot functions.
+This data set provides an example of the summarized response data, where the total occurrences of each response type (Conversing, Labeling, Echoing, and Requesting) are calculated for each evaluation date. This summary is often used as an input for plot functions and other analyses to assess patterns in response types over time.
+
+The summarized data can be generated using the `util_summarize_response` function. See `?util_summarize_response` for more details.
 }
-\details{
-It can be produced using `util_summarize_response`. (See `?util_summarize_response`.)
+\seealso{
+See [util_summarize_response] for generating this summary data frame from raw response inputs.
 }
 \keyword{datasets}

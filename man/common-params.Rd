@@ -2,24 +2,24 @@
 % Please edit documentation in R/common-params.R
 \name{common-params}
 \alias{common-params}
-\title{Common parameters}
+\title{Common Parameters for VOX Analysis Functions}
 \arguments{
-\item{id}{The namespace id.}
+\item{id}{The namespace `id`, used to uniquely identify Shiny modules and UI components within the VOX Analysis package.}
 
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
 
-\item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `util_summarize_response` for how to produce.}
+\item{df_summarized_response}{A `data.frame` summarizing each verbal operant (Conversing, Labeling, Echoing, Requesting) for a given evaluation date. This summary provides a condensed view of responses and can be produced using the `util_summarize_response` function.}
 
-\item{df_input_response_previous}{A `data.frame` similar to `df_summarized_response`. It is used to distinguish past evaluations that were uploaded by the end user.}
+\item{df_input_response_previous}{A `data.frame` similar to `df_summarized_response` but represents past evaluations uploaded by the end user to distinguish prior assessments from current ones.}
 
-\item{df_input_speaker_info}{A `data.frame` that contains general info about a speaker, provided by the user. Run `data("df_input_speaker_info")` to produce an example.}
+\item{df_input_speaker_info}{A `data.frame` containing general information about a speaker (the subject of the VOX Analysis), as provided by the user. For an example, run `data("df_input_speaker_info")`.}
 
-\item{date_primary}{A single entry `vector` containing a date. This field helps a function or module where multiple evaluation dates are present. The date chosen as primary will determine which will be calculated or highlighted in the function.}
+\item{date_primary}{A single date `vector` specifying the primary evaluation date. This parameter is essential when multiple evaluation dates are available, as it determines which date will be prioritized for calculations or highlights within the function.}
 
-\item{ind_doc_version}{`TRUE` or `FALSE` value to indicate whether a plot needs to be rendered for a Word doc. Passing `TRUE` will change various font sizes and other aesthetic parameters of the plot to make it more Word-friendly.}
+\item{ind_doc_version}{Logical (`TRUE` or `FALSE`): Indicates whether a plot needs to be optimized for inclusion in a Word document. If `TRUE`, font sizes and other aesthetics will be adjusted to enhance Word document readability.}
 
-\item{ind_add_new_data}{`TRUE` or `FALSE` value to indicate whether a user workflow should include `mod_speaker_data_entry`. In other words, `TRUE` will be passed by the user behavior, because they indicated that they wanted to hand-type new data entries.}
+\item{ind_add_new_data}{Logical (`TRUE` or `FALSE`): Indicates whether the user intends to manually enter new data. Setting this to `TRUE` triggers the inclusion of the `mod_speaker_data_entry` module, enabling manual data entry by the user.}
 }
 \description{
-Common parameters found throughout the language assessment package.
+A collection of common parameters used throughout the VOX Analysis package, specifically designed to facilitate analysis and visualization of language development through verbal operant assessment.
 }

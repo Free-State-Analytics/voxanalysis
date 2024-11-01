@@ -2,7 +2,7 @@
 % Please edit documentation in R/util_generate_word_doc_report.R
 \name{util_generate_word_doc_report}
 \alias{util_generate_word_doc_report}
-\title{Render Word Doc Report}
+\title{Render Word Document Report}
 \usage{
 util_generate_word_doc_report(
   df_input_speaker_info = NULL,
@@ -11,24 +11,29 @@ util_generate_word_doc_report(
 )
 }
 \arguments{
-\item{df_input_speaker_info}{A `data.frame` that contains general info about a speaker, provided by the user. Run `data("df_input_speaker_info")` to produce an example.}
+\item{df_input_speaker_info}{A `data.frame` containing general information about a speaker (the subject of the VOX Analysis), as provided by the user. For an example, run `data("df_input_speaker_info")`.}
 
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
 
-\item{file_name}{The name of the file to be exported.}
+\item{file_name}{A character string specifying the name of the exported file, including the `.docx` extension.}
 }
 \description{
-Produces a word doc report using the `printable_report.qmd` found in the `inst` folder.
+This function generates a Word document report using the `printable_report.qmd` template found in the `inst` folder of the package. The report provides a formatted summary of VOX Analysis data, making it suitable for sharing and documentation purposes.
 }
 \examples{
-
 \dontrun{
+# Load example data for report generation
 data("df_input_speaker_info_example")
 data("df_input_response_example")
+
+# Generate a Word document report
 util_generate_word_doc_report(
   df_input_speaker_info = df_input_speaker_info_example,
   df_input_response = df_input_response_example,
-  file_name = "text.docx")
+  file_name = "text.docx"
+)
 }
-
+}
+\seealso{
+[util_download_handler] for handling .csv and Word exports within the VOX Analysis app.
 }

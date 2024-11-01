@@ -1,26 +1,29 @@
-#' Render Word Doc Report
+#' Render Word Document Report
 #'
 #' @description
-#' Produces a word doc report using the `printable_report.qmd` found in the `inst` folder.
+#' This function generates a Word document report using the `printable_report.qmd` template found in the `inst` folder of the package. The report provides a formatted summary of VOX Analysis data, making it suitable for sharing and documentation purposes.
 #'
-#'
-#' @inherit common-params
-#' @param file_name The name of the file to be exported.
+#' @inheritParams common-params
+#' @param file_name A character string specifying the name of the exported file, including the `.docx` extension.
 #' @import quarto
 #' @import dplyr
 #'
 #' @examples
-#'
 #' \dontrun{
+#' # Load example data for report generation
 #' data("df_input_speaker_info_example")
 #' data("df_input_response_example")
+#'
+#' # Generate a Word document report
 #' util_generate_word_doc_report(
 #'   df_input_speaker_info = df_input_speaker_info_example,
 #'   df_input_response = df_input_response_example,
-#'   file_name = "text.docx")
+#'   file_name = "text.docx"
+#' )
 #' }
-#'
+#' @seealso [util_download_handler] for handling .csv and Word exports within the VOX Analysis app.
 #' @export
+
 
 util_generate_word_doc_report <- function(
     df_input_speaker_info = NULL,

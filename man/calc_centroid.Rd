@@ -2,23 +2,23 @@
 % Please edit documentation in R/calc_centroid.R
 \name{calc_centroid}
 \alias{calc_centroid}
-\title{Calculate the centroid, centroidal distance, and area Q}
+\title{Calculate the Centroid, Centroidal Distance, and Area Moment (Q)}
 \usage{
 calc_centroid(df_input_response)
 }
 \arguments{
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
 }
 \value{
 A `list` with the following components:
   \describe{
-    \item{centroid}{A numeric vector of length 2, giving the x and y coordinates of the centroid.}
-    \item{distance}{The centroidal distance (numeric).}
-    \item{moment}{The area moment (numeric), often referred to as area Q.}
+    \item{centroid}{A numeric vector of length 2, providing the x and y coordinates of the centroid. This represents the geometric center of the input data.}
+    \item{distance}{A numeric value representing the centroidal distance, which is the distance between a reference point and the calculated centroid.}
+    \item{moment}{A numeric value for the area moment (often referred to as area Q), representing the product of the area and the distance to a reference axis.}
   }
 }
 \description{
-Calculate the centroid, centroidal distance, and area Q
+This function calculates the centroid (geometric center), the distance from a reference point to the centroid (centroidal distance), and the area moment (Q) of a given shape or set of data points.
 }
 \examples{
 data("df_input_response_example")

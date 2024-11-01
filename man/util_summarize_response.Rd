@@ -2,18 +2,23 @@
 % Please edit documentation in R/util_summarize_response.R
 \name{util_summarize_response}
 \alias{util_summarize_response}
-\title{Group response}
+\title{Summarize Responses by Type}
 \usage{
 util_summarize_response(df_input_response)
 }
 \arguments{
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
 }
 \description{
-A utility function to sum the response by the type of response.
+This utility function aggregates responses by type (e.g., Conversing, Labeling, Echoing, Requesting) within the VOX Analysis application. It calculates the total count for each response type, providing a summary that can be used for further analysis or visualization.
 }
 \examples{
+# Load example data
+data("df_input_response_example")
+
+# Summarize responses by type
 util_summarize_response(
   df_input_response = df_input_response_example
-  )
+)
+
 }

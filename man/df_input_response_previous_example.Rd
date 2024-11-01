@@ -3,28 +3,27 @@
 \docType{data}
 \name{df_input_response_previous_example}
 \alias{df_input_response_previous_example}
-\title{Response Inputs Previous (Example)}
+\title{Previous Response Inputs (Example Data)}
 \format{
 A data frame with 7 rows and 6 variables:
 \describe{
-  \item{date_of_evaluation}{The date of the evaluation.}
-  \item{referent}{Name of the referent associated with the response.}
-  \item{conversing}{Indicates whether the speaker provided a thematic response to an object (1 = Yes, 0 = No).}
-  \item{labeling}{Indicates whether the speaker could label an object (1 = Yes, 0 = No).}
-  \item{echoing}{Indicates whether the speaker could repeat an object name (1 = Yes, 0 = No).}
-  \item{requesting}{Indicates whether the speaker could request an object name (1 = Yes, 0 = No).}
+  \item{date_of_evaluation}{The date on which the evaluation was conducted.}
+  \item{referent}{The name of the referent associated with the response, representing the object or entity involved in the verbal episode.}
+  \item{conversing}{Binary indicator showing if the speaker provided a conversational response to the referent (1 = Yes, 0 = No).}
+  \item{labeling}{Binary indicator showing if the speaker could label the referent (1 = Yes, 0 = No).}
+  \item{echoing}{Binary indicator showing if the speaker could repeat the referent's name (1 = Yes, 0 = No).}
+  \item{requesting}{Binary indicator showing if the speaker could request the referent's name (1 = Yes, 0 = No).}
 }
 }
 \usage{
 data(df_input_response_previous_example)
 }
 \description{
-This sample data set is similar to `df_input_response_example`, but contains two previous set of evaluations. It is useful for producing examples of plots or analysis containing previous evaluation dates.
-}
-\details{
-Each entry is a 1 or 0, which indicates whether a speaker responded to the referent.
+This sample data set is similar to `df_input_response_example` but includes two previous sets of evaluations. It serves as an example for generating plots or analyses that compare current responses with past evaluation dates, offering insights into the speaker's language development over time.
+
+Each entry is a binary indicator (1 or 0), representing whether the speaker responded to a specific referent for each verbal operant.
 }
 \seealso{
-[df_input_response_example]
+[df_input_response_example] for a single evaluation example.
 }
 \keyword{datasets}

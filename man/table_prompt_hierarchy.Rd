@@ -2,22 +2,26 @@
 % Please edit documentation in R/table_prompt_hierarchy.R
 \name{table_prompt_hierarchy}
 \alias{table_prompt_hierarchy}
-\title{Prompt Hierachy Table}
+\title{Prompt Hierarchy Table}
 \usage{
 table_prompt_hierarchy(df_summarized_response)
 }
 \arguments{
-\item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `util_summarize_response` for how to produce.}
+\item{df_summarized_response}{A `data.frame` summarizing each verbal operant (Conversing, Labeling, Echoing, Requesting) for a given evaluation date. This summary provides a condensed view of responses and can be produced using the `util_summarize_response` function.}
 }
 \description{
-Produces a data.frame with the prompt hierarchy
+This function generates a `data.frame` representing the prompt hierarchy, which outlines the structured intervention steps that a speaker is expected to follow during VOX Analysis. The hierarchy helps assess the progression of responses, providing insights into how prompts are followed or adjusted based on the speaker's responses. This table accepts only one unique evaluation date at a time.
 }
 \examples{
+# Load example data
 library(dplyr)
 data("df_summarized_response_example")
- ## Table only works with one date at a time
+
+# Filter to a single evaluation date, as the table works with one date at a time
 dat <- df_summarized_response_example \%>\%
     filter(date_of_evaluation == max(date_of_evaluation))
+
+# Generate the prompt hierarchy table
 table_prompt_hierarchy(df_summarized_response = dat)
 
 }

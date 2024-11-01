@@ -1,7 +1,7 @@
-#' A Shiny module to upload a csv file
+#' CSV File Upload Module for Speaker Data
 #'
 #' @description
-#' A Shiny module to allow the user to upload a .csv file with a speaker's data, via a user-interface.
+#' This Shiny module provides a user interface for uploading a `.csv` file containing speaker data for VOX Analysis. It enables users to import external data for analysis, with options to modify the speaker data
 #'
 #' @inheritParams common-params
 #'
@@ -10,27 +10,31 @@
 #' @importFrom shinyjs hidden show hide
 #'
 #' @examples
-#'
 #' if (interactive()) {
-#' data("df_input_speaker_info_example")
+#'   # Load example speaker data
 #'
-#' ui <- page(
-#'   mod_upload_data_set_ui("upload")
-#' )
+#'   # Define the UI with the file upload module
+#'   ui <- page(
+#'     useShinyjs(),
+#'     mod_upload_data_set_ui("upload")
+#'   )
 #'
-#' server <- function(input, output, session) {
-#'   mod_upload_data_set_server("upload", df_input_speaker_info_example, ind_add_new_data = TRUE)
+#'   # Set up the server to handle file uploads
+#'   server <- function(input, output, session) {
+#'     mod_upload_data_set_server(
+#'       "upload",
+#'       ind_add_new_data = TRUE
+#'     )
+#'   }
+#'
+#'   # Run the Shiny app
+#'   shinyApp(ui, server)
 #' }
 #'
-#' shinyApp(ui, server)
-#' }
-#'
-#' ## Alternative
+#' # Alternative: Run a pre-configured example app for file upload
 #' if (interactive()) {
-#' run_example_upload_data_set_app(ind_add_new_data = TRUE)
+#'   run_example_upload_data_set_app(ind_add_new_data = TRUE)
 #' }
-#'
 #'
 #' @name mod_upload_data_set
 NULL
-#' >null

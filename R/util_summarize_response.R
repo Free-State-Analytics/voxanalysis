@@ -1,14 +1,19 @@
-#' Group response
+#' Summarize Responses by Type
 #'
 #' @description
-#' A utility function to sum the response by the type of response.
+#' This utility function aggregates responses by type (e.g., Conversing, Labeling, Echoing, Requesting) within the VOX Analysis application. It calculates the total count for each response type, providing a summary that can be used for further analysis or visualization.
 #'
-#' @inherit common-params
+#' @inheritParams common-params
 #'
 #' @examples
+#' # Load example data
+#' data("df_input_response_example")
+#'
+#' # Summarize responses by type
 #' util_summarize_response(
 #'   df_input_response = df_input_response_example
-#'   )
+#' )
+#'
 #' @export
 
 

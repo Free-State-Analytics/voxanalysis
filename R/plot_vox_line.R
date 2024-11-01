@@ -1,10 +1,10 @@
-#' Plot a Vox Line Chart
+#' Plot a VOX Line Chart
 #'
 #' @description
-#' Produces a Vox line chart
+#' This function generates a VOX line chart, visualizing response trends (e.g., Conversing, Labeling, Echoing, Requesting) across verbal episodes in a VOX Analysis evaluation.
 #'
-#' @inherit common-params
-#' @param hide_heading A logical indicator to hide the heading. It defaults to TRUE.
+#' @inheritParams common-params
+#' @param ind_hide_heading Logical. If `TRUE`, hides the heading on the chart. Defaults to `TRUE`.
 #' @import ggplot2
 #' @import dplyr
 #' @import tidyr
@@ -12,12 +12,14 @@
 #' @export
 #'
 #' @examples
+#' # Load example data
 #' data("df_input_response_example")
+#'
+#' # Generate a VOX line chart across verbal episodes
 #' plot_vox_line(df_input_response = df_input_response_example)
-#'
-#'
 
-plot_vox_line <- function(df_input_response, hide_heading = TRUE, ind_doc_version = FALSE) {
+
+plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_version = FALSE) {
 
   response_inputs <- df_input_response %>%
     transmute(
@@ -96,7 +98,7 @@ plot_vox_line <- function(df_input_response, hide_heading = TRUE, ind_doc_versio
  }
 
 
-  if (!hide_heading) {
+  if (!ind_hide_heading) {
     p <- p +
       labs(title = "VOX Chart",
               subtitle = "Results by Verbal Episode")

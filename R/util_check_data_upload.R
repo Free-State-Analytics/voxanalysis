@@ -1,23 +1,25 @@
-#' Quality check df_input_response
+#' Quality Check for `df_input_response`
 #'
 #' @description
-#' A helpful function to ensure that `df_input_response` follows the right data model.
+#' This function performs a quality check to ensure that `df_input_response` conforms to the expected data model. It is particularly useful for validating data uploaded by users via the `mod_upload_data_set` module, helping maintain data consistency and integrity within the VOX Analysis app.
 #'
-#' This is particular useful with quality checking data the user uploaded via `mod_upload_data_set`.
-#'
-#' Returns `Good` or `Bad` to avoid ambiguity.
+#' The function returns either `"Good"` or `"Bad"` to indicate the quality status, providing a clear, unambiguous result.
 #'
 #' @inheritParams common-params
 #' @import dplyr
 #' @import tidyr
 #'
+#' @return A character string, either `"Good"` if the data passes the quality check, or `"Bad"` if it does not.
+#'
 #' @examples
+#' # Load example data for quality checking
 #' data("df_input_response_example")
+#'
+#' # Perform a quality check on the data
 #' util_check_data_upload(df_input_response = df_input_response_example)
 #'
+#'
 #' @export
-
-
 
 util_check_data_upload <- function(df_input_response) {
 

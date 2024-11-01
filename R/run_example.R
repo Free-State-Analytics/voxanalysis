@@ -1,28 +1,30 @@
-#' Helper functions to run and test various applications / modules
+#' Helper Functions to Demonstrate Application and Module Combinations
 #'
 #' @description
-#' A series of helper functions to allow easy demonstration of various application / module combos.
-#'
-#' Example data is included within the functions.
+#' This set of helper functions allows users to easily run and test various combinations of VOX Analysis applications and modules. Each function includes example data, providing a straightforward way to demonstrate different functionalities without requiring additional setup.
 #'
 #' @inheritParams common-params
 #'
 #' @examples
-#' # Runs the results page
+#' # Run the results page application
 #' if (interactive()) {
 #'   run_example_results_app()
 #' }
 #'
-#'
-#' # Runs the response input page
+#' # Run the response input page application
 #' if (interactive()) {
 #'   run_example_response_entry_app()
 #' }
 #'
-#' # Runs the upload data page. Change ind_add_new_data = TRUE to include response_entry page
-#'
+#' # Run the upload data page application
+#' # Set ind_add_new_data = TRUE to include the response entry page
 #' if (interactive()) {
 #'   run_example_upload_data_set_app(ind_add_new_data = FALSE)
+#' }
+#'
+#' # Run the speaker data entry application
+#' if (interactive()) {
+#'   run_example_speaker_data_entry_app()
 #' }
 #'
 #' @name run_example
