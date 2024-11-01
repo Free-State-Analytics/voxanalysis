@@ -13,7 +13,9 @@ output: github_document
 )
 ```
 
-# `voxanalysis`
+# VOX Analysis
+
+*NOTE: THIS PACKAGE IS IN DEVELOPMENT MANY KEY MEASURES AND DATA VISUALIZATIONS HAVE NOT BEEN TESTED OR VERIFIED YET.*
 
 `voxanalysis` is an R package and R Shiny application for autism spectrum diagnosis. It provides a user-interface that allows for user inputs following the VOX Analysis evaluation process defined here. Its data visualization functions are also available for analysts to use for custom requirements.
 

@@ -1,10 +1,7 @@
-#' A Shiny module to input speaker data
+#' Speaker Data Entry Module
 #'
 #' @description
-#' A module that allows the user to enter speaker data via a prompt.
-#'
-#' It subsequently triggers a data entry prompt and a report output.
-#'
+#' This Shiny module provides a user interface for entering speaker data, triggering a data entry prompt followed by a report output. It can be used to collect speaker information for VOX Analysis.
 #'
 #' @inheritParams common-params
 #'
@@ -12,40 +9,18 @@
 #' @import bslib
 #'
 #' @examples
-#'
 #' if (interactive()) {
+#'   # Basic usage example
+#'   ui <- page(
+#'     useShinyjs(),
+#'     mod_speaker_data_entry_ui("speaker_entry")
+#'   )
 #'
-#' ui <- page(
-#'   useShinyjs(),
-#'   mod_speaker_data_entry_ui("speaker_entry")
-#' )
+#'   server <- function(input, output, session) {
+#'     mod_speaker_data_entry_server("speaker_entry")
+#'   }
 #'
-#' server <- function(input, output, session) {
-#'   mod_speaker_data_entry_server("speaker_entry")
+#'   shinyApp(ui, server)
 #' }
-#'
-#' shinyApp(ui, server)
-#'
-#' }
-#'
-#' ### Alternative: include previous speaker data
-#' if (interactive()) {
-#' data("df_input_speaker_info_example")
-#'
-#' ui <- page(
-#'   useShinyjs(),
-#'   mod_speaker_data_entry_ui("speaker_entry")
-#' )
-#'
-#' server <- function(input, output, session) {
-#'   mod_speaker_data_entry_server(
-#'   "speaker_entry",
-#'   df_input_speaker_info = df_input_speaker_info_example)
-#' }
-#'
-#' shinyApp(ui, server)
-#' }
-#'
 #' @name mod_speaker_data_entry
 NULL
-#' >null

@@ -5,38 +5,45 @@
 \alias{mod_upload_data_set}
 \alias{mod_upload_data_set_server}
 \alias{mod_upload_data_set_ui}
-\title{A Shiny module to upload a csv file}
+\title{CSV File Upload Module for Speaker Data}
 \usage{
-mod_upload_data_set_server(id, add_new_data_ind = FALSE)
+mod_upload_data_set_server(id, ind_add_new_data = FALSE)
 
 mod_upload_data_set_ui(id)
 }
 \arguments{
-\item{id}{The namespace id.}
+\item{id}{The namespace `id`, used to uniquely identify Shiny modules and UI components within the VOX Analysis package.}
+
+\item{ind_add_new_data}{Logical (`TRUE` or `FALSE`): Indicates whether the user intends to manually enter new data. Setting this to `TRUE` triggers the inclusion of the `mod_speaker_data_entry` module, enabling manual data entry by the user.}
 }
 \description{
-A Shiny module to allow the user to upload a .csv file with a speaker's data, via a user-interface.
+This Shiny module provides a user interface for uploading a `.csv` file containing speaker data for VOX Analysis. It enables users to import external data for analysis, with options to modify the speaker data
 }
 \examples{
-
 if (interactive()) {
-data("df_input_speaker_info_example")
+  # Load example speaker data
 
-ui <- page(
-  mod_upload_data_set_ui("upload")
-)
+  # Define the UI with the file upload module
+  ui <- page(
+    useShinyjs(),
+    mod_upload_data_set_ui("upload")
+  )
 
-server <- function(input, output, session) {
-  mod_upload_data_set_server("upload", df_input_speaker_info_example, add_new_data_ind = TRUE)
+  # Set up the server to handle file uploads
+  server <- function(input, output, session) {
+    mod_upload_data_set_server(
+      "upload",
+      ind_add_new_data = TRUE
+    )
+  }
+
+  # Run the Shiny app
+  shinyApp(ui, server)
 }
 
-shinyApp(ui, server)
-}
-
-## Alternative
+# Alternative: Run a pre-configured example app for file upload
 if (interactive()) {
-run_example_upload_data_set_app <- function(add_new_data_ind = TRUE)
+  run_example_upload_data_set_app(ind_add_new_data = TRUE)
 }
-
 
 }

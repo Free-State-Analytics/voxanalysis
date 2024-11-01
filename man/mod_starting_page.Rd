@@ -5,31 +5,33 @@
 \alias{mod_starting_page}
 \alias{mod_starting_page_server}
 \alias{mod_starting_page_ui}
-\title{A module for the application's home page}
+\title{Application Home Page Module}
 \usage{
 mod_starting_page_server(id)
 
 mod_starting_page_ui(id)
 }
 \arguments{
-\item{id}{The namespace id.}
+\item{id}{The namespace `id`, used to uniquely identify Shiny modules and UI components within the VOX Analysis package.}
 }
 \description{
-A Shiny module containing the home page for the application (basically the entire app).
+This Shiny module defines the home page for the VOX Analysis application, serving as the main entry point for users. It contains the primary layout and navigation elements for accessing various sections of the app.
 }
 \examples{
-
 if (interactive()) {
-ui <- page(
-   useShinyjs(),
-   mod_starting_page_ui("home_page")
-)
+  # Define the UI with the application's home page
+  ui <- page(
+    useShinyjs(),
+    mod_starting_page_ui("home_page")
+  )
 
-server <- function(input, output, session) {
-   mod_starting_page_server("home_page")
-}
-shinyApp(ui, server)
-}
+  # Set up the server for the home page module
+  server <- function(input, output, session) {
+    mod_starting_page_server("home_page")
+  }
 
+  # Run the Shiny app
+  shinyApp(ui, server)
+}
 
 }

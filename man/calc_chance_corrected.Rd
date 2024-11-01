@@ -2,18 +2,18 @@
 % Please edit documentation in R/calc_chance_corrected.R
 \name{calc_chance_corrected}
 \alias{calc_chance_corrected}
-\title{Provided the chance corrected R calculation}
+\title{Calculate the Chance-Corrected R for Language Assessment}
 \usage{
 calc_chance_corrected(df_input_response)
 }
 \arguments{
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
 }
 \value{
-A `vector`.
+A numeric vector containing the chance-corrected R value for the provided data. This value can help assess consistency in language evaluations by controlling for chance agreement.
 }
 \description{
-Calculate the chance corrected R calculation for the language assessment.
+This function computes the chance-corrected R value, a measure used in the VOX analysis to evaluate agreement while accounting for chance. The R value adjusts for potential randomness in scoring or response patterns, providing a more accurate assessment of inter-rater or inter-response agreement.
 }
 \examples{
 library(dplyr)
@@ -22,5 +22,6 @@ calc_chance_corrected(df_input_response = df_input_response_example)
 
 }
 \references{
+For more information on chance-corrected measures in agreement assessments, see:
 \url{https://peterstatistics.com/CrashCourse/5-ThreeVarPair/binary/MultipleBinaryPaired3c.html}
 }

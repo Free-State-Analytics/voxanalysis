@@ -1,0 +1,26 @@
+---
+title: "Generating Reports"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{generatingreports}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(voxanalysis)
+```
+
+The `voxanalysis` package provides the user two ways to generate a report:
+
+* The R Shiny application
+* Word Doc generation
+
+The user can also generate individual data visualizations and measures of variability using the functions defined [here](./datavizandcharts.html).

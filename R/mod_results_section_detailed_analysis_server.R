@@ -7,7 +7,7 @@ mod_results_section_detailed_analysis_server <- function(
     df_input_response) {
     moduleServer(id, function(input, output, session) {
 
-      df_summarized_response <- summarize_response(df_input_response)
+      df_summarized_response <- util_summarize_response(df_input_response)
 
       output$analysis_results_vox <- renderPlot({
         plot_vox_line(df_input_response)

@@ -3,22 +3,25 @@
 \docType{data}
 \name{df_input_speaker_info_example}
 \alias{df_input_speaker_info_example}
-\title{Speaker Info (Example)}
+\title{Speaker Information (Example Data)}
 \format{
-A data frame with 1 rows and 4 variables:
+A data frame with 1 row and 6 variables:
 \describe{
-  \item{first_name}{Speaker's first name.}
-  \item{last_name}{Speaker's last name.}
-  \item{date_of_birth}{The speaker's date of birth.}
-  \item{date_of_evaluation}{The date of the evaluation.}
-  \item{language_spoken}{The language spoken during the evaluation.}
+  \item{first_name}{The speaker's first name.}
+  \item{last_name}{The speaker's last name.}
+  \item{date_of_birth}{The date of birth of the speaker.}
+  \item{date_of_evaluation}{The date on which the evaluation was conducted.}
+  \item{language_spoken}{The primary language spoken by the speaker during the evaluation.}
   \item{gender}{The speaker's gender.}
-  }
+}
 }
 \usage{
 data(df_input_speaker_info_example)
 }
 \description{
-This data set shows the expected structure for `df_input_speaker_info`, which is a common input required for function found in this package.
+This data set provides an example structure for `df_input_speaker_info`, a required input data frame used across various functions in this package. It contains essential information about the speaker, including personal details and evaluation context.
+}
+\seealso{
+Other example datasets such as [df_input_response_example] for individual response information.
 }
 \keyword{datasets}

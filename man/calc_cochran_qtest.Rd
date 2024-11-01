@@ -2,24 +2,47 @@
 % Please edit documentation in R/calc_cochran_qtest.R
 \name{calc_cochran_qtest}
 \alias{calc_cochran_qtest}
-\title{Cochran's Q test}
+\title{Perform Cochran's Q Test for Multiple Response Comparisons}
 \usage{
-calc_cochran_qtest(formula, data, alpha = 0.05, p.method = "fdr")
+calc_cochran_qtest(formula, data, alpha = 0.05, p.method = "bonferroni")
 }
 \arguments{
-\item{formula}{A formula to pass through. The app currently uses `value ~ name | referent`.}
+\item{formula}{A formula specifying the model to use in the test. Typically, the format is `value ~ name | referent`, where `value` is the binary response variable and `name` represents different conditions or responses.}
 
-\item{data}{A `data.frame` containing `Conversing`, `Labeling`, `Echoing`, and `Requesting`. Must have `pivot_longer` applied, with `name` and `value` being the two new columns.}
+\item{data}{A `data.frame` containing the binary responses for each verbal operant (e.g., `Conversing`, `Labeling`, `Echoing`, and `Requesting`). The data should be transformed with `pivot_longer` so that the binary operant names are in a `name` column, and responses are in a `value` column.}
 
-\item{alpha}{alpha level.}
+\item{alpha}{Significance level for the test (e.g., 0.05).}
 
-\item{p.method}{p method. Recommend "fdr".}
+\item{p.method}{Method for p-value adjustment for multiple comparisons; VOX analysis uses `bonferroni`.}
 }
 \value{
-A `list`.
+A `list` containing the following components:
+  \describe{
+    \item{statistic}{The test statistic for Cochran's Q.}
+    \item{p.value}{The p-value associated with the test statistic, after adjustment if `p.method` is specified.}
+    \item{...}{Other values are returned, but not used for the purpose of the VOX Analysis app.}
+  }
 }
 \description{
-This is heavily based on Cochran's Q Test from `RVAideMemoire` package.
+This function performs Cochran's Q Test, a non-parametric test for examining differences in proportions across multiple related groups. It is based on the `RVAideMemoire` package's implementation, adapted here to avoid external dependencies and ensure seamless integration. Cochran's Q Test is commonly used in repeated measures designs or studies with binary response data.
+}
+\examples{
+# Example of Cochran's Q Test using sample response data
+library(dplyr)
+library(tidyr)
+data("df_input_response_example")
+ dat <- df_input_response_example \%>\%
+    select("referent", "conversing", "labeling", "echoing", "requesting") \%>\%
+   pivot_longer(
+     cols = c("conversing", "labeling", "echoing", "requesting"),
+     names_to = "name",
+     values_to = "value") \%>\%
+     arrange(.data$name)
+calc_cochran_qtest(
+  formula = value ~ name | referent,
+  data = dat,
+  alpha = 0.05,
+  p.method = "bonferroni"
+)
 
-There were several dependency issues with the package, so it was re-written to be a built-in function for this package with some modification.
 }

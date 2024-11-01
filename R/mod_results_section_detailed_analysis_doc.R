@@ -1,42 +1,41 @@
-#' A module for a  detailed analysis section
+#' Detailed Analysis Section Module
 #'
 #' @description
-#' A Shiny module to generate a detailed analysis section, intended to be used in `mod_results_primary`.
+#' This Shiny module generates a detailed analysis section for VOX Analysis, designed to be used within the `mod_results_primary` module. It provides a comprehensive view of the speaker's responses by generating multiple components:
+#' \itemize{
+#'   \item \strong{Vox pie chart}: Visualizes the distribution of different response types.
+#'   \item \strong{Vox line chart}: Shows trends in responses over time.
+#'   \item \strong{Cochran's Q test}: Performs a statistical test to assess consistency across responses.
+#'   \item \strong{Prompt hierarchy table}: Displays a structured view of response prompts in a hierarchy.
+#' }
 #'
-#' This module will generate Vox pie chart, Vox line chart, Cochran's Q test, and prompt hierarchy table.
-#'
-#'
-#' @param id The namespace id.
+#' @inheritParams common-params
 #'
 #' @import shiny
 #' @import bslib
 #' @importFrom shinycssloaders withSpinner
 #'
 #' @examples
-#'
 #' if (interactive()) {
-#' data("df_input_speaker_info_example")
-#' data("df_input_response_example")
-#' data("df_input_response_previous_example")
+#'   # Load example data
+#'   data("df_input_response_example")
 #'
-#' ui <- page(
-#'   mod_results_section_detailed_analysis_ui("detailed_analysis")
-#' )
+#'   # Define the UI with the detailed analysis section
+#'   ui <- page(
+#'     mod_results_section_detailed_analysis_ui("detailed_analysis")
+#'   )
 #'
-#' server <- function(input, output, session) {
+#'   # Set up the server to include detailed analysis functionality
+#'   server <- function(input, output, session) {
+#'     mod_results_section_detailed_analysis_server(
+#'       "detailed_analysis",
+#'       df_input_response = df_input_response_example
+#'     )
+#'   }
 #'
-#'   mod_results_section_detailed_analysis_server(
-#'     "detailed_analysis",
-#'     df_input_speaker_info = df_input_speaker_info_example,
-#'     df_input_response = df_input_response_example,
-#'     df_input_response_previous = df_input_response_previous_example)
-#'
+#'   # Run the Shiny app
+#'   shinyApp(ui, server)
 #' }
-#'
-#' shinyApp(ui, server)
-#' }
-#'
 #'
 #' @name mod_results_section_detailed_analysis
 NULL
-#' >null

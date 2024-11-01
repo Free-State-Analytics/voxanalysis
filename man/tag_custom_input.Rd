@@ -2,7 +2,7 @@
 % Please edit documentation in R/tag_custom_numeric_input.R
 \name{tag_custom_input}
 \alias{tag_custom_input}
-\title{A custom numeric input for the language assessment app}
+\title{Custom Numeric Input for Borderless Data Entry}
 \usage{
 tag_custom_input(
   input_id,
@@ -12,10 +12,17 @@ tag_custom_input(
 )
 }
 \arguments{
-\item{input_id}{An id}
+\item{input_id}{A unique identifier for the input element.}
 
-\item{value}{A numeric value}
+\item{value}{A numeric value to be displayed as the default input.}
+
+\item{align_center}{Logical. If `TRUE`, centers the input alignment. Defaults to `FALSE`.}
+
+\item{placeholder}{A character string to display as placeholder text when the input is empty.}
+}
+\value{
+A custom, borderless numeric input UI element without numeric increment arrows.
 }
 \description{
-This function is used in `tag_table_response_inputs` to produce a matrix-like data entry input.
+This function creates a custom numeric input field, similar to `shiny::textInput`, but with a borderless design and no up / down arrows. It is used in `tag_table_response_inputs` to facilitate smooth, minimalistic numeric input in the VOX Analysis language assessment app.
 }
