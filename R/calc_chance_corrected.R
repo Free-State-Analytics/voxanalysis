@@ -1,7 +1,7 @@
-#' Provided the chance corrected R calculation
+#' Calculate the Chance-Corrected R for Language Assessment
 #'
 #' @description
-#' Calculate the chance corrected R calculation for the language assessment.
+#' This function computes the chance-corrected R value, a measure used in the VOX analysis to evaluate agreement while accounting for chance. The R value adjusts for potential randomness in scoring or response patterns, providing a more accurate assessment of inter-rater or inter-response agreement.
 #'
 #' @inheritParams common-params
 #'
@@ -11,9 +11,11 @@
 #' calc_chance_corrected(df_input_response = df_input_response_example)
 #'
 #' @references
+#' For more information on chance-corrected measures in agreement assessments, see:
 #' \url{https://peterstatistics.com/CrashCourse/5-ThreeVarPair/binary/MultipleBinaryPaired3c.html}
 #'
-#' @returns A `vector`.
+#' @return A numeric vector containing the chance-corrected R value for the provided data. This value can help assess consistency in language evaluations by controlling for chance agreement.
+#' @export
 
 calc_chance_corrected <- function(df_input_response) {
   dat <- df_input_response  %>%

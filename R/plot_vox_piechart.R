@@ -1,9 +1,10 @@
-#' Plot a Vox Pie Chart
+#' Plot a VOX Pie Chart
 #'
 #' @description
-#' Produces a Vox pie chart.
+#' This function generates a VOX pie chart that visualizes the distribution of response types (Conversing, Labeling, Echoing, Requesting) for a single evaluation date.
 #'
-#' @inherit common-params
+#' @inheritParams common-params
+#' @param ind_doc_version Logical. If `TRUE`, adjusts font sizes for Word document compatibility. Defaults to `FALSE`.
 #' @import ggplot2
 #' @import dplyr
 #' @import tidyr
@@ -11,14 +12,20 @@
 #' @export
 #'
 #' @examples
+#' # Load example data
+#' library(dplyr)
 #' data("df_summarized_response_example")
+#'
+#' # Filter to a single evaluation date, as the pie chart works with one date at a time
 #' dat <- df_summarized_response_example %>%
-#'     filter(date_of_evaluation == max(date_of_evaluation)) ## Plot only works with one date at a time
+#'     filter(date_of_evaluation == max(date_of_evaluation))
+#'
+#' # Generate the VOX pie chart
 #' plot_vox_piechart(df_summarized_response = dat)
 #'
 #'
 
-plot_vox_piechart <- function(df_summarized_response, doc_version_ind = FALSE) {
+plot_vox_piechart <- function(df_summarized_response, ind_doc_version = FALSE) {
 
    if (length(unique(df_summarized_response$date_of_evaluation)) != 1) {
      stop("The df_summarized_response input should only have one row of data for this function.")
@@ -45,7 +52,7 @@ plot_vox_piechart <- function(df_summarized_response, doc_version_ind = FALSE) {
       theme(legend.position = "none") +
       scale_fill_manual(values = plot_color_mapping)
 
-    if (doc_version_ind) {
+    if (ind_doc_version) {
       p <- p + geom_text(aes(y = .data$ypos,
                              label = paste0(.data$name,":","\n", .data$value, " (", .data$perc, "%)")),
                          color = "white", size = 3)

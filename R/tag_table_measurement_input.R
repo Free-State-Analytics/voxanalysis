@@ -1,13 +1,15 @@
-#' A custom html table to allow the user to type in response
+#' Custom HTML Table for Response Data Entry
 #'
 #' @description
-#' This function generate an html table, which uses various tags and classes, as well as `tag_custom_input`, to allow for data entry.
+#' This function generates a custom HTML table with editable fields, allowing users to enter responses directly into the table. It uses `tag_custom_input` along with various HTML tags and CSS classes to create a seamless data entry experience. Data entered in the table is accessible on the server side via the `input` object, enabling real-time data capture within a Shiny session.
 #'
-#' Data that is collected during the session will be made available to on the server-side via `input`.
+#' @param ns_prefix The namespace prefix. Pass `session$ns(id)` to ensure that user inputs are accessible in the same module via `input`.
+#' @param row_count The number of rows to include in the table.
 #'
-#' @param ns_prefix The namespace. Pass `session$ns(id)` to make the user inputs available in the session via `input`. This will ensure that the inputs are accessible in the same module.
-#' @param row_count The number of rows to include
-
+#' @seealso [tag_table_response_report] for a static, read-only version of the response table.
+#' @return An HTML table with custom input fields for each cell, styled for data entry in Shiny applications.
+#'
+#' @export
 
 tag_table_response_input <- function(ns_prefix, row_count) {
 

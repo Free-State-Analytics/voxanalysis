@@ -1,8 +1,7 @@
-#' A Shiny module to enter speaker data and render a report
-#'
+#' Speaker Data Entry and Report Generation Module
 #'
 #' @description
-#' A module that generates a UI and server function to allow the user to enter speaker data and render a report.
+#' This Shiny module provides a user interface and server function that allows users to enter speaker data for a VOX Analysis and generate a corresponding report. The module is designed to streamline data entry and report generation within the analysis workflow.
 #'
 #' @inheritParams common-params
 #'
@@ -12,25 +11,29 @@
 #'
 #' @examples
 #' if (interactive()) {
-#' data("df_input_speaker_info_example")
+#'   # Load example speaker information data
+#'   data("df_input_speaker_info_example")
 #'
-#' ui <- page(
-#'   useShinyjs(),
-#'   mod_response_entry_ui("data_entry")
-#' )
+#'   # Define the UI with data entry and report functionality
+#'   ui <- page(
+#'     useShinyjs(),
+#'     mod_response_entry_ui("data_entry")
+#'   )
 #'
-#' server <- function(input, output, session) {
-#'   mod_response_entry_server("data_entry", df_input_speaker_info_example)
+#'   # Set up the server to include data entry functionality
+#'   server <- function(input, output, session) {
+#'     mod_response_entry_server("data_entry", df_input_speaker_info_example)
+#'   }
+#'
+#'   # Run the Shiny app
+#'   shinyApp(ui, server)
 #' }
-#'
-#' }
-#' shinyApp(ui, server)
 #'
 #' if (interactive()) {
-#' ### Alternative
-#' run_example_measurment_entry_app()
+#'   # Alternative example using a pre-built app function
+#'   run_example_measurement_entry_app()
 #' }
 #'
 #' @name mod_response_entry
 NULL
-#' >NULL
+

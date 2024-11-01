@@ -2,15 +2,19 @@
 % Please edit documentation in R/tag_table_measurement_results.R
 \name{tag_table_response_results}
 \alias{tag_table_response_results}
-\title{A custom html table to reports response}
+\title{Custom HTML Table for Reporting Responses}
 \usage{
 tag_table_response_results(df_input_response)
 }
 \arguments{
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
+\item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
+}
+\value{
+An HTML table for displaying response data in a static format.
 }
 \description{
-A custom html table that reports the response.
-
-Unlike `tag_table_response_input`, this cannot be interacted with by the user in a Shiny session and is a static rendering.
+This function creates a custom HTML table to display response data in a static, non-interactive format. Unlike `tag_table_response_input`, this table is not intended for data entry or modification by the user in a Shiny session. It provides a read-only view, ideal for reporting or summarizing response data within the VOX Analysis application.
+}
+\seealso{
+[tag_table_response_input] for an interactive version that allows data entry.
 }

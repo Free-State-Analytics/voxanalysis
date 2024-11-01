@@ -27,10 +27,10 @@ mod_speaker_data_entry_server <- function(
         pivot_longer(everything())
 
       bad_entries <- data_to_check %>%
-        filter(str_detect(value, ",") |
-                 str_detect(value, ";") |
-                 str_detect(value, "\"") |
-                 str_detect(value, "\'"))
+        filter(str_detect(.data$value, ",") |
+                 str_detect(.data$value, ";") |
+                 str_detect(.data$value, "\"") |
+                 str_detect(.data$value, "\'"))
 
       if (nrow(bad_entries) > 0) {
         shinyjs::show("warning_message")
@@ -40,9 +40,9 @@ mod_speaker_data_entry_server <- function(
       }
 
       missing_entries <- data_to_check %>%
-        filter(name %in% c("first_name", "last_name")) %>%
-        filter(value == "" |
-                 is.null(value))
+        filter(.data$name %in% c("first_name", "last_name")) %>%
+        filter(.data$value == "" |
+                 is.null(.data$value))
 
       if (nrow(missing_entries) == 0) {
         shinyjs::enable("button_continue")

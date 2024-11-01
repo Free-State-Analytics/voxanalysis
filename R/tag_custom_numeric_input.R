@@ -1,12 +1,16 @@
-#' A custom numeric input for the language assessment app
+#' Custom Numeric Input for Borderless Data Entry
 #'
 #' @description
-#' This function is used in `tag_table_response_inputs` to produce a matrix-like data entry input.
+#' This function creates a custom numeric input field, similar to `shiny::textInput`, but with a borderless design and no up / down arrows. It is used in `tag_table_response_inputs` to facilitate smooth, minimalistic numeric input in the VOX Analysis language assessment app.
 #'
+#' @param input_id A unique identifier for the input element.
+#' @param value A numeric value to be displayed as the default input.
+#' @param align_center Logical. If `TRUE`, centers the input alignment. Defaults to `FALSE`.
+#' @param placeholder A character string to display as placeholder text when the input is empty.
 #'
-#' @param input_id An id
-#' @param value A numeric value
-
+#' @return A custom, borderless numeric input UI element without numeric increment arrows.
+#'
+#' @export
 
 tag_custom_input <- function (input_id, value = 0, align_center = TRUE, placeholder = "Enter value")
 {

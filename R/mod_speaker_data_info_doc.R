@@ -1,25 +1,31 @@
-#' A module to view and modify the speaker data
+#' Speaker Data Viewing and Modification Module
 #'
 #' @description
-#' A module that allows the user to view and modify speaker data.
-#'
+#' This Shiny module provides an interface for users to view and modify speaker data in VOX Analysis.
 #'
 #' @inheritParams common-params
 #'
 #' @import shiny
 #'
 #' @examples
-#' data("df_input_speaker_info_example")
-#' ui <- page(
-#'    useShinyjs(),
-#'    mod_speaker_data_info_ui("speaker")
-#' )
+#' if (interactive()) {
+#'   # Load example speaker information data
+#'   data("df_input_speaker_info_example")
 #'
-#' server <- function(input, output, session) {
-#'    mod_speaker_data_info_server("speaker", df_input_speaker_info_example)
+#'   # Define the UI with speaker data viewing and modification capabilities
+#'   ui <- page(
+#'     useShinyjs(),
+#'     mod_speaker_data_info_ui("speaker")
+#'   )
+#'
+#'   # Set up the server with initial speaker data
+#'   server <- function(input, output, session) {
+#'     mod_speaker_data_info_server("speaker", df_input_speaker_info_example)
+#'   }
+#'
+#'   # Run the Shiny app
+#'   shinyApp(ui, server)
 #' }
-#' shinyApp(ui, server)
 #'
 #' @name mod_speaker_data_info
 NULL
-

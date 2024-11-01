@@ -1,24 +1,28 @@
 #' Area Q Plot
 #'
 #' @description
-#' Produces an area Q plot over time for the data set provided.
+#' This function generates an Area Q plot to visualize response types (e.g., Conversing, Labeling, Echoing, Requesting) for VOX Analysis. The plot can display data for a single evaluation (e.g., a play therapy session) or compare multiple evaluations over time to reveal changes in language development patterns. This flexibility allows users to analyze individual sessions or observe trends across multiple sessions.
 #'
-#' @inherit common-params
+#' @inheritParams common-params
 #' @import ggplot2
 #' @import ggradar
 #' @import dplyr
 #' @export
-#' @examples
-#' data("df_summarized_response_example")
-#' plot_area_q(df_summarized_response = df_summarized_response_example[1:2,], v_primary_date = "2024-08-23")
 #'
+#' @examples
+#' # Load example data
+#' data("df_summarized_response_example")
+#'
+#' # Generate an Area Q plot for selected dates
+#' plot_area_q(
+#'   df_summarized_response = df_summarized_response_example[1:2, ],
+#'   date_primary = "2024-08-23"
+#' )
 
+plot_area_q <- function(df_summarized_response, date_primary, ind_doc_version = FALSE) {
 
-
-plot_area_q <- function(df_summarized_response, v_primary_date, doc_version_ind = FALSE) {
-
-  if (nrow(df_summarized_response) > 1 && is.null(v_primary_date)) {
-    stop("v_primary_date is required when df_summarized_response has more than one row.")
+  if (nrow(df_summarized_response) > 1 && is.null(date_primary)) {
+    stop("date_primary is required when df_summarized_response has more than one row.")
   }
 
   if (nrow(df_summarized_response) > 2) {
@@ -35,7 +39,7 @@ plot_area_q <- function(df_summarized_response, v_primary_date, doc_version_ind 
 
   if (nrow(dat_for_plot) != 1) {
     dat_for_plot <- dat_for_plot %>%
-      mutate(priority = ifelse(.data$date_of_evaluation == as.Date(v_primary_date), 1, 2)) %>%
+      mutate(priority = ifelse(.data$date_of_evaluation == as.Date(date_primary), 1, 2)) %>%
       arrange(desc(.data$priority)) %>%
       select(-"priority")
     colors <- c("#33808040", "#338080E6")
@@ -44,7 +48,7 @@ plot_area_q <- function(df_summarized_response, v_primary_date, doc_version_ind 
     colors <- "#338080E6"
   }
 
-  if (doc_version_ind) {
+  if (ind_doc_version) {
       p <- ggradar(
         dat_for_plot,
         base.size = 9,

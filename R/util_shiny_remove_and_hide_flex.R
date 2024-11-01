@@ -1,13 +1,12 @@
-#' Removes flex classes from interfering with hide function
+#' Remove Flex Classes for Compatibility with `shinyjs::hide()`
 #'
 #' @description
-#' Whenever a class of `d-flex flex-fill` is used in an HTML tag `class`, `shinyjs::hide()` does not work.
+#' When an HTML tag has the `d-flex flex-fill` classes applied, it can interfere with the functionality of `shinyjs::hide()`. This utility function removes these classes from the specified tag, ensuring `shinyjs::hide()` works as expected to hide the element.
 #'
-#' This utility function removes the classes and hides the tag.
-#'
-#' @param inputId The tag ID
+#' @param inputId The ID of the HTML tag to modify and hide.
 #' @importFrom shinyjs hide
-
+#'
+#' @export
 
 
 util_shiny_remove_and_hide_flex <- function(inputId) {

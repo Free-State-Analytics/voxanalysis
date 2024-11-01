@@ -1,7 +1,20 @@
+#' Custom File Upload Control
+#'
+#' Create a file upload control that can be used to upload one or more files.
+#'
+#' This is modified from `shiny::fileInput` to make the format more consistent with the VOX Analysis user-interface.
+#'
+#' @inheritParams shiny::fileInput
+#' @inheritDotParams shiny::fileInput
+#' @importFrom jsonlite toJSON
+#'
+#' @return A UI element for file upload, similar to `shiny::fileInput`.
+#'
+#' @export
 
 
 tag_custom_file_upload <- function (inputId, multiple = FALSE, accept = NULL,
-                                    buttonLabel = "Browse...", placeholder = "No file selected")
+                                    buttonLabel = "Browse...", placeholder = "No file selected", ...)
 {
   restoredValue <- restoreInput(id = inputId, default = NULL)
   if (!is.null(restoredValue) && !is.data.frame(restoredValue)) {

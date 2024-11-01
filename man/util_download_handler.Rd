@@ -2,29 +2,26 @@
 % Please edit documentation in R/util_download_handler.R
 \name{util_download_handler}
 \alias{util_download_handler}
-\alias{util_download_handler_word}
 \alias{util_download_handler_dataset}
-\title{Download handlers for producing .csv and Word exports}
+\title{Download Handlers for Generating .csv and Word Exports}
 \usage{
-util_download_handler_word(
-  df_input_speaker_info,
-  df_input_response,
-  df_summarized_response
-)
-
 util_download_handler_dataset(df_input_speaker_info, df_input_response)
 }
 \arguments{
-\item{df_input_speaker_info}{A `data.frame` that contains general info about a speaker, provided by the user. Run `data("df_input_speaker_info")` to produce an example.}
+\item{df_input_speaker_info}{A `data.frame` containing general information about a speaker (the subject of the VOX Analysis), as provided by the user. For an example, run `data("df_input_speaker_info")`.}
 
-\item{df_input_response}{A `data.frame` containing the referent names and their response. Run `data("df_input_response_example")` or `data("df_input_response_previous_example")` for example.}
-
-\item{df_summarized_response}{A `data.frame` that sums each verbal operant column (i.e., conversing, echoing, etc.) for a given evaluation date. See `summarize_response` for how to produce.}
+\item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
 }
 \description{
-`util_download_handler_word` and `util_download_handler_dataset` pass params on to `downloadHandler`.
+These functions provide download handlers for exporting data in `.csv` and Word document formats:
 
-`util_download_handler_word` generates a Word version of the results page.
+\itemize{
+  \item `util_download_handler_word`: Generates a Word version of the results page, formatted for reporting and easy sharing of VOX Analysis outputs.
+  \item `util_download_handler_dataset`: Creates a `.csv` file containing the input data provided by the user, allowing for quick data export and further analysis.
+}
 
-`util_download_handler_dataset` generates a `.csv` with the inputs provided by the user.
+Both functions pass parameters to `downloadHandler`, enabling customization of file output within the VOX Analysis app.
+}
+\seealso{
+[util_generate_word_doc_report] for generating a Word document report based on VOX Analysis data.
 }

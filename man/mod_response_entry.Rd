@@ -5,7 +5,7 @@
 \alias{mod_response_entry}
 \alias{mod_response_entry_server}
 \alias{mod_response_entry_ui}
-\title{A Shiny module to enter speaker data and render a report}
+\title{Speaker Data Entry and Report Generation Module}
 \usage{
 mod_response_entry_server(
   id,
@@ -16,32 +16,38 @@ mod_response_entry_server(
 mod_response_entry_ui(id)
 }
 \arguments{
-\item{id}{The namespace id.}
+\item{id}{The namespace `id`, used to uniquely identify Shiny modules and UI components within the VOX Analysis package.}
 
-\item{df_input_speaker_info}{A `data.frame` that contains general info about a speaker, provided by the user. Run `data("df_input_speaker_info")` to produce an example.}
+\item{df_input_speaker_info}{A `data.frame` containing general information about a speaker (the subject of the VOX Analysis), as provided by the user. For an example, run `data("df_input_speaker_info")`.}
+
+\item{df_input_response_previous}{A `data.frame` similar to `df_summarized_response` but represents past evaluations uploaded by the end user to distinguish prior assessments from current ones.}
 }
 \description{
-A module that generates a UI and server function to allow the user to enter speaker data and render a report.
+This Shiny module provides a user interface and server function that allows users to enter speaker data for a VOX Analysis and generate a corresponding report. The module is designed to streamline data entry and report generation within the analysis workflow.
 }
 \examples{
 if (interactive()) {
-data("df_input_speaker_info_example")
+  # Load example speaker information data
+  data("df_input_speaker_info_example")
 
-ui <- page(
-  useShinyjs(),
-  mod_response_entry_ui("data_entry")
-)
+  # Define the UI with data entry and report functionality
+  ui <- page(
+    useShinyjs(),
+    mod_response_entry_ui("data_entry")
+  )
 
-server <- function(input, output, session) {
-  mod_response_entry_server("data_entry", df_input_speaker_info_example)
+  # Set up the server to include data entry functionality
+  server <- function(input, output, session) {
+    mod_response_entry_server("data_entry", df_input_speaker_info_example)
+  }
+
+  # Run the Shiny app
+  shinyApp(ui, server)
 }
-
-}
-shinyApp(ui, server)
 
 if (interactive()) {
-### Alternative
-run_example_measurment_entry_app()
+  # Alternative example using a pre-built app function
+  run_example_measurement_entry_app()
 }
 
 }
