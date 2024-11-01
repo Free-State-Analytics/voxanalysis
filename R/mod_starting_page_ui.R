@@ -19,9 +19,15 @@ mod_starting_page_ui <- function(id) {
                       class = "btn-sm btn-outline-primary border border-0"
                     )
                 ),
-                span(lass = "my-5",
-                     style = "font-size: 25px;",
-                     icon("info")
+                actionButton(
+                  NS(id, "button_user_guide"),
+                  div(
+                    span(style = "font-size: 25px;",
+                         icon("info")),
+                    p("User Guide")
+                  ),
+                  class = "btn-sm btn-outline-primary border border-0",
+                  onclick = "window.open('https://free-state-analytics.github.io/voxanalysis/', '_blank')"
                 )
             )
         ),
