@@ -7,7 +7,7 @@
 #' @examples
 #' plot_color_mapping
 #'
-#'
+#' @export
 
 plot_color_mapping <- c(
     "Conversing" = "#748282ff",

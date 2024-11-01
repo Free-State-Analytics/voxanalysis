@@ -11,6 +11,7 @@
 #' @export
 #'
 #' @examples
+#' library(dplyr)
 #' data("df_summarized_response_example")
 #' dat <- df_summarized_response_example %>%
 #'     filter(date_of_evaluation == max(date_of_evaluation)) ## Plot only works with one date at a time

@@ -9,16 +9,18 @@
 #' @import quarto
 #' @import dplyr
 #'
-#' @export
-#'
 #' @examples
+#'
+#' \dontrun{
 #' data("df_input_speaker_info_example")
 #' data("df_input_response_example")
 #' util_generate_word_doc_report(
 #'   df_input_speaker_info = df_input_speaker_info_example,
-#'   df_input_response = df_input_response_example)
+#'   df_input_response = df_input_response_example,
+#'   file_name = "text.docx")
+#' }
 #'
-#'
+#' @export
 
 util_generate_word_doc_report <- function(
     df_input_speaker_info = NULL,

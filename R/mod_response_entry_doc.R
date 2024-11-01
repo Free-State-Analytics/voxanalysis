@@ -22,9 +22,9 @@
 #' server <- function(input, output, session) {
 #'   mod_response_entry_server("data_entry", df_input_speaker_info_example)
 #' }
-#'
-#' }
 #' shinyApp(ui, server)
+#' }
+#'
 #'
 #' if (interactive()) {
 #' ### Alternative

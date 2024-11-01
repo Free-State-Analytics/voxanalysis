@@ -21,6 +21,7 @@ Imports:
     ggthemes,
     golem,
     gt,
+    jsonlite,  
     magrittr,
     quarto,
     shiny,

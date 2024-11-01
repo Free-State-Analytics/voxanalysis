@@ -17,8 +17,6 @@
 #'
 #' Each required field is indicated with an asterisk, as noted in the form text.
 #'
-#' @examples
-#' tag_speaker_input_form("speaker")
 #'
 #' @export
 

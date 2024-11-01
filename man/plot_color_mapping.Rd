@@ -16,6 +16,5 @@ Produces hexadecimal color codes for plotting.
 \examples{
 plot_color_mapping
 
-
 }
 \keyword{datasets}

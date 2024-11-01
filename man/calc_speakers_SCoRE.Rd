@@ -16,9 +16,10 @@ A vector with the Speaker's SCoRE
 Produces a vector with the Speaker's SCoRE
 }
 \examples{
+library(dplyr)
 data("df_summarized_response_example")
 # Must be limited to one date.
 dat <- df_summarized_response_example \%>\%
-  filter(date_of_evaluation == max(.data$date_of_evaluation))
+  filter(date_of_evaluation == max(date_of_evaluation))
 calc_speakers_SCoRE(df_summarized_response = dat)
 }

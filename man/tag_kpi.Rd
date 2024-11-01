@@ -14,8 +14,3 @@ tag_kpi(metric, header)
 \description{
 Produces a KPI taglist containing only a header and the KPI itself.
 }
-\examples{
-tag_kpi(45, "This is a header")
-
-
-}

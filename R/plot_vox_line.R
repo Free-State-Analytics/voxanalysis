@@ -64,10 +64,6 @@ plot_vox_line <- function(df_input_response, hide_heading = TRUE, ind_doc_versio
     as.data.frame()
 
   by_session$type <- factor(by_session$type, levels = c("Conversing", "Labeling", "Echoing", "Requesting"))
-  gray <-  "#748282ff"
-  powderblue <-  "#A4B5C2ff"
-  ebony <- "#545343ff"
-  green <- "#2FC1D3"
 
   p <- ggplot(by_session, aes(.data$session, y = .data$value))
 
@@ -94,7 +90,7 @@ plot_vox_line <- function(df_input_response, hide_heading = TRUE, ind_doc_versio
      xlab(NULL) +
      ylab("Response") +
      ggthemes::theme_pander(
-       base_family = "Lato",
+     #  base_family = "Lato",
        nomargin = FALSE
      )
  }

@@ -7,6 +7,7 @@
 #'
 #' @param ns_prefix The namespace. Pass `session$ns(id)` to make the user inputs available in the session via `input`. This will ensure that the inputs are accessible in the same module.
 #' @param row_count The number of rows to include
+#' @export
 
 
 tag_table_response_input <- function(ns_prefix, row_count) {

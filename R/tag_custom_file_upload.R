@@ -6,11 +6,9 @@
 #'
 #' @inheritParams shiny::fileInput
 #' @inheritDotParams shiny::fileInput
+#' @importFrom jsonlite toJSON
 #'
 #' @return A UI element for file upload, similar to `shiny::fileInput`.
-#'
-#' @examples
-#' tag_custom_file_upload("file", "Upload your file")
 #'
 #' @export
 

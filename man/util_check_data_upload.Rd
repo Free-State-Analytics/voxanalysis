@@ -20,5 +20,4 @@ Returns `Good` or `Bad` to avoid ambiguity.
 data("df_input_response_example")
 util_check_data_upload(df_input_response = df_input_response_example)
 
-
 }

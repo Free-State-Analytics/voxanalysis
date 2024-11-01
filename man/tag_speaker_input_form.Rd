@@ -26,7 +26,3 @@ Each required field is indicated with an asterisk, as noted in the form text.
 This function creates a tag list of input fields with namespaced IDs.
 The IDs are dynamically generated based on a provided namespace prefix, allowing these inputs to be used within a Shiny module or application with a consistent naming structure.
 }
-\examples{
-tag_speaker_input_form("speaker")
-
-}

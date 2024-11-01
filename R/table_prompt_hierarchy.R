@@ -9,6 +9,7 @@
 #' @import stringr
 #'
 #' @examples
+#' library(dplyr)
 #' data("df_summarized_response_example")
 #'  ## Table only works with one date at a time
 #' dat <- df_summarized_response_example %>%

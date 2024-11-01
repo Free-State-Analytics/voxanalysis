@@ -66,7 +66,3 @@ Create a file upload control that can be used to upload one or more files.
 \details{
 This is modified from `shiny::fileInput` to make the format more consistent with the VOX Analysis user-interface.
 }
-\examples{
-tag_custom_file_upload("file", "Upload your file")
-
-}

@@ -6,6 +6,7 @@
 #' Unlike `tag_table_response_input`, this cannot be interacted with by the user in a Shiny session and is a static rendering.
 #'
 #' @inheritParams common-params
+#' @export
 
 tag_table_response_results <- function(df_input_response) {
 

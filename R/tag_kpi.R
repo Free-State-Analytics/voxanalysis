@@ -7,10 +7,7 @@
 #' @param header A string value containing the header or KPI description.
 #' @import shiny
 #'
-#' @examples
-#' tag_kpi(45, "This is a header")
-#'
-#'
+#' @export
 
 tag_kpi <- function(metric, header) {
 
