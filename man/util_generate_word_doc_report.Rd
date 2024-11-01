@@ -2,7 +2,7 @@
 % Please edit documentation in R/util_generate_word_doc_report.R
 \name{util_generate_word_doc_report}
 \alias{util_generate_word_doc_report}
-\title{Render Word Doc REport}
+\title{Render Word Doc Report}
 \usage{
 util_generate_word_doc_report(
   df_input_speaker_info = NULL,

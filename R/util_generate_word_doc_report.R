@@ -1,4 +1,4 @@
-#' Render Word Doc REport
+#' Render Word Doc Report
 #'
 #' @description
 #' Produces a word doc report using the `printable_report.qmd` found in the `inst` folder.
@@ -6,7 +6,6 @@
 #'
 #' @inherit common-params
 #' @param file_name The name of the file to be exported.
-#' @param temp_file
 #' @import quarto
 #' @import dplyr
 #'

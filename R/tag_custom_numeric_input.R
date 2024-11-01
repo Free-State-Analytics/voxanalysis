@@ -8,6 +8,7 @@
 #' @param value A numeric value.
 #' @param align_center A `TRUE` or `FALSE` to indicate whether the alignment should be centered.
 #' @param placeholder A `str` value for the placeholder.
+#' @export
 
 
 tag_custom_input <- function (input_id, value = 0, align_center = TRUE, placeholder = "Enter value")
