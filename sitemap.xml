@@ -4,6 +4,9 @@
 <url><loc>https://free-state-analytics.github.io/voxanalysis/LICENSE-text.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/LICENSE.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/articles/datadictionary.html</loc></url>
+<url><loc>https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html</loc></url>
+<url><loc>https://free-state-analytics.github.io/voxanalysis/articles/datavizandcharts.html</loc></url>
+<url><loc>https://free-state-analytics.github.io/voxanalysis/articles/generatingreports.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/articles/index.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/authors.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/index.html</loc></url>
@@ -17,6 +20,7 @@
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/df_input_response_previous_example.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/df_input_speaker_info_example.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/df_output_exportable_example.html</loc></url>
+<url><loc>https://free-state-analytics.github.io/voxanalysis/reference/df_summarized_response_example.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/index.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/mod_download_bar.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/mod_response_entry.html</loc></url>
@@ -34,11 +38,12 @@
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/plot_vox_piechart.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/run_app.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/run_example.html</loc></url>
-<url><loc>https://free-state-analytics.github.io/voxanalysis/reference/summarize_response.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/table_cochrans_q_test.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/table_prompt_hierarchy.html</loc></url>
+<url><loc>https://free-state-analytics.github.io/voxanalysis/reference/tag_custom_file_upload.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/tag_custom_input.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/tag_kpi.html</loc></url>
+<url><loc>https://free-state-analytics.github.io/voxanalysis/reference/tag_speaker_input_form.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/tag_table_prompt_hierarchy.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/tag_table_response_input.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/tag_table_response_results.html</loc></url>
@@ -46,5 +51,6 @@
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/util_download_handler.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/util_generate_word_doc_report.html</loc></url>
 <url><loc>https://free-state-analytics.github.io/voxanalysis/reference/util_shiny_remove_and_hide_flex.html</loc></url>
+<url><loc>https://free-state-analytics.github.io/voxanalysis/reference/util_summarize_response.html</loc></url>
 </urlset>
 

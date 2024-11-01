@@ -3,7 +3,10 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   datadictionary: datadictionary.html
-last_built: 2024-10-28T17:50Z
+  datamodel: datamodel.html
+  datavizandcharts: datavizandcharts.html
+  generatingreports: generatingreports.html
+last_built: 2024-11-01T19:56Z
 urls:
   reference: https://free-state-analytics.github.io/voxanalysis/reference
   article: https://free-state-analytics.github.io/voxanalysis/articles
