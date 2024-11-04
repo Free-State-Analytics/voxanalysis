@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Generating Reports • VOX Analysis</title>
+<title>How to Generate Reports • VOX Analysis</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Generating Reports">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="How to Generate Reports">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -36,7 +36,7 @@
 <li><a class="dropdown-item" href="../articles/datadictionary.html">Data Definitions</a></li>
     <li><a class="dropdown-item" href="../articles/datamodel.html">Data Model</a></li>
     <li><a class="dropdown-item" href="../articles/datavizandcharts.html">VOX Visualizations and Metrics</a></li>
-    <li><a class="dropdown-item" href="../articles/generatingreports.html">Generating Reports</a></li>
+    <li><a class="dropdown-item" href="../articles/generatingreports.html">How to Generate Reports</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
@@ -58,7 +58,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Generating Reports</h1>
+      <h1>How to Generate Reports</h1>
             
       
 
@@ -77,7 +77,110 @@ generate a report:</p>
 </ul>
 <p>The user can also generate individual data visualizations and
 measures of variability using the functions defined <a href="./datavizandcharts.html">here</a>.</p>
-  </main>
+<div class="section level2">
+<h2 id="word-doc-report">Word Doc Report<a class="anchor" aria-label="anchor" href="#word-doc-report"></a>
+</h2>
+<p>If the user knows how to use R and has downloaded the
+<code>voxanalysis</code> pacakge, they can use the function below to
+generate a Word Doc report. See
+<code><a href="../reference/util_generate_word_doc_report.html">?util_generate_word_doc_report</a></code> for more information.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Load example data sets</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_speaker_info_example"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_response_example"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate a Word document report</span></span>
+<span><span class="fu"><a href="../reference/util_generate_word_doc_report.html">util_generate_word_doc_report</a></span><span class="op">(</span></span>
+<span>  df_input_speaker_info <span class="op">=</span> <span class="va">df_input_speaker_info_example</span>,</span>
+<span>  df_input_response <span class="op">=</span> <span class="va">df_input_response_example</span>,</span>
+<span>  file_name <span class="op">=</span> <span class="st">"test.docx"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>Note that using <code>util_generate_word_doc_report</code> can be
+tedious when it comes to data management. A user must follow the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html">data
+model</a> exactly, otherwise the Word Doc will not generate.</p>
+</div>
+<div class="section level2">
+<h2 id="r-shiny-application">R Shiny Application<a class="anchor" aria-label="anchor" href="#r-shiny-application"></a>
+</h2>
+<p>The R Shiny Application is the recommended way for generating a
+report, appending data, etc.</p>
+<p>To launch the application, simply run:
+<code><a href="../reference/run_app.html">voxanalysis::run_app()</a></code>.</p>
+<p>We’ll go into more steps below.</p>
+</div>
+<div class="section level2">
+<h2 id="r-shiny-prompts">R Shiny Prompts<a class="anchor" aria-label="anchor" href="#r-shiny-prompts"></a>
+</h2>
+<p>A guide to various prompts that appear in the R Shiny
+application.</p>
+<div class="section level3">
+<h3 id="select-data-upload-method">Select Data Upload Method<a class="anchor" aria-label="anchor" href="#select-data-upload-method"></a>
+</h3>
+<p>The first menu let’s you decide how to enter data.</p>
+<p>Selecting <strong>Type in new data</strong> means you will manually
+type both the speaker info and then the responses from the
+evaluation.</p>
+<p>Selecting <strong>Upload a .csv file</strong> if you want to re-run a
+report with previously exported data. Alternatively, you can also use
+this path if you find it easier to record your data to a .csv file
+beforehand, rather than use the application to hand type data. You’ll
+also have the opportunity to modify the speaker data that accompanies
+it.</p>
+<p>Select <strong>Both</strong> is useful when you have a previous data
+set that you want to append new response data.</p>
+</div>
+<div class="section level3">
+<h3 id="provide-speaker-info">Provide Speaker Info<a class="anchor" aria-label="anchor" href="#provide-speaker-info"></a>
+</h3>
+<p>The <strong>Provide Speaker Info</strong> prompt is asking for the
+speaker’s information, such as first name, last name, birth date, and
+evaluation date. Language spoken and gender are optional entries to
+include as well.</p>
+<p>The speaker information will be fed into any Word Doc or .csv
+exports.</p>
+</div>
+<div class="section level3">
+<h3 id="upload-data-set">Upload Data Set<a class="anchor" aria-label="anchor" href="#upload-data-set"></a>
+</h3>
+<p>The <strong>Upload Data Set</strong> prompt appears when the user
+indicated they wanted to upload a data set. This data set is usually one
+that the user previously exported from the <strong>Results
+Summary</strong> page. Exporting a data set from the Results Summary
+page ensures the data is structured in a way that it can be re-uploaded,
+re-analyzed, or appended in the future.</p>
+<p>However, a user may also upload a new data set, provided it follows
+the data model <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html">guidelines</a>.</p>
+<p>Once the user has uploaded a .csv file, they will have the option to
+modify the speaker info.</p>
+<p>If the user did not previous select the option to add new data, they
+can select <strong>Download Report</strong> for a Word Doc or select
+<strong>Show Report</strong> to see the report within the web
+application. Otherwise, they can hit <strong>Continue</strong> to move
+onto the <strong>Provide Speaker Responses</strong> prompt.</p>
+</div>
+<div class="section level3">
+<h3 id="provide-speaker-responses">Provide Speaker Responses<a class="anchor" aria-label="anchor" href="#provide-speaker-responses"></a>
+</h3>
+<p>The <strong>Provide Speaker Responses</strong> prompt asks the user
+for the number of referents (i.e., toys) used in the evaluation. This
+will change the number of rows found in the input table below.</p>
+<p>The user will then need to provide unique referent names and the
+responses (1 = Positive Response, 0 = No Response) to those referents
+based on the verbal oeprant (CLEaR).</p>
+</div>
+<div class="section level3">
+<h3 id="results-summary-page">Results Summary Page<a class="anchor" aria-label="anchor" href="#results-summary-page"></a>
+</h3>
+<p>The <strong>Results Summary Page</strong> provides the VOX Analysis
+results for the speakers responses the user provided.</p>
+<p>The user will have the option to <strong>Download Report</strong> to
+download a Word Doc version, or they can select <strong>Save
+Data</strong>, which allows them to download the data set they had
+previously entered.</p>
+</div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
