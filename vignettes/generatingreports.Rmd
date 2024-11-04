@@ -1,5 +1,5 @@
 ---
-title: "Generating Reports"
+title: "How to Generate Reports"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{generatingreports}
@@ -24,3 +24,74 @@ The `voxanalysis` package provides the user two ways to generate a report:
 * Word Doc generation
 
 The user can also generate individual data visualizations and measures of variability using the functions defined [here](./datavizandcharts.html).
+
+## Word Doc Report
+
+If the user knows how to use R and has downloaded the `voxanalysis` pacakge, they can use the function below to generate a Word Doc report. See `?util_generate_word_doc_report` for more information.
+
+```{r, eval = FALSE}
+# Load example data sets
+data("df_input_speaker_info_example")
+data("df_input_response_example")
+
+# Generate a Word document report
+util_generate_word_doc_report(
+  df_input_speaker_info = df_input_speaker_info_example,
+  df_input_response = df_input_response_example,
+  file_name = "test.docx"
+)
+
+```
+
+
+Note that using `util_generate_word_doc_report` can be tedious when it comes to data management. A user must follow the [data model](https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html) exactly, otherwise the Word Doc will not generate.
+
+## R Shiny Application
+
+The R Shiny Application is the recommended way for generating a report, appending data, etc.
+
+To launch the application, simply run: `voxanalysis::run_app()`.
+
+We'll go into more steps below.
+
+## R Shiny Prompts
+
+A guide to various prompts that appear in the R Shiny application.
+
+### Select Data Upload Method
+
+The first menu let's you decide how to enter data.
+
+Selecting **Type in new data** means you will manually type both the speaker info and then the responses from the evaluation.
+
+Selecting **Upload a .csv file** if you want to re-run a report with previously exported data. Alternatively, you can also use this path if you find it easier to record your data to a .csv file beforehand, rather than use the application to hand type data. You'll also have the opportunity to modify the speaker data that accompanies it.
+
+Select **Both** is useful when you have a previous data set that you want to append new response data.
+
+### Provide Speaker Info
+
+The **Provide Speaker Info** prompt is asking for the speaker's information, such as first name, last name, birth date, and evaluation date. Language spoken and gender are optional entries to include as well.
+ 
+The speaker information will be fed into any Word Doc or .csv exports.
+
+### Upload Data Set
+
+The **Upload Data Set** prompt appears when the user indicated they wanted to upload a data set. This data set is usually one that the user previously exported from the **Results Summary** page. Exporting a data set from the Results Summary page ensures the data is structured in a way that it can be re-uploaded, re-analyzed, or appended in the future.
+
+However, a user may also upload a new data set, provided it follows the data model [guidelines](https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html).
+
+Once the user has uploaded a .csv file, they will have the option to modify the speaker info.
+
+If the user did not previous select the option to add new data, they can select **Download Report** for a Word Doc or select **Show Report** to see the report within the web application. Otherwise, they can hit **Continue** to move onto the **Provide Speaker Responses** prompt.
+
+### Provide Speaker Responses
+
+The **Provide Speaker Responses** prompt asks the user for the number of referents (i.e., toys) used in the evaluation. This will change the number of rows found in the input table below.
+
+The user will then need to provide unique referent names and the responses (1 = Positive Response, 0 = No Response) to those referents based on the verbal oeprant (CLEaR).
+
+### Results Summary Page
+
+The **Results Summary Page** provides the VOX Analysis results for the speakers responses the user provided. 
+
+The user will have the option to **Download Report** to download a Word Doc version, or they can select **Save Data**, which allows them to download the data set they had previously entered.

@@ -1,6 +1,9 @@
 ---
 title: "Data Model"
-output: rmarkdown::html_vignette
+output: 
+  rmarkdown::html_vignette:
+      toc: true
+      toc_depth: 2
 vignette: >
   %\VignetteIndexEntry{datamodel}
   %\VignetteEngine{knitr::rmarkdown}
@@ -17,3 +20,12 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(voxanalysis)
 ```
+
+
+
+## Data Upload {#dataupload}
+
+k
+
+
+

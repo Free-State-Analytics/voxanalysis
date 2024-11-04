@@ -12,7 +12,7 @@ mod_upload_data_set_ui <- function(id) {
             style = "width: 450px;",
             div(class = "card-body",
                 h3("Upload Data Set"),
-                p("Ensure proper structure with these guidelines"),
+                p("Ensure proper structure with these", tags$a(href = "https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#dataupload", target = "_blank", "guidelines.") ),
                 tag_custom_file_upload(
                   NS(id, "data_upload"),
                   placeholder = "Choose CSV File", accept = ".csv"),
