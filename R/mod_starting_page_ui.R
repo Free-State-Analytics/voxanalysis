@@ -36,7 +36,9 @@ mod_starting_page_ui <- function(id) {
             div(class = "card border-0",
                 style = "max-width: 750px; max-height: 400px;",
                 div(class = "card-body",
-                    h3("How would you like to generate a report?"),
+                    h3(class = "d-flex justify-content-between",
+                       span("How would you like to generate a report?"),
+                       tag_help_link(NS(id, "help_link"), page = "articles/generatingreports.html")),
                     div(class = "row",
                         div(class = "col-5 d-flex align-items-center",
                             span(class = "pt-4",
@@ -44,7 +46,7 @@ mod_starting_page_ui <- function(id) {
                                    NS(id, "chosen_path"),
                                    label = NULL,
                                    selected = 1,
-                                   choiceNames = c("Upload a .csv file", "Type in new data", "Both"),
+                                   choiceNames = c("Type in new data", "Upload a .csv file","Both"),
                                    choiceValues = c(1, 2, 3),
                                  )
                             )
