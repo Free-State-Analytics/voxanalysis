@@ -5,7 +5,7 @@ output:
       toc: true
       toc_depth: 2
 vignette: >
-  %\VignetteIndexEntry{datamodel}
+  %\VignetteIndexEntry{Data Structure Guidelines}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEngine{kableExtra}
   %\VignetteEncoding{UTF-8}
