@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Data Model • VOX Analysis</title>
+<title>Data Structure Guidelines • VOX Analysis</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Data Model">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Data Structure Guidelines">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -34,7 +34,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
 <li><a class="dropdown-item" href="../articles/datadictionary.html">Data Definitions</a></li>
-    <li><a class="dropdown-item" href="../articles/datamodel.html">Data Model</a></li>
+    <li><a class="dropdown-item" href="../articles/datamodel.html">Data Structure Guidelines</a></li>
     <li><a class="dropdown-item" href="../articles/datavizandcharts.html">VOX Visualizations and Metrics</a></li>
     <li><a class="dropdown-item" href="../articles/generatingreports.html">How to Generate Reports</a></li>
   </ul>
@@ -58,7 +58,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Data Model</h1>
+      <h1>Data Structure Guidelines</h1>
             
       
 
@@ -67,14 +67,292 @@
 
     
     
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
-<h2 id="dataupload">Data Upload<a class="anchor" aria-label="anchor" href="#dataupload"></a>
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h2>
-<p>k</p>
+<p>The <code>voxanalysis</code> package relies on standardized data sets
+to power the VOX Analysis application, as well as supporting
+calculations and data visualizations.</p>
+<p>There are four specific data sets that users will interact with,
+either directly or indirectly. These include:</p>
+<ul>
+<li>
+<strong>Response</strong> - Response entries for the speaker,
+organized by response type, referent, and evaluation date.</li>
+<li>
+<strong>Speaker</strong> - General information about the speaker
+(name, date of birth, etc.).</li>
+<li>
+<strong>Summary</strong> - An aggregate of the Response data set,
+where a total count of positive responses by response type grouped by
+evaluation date.</li>
+<li>
+<strong>Upload &amp; Export</strong> - A combination of Response and
+Speaker. It is used by the application for uploading and exporting
+data.</li>
+</ul>
+<p>For VOX Analysis application users (non-R users), Upload &amp; Export
+is the data structure to familiarize. The application will export data
+that follows this structure. If a user wants to modify or add data
+directly to this data set, they must ensure they follow the structure
+outlined in this page. Otherwise, the application will reject any
+attempt to upload the data set.</p>
+<p>For R users, Response, Summary, and Speaker are useful data
+structures to familiarize. Nearly every function for variance
+calculations and data visualizations use these structures.</p>
+<p>See <a href="https://free-state-analytics.github.io/voxanalysis/articles/datadictionary.html">Data
+Definitions</a> to understand keywords found in this page.</p>
 </div>
-  </main>
+<div class="section level2">
+<h2 id="responsedata">Response Data<a class="anchor" aria-label="anchor" href="#responsedata"></a>
+</h2>
+<p>The Response data set provides speaker responses from the evaluation.
+Each entry is a binary indicator (1 or 0) that shows whether the speaker
+responded to a given referent for a particular response type. The data
+set may contain multiple evaluations, distinguished by
+<code>date_of_evaluation</code>.</p>
+<table class="table">
+<colgroup>
+<col width="21%">
+<col width="78%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Column Name</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">date_of_evaluation</td>
+<td align="left">The date of the evaluation</td>
+</tr>
+<tr class="even">
+<td align="left">referent</td>
+<td align="left">The object a listener interacts with during the
+evaluation</td>
+</tr>
+<tr class="odd">
+<td align="left">conversing</td>
+<td align="left">Binary indicator for conversational response (1 = Yes,
+0 = No)</td>
+</tr>
+<tr class="even">
+<td align="left">labeling</td>
+<td align="left">Binary indicator for labeling the referent (1 = Yes, 0
+= No)</td>
+</tr>
+<tr class="odd">
+<td align="left">echoing</td>
+<td align="left">Binary indicator for echoing the referent’s name (1 =
+Yes, 0 = No)</td>
+</tr>
+<tr class="even">
+<td align="left">requesting</td>
+<td align="left">Binary indicator for requesting the referent’s name (1
+= Yes, 0 = No)</td>
+</tr>
+</tbody>
+</table>
+<p>When used as a parameter in <code>voxanalysis</code> functions, this
+data set is called <code>df_input_response</code>.</p>
+<p>A sample data set can be generated with:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_response_example"</span><span class="op">)</span></span></code></pre></div>
+<p>See <code><a href="../reference/df_input_response_example.html">?df_input_response_example</a></code> for more information.</p>
+</div>
+<div class="section level2">
+<h2 id="speakerdata">Speaker Data<a class="anchor" aria-label="anchor" href="#speakerdata"></a>
+</h2>
+<p>The Speaker data set provides key personal information about the
+speaker, such as name and date of birth.</p>
+<table class="table">
+<thead><tr class="header">
+<th align="left">Column Name</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">first_name</td>
+<td align="left">The speaker’s first name</td>
+</tr>
+<tr class="even">
+<td align="left">last_name</td>
+<td align="left">The speaker’s last name</td>
+</tr>
+<tr class="odd">
+<td align="left">date_of_birth</td>
+<td align="left">The speaker’s date of birth</td>
+</tr>
+<tr class="even">
+<td align="left">language_spoken</td>
+<td align="left">The language spoken during the evaluation
+(optional)</td>
+</tr>
+<tr class="odd">
+<td align="left">gender</td>
+<td align="left">The speaker’s gender (optional)</td>
+</tr>
+</tbody>
+</table>
+<p>When used as a parameter in <code>voxanalysis</code> functions, this
+data set is called <code>df_input_speaker_info</code>.</p>
+<p>A sample data set can be generated with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_speaker_info_example"</span><span class="op">)</span></span></code></pre></div>
+<p>See <code><a href="../reference/df_input_speaker_info_example.html">?df_input_speaker_info_example</a></code> for more
+information.</p>
+</div>
+<div class="section level2">
+<h2 id="summarizedata">Summary Data<a class="anchor" aria-label="anchor" href="#summarizedata"></a>
+</h2>
+<p>The Summary data set provides an aggregated total for each response
+type (Conversing, Labeling, Echoing, and Requesting). These totals are
+grouped by evaluation date. The data set is often used as an input for
+plot functions and other analyses to assess patterns in response types
+over time.</p>
+<table class="table">
+<colgroup>
+<col width="21%">
+<col width="78%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Column Name</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">date_of_evaluation</td>
+<td align="left">The date of the evaluation</td>
+</tr>
+<tr class="even">
+<td align="left">conversing</td>
+<td align="left">Binary indicator for conversational response (1 = Yes,
+0 = No)</td>
+</tr>
+<tr class="odd">
+<td align="left">labeling</td>
+<td align="left">Binary indicator for labeling the referent (1 = Yes, 0
+= No)</td>
+</tr>
+<tr class="even">
+<td align="left">echoing</td>
+<td align="left">Binary indicator for echoing the referent’s name (1 =
+Yes, 0 = No)</td>
+</tr>
+<tr class="odd">
+<td align="left">requesting</td>
+<td align="left">Binary indicator for requesting the referent’s name (1
+= Yes, 0 = No)</td>
+</tr>
+</tbody>
+</table>
+<p>When used as a parameter in <code>voxanalysis</code> functions, this
+data set is called <code>df_summarized_response</code>.</p>
+<p>The summary data set can be generated by passing
+<code>df_input_response</code> to the
+<code>util_summarize_response</code> function:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Load example data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_response_example"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Summarize responses by type</span></span>
+<span><span class="fu"><a href="../reference/util_summarize_response.html">util_summarize_response</a></span><span class="op">(</span></span>
+<span>  df_input_response <span class="op">=</span> <span class="va">df_input_response_example</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>A sample data set can be generated with:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_summarized_response_example"</span><span class="op">)</span></span></code></pre></div>
+<p>See <code><a href="../reference/df_summarized_response_example.html">?df_summarized_response_example</a></code> and
+<code><a href="../reference/util_summarize_response.html">?util_summarize_response</a></code> for more information.</p>
+</div>
+<div class="section level2">
+<h2 id="dataupload">Upload &amp; Export Data<a class="anchor" aria-label="anchor" href="#dataupload"></a>
+</h2>
+<p>The Upload &amp; Export data set consolidates information about the
+speaker and their responses. It merges the Speaker and Response data set
+together, for ease-of-export by the application user.</p>
+<table class="table">
+<colgroup>
+<col width="21%">
+<col width="78%">
+</colgroup>
+<thead><tr class="header">
+<th align="left">Column Name</th>
+<th align="left">Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">first_name</td>
+<td align="left">The speaker’s first name</td>
+</tr>
+<tr class="even">
+<td align="left">last_name</td>
+<td align="left">The speaker’s last name</td>
+</tr>
+<tr class="odd">
+<td align="left">date_of_birth</td>
+<td align="left">The speaker’s date of birth</td>
+</tr>
+<tr class="even">
+<td align="left">language_spoken</td>
+<td align="left">The language spoken during the evaluation
+(optional)</td>
+</tr>
+<tr class="odd">
+<td align="left">gender</td>
+<td align="left">The speaker’s gender (optional)</td>
+</tr>
+<tr class="even">
+<td align="left">date_of_evaluation</td>
+<td align="left">The date of the evaluation</td>
+</tr>
+<tr class="odd">
+<td align="left">referent</td>
+<td align="left">The object a listener interacts with during the
+evaluation</td>
+</tr>
+<tr class="even">
+<td align="left">conversing</td>
+<td align="left">Binary indicator for conversational response (1 = Yes,
+0 = No)</td>
+</tr>
+<tr class="odd">
+<td align="left">labeling</td>
+<td align="left">Binary indicator for labeling the referent (1 = Yes, 0
+= No)</td>
+</tr>
+<tr class="even">
+<td align="left">echoing</td>
+<td align="left">Binary indicator for echoing the referent’s name (1 =
+Yes, 0 = No)</td>
+</tr>
+<tr class="odd">
+<td align="left">requesting</td>
+<td align="left">Binary indicator for requesting the referent’s name (1
+= Yes, 0 = No)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note: application users MUST follow this structure when
+modifying .csv downloads.</strong> The application exports this data in
+a way that it can be re-uploaded. This gives the user the ability to
+append new data overtime. If a user modifies column names, column order,
+or adds ill-formatted entries, the application will reject the .csv file
+when the user uploads it.</p>
+<p>When used as a parameter in <code>voxanalysis</code> functions, this
+data set is called <code>df_output_exportable</code>.</p>
+<p>A sample data set can be generated with:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_output_exportable_example"</span><span class="op">)</span></span></code></pre></div>
+<p>For more details, see <code><a href="../reference/df_output_exportable_example.html">?df_output_exportable_example</a></code>.</p>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
