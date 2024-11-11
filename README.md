@@ -6,7 +6,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-# VOX (verbal operant experimental) Analysis
+# VOX Analysis Application & Package
 
 *NOTE: THIS PACKAGE IS IN DEVELOPMENT. USE AT YOUR OWN DISCRETION*
 
@@ -16,7 +16,7 @@ below) and individual functions for measurements and data
 visualizations.
 
 <figure>
-<img src="https://via.placeholder.com/150" alt="Placeholder Image" />
+<img src="https://placehold.co/600x400" alt="Placeholder Image" />
 <figcaption aria-hidden="true">Placeholder Image</figcaption>
 </figure>
 
