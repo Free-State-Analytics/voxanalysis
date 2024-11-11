@@ -7,6 +7,7 @@ output:
 vignette: >
   %\VignetteIndexEntry{datamodel}
   %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEngine{kableExtra}
   %\VignetteEncoding{UTF-8}
 ---
 
