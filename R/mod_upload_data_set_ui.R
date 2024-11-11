@@ -11,7 +11,11 @@ mod_upload_data_set_ui <- function(id) {
         div(class = "card card-border pb-3",
             style = "width: 450px;",
             div(class = "card-body",
-                h3("Upload Data Set"),
+                h3(
+                  class = "d-flex justify-content-between",
+                  span("Upload Data Set"),
+                  tag_help_link(NS(id, "help_link"), page = "articles/generatingreports.html#upload-data-set")
+                ),
                 p("Ensure proper structure with these", tags$a(href = "https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#dataupload", target = "_blank", "guidelines.") ),
                 tag_custom_file_upload(
                   NS(id, "data_upload"),

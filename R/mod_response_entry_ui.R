@@ -12,7 +12,7 @@ mod_response_entry_ui <- function(id) {
               h3(
                 class = "d-flex justify-content-between",
                 span("Provide Speaker Responses"),
-                tag_help_link(NS(id, "help_link"), page = "articles/datadictionary.html")
+                tag_help_link(NS(id, "help_link"), page = "articles/generatingreports.html#provide-speaker-responses")
                 ),
               h5(class = "mb-2",
                 "How many referents did you use in your evaluation?"),
