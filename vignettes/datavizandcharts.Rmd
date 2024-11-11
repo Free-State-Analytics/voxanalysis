@@ -2,7 +2,7 @@
 title: "VOX Visualizations and Metrics"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{datavizandcharts}
+  %\VignetteIndexEntry{VOX Visualizations and Metrics}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
