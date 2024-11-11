@@ -17,13 +17,13 @@ output: github_document
 )
 ```
 
-# VOX (verbal operant experimental) Analysis 
+# VOX Analysis Application & Package
 
 *NOTE: THIS PACKAGE IS IN DEVELOPMENT. USE AT YOUR OWN DISCRETION*
 
 The `{voxanalysis}` package provides a framework for diagnosing autism spectrum disorder It contains both the VOX Analysis Application (see below) and individual functions for measurements and data visualizations.
 
-![Placeholder Image](https://via.placeholder.com/150)
+![Placeholder Image](https://placehold.co/600x400)
 
 ## Background
 
