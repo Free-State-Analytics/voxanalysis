@@ -8,10 +8,10 @@ mod_upload_data_set_ui <- function(id) {
     div(id = NS(id, "div_data_upload"),
         class = "container d-flex align-items-center",
         style = "width: 550px;",
-        div(class = "card card-border pb-3",
+        div(class = "card card-border pb-3 mt-3",
             style = "width: 450px;",
-            div(class = "card-body",
-                h3(
+            div(class = "card-body  px-4",
+                h4(
                   class = "d-flex justify-content-between",
                   span("Upload Data Set"),
                   tag_help_link(NS(id, "help_link"), page = "articles/generatingreports.html#upload-data-set")

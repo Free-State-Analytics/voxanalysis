@@ -5,11 +5,11 @@
 mod_speaker_data_entry_ui <- function(id) {
   tagList(
     div(id = NS(id, "div_speaker_info_entry"),
-        class = "container d-flex align-items-center",
+        class = "container d-flex align-items-center mt-3",
         style = "width: 400px",
-        div(class = "card",
-            div(class = "card-body",
-                h3("Provide Speaker Info"),
+        div(class = "card card-border",
+            div(class = "card-body px-4",
+                h4("Provide Speaker Info"),
                 tag_speaker_input_form(id),
                 shinyjs::hidden(
                   p(id = NS(id, "warning_message"),

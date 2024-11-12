@@ -6,7 +6,7 @@ mod_starting_page_ui <- function(id) {
 
   tagList(
     div(class = "d-flex flex-row",
-        style = "height: 100vh;",
+        style = "height: 110vh;",
         div(class = "px-1 border-end",
             div(class = "text-primary text-center mt-5",
                 div(class = "my-5",
@@ -33,15 +33,15 @@ mod_starting_page_ui <- function(id) {
         ),
         div(id = NS(id, "div_select_a_path"),
             class = "d-flex flex-fill justify-content-center align-items-center",
-            div(class = "card border-0",
-                style = "max-width: 750px; max-height: 400px;",
-                div(class = "card-body",
-                    h3(class = "d-flex justify-content-between",
+            div(class = "card card-border",
+                style = "width: 550px; max-height: 400px;",
+                div(class = "card-body px-4",
+                    h4(class = "d-flex justify-content-between",
                        span("How would you like to generate a report?"),
                        tag_help_link(NS(id, "help_link"), page = "articles/generatingreports.html")),
                     div(class = "row",
                         div(class = "col-5 d-flex align-items-center",
-                            span(class = "pt-4",
+                            span(class = "pt-3 ps-3",
                                  radioButtons(
                                    NS(id, "chosen_path"),
                                    label = NULL,
@@ -56,7 +56,7 @@ mod_starting_page_ui <- function(id) {
                             uiOutput(NS(id, "icon_choice"))
                         )
                     ),
-                    actionButton(NS(id, "begin"), "Begin", class = "btn btn-primary")
+                    actionButton(NS(id, "begin"), "Begin", class = "btn btn-primary mt-2")
                 )
             )
         ),

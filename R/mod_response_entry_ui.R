@@ -4,12 +4,12 @@
 mod_response_entry_ui <- function(id) {
   tagList(
     div(id = NS(id, "data_entry_card"),
-        class = "container d-flex align-items-center mt-5",
+        class = "container d-flex align-items-center mt-3",
         style = "width: 700px;",
         div(class = "card card-border",
             style = "width: 700px;",
             div(class = "card-body px-4 pt-3",
-              h3(
+              h4(
                 class = "d-flex justify-content-between",
                 span("Provide Speaker Responses"),
                 tag_help_link(NS(id, "help_link"), page = "articles/generatingreports.html#provide-speaker-responses")
