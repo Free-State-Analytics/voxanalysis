@@ -102,6 +102,20 @@ to allow flexible analysis beyond the main VOX Analysis Application.
 For example, a line chart that tracks language skill balance over verbal
 episodes can be generated with:
 
+``` r
+library(voxanalysis)
+
+# Load example data
+data("df_input_response_example")
+
+# Generate a VOX line chart across verbal episodes
+plot_vox_line(
+  df_input_response = df_input_response_example,
+  ind_hide_heading = FALSE,
+  ind_doc_version = TRUE
+  )
+```
+
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 For more details on available visualization and metric functions, see
