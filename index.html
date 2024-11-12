@@ -58,72 +58,85 @@
 <div class="section level1">
 <div class="page-header"><h1 id="vox-analysis-application--package">VOX Analysis Application &amp; Package<a class="anchor" aria-label="anchor" href="#vox-analysis-application--package"></a>
 </h1></div>
-<p><em>NOTE: THIS PACKAGE IS IN DEVELOPMENT. USE AT YOUR OWN DISCRETION</em></p>
-<p>The <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package provides a framework for diagnosing autism spectrum disorder It contains both the VOX Analysis Application (see below) and individual functions for measurements and data visualizations.</p>
+<p><strong>Note:</strong> <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> is currently under active development. Use it at your own discretion.</p>
+<p>The <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package provides tools for conducting and analyzing autism diagnoses using the VOX Analysis framework.</p>
+<p>Developed by Dr. Lee Mason and Dr. Alonzo Andrews, founders of Shapers at Work, this package aids behavioral specialists by offering visualizations and metrics for language development assessment in individuals with autism.</p>
 <figure><img src="https://placehold.co/600x400" alt="Placeholder Image"><figcaption aria-hidden="true">
 Placeholder Image
 </figcaption></figure><div class="section level2">
 <h2 id="background">Background<a class="anchor" aria-label="anchor" href="#background"></a>
 </h2>
-<p>The <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package is meant to provide easily generated reports and analysis using the VOX Analysis framework.</p>
-<p>It was developed by Dr. Lee Mason and Dr. Alonzo Andrews, two researchers in verbal behavior and founders of Shapers at Work, a consulting firm that teaches behavioral specialists about autism diagnosis.</p>
-<p>People with autism tend to have more variation with respect to language development.</p>
-<p>For example, they may be good at requesting something, but not at responding to a question. A person without autism will have a balanced set of language skills, which means their ability to request something is nearly the same as their ability to respond to a question.</p>
-<p>VOX Analysis involves an in-person evaluation (i.e., play therapy), where the listener (e.g., a behavioral analyst or clinician) elicits a response from the speaker (i.e., the patient). (Read more on this process here.)</p>
-<p>Once the listener has recorded the responses, they can use the <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package to run a generate data visualizations and measures of variance.</p>
+<p>The <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package enables behavioral specialists to generate detailed reports and analyses using the VOX Analysis framework, which was designed to assess language development in individuals with autism.</p>
+<p>Developed by Dr. Lee Mason and Dr. Alonzo Andrews, co-founders of Shapers at Work, <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> is rooted in their expertise in verbal behavior and autism diagnosis. Shapers at Work is a consulting firm dedicated to training specialists in behavioral analysis and autism assessment.</p>
+<p>Autism spectrum disorder often presents unique language development patterns. For instance, an individual with autism may excel at requesting an object but struggle with responding to questions. In contrast, people without autism typically exhibit balanced language skills, where abilities like requesting and responding are more evenly developed.</p>
+<p>VOX Analysis leverages in-person evaluations (e.g., play therapy) to measure these variations. During evaluations, a clinician (the “listener”) elicits verbal responses from the individual (the “speaker”). By documenting these interactions, clinicians can use <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> to produce comprehensive reports, complete with data visualizations and variance measures, that offer insights into the speaker’s language skills and patterns.</p>
+<p>(Read more on the VOX Analysis process <a href="https://www.verbalbehavior.org/vox" class="external-link">here</a>.)</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>A user can install <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># If devtools is not installed, first install it</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"devtools"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Install PackageName from GitHub</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"Free-State-Analytics/voxanalysis"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"Free-State-Analytics/voxanalysis"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="running-reports">Running Reports<a class="anchor" aria-label="anchor" href="#running-reports"></a>
 </h2>
-<p>The easiest way to generate a report is through the VOX Analysis Application.</p>
-<p>This Shiny application can run with:</p>
+<p>The easiest way to generate a report is by using the VOX Analysis Application, a Shiny app included with {voxanalysis}.</p>
+<p>To launch the application, run:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">voxanalysis</span><span class="fu">::</span><span class="fu"><a href="reference/run_app.html">run_app</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>A user with R programming experience can generate a MS Word version of the report too.</p>
-<p>Read <a href="https://free-state-analytics.github.io/voxanalysis/articles/generatingreports.html">How to Generate Reports</a> to learn more about report generation.</p>
+<p>For users familiar with R, <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> also supports generating a report in MS Word format.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Load example data for report generation</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_speaker_info_example"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_response_example"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate a Word document report</span></span>
+<span><span class="fu"><a href="reference/util_generate_word_doc_report.html">util_generate_word_doc_report</a></span><span class="op">(</span></span>
+<span>  df_input_speaker_info <span class="op">=</span> <span class="va">df_input_speaker_info_example</span>,</span>
+<span>  df_input_response <span class="op">=</span> <span class="va">df_input_response_example</span>,</span>
+<span>  file_name <span class="op">=</span> <span class="st">"text.docx"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<p>To learn more about report generation, refer to the <a href="https://free-state-analytics.github.io/voxanalysis/articles/generatingreports.html">How to Generate Reports</a> guide.</p>
 </div>
 <div class="section level2">
-<h2 id="individual-calculations-and-data-visualizations">Individual Calculations and Data Visualizations<a class="anchor" aria-label="anchor" href="#individual-calculations-and-data-visualizations"></a>
+<h2 id="data-visualizations-and-individual-metrics">Data Visualizations and Individual Metrics<a class="anchor" aria-label="anchor" href="#data-visualizations-and-individual-metrics"></a>
 </h2>
-<p>Users with more R programming experience can use individual components from the VOX Analysis Application. All data visualizations and measures are including in the <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package.</p>
-<p>Read <a href="https://free-state-analytics.github.io/voxanalysis/articles/datavizandcharts.html">VOX Visualizations and Metrics</a> to learn more about these functions.</p>
-<p>A user with R programming experience can generate individual data visualizations and a MS Word version of the report too.</p>
+<p>Advanced R users can use the individual functions within <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> for data visualizations and calculations. These components are designed to allow flexible analysis beyond the main VOX Analysis Application.</p>
+<p>For example, a line chart that tracks language skill balance over verbal episodes can be generated with:</p>
+<p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="100%"></p>
+<p>For more details on available visualization and metric functions, see <a href="https://free-state-analytics.github.io/voxanalysis/articles/datavizandcharts.html">VOX Visualizations and Metrics</a>.</p>
 </div>
 <div class="section level2">
 <h2 id="about-the-team">About the Team<a class="anchor" aria-label="anchor" href="#about-the-team"></a>
 </h2>
-<p>The <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package was developed by Lee Mason, Alonzo Andrews, and Taylor Rodgers.</p>
+<p>The <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package was developed by Lee Mason, Alonzo Andrews, and Taylor Rodgers. It was a partnership between their respective companies, Shapers at Work and Free State Analytics.</p>
 <div class="section level3">
-<h3 id="dr-lee-mason">Dr. Lee Mason<a class="anchor" aria-label="anchor" href="#dr-lee-mason"></a>
+<h3 id="dr-lee-mason---vox-analysis-researcher">Dr. Lee Mason - VOX Analysis Researcher<a class="anchor" aria-label="anchor" href="#dr-lee-mason---vox-analysis-researcher"></a>
 </h3>
-<p><em>Coming soon</em></p>
+<p>Dr. Mason is a behavioral specialist in verbal behavior and co-founder of Shapers at Work. [Bio coming soon]</p>
 </div>
 <div class="section level3">
-<h3 id="dr-alonzo-andrews">Dr. Alonzo Andrews<a class="anchor" aria-label="anchor" href="#dr-alonzo-andrews"></a>
+<h3 id="dr-alonzo-andrews---vox-analysis-researcher">Dr. Alonzo Andrews - VOX Analysis Researcher<a class="anchor" aria-label="anchor" href="#dr-alonzo-andrews---vox-analysis-researcher"></a>
 </h3>
-<p><em>Coming soon</em></p>
+<p>Dr. Andrews is a behavioral specialist in verbal behavior and co-founder of Shapers at Work. [Bio coming soon]</p>
 </div>
 <div class="section level3">
-<h3 id="taylor-rodgers">Taylor Rodgers<a class="anchor" aria-label="anchor" href="#taylor-rodgers"></a>
+<h3 id="taylor-rodgers---project-manager--package-developer">Taylor Rodgers - Project Manager &amp; Package Developer<a class="anchor" aria-label="anchor" href="#taylor-rodgers---project-manager--package-developer"></a>
 </h3>
-<p><em>Coming soon</em></p>
+<p>Taylor Rodgers is the founder of Free State Analytics, a boutique consulting firm specialized in R Shiny &amp; package development. He is available for R Shiny consulting and training. Contact <a href="mailto:taylor.rodgers@freestateanalytics.com" class="email">taylor.rodgers@freestateanalytics.com</a></p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="services-offered">Services Offered<a class="anchor" aria-label="anchor" href="#services-offered"></a>
+<h2 id="training-and-consulting-services">Training and Consulting Services<a class="anchor" aria-label="anchor" href="#training-and-consulting-services"></a>
 </h2>
-<p><em>Coming soon</em></p>
+<ul>
+<li>
+<strong>VOX Analysis Training</strong>: Behavioral specialists can contact Lee Mason (<a href="mailto:leemason@gmail.com" class="email">leemason@gmail.com</a>) for training on using the VOX Analysis framework.</li>
+<li>
+<strong>VOX Analysis Setup &amp; Support</strong>: For assistance with setup or customization of the VOX Analysis Application, contact Taylor Rodgers (<a href="mailto:taylor.rodgers@freestateanalytics.com" class="email">taylor.rodgers@freestateanalytics.com</a>).</li>
+</ul>
 </div>
 </div>
 
