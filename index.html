@@ -105,6 +105,18 @@ Placeholder Image
 </h2>
 <p>Advanced R users can use the individual functions within <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> for data visualizations and calculations. These components are designed to allow flexible analysis beyond the main VOX Analysis Application.</p>
 <p>For example, a line chart that tracks language skill balance over verbal episodes can be generated with:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Load example data</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_response_example"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Generate a VOX line chart across verbal episodes</span></span>
+<span><span class="fu"><a href="reference/plot_vox_line.html">plot_vox_line</a></span><span class="op">(</span></span>
+<span>  df_input_response <span class="op">=</span> <span class="va">df_input_response_example</span>,</span>
+<span>  ind_hide_heading <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  ind_doc_version <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span>  <span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-unnamed-chunk-5-1.png" width="100%"></p>
 <p>For more details on available visualization and metric functions, see <a href="https://free-state-analytics.github.io/voxanalysis/articles/datavizandcharts.html">VOX Visualizations and Metrics</a>.</p>
 </div>
