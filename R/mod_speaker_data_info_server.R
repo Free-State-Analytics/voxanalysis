@@ -50,7 +50,6 @@ mod_speaker_data_info_server <- function(id, df_input_speaker_info) {
 
     })
 
-
     output$speaker_info <- render_gt({
 
       df_input_speaker_info() %>%

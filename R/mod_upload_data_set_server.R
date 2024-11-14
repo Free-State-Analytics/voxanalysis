@@ -35,6 +35,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
         )
 
         if (!is.null(result$warning)) {
+          shinyjs::hide("div_update_speaker_data")
           shinyjs::show("error_message")
           return()
         }
@@ -42,6 +43,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
         check_data_upload <- util_check_data_upload(result$df_to_upload)
 
         if (check_data_upload == "Bad") {
+          shinyjs::hide("div_update_speaker_data")
           shinyjs::show("error_message")
           return()
         }
@@ -66,17 +68,15 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
           select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
         ## Sometimes, the date that's uploaded is read as a character, causing disruption in future modules
 
+        ### If the birthday is NA, we need to supply a date for the app to work.
+
+        result$df_to_upload$date_of_birth <- ifelse(is.na(result$df_to_upload$date_of_birth), Sys.Date(), result$df_to_upload$date_of_birth)
         rv$df_input_speaker_info <- result$df_to_upload %>%
           filter(.data$date_of_evaluation == max(.data$date_of_evaluation)) %>%
           mutate(date_of_evaluation = as.Date(.data$date_of_evaluation),
-                 date_of_birth = as.Date(.data$date_of_birth)) %>%
+                 date_of_birth = as.Date(.data$date_of_birth, origin = "1970-01-01")) %>%
           select(any_of(c("first_name", "last_name", "date_of_birth", "date_of_evaluation", "language_spoken", "gender"))) %>%
-          distinct(.data$first_name,
-                   .data$last_name,
-                   .data$date_of_birth,
-                   .data$date_of_evaluation,
-                   .data$language_spoken,
-                   .data$gender)
+          distinct()
 
         if (ind_add_new_data && rv$df_input_speaker_info$date_of_evaluation == Sys.Date()) {
           shinyjs::show("same_date_message")
