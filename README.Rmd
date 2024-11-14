@@ -89,8 +89,7 @@ data("df_input_response_example")
 # Generate a VOX line chart across verbal episodes
 plot_vox_line(
   df_input_response = df_input_response_example,
-  ind_hide_heading = FALSE,
-  ind_doc_version = TRUE
+  ind_hide_heading = FALSE
   )
 ```
 

@@ -1,0 +1,16 @@
+ body {
+   font-family: Quicksand;
+ }
+
+.card-border {
+  border-top: 3px solid var(--bs-primary) !important;
+}
+
+.table {
+  --bs-table-bg: unset !important;
+}
+
+.spinner-custom .load-container,
+.spinner-custom .lds-ring div {
+  border-color: var(--bs-primary) transparent transparent transparent;
+}

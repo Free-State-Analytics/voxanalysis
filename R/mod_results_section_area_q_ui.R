@@ -6,7 +6,7 @@ mod_results_section_area_q_ui <- function(id) {
   tagList(
     h4(class = "mb-0", "VOX Analysis"),
     p(style = "font-weight: 300;", "Does my speaker have balanced language skills?"),
-    div(class = "card mb-5",
+    div(class = "card card-border mb-5",
         div(class = "card-body",
         div(class = "row",
             div(class = "col-5",
@@ -47,10 +47,9 @@ mod_results_section_area_q_ui <- function(id) {
                       )
                   )
                 ),
-                withSpinner(
-                  plotOutput(NS(id, "analysis_results_area_q_plot")) ,
-                  type = getOption("spinner.type", default = 4),
-                  color = getOption("spinner.color", default = "#A4B5C2ff"))
+                tag_spinner(
+                  plotOutput(NS(id, "analysis_results_area_q_plot"))
+                )
             )
             )
             )

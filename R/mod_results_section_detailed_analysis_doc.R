@@ -13,7 +13,6 @@
 #'
 #' @import shiny
 #' @import bslib
-#' @importFrom shinycssloaders withSpinner
 #'
 #' @examples
 #' if (interactive()) {

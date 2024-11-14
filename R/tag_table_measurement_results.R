@@ -17,12 +17,12 @@ tag_table_response_results <- function(df_input_response) {
 
   row_names <- df_input_response$referent
   body_creation <- lapply(1:length(row_names), function(i) {
-    tags$tr(class = "tr matrix-input border" ,
+    tags$tr(class = "tr matrix-input border bg-white" ,
             tags$td(class = "fw-normal ps-3 text-body", row_names[i]),
-            tags$td(class = "text-center", style = "opacity: .35", df_input_response[i,"conversing"]),
-            tags$td(class = "text-center", style = "opacity: .35", df_input_response[i,"labeling"]),
-            tags$td(class = "text-center", style = "opacity: .35", df_input_response[i,"echoing"]),
-            tags$td(class = "text-center", style = "opacity: .35", df_input_response[i,"requesting"])
+            tags$td(class = "text-center", style = "opacity: .5", df_input_response[i,"conversing"]),
+            tags$td(class = "text-center", style = "opacity: .5", df_input_response[i,"labeling"]),
+            tags$td(class = "text-center", style = "opacity: .5", df_input_response[i,"echoing"]),
+            tags$td(class = "text-center", style = "opacity: .5", df_input_response[i,"requesting"])
     )
   })
 
