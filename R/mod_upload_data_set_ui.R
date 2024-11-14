@@ -8,10 +8,14 @@ mod_upload_data_set_ui <- function(id) {
     div(id = NS(id, "div_data_upload"),
         class = "container d-flex align-items-center",
         style = "width: 550px;",
-        div(class = "card card-border pb-3",
+        div(class = "card card-border pb-3 mt-3",
             style = "width: 450px;",
-            div(class = "card-body",
-                h3("Upload Data Set"),
+            div(class = "card-body  px-4",
+                h4(
+                  class = "d-flex justify-content-between",
+                  span("Upload Data Set"),
+                  tag_help_link(NS(id, "help_link"), page = "articles/generatingreports.html#upload-data-set")
+                ),
                 p("Ensure proper structure with these", tags$a(href = "https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#dataupload", target = "_blank", "guidelines.") ),
                 tag_custom_file_upload(
                   NS(id, "data_upload"),
@@ -31,9 +35,9 @@ mod_upload_data_set_ui <- function(id) {
                 ),
                 shinyjs::hidden(
                   p(id = NS(id, "same_date_message"),
-                    class="text-warning",
+                    class="text-info-emphasis",
                     icon("circle-exclamation"),
-                    "Note: The data set you uploaded includes entries for today's date. Any new entries will be analyzed with these previous entries, unless you change the evaluation date above or the source file."
+                    "Note: The data set you uploaded includes entries for today's date. Any new entries will be analyzed with these previous entries, unless you change the evaluation date in table above or the evaluation date in the source file."
                   )
                 ),
                 shinyjs::hidden(

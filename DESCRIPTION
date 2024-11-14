@@ -34,6 +34,7 @@ Imports:
 Suggests: 
     knitr,
     rmarkdown,
+    kableExtra,
     spelling,
     testthat (>= 3.0.0)
 VignetteBuilder: 

@@ -46,6 +46,7 @@ jobs:
         run: |
           install.packages('remotes')
           remotes::install_deps(dependencies = TRUE)
+          install.packages('kableExtra')
 
       - name: Build and deploy pkgdown site
         env:

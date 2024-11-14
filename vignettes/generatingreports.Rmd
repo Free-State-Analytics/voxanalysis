@@ -2,7 +2,7 @@
 title: "How to Generate Reports"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{generatingreports}
+  %\VignetteIndexEntry{How to Generate Reports}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

@@ -34,6 +34,10 @@ golem_add_external_resources <- function() {
     bundle_resources(
       path = app_sys("app/www"),
       app_title = "voxanalysis"
+    ),
+    tags$link(
+      href = "https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap",
+      rel = "stylesheet"
     )
     # Add here other external resources
     # for example, you can add shinyalert::useShinyalert()
