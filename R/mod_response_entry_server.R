@@ -28,9 +28,10 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
           mutate(across(c( "conversing", "labeling", "echoing", "requesting"), as.numeric)) %>%
           select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting") %>%
           as.data.frame()
+
       } else {
         df_input_response <- df_input_response %>%
-          mutate(date_of_evaluation = Sys.Date()) %>%
+          mutate(date_of_evaluation = as.Date(df_input_speaker_info$date_of_evaluation)) %>%
           mutate(across(c( "conversing", "labeling", "echoing", "requesting"), as.numeric)) %>%
           select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting") %>%
           as.data.frame()
@@ -73,6 +74,7 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
     observeEvent(input$button_generate, {
 
       df_input_response_to_pass <- df_input_response()
+
       if (!is.null(df_input_response_previous)) {
         df_input_response_to_pass <- rbind(
           df_input_response_to_pass,

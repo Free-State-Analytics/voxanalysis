@@ -86,8 +86,8 @@ The Area Q plot helps visualize variance. A speaker with normal language develop
 #| fig-align: center
 plot_area_q(
   df_summarized_response = df_summarized_response,
-  v_primary_date = max(df_summarized_response$date_of_evaluation),
-  doc_version_ind = TRUE)
+  date_primary = max(df_summarized_response$date_of_evaluation),
+  ind_doc_version = TRUE)
 ```
 
 ### VOX Chart
@@ -99,8 +99,8 @@ The VOX Chart shows the responses based on the verbal episode. A speaker with no
 #| fig-align: center
 plot_vox_line(
   df_input_response = df_input_response,
-  hide_heading = FALSE,
-  doc_version_ind = TRUE)
+  ind_hide_heading = FALSE,
+  ind_doc_version = TRUE)
 ```
 
 ### Cochran's Q
@@ -134,7 +134,7 @@ The pie chart below further illustrates this balance or imbalance.
 plot_vox_piechart(
   df_summarized_response = df_summarized_response %>%
     filter(.data$date_of_evaluation == max(.data$date_of_evaluation)),
-  doc_version_ind = TRUE
+  ind_doc_version = TRUE
 )
 ```
 

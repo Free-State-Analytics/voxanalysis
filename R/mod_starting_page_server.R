@@ -12,19 +12,20 @@ mod_starting_page_server <- function(id) {
     output$icon_choice <- renderUI({
       if (input$chosen_path == 1) {
         return(
-          span(style = "font-size: 75px",
+          span(style = "font-size: 70px",
                icon("keyboard"))
         )
       }
       if (input$chosen_path == 2) {
         return(
-          span(style = "font-size: 75px",
+          span(style = "font-size: 70px",
                icon("file-csv"))
         )
       }
       if (input$chosen_path == 3) {
         return(
-          span(style = "font-size: 60px",
+          span(class = "pt-3",
+               style = "font-size: 60px",
                icon("file-csv"),
                icon("keyboard"))
         )
