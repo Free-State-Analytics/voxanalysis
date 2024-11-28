@@ -3,7 +3,7 @@
 
 mod_results_section_detailed_analysis_ui <- function(id) {
 
-  div(class = "mb-5",
+  div(
     h4(class = "mb-0",
        "Detailed Analysis"),
        p(style = "font-weight: 300;",

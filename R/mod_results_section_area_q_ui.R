@@ -6,7 +6,7 @@ mod_results_section_area_q_ui <- function(id) {
   tagList(
     h4(class = "mb-0", "VOX Analysis"),
     p(style = "font-weight: 300;", "Does my speaker have balanced language skills?"),
-    div(class = "card card-border mb-5",
+    div(class = "card card-border",
         div(class = "card-body",
         div(class = "row",
             div(class = "col-5",
