@@ -112,13 +112,11 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
     ### The code below is for the interactions with the buttons to continue the workflow.
 
     observeEvent(input$button_run_report, {
-
       ### We need to change the evaluation date in df_input_resopnse, if the use had changed it.
-      if (unique(rv$df_input_response$date_of_evaluation) != rv$df_input_speaker_info$date_of_evaluation) {
+      if (!rv$df_input_speaker_info$date_of_evaluation %in% unique(rv$df_input_response$date_of_evaluation)) {
         rv$df_input_response <- rv$df_input_response %>%
           mutate(date_of_evaluation = rv$df_input_speaker_info$date_of_evaluation)
       }
-
       util_shiny_remove_and_hide_flex("div_data_upload")
       shinyjs::show("div_upload_to_results",
                     anim = TRUE,

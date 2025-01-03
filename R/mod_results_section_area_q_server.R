@@ -8,7 +8,7 @@ mod_results_section_area_q_server <- function(
     date_primary) {
   moduleServer(id, function(input, output, session) {
 
-    if (length(unique(df_input_response$date_of_evaluation)) != 1) {
+    if (length(unique(df_input_response$date_of_evaluation)) > 2) {
       shinyjs::show("filter_date_div")
       dates_to_pass <- df_input_response %>%
         filter(.data$date_of_evaluation != as.Date(date_primary))
@@ -24,7 +24,7 @@ mod_results_section_area_q_server <- function(
     }
 
     rct_summarize_response <- eventReactive(input$filter_secondary_date, {
-      if (length(unique(df_input_response$date_of_evaluation)) != 1) {
+      if (length(unique(df_input_response$date_of_evaluation)) > 2) { ## We want data set to respond to filter if there are more than two dates
         data_to_return <- util_summarize_response(
           df_input_response %>%
             filter(.data$date_of_evaluation %in% c(as.Date(date_primary), as.Date(input$filter_secondary_date)))
