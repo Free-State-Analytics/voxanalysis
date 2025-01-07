@@ -7,7 +7,7 @@ mod_results_section_detailed_analysis_ui <- function(id) {
     h4(class = "mb-0",
        "Detailed Analysis"),
        p(style = "font-weight: 300;",
-         "Click the four tabs for more thorough language assessment results."),
+         "Click the four tabs for more thorough VOX analysis results."),
     navset_underline(
       id = NS(id, "detailed_analysis"),
       nav_panel(
