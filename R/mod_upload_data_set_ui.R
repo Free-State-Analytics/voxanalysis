@@ -34,10 +34,10 @@ mod_upload_data_set_ui <- function(id) {
                   )
                 ),
                 shinyjs::hidden(
-                  p(id = NS(id, "same_date_message"),
+                  div(id = NS(id, "same_date_message"),
                     class="text-info-emphasis",
-                    icon("circle-exclamation"),
-                    "Note: The data set you uploaded includes entries for today's date. Any new entries will be analyzed with these previous entries, unless you change the evaluation date in table above or the evaluation date in the source file."
+                    p(icon("circle-exclamation"), "Note: The data set you selected includes the current evaluation date."),
+                    p('Click "Continue" to combine these records for a single VOX Analysis, or click "Modify" to change the evaluation date to create two analysis.')
                   )
                 ),
                 shinyjs::hidden(
