@@ -28,6 +28,13 @@ mod_upload_data_set_ui <- function(id) {
                   )
                 ),
                 shinyjs::hidden(
+                  p(id = NS(id, "wrong_date_format_message"),
+                    class="text-warning-emphasis",
+                    icon("circle-exclamation"),
+                    'All evaluation date entries must use "yyyy-mm-dd" format.'
+                  )
+                ),
+                shinyjs::hidden(
                   div(id = NS(id, "div_update_speaker_data"),
                       class = "mb-3",
                       mod_speaker_data_info_ui(NS(id, "speaker_info"))

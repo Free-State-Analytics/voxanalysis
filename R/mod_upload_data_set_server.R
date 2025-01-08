@@ -36,20 +36,31 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
 
         if (!is.null(result$warning)) {
           shinyjs::hide("div_update_speaker_data")
+          shinyjs::hide("wrong_date_format_message")
           shinyjs::show("error_message")
           return()
         }
 
+        ### Check that date formats are correct
+        ind_wrong_date_format <- util_check_date_format(result$df_to_upload$date_of_evaluation)
+        if (!ind_wrong_date_format) {
+          shinyjs::hide("div_update_speaker_data")
+          shinyjs::show("wrong_date_format_message")
+          return()
+        }
+        ## Check date all other fields
         check_data_upload <- util_check_data_upload(result$df_to_upload)
 
         if (check_data_upload == "Bad") {
           shinyjs::hide("div_update_speaker_data")
+          shinyjs::hide("wrong_date_format_message")
           shinyjs::show("error_message")
           return()
         }
 
         if (ind_add_new_data) {
           shinyjs::hide("error_message")
+          shinyjs::hide("wrong_date_format_message")
           shinyjs::show("button_continue",
                         anim = TRUE,
                         animType = "fade")
@@ -58,6 +69,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
 
         if (!ind_add_new_data) {
           shinyjs::hide("error_message")
+          shinyjs::hide("wrong_date_format_message")
           shinyjs::show("div_run_report_buttons",
                         anim = TRUE,
                         animType = "fade")
