@@ -41,13 +41,6 @@ mod_upload_data_set_ui <- function(id) {
                   )
                 ),
                 shinyjs::hidden(
-                  div(id = NS(id, "same_date_message"),
-                    class="text-info-emphasis",
-                    p(icon("circle-exclamation"), "Note: The data set you selected includes the current evaluation date."),
-                    p('Click "Continue" to combine these records for a single VOX Analysis, or click "Modify" to change the evaluation date to create two analysis.')
-                  )
-                ),
-                shinyjs::hidden(
                   actionButton(NS(id,"button_continue"), "Continue", class = "btn-primary")
                 ),
                 shinyjs::hidden(
@@ -66,7 +59,7 @@ mod_upload_data_set_ui <- function(id) {
     ),
     shinyjs::hidden(
       div(id = NS(id, "div_upload_to_data_entry"),
-          mod_response_entry_ui(NS(id, "upload_to_data_entry"))
+          mod_evaluation_data_entry_ui(NS(id, "upload_to_data_entry"))
       )
     ),
     shinyjs::hidden(

@@ -53,12 +53,11 @@ mod_speaker_data_info_server <- function(id, df_input_speaker_info) {
     output$speaker_info <- render_gt({
 
       df_input_speaker_info() %>%
-        select("first_name", "last_name", "date_of_birth", "date_of_evaluation", "language_spoken", "gender") %>%
+        select("first_name", "last_name", "date_of_birth", "language_spoken", "gender") %>%
         rename(
           `First Name` = "first_name",
           `Last Name` = "last_name",
           `Date of Birth` = "date_of_birth",
-          `Date of Evaluation` =  "date_of_evaluation",
           Language = "language_spoken",
           Gender =  "gender") %>%
         mutate(across(everything(), as.character)) %>%

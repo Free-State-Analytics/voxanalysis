@@ -90,12 +90,6 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
           select(any_of(c("first_name", "last_name", "date_of_birth", "date_of_evaluation", "language_spoken", "gender"))) %>%
           distinct()
 
-        if (ind_add_new_data && rv$df_input_speaker_info$date_of_evaluation == Sys.Date()) {
-          shinyjs::show("same_date_message")
-        } else {
-          shinyjs::hide("same_date_message")
-        }
-
         shinyjs::show("div_update_speaker_data")
         updated_speaker_data <- mod_speaker_data_info_server(
           "speaker_info",
@@ -151,7 +145,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
       df_input_response_previous <- rv$df_input_response %>%
         select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
 
-      mod_response_entry_server(
+      mod_evaluation_data_entry_server(
         "upload_to_data_entry",
         df_input_speaker_info = rv$df_input_speaker_info,
         df_input_response_previous = df_input_response_previous

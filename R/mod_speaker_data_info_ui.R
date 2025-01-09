@@ -20,7 +20,7 @@ mod_speaker_data_info_ui <- function(id) {
             ),
             shinyjs::hidden(
               div(id = NS(id, "div_speaker_entry"),
-                  tag_speaker_input_form(id),
+                  tag_speaker_input_form(id, ind_evaluation_date = FALSE),
                   actionButton(NS(id,"button_save"), "Save", class = "btn-secondary")
               )
             )
