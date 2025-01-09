@@ -4,8 +4,8 @@
 mod_response_entry_ui <- function(id) {
   tagList(
     div(id = NS(id, "data_entry_card"),
-        class = "container d-flex align-items-center",
-        style = "width: 700px; height: 100%;",
+        class = "container d-flex align-items-center h-100",
+        style = "width: 700px;",
         div(class = "card card-border pb-3 mt-3",
             style = "width: 700px;",
             div(class = "card-body px-4 pt-3",

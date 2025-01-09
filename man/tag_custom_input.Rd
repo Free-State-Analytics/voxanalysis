@@ -8,7 +8,7 @@ tag_custom_input(
   input_id,
   value = 0,
   align_center = TRUE,
-  placeholder = "Enter value"
+  placeholder = "Enter 1 or 0"
 )
 }
 \arguments{

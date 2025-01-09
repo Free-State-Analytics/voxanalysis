@@ -145,7 +145,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
       df_input_response_previous <- rv$df_input_response %>%
         select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
 
-      mod_evaluation_data_entry_server(
+      mod_evaluation_date_entry_server(
         "upload_to_data_entry",
         df_input_speaker_info = rv$df_input_speaker_info,
         df_input_response_previous = df_input_response_previous

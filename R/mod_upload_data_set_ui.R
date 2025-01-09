@@ -59,7 +59,7 @@ mod_upload_data_set_ui <- function(id) {
     ),
     shinyjs::hidden(
       div(id = NS(id, "div_upload_to_data_entry"),
-          mod_evaluation_data_entry_ui(NS(id, "upload_to_data_entry"))
+          mod_evaluation_date_entry_ui(NS(id, "upload_to_data_entry"))
       )
     ),
     shinyjs::hidden(
