@@ -36,20 +36,20 @@ mod_results_section_area_q_ui <- function(id) {
                 )
             ),
             div(class = "col-7",
+                tag_spinner(
+                  plotOutput(NS(id, "analysis_results_area_q_plot"))
+                ),
                 shinyjs::hidden(
                   div(id = NS(id, "filter_date_div"),
                       class = "d-flex justify-content-end",
-                      div(class = "form-select-sm",
-                        style = "max-width: 150px;",
-                        selectInput(NS(id, "filter_secondary_date"),
-                                    label = "Select comparison:",
-                                    choices = c(NULL))
+                      div(class = "form-select-sm ",
+                          style = "max-width: 150px;",
+                          selectInput(NS(id, "filter_secondary_date"),
+                                      label = em("Compare to..."),
+                                      choices = c(NULL))
                       )
                   )
                 ),
-                tag_spinner(
-                  plotOutput(NS(id, "analysis_results_area_q_plot"))
-                )
             )
             )
             )
