@@ -14,13 +14,13 @@ mod_response_entry_ui <- function(id) {
                 span("Provide Speaker Responses"),
                 tag_help_link(NS(id, "help_link"), page = "articles/generatingreports.html#provide-speaker-responses")
                 ),
-              h5(class = "mb-2",
+              h5(class = "mb-3",
                 "How many referents did you use in your evaluation?"),
               selectInput(NS(id, "referent_count"), label = NULL, choices = c(6, 9, 12)),
               br(),
-              h5(class = "mb-0", "Please provide referent names and responses."),
-              p(style = "font-weight: 300;",
-               "Each response must be 1 or 0."),
+              h5(class = "mb-4", "Please provide referent names and responses."),
+              # p(style = "font-weight: 300;",
+              #  "Each response must be 1 or 0."),
               uiOutput(NS(id, "referent_response")),
               shinyjs::disabled(
                 actionButton(NS(id, "button_generate"),
