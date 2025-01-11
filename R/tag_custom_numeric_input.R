@@ -12,7 +12,7 @@
 #'
 #' @export
 
-tag_custom_input <- function (input_id, value = 0, align_center = TRUE, placeholder = "Enter value")
+tag_custom_input <- function (input_id, value = 0, align_center = TRUE, placeholder = "Enter 1 or 0")
 {
 
   if (align_center) {

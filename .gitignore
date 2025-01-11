@@ -1,6 +1,7 @@
 .Rproj.user
 .Rhistory
 .Rdata
+.rscignore
 .httr-oauth
 .DS_Store
 .quarto
@@ -8,3 +9,6 @@ inst/doc
 /doc/
 /Meta/
 docs
+/rsconnect
+renv.lock
+/R/_disable_autoload.R
