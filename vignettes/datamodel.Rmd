@@ -22,7 +22,7 @@ knitr::opts_chunk$set(
 library(voxanalysis)
 ```
 
-## Introduction
+### Introduction
 
 The `voxanalysis` package relies on standardized data sets to power the VOX Analysis application, as well as supporting calculations and data visualizations.
 
@@ -33,15 +33,20 @@ There are four specific data sets that users will interact with, either directly
 * **Summary** - An aggregate of the Response data set, where a total count of positive responses by response type grouped by evaluation date.
 * **Upload & Export** - A combination of Response and Speaker. It is used by the application for uploading and exporting data.
 
-For VOX Analysis application users (non-R users), Upload & Export is the data structure to familiarize. The application will export data that follows this structure. If a user wants to modify or add data directly to this data set, they must ensure they follow the structure outlined in this page. Otherwise, the application will reject any attempt to upload the data set.
+For VOX Analysis application users (non-R users), [Upload & Export](#dataupload) is the data structure to familiarize. The application will export data that follows this structure. If a user wants to modify or add data directly to this data set, they must ensure they follow the structure outlined in this page. Otherwise, the application will reject any attempt to upload the data set.
 
-For R users, Response, Summary, and Speaker are useful data structures to familiarize. Nearly every function for variance calculations and data visualizations use these structures.
+For R users, [Response](#responsedata), [Summary](#speakerdata), and [Speaker](#summarizedata) are useful data structures to familiarize. Nearly every function for variance calculations and data visualizations use these structures.
 
 See [Data Definitions](https://free-state-analytics.github.io/voxanalysis/articles/datadictionary.html) to understand keywords found in this page.
 
-## Response Data {#responsedata}
+<br>
+<br>
+
+### Response Data {#responsedata}
 
 The Response data set provides speaker responses from the evaluation. Each entry is a binary indicator (1 or 0) that shows whether the speaker responded to a given referent for a particular response type. The data set may contain multiple evaluations, distinguished by `date_of_evaluation`.
+
+<br>
 
 ```{r, echo = FALSE}
 data.frame(
@@ -59,6 +64,8 @@ data.frame(
 kableExtra::kable(col.names = c("Column Name", "Description"))
 ```
 
+<br>
+
 When used as a parameter in `voxanalysis` functions, this data set is called `df_input_response`. 
 
 A sample data set can be generated with:
@@ -70,9 +77,14 @@ data("df_input_response_example")
 
 See `?df_input_response_example` for more information.
 
+<br>
+<br>
+
 ## Speaker Data {#speakerdata}
 
 The Speaker data set provides key personal information about the speaker, such as name and date of birth.
+
+<br>
 
 ```{r, echo = FALSE}
 data.frame(
@@ -89,6 +101,8 @@ data.frame(
 kableExtra::kable(col.names = c("Column Name", "Description"))
 ```
 
+<br>
+
 When used as a parameter in `voxanalysis` functions, this data set is called `df_input_speaker_info`. 
 
 A sample data set can be generated with:
@@ -100,9 +114,14 @@ data("df_input_speaker_info_example")
 
 See `?df_input_speaker_info_example` for more information.
 
+<br>
+<br>
+
 ## Summary Data {#summarizedata}
 
 The Summary data set provides an aggregated total for each response type (Conversing, Labeling, Echoing, and Requesting). These totals are grouped by evaluation date. The data set is often used as an input for plot functions and other analyses to assess patterns in response types over time.
+
+<br>
 
 ```{r, echo = FALSE}
 data.frame(
@@ -118,6 +137,8 @@ data.frame(
 ) %>%
 kableExtra::kable(col.names = c("Column Name", "Description"))
 ```
+
+<br>
 
 When used as a parameter in `voxanalysis` functions, this data set is called `df_summarized_response`.
 
@@ -144,9 +165,14 @@ data("df_summarized_response_example")
 
 See `?df_summarized_response_example` and `?util_summarize_response` for more information.
 
+<br>
+<br>
+
 ## Upload & Export Data {#dataupload}
 
 The Upload & Export data set consolidates information about the speaker and their responses. It merges the Speaker and Response data set together, for ease-of-export by the application user.
+
+<br>
 
 ```{r, echo = FALSE}
 data.frame(
@@ -170,6 +196,8 @@ data.frame(
 kableExtra::kable(col.names = c("Column Name", "Description"))
 ```
 
+<br>
+
 **Note: application users MUST follow this structure when modifying .csv downloads.** The application exports this data in a way that it can be re-uploaded. This gives the user the ability to append new data overtime. If a user modifies column names, column order, or adds ill-formatted entries, the application will reject the .csv file when the user uploads it.
 
 When used as a parameter in `voxanalysis` functions, this data set is called `df_output_exportable`.
@@ -183,3 +211,8 @@ data("df_output_exportable_example")
 
 For more details, see `?df_output_exportable_example`.
 
+
+<br>
+<br>
+<br>
+<br>
