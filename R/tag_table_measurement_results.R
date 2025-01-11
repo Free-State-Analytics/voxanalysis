@@ -14,7 +14,6 @@
 tag_table_response_results <- function(df_input_response) {
 
   req(df_input_response)
-
   row_names <- df_input_response$referent
   body_creation <- lapply(1:length(row_names), function(i) {
     tags$tr(class = "tr matrix-input border bg-white" ,

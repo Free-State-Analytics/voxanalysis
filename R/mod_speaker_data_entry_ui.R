@@ -22,6 +22,7 @@ mod_speaker_data_entry_ui <- function(id) {
         )),
     shinyjs::hidden(
       div(id = NS(id, "div_new_entry"),
+          class = "d-flex flex-fill justify-content-center",
           mod_response_entry_ui(NS(id, "new_entry"))
           )
     )

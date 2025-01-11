@@ -19,16 +19,30 @@ mod_starting_page_ui <- function(id) {
                       class = "btn-sm btn-outline-primary border border-0"
                     )
                 ),
-                actionButton(
-                  NS(id, "button_user_guide"),
-                  div(
-                    span(style = "font-size: 25px;",
-                         icon("info")),
-                    p("User Guide")
-                  ),
-                  class = "btn-sm btn-outline-primary border border-0",
-                  onclick = "window.open('https://free-state-analytics.github.io/voxanalysis/', '_blank')"
-                )
+                div(class = "my-5",
+                  actionButton(
+                    NS(id, "button_user_guide"),
+                    div(
+                      span(style = "font-size: 25px;",
+                           icon("info")),
+                      p("User Guide")
+                    ),
+                    class = "btn-sm btn-outline-primary border border-0",
+                    onclick = "window.open('https://free-state-analytics.github.io/voxanalysis/', '_blank')"
+                  )
+                ),
+                div(class = "my-5",
+                  actionButton(
+                    NS(id, "button_report_bug"),
+                    div(
+                      span(style = "font-size: 25px;",
+                           icon("bug")),
+                      p("Report Issue")
+                    ),
+                    class = "btn-sm btn-outline-primary border border-0",
+                    onclick = "window.location.href = 'mailto:taylor.rodgers@freestateanalytics.com?subject=Bug Report for VOX Analysis&body=Please describe the issue here...';"
+                  )
+                ),
             )
         ),
         div(id = NS(id, "div_select_a_path"),

@@ -9,8 +9,8 @@ mod_results_primary_ui <- function(id) {
         br(),
         div(class = "row justify-content-between px-4",
             div(class = "col-7",
-                h3("Results",
-                   p(class="lead", "Scroll down to see analysis"))
+                h3("VOX Analysis",
+                   p(class="lead", "A Comprehensive Report"))
             ),
             div(class = "col-5",
                 shinyjs::hidden(
@@ -27,19 +27,22 @@ mod_results_primary_ui <- function(id) {
                 )
             )
             ),
-        div(class = "card pb-5 bg-body-tertiary text-secondary-emphasis",
-            style = "width: 625px; margin-bottom: 150px;",
-            div(class = "card-body px-4",
-                mod_results_section_area_q_ui(NS(id,"section_area_q")),
-                # hr(),
-                mod_results_section_detailed_analysis_ui(NS(id, "section_detailed_analysis")),
-                br(),
-                h4(class = "mb-0",
-                   "Responses by Verbal Operant"),
-                p(style = "font-weight: 300;",
-                  "Down below are the responses to referants by verbal operants."),
-                br(),
-                uiOutput(NS(id, "table_response_results"))
+        div(class = "card pb-5 mb-5 bg-body-tertiary text-secondary-emphasis",
+            style = "width: 625px;",
+            div(class = "card-body px-4 grid gap-0 row-gap-3",
+                div(class = "pb-5 g-col-12",
+                  mod_results_section_area_q_ui(NS(id,"section_area_q"))
+                  ),
+                div(class = "py-5 g-col-12",
+                  mod_results_section_detailed_analysis_ui(NS(id, "section_detailed_analysis"))
+                  ),
+                div(class = "pt-5 g-col-12",
+                  h4(class = "mb-0",
+                     "Responses by Verbal Operant"),
+                  p(style = "font-weight: 300;",
+                    "Down below are the responses to referants by verbal operants."),
+                  uiOutput(NS(id, "table_response_results"))
+                )
             )
             )
         ),
