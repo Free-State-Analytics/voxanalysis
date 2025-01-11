@@ -6,29 +6,53 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-# VOX Analysis Application & Package
+<br>
 
-**Note:** `{voxanalysis}` is currently under active development. Use it
-at your own discretion.
-
-The `{voxanalysis}` package provides tools for conducting and analyzing
-autism diagnoses using the VOX Analysis framework.
-
-Developed by Dr. Lee Mason and Dr. Alonzo Andrews, founders of Shapers
-at Work, this package aids behavioral specialists by offering
-visualizations and metrics for language development assessment in
-individuals with autism.
-
-<figure>
-<img src="https://placehold.co/600x400" alt="Placeholder Image" />
-<figcaption aria-hidden="true">Placeholder Image</figcaption>
-</figure>
-
-## Background
+## VOX Analysis Application & Package
 
 The `{voxanalysis}` package enables behavioral specialists to generate
 detailed reports and analyses using the VOX Analysis framework, which
 was designed to assess language development in individuals with autism.
+
+<div style="display: flex; align-items: center;">
+
+<div style="flex: 1; padding-right: 10px;">
+
+<br>
+
+<p>
+
+#### Austism and VOX Analysis
+
+Autism spectrum disorder often presents unique language development
+patterns. For instance, an individual with autism may excel at
+requesting an object but struggle with responding to questions.
+
+In contrast, people without autism typically exhibit balanced language
+skills, where abilities like requesting and responding are more evenly
+developed.
+
+VOX Analysis leverages in-person evaluations (e.g., play therapy) to
+measure these variations in development. During evaluations, a clinician
+(the “listener”) elicits verbal responses from the individual (the
+“speaker”).
+
+By documenting these interactions, clinicians can use `{voxanalysis}` to
+produce comprehensive reports, complete with data visualizations and
+variance measures, that offer insights into the speaker’s language
+skills and patterns.
+
+</p>
+
+</div>
+
+<div style="flex: 1; text-align: center;">
+
+<img src="man/figures/main_app.gif" alt="Main App GIF" style="max-width: 100%; height: auto;">
+
+</div>
+
+</div>
 
 Developed by Dr. Lee Mason and Dr. Alonzo Andrews, co-founders of
 Shapers at Work, `{voxanalysis}` is rooted in their expertise in verbal
@@ -36,23 +60,10 @@ behavior and autism diagnosis. Shapers at Work is a consulting firm
 dedicated to training specialists in behavioral analysis and autism
 assessment.
 
-Autism spectrum disorder often presents unique language development
-patterns. For instance, an individual with autism may excel at
-requesting an object but struggle with responding to questions. In
-contrast, people without autism typically exhibit balanced language
-skills, where abilities like requesting and responding are more evenly
-developed.
-
-VOX Analysis leverages in-person evaluations (e.g., play therapy) to
-measure these variations. During evaluations, a clinician (the
-“listener”) elicits verbal responses from the individual (the
-“speaker”). By documenting these interactions, clinicians can use
-`{voxanalysis}` to produce comprehensive reports, complete with data
-visualizations and variance measures, that offer insights into the
-speaker’s language skills and patterns.
-
 (Read more on the VOX Analysis process
 [here](https://www.verbalbehavior.org/vox).)
+
+<br> <br>
 
 ## Installation
 
@@ -61,6 +72,8 @@ A user can install `{voxanalysis}` with:
 ``` r
 devtools::install_github("Free-State-Analytics/voxanalysis")
 ```
+
+<br> <br>
 
 ## Running Reports
 
@@ -93,6 +106,8 @@ To learn more about report generation, refer to the [How to Generate
 Reports](https://free-state-analytics.github.io/voxanalysis/articles/generatingreports.html)
 guide.
 
+<br> <br>
+
 ## Data Visualizations and Individual Metrics
 
 Advanced R users can use the individual functions within `{voxanalysis}`
@@ -115,11 +130,17 @@ plot_vox_line(
   )
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<br>
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
+<br>
 
 For more details on available visualization and metric functions, see
 [VOX Visualizations and
 Metrics](https://free-state-analytics.github.io/voxanalysis/articles/datavizandcharts.html).
+
+<br> <br>
 
 ## About the Team
 
@@ -127,12 +148,12 @@ The `{voxanalysis}` package was developed by Lee Mason, Alonzo Andrews,
 and Taylor Rodgers. It was a partnership between their respective
 companies, Shapers at Work and Free State Analytics.
 
-### Dr. Lee Mason - VOX Analysis Researcher
+#### Dr. Lee Mason - VOX Analysis Researcher
 
 Dr. Mason is a behavioral specialist in verbal behavior and co-founder
 of Shapers at Work. \[Bio coming soon\]
 
-### Dr. Alonzo Andrews - VOX Analysis Researcher
+#### Dr. Alonzo Andrews - VOX Analysis Researcher
 
 Dr. Andrews served as the director of the Autism Treatment Center in San
 Antonio for 24 years, where he led the delivery of behavioral services
@@ -154,18 +175,21 @@ training program for caregivers of children with autism, reflecting his
 commitment to advancing both research and practical applications in the
 field.
 
-### Taylor Rodgers - Project Manager & Package Developer
+#### Taylor Rodgers - Project Manager & Package Developer
 
-Taylor Rodgers is the founder of Free State Analytics, a boutique
-consulting firm specialized in R Shiny & package development. He is
+Taylor Rodgers is an R Shiny developer and project manager. He is
 available for R Shiny consulting and training. Contact
-<taylor.rodgers@freestateanalytics.com>
+<taylor@taylorrodgers.com>
+
+<br> <br>
 
 ## Training and Consulting Services
 
-- **VOX Analysis Training**: Behavioral specialists can contact Lee
-  Mason (<leemason@gmail.com>) for training on using the VOX Analysis
-  framework.
-- **VOX Analysis Setup & Support**: For assistance with setup or
-  customization of the VOX Analysis Application, contact Taylor Rodgers
-  (<taylor.rodgers@freestateanalytics.com>).
+**VOX Analysis Training**: Behavioral specialists can contact Lee Mason
+(<leemason@gmail.com>) for training on using the VOX Analysis framework.
+
+**VOX Analysis Setup & Support**: For assistance with setup or
+customization of the VOX Analysis Application, contact Taylor Rodgers
+(<taylor@taylorrodgers.com>).
+
+<br> <br> <br> <br>
