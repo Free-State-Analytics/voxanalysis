@@ -68,9 +68,9 @@
 
     
     
-<div class="section level2">
-<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
+<div class="section level3">
+<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h3>
 <p>The <code>voxanalysis</code> package relies on standardized data sets
 to power the VOX Analysis application, as well as supporting
 calculations and data visualizations.</p>
@@ -92,26 +92,28 @@ evaluation date.</li>
 Speaker. It is used by the application for uploading and exporting
 data.</li>
 </ul>
-<p>For VOX Analysis application users (non-R users), Upload &amp; Export
-is the data structure to familiarize. The application will export data
-that follows this structure. If a user wants to modify or add data
-directly to this data set, they must ensure they follow the structure
-outlined in this page. Otherwise, the application will reject any
-attempt to upload the data set.</p>
-<p>For R users, Response, Summary, and Speaker are useful data
-structures to familiarize. Nearly every function for variance
-calculations and data visualizations use these structures.</p>
+<p>For VOX Analysis application users (non-R users), <a href="#dataupload">Upload &amp; Export</a> is the data structure to
+familiarize. The application will export data that follows this
+structure. If a user wants to modify or add data directly to this data
+set, they must ensure they follow the structure outlined in this page.
+Otherwise, the application will reject any attempt to upload the data
+set.</p>
+<p>For R users, <a href="#responsedata">Response</a>, <a href="#speakerdata">Summary</a>, and <a href="#summarizedata">Speaker</a> are useful data structures to
+familiarize. Nearly every function for variance calculations and data
+visualizations use these structures.</p>
 <p>See <a href="https://free-state-analytics.github.io/voxanalysis/articles/datadictionary.html">Data
 Definitions</a> to understand keywords found in this page.</p>
+<p><br><br></p>
 </div>
-<div class="section level2">
-<h2 id="responsedata">Response Data<a class="anchor" aria-label="anchor" href="#responsedata"></a>
-</h2>
+<div class="section level3">
+<h3 id="responsedata">Response Data<a class="anchor" aria-label="anchor" href="#responsedata"></a>
+</h3>
 <p>The Response data set provides speaker responses from the evaluation.
 Each entry is a binary indicator (1 or 0) that shows whether the speaker
 responded to a given referent for a particular response type. The data
 set may contain multiple evaluations, distinguished by
 <code>date_of_evaluation</code>.</p>
+<p><br></p>
 <table class="table">
 <colgroup>
 <col width="21%">
@@ -153,6 +155,7 @@ Yes, 0 = No)</td>
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>When used as a parameter in <code>voxanalysis</code> functions, this
 data set is called <code>df_input_response</code>.</p>
 <p>A sample data set can be generated with:</p>
@@ -160,12 +163,14 @@ data set is called <code>df_input_response</code>.</p>
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_response_example"</span><span class="op">)</span></span></code></pre></div>
 <p>See <code><a href="../reference/df_input_response_example.html">?df_input_response_example</a></code> for more information.</p>
+<p><br><br></p>
 </div>
 <div class="section level2">
 <h2 id="speakerdata">Speaker Data<a class="anchor" aria-label="anchor" href="#speakerdata"></a>
 </h2>
 <p>The Speaker data set provides key personal information about the
 speaker, such as name and date of birth.</p>
+<p><br></p>
 <table class="table">
 <thead><tr class="header">
 <th align="left">Column Name</th>
@@ -195,6 +200,7 @@ speaker, such as name and date of birth.</p>
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>When used as a parameter in <code>voxanalysis</code> functions, this
 data set is called <code>df_input_speaker_info</code>.</p>
 <p>A sample data set can be generated with:</p>
@@ -203,6 +209,7 @@ data set is called <code>df_input_speaker_info</code>.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_speaker_info_example"</span><span class="op">)</span></span></code></pre></div>
 <p>See <code><a href="../reference/df_input_speaker_info_example.html">?df_input_speaker_info_example</a></code> for more
 information.</p>
+<p><br><br></p>
 </div>
 <div class="section level2">
 <h2 id="summarizedata">Summary Data<a class="anchor" aria-label="anchor" href="#summarizedata"></a>
@@ -212,6 +219,7 @@ type (Conversing, Labeling, Echoing, and Requesting). These totals are
 grouped by evaluation date. The data set is often used as an input for
 plot functions and other analyses to assess patterns in response types
 over time.</p>
+<p><br></p>
 <table class="table">
 <colgroup>
 <col width="21%">
@@ -248,6 +256,7 @@ Yes, 0 = No)</td>
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>When used as a parameter in <code>voxanalysis</code> functions, this
 data set is called <code>df_summarized_response</code>.</p>
 <p>The summary data set can be generated by passing
@@ -269,6 +278,7 @@ data set is called <code>df_summarized_response</code>.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_summarized_response_example"</span><span class="op">)</span></span></code></pre></div>
 <p>See <code><a href="../reference/df_summarized_response_example.html">?df_summarized_response_example</a></code> and
 <code><a href="../reference/util_summarize_response.html">?util_summarize_response</a></code> for more information.</p>
+<p><br><br></p>
 </div>
 <div class="section level2">
 <h2 id="dataupload">Upload &amp; Export Data<a class="anchor" aria-label="anchor" href="#dataupload"></a>
@@ -276,6 +286,7 @@ data set is called <code>df_summarized_response</code>.</p>
 <p>The Upload &amp; Export data set consolidates information about the
 speaker and their responses. It merges the Speaker and Response data set
 together, for ease-of-export by the application user.</p>
+<p><br></p>
 <table class="table">
 <colgroup>
 <col width="21%">
@@ -338,6 +349,7 @@ Yes, 0 = No)</td>
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p><strong>Note: application users MUST follow this structure when
 modifying .csv downloads.</strong> The application exports this data in
 a way that it can be re-uploaded. This gives the user the ability to
@@ -351,6 +363,7 @@ data set is called <code>df_output_exportable</code>.</p>
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_output_exportable_example"</span><span class="op">)</span></span></code></pre></div>
 <p>For more details, see <code><a href="../reference/df_output_exportable_example.html">?df_output_exportable_example</a></code>.</p>
+<p><br><br><br><br></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
