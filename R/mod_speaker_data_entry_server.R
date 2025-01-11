@@ -9,6 +9,10 @@ mod_speaker_data_entry_server <- function(
 
     df_input_speaker_info <- reactive({
 
+      if (length(input$date_of_evaluation) < 1 | length(input$date_of_birth) < 1) {
+        return()
+      }
+
       data.frame(
         last_name = input$last_name,
         first_name = input$first_name,
@@ -52,7 +56,6 @@ mod_speaker_data_entry_server <- function(
       }
 
     })
-
 
       observeEvent(input$button_continue, {
           util_shiny_remove_and_hide_flex("div_speaker_info_entry")

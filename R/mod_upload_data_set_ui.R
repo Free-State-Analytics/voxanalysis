@@ -28,16 +28,16 @@ mod_upload_data_set_ui <- function(id) {
                   )
                 ),
                 shinyjs::hidden(
-                  div(id = NS(id, "div_update_speaker_data"),
-                      class = "mb-3",
-                      mod_speaker_data_info_ui(NS(id, "speaker_info"))
+                  p(id = NS(id, "wrong_date_format_message"),
+                    class="text-warning-emphasis",
+                    icon("circle-exclamation"),
+                    'All evaluation date entries must use "yyyy-mm-dd" format.'
                   )
                 ),
                 shinyjs::hidden(
-                  p(id = NS(id, "same_date_message"),
-                    class="text-info-emphasis",
-                    icon("circle-exclamation"),
-                    "Note: The data set you uploaded includes entries for today's date. Any new entries will be analyzed with these previous entries, unless you change the evaluation date in table above or the evaluation date in the source file."
+                  div(id = NS(id, "div_update_speaker_data"),
+                      class = "mb-3",
+                      mod_speaker_data_info_ui(NS(id, "speaker_info"))
                   )
                 ),
                 shinyjs::hidden(
@@ -59,7 +59,7 @@ mod_upload_data_set_ui <- function(id) {
     ),
     shinyjs::hidden(
       div(id = NS(id, "div_upload_to_data_entry"),
-          mod_response_entry_ui(NS(id, "upload_to_data_entry"))
+          mod_evaluation_date_entry_ui(NS(id, "upload_to_data_entry"))
       )
     ),
     shinyjs::hidden(

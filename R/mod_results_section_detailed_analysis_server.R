@@ -14,9 +14,32 @@ mod_results_section_detailed_analysis_server <- function(
       }) %>%
         bindCache(df_input_response)
 
-      output$analysis_results_cochrans_q_table <- renderTable({
-        table_cochrans_q_test(df_input_response)
-      }, width = "100%", colnames = FALSE) %>%
+      output$analysis_results_cochrans_q_table <- render_gt({
+        table_cochrans_q_test(df_input_response) %>%
+          gt() %>%
+          tab_style(
+            style = list(
+              cell_text(color = "#212529")
+            ),
+            locations = cells_body(
+              columns = everything()
+            )
+          ) %>%
+          tab_style(
+            style = list(
+              cell_text(align = "right", color = "#212529")
+            ),
+            locations = cells_body(
+              columns = 2
+            )
+          ) %>%
+          tab_options(
+            column_labels.hidden = TRUE,
+            table.width = pct(100),
+            table.background.color = "#FF000000",
+            table_body.hlines.color = "#FF000000"
+          )
+      }, width = "100%") %>%
         bindCache(df_input_response)
 
       output$analysis_results_speakers_score <- renderUI({

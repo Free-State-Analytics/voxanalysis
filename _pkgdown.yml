@@ -4,6 +4,9 @@ title: VOX Analysis
 description: An R package and shiny application for autism spectrum disorder diagnosis
 template:
   bootstrap: 5
+  bslib:
+    base_font: {google: "Quicksand"}
+    heading_font: {google: "Quicksand"}
 
 navbar:
   structure:

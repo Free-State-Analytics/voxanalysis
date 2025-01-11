@@ -36,20 +36,31 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
 
         if (!is.null(result$warning)) {
           shinyjs::hide("div_update_speaker_data")
+          shinyjs::hide("wrong_date_format_message")
           shinyjs::show("error_message")
           return()
         }
 
+        ### Check that date formats are correct
+        ind_wrong_date_format <- util_check_date_format(result$df_to_upload$date_of_evaluation)
+        if (!ind_wrong_date_format) {
+          shinyjs::hide("div_update_speaker_data")
+          shinyjs::show("wrong_date_format_message")
+          return()
+        }
+        ## Check date all other fields
         check_data_upload <- util_check_data_upload(result$df_to_upload)
 
         if (check_data_upload == "Bad") {
           shinyjs::hide("div_update_speaker_data")
+          shinyjs::hide("wrong_date_format_message")
           shinyjs::show("error_message")
           return()
         }
 
         if (ind_add_new_data) {
           shinyjs::hide("error_message")
+          shinyjs::hide("wrong_date_format_message")
           shinyjs::show("button_continue",
                         anim = TRUE,
                         animType = "fade")
@@ -58,6 +69,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
 
         if (!ind_add_new_data) {
           shinyjs::hide("error_message")
+          shinyjs::hide("wrong_date_format_message")
           shinyjs::show("div_run_report_buttons",
                         anim = TRUE,
                         animType = "fade")
@@ -77,12 +89,6 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
                  date_of_birth = as.Date(.data$date_of_birth, origin = "1970-01-01")) %>%
           select(any_of(c("first_name", "last_name", "date_of_birth", "date_of_evaluation", "language_spoken", "gender"))) %>%
           distinct()
-
-        if (ind_add_new_data && rv$df_input_speaker_info$date_of_evaluation == Sys.Date()) {
-          shinyjs::show("same_date_message")
-        } else {
-          shinyjs::hide("same_date_message")
-        }
 
         shinyjs::show("div_update_speaker_data")
         updated_speaker_data <- mod_speaker_data_info_server(
@@ -112,13 +118,11 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
     ### The code below is for the interactions with the buttons to continue the workflow.
 
     observeEvent(input$button_run_report, {
-
       ### We need to change the evaluation date in df_input_resopnse, if the use had changed it.
-      if (unique(rv$df_input_response$date_of_evaluation) != rv$df_input_speaker_info$date_of_evaluation) {
+      if (!rv$df_input_speaker_info$date_of_evaluation %in% unique(rv$df_input_response$date_of_evaluation)) {
         rv$df_input_response <- rv$df_input_response %>%
           mutate(date_of_evaluation = rv$df_input_speaker_info$date_of_evaluation)
       }
-
       util_shiny_remove_and_hide_flex("div_data_upload")
       shinyjs::show("div_upload_to_results",
                     anim = TRUE,
@@ -141,7 +145,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
       df_input_response_previous <- rv$df_input_response %>%
         select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
 
-      mod_response_entry_server(
+      mod_evaluation_date_entry_server(
         "upload_to_data_entry",
         df_input_speaker_info = rv$df_input_speaker_info,
         df_input_response_previous = df_input_response_previous

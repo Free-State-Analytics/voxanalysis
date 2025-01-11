@@ -111,8 +111,7 @@ data("df_input_response_example")
 # Generate a VOX line chart across verbal episodes
 plot_vox_line(
   df_input_response = df_input_response_example,
-  ind_hide_heading = FALSE,
-  ind_doc_version = TRUE
+  ind_hide_heading = FALSE
   )
 ```
 
@@ -135,8 +134,25 @@ of Shapers at Work. \[Bio coming soon\]
 
 ### Dr. Alonzo Andrews - VOX Analysis Researcher
 
-Dr. Andrews is a behavioral specialist in verbal behavior and co-founder
-of Shapers at Work. \[Bio coming soon\]
+Dr. Andrews served as the director of the Autism Treatment Center in San
+Antonio for 24 years, where he led the delivery of behavioral services
+for individuals with autism spectrum disorders. His work included
+developing residential programs for children and adults, operating a
+state-certified private school, and providing outpatient rehabilitation
+therapies. Currently, he provides behavioral consultation for a school
+district in San Antonio and has been teaching courses at the University
+of Texas at San Antonio since 2013.
+
+Alonzo has co-authored numerous publications in esteemed journals,
+including *The Journal of Autism and Developmental Disorders*, The
+*Analysis of Verbal Behavior*, and *Behavior Analysis in Practice*. His
+clinical interests span a wide range of innovative projects, such as
+biomedical interventions, video modeling, remote functional assessments,
+autism-friendly architectural design, and challenging behavior
+interventions. He has also worked on developing a computer-simulation
+training program for caregivers of children with autism, reflecting his
+commitment to advancing both research and practical applications in the
+field.
 
 ### Taylor Rodgers - Project Manager & Package Developer
 

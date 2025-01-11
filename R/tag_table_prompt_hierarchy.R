@@ -28,7 +28,7 @@ tag_table_prompt_hierarchy <- function(table_prompt_hierarchy) {
   })
 
   tag_to_return <- tags$table(
-     class = "table border",
+     class = "table border small table-sm",
      tags$thead(class = "table-input",
        tags$tr(class = "table-input border bg-primary-subtle",
          tags$th(scope="col", class = "ps-3 text-body", "Percent"),
