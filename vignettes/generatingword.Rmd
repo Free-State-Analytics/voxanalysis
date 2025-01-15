@@ -1,0 +1,37 @@
+---
+title: "How to Generate Word Doc Report"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How to Generate Reports}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(voxanalysis)
+```
+
+If the user knows how to use R and has downloaded the `voxanalysis` pacakge, they can use the function below to generate a Word Doc report. See `?util_generate_word_doc_report` for more information.
+
+```{r, eval = FALSE}
+# Load example data sets
+data("df_input_speaker_info_example")
+data("df_input_response_example")
+
+# Generate a Word document report
+util_generate_word_doc_report(
+  df_input_speaker_info = df_input_speaker_info_example,
+  df_input_response = df_input_response_example,
+  file_name = "test.docx"
+)
+
+```
+
+Note that using `util_generate_word_doc_report` can be tedious when it comes to data management. A user must follow the [data model](https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html) exactly, otherwise the Word Doc will not generate.

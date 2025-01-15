@@ -10,7 +10,10 @@ mod_results_primary_ui <- function(id) {
         div(class = "row justify-content-between px-4",
             div(class = "col-7",
                 h3("VOX Analysis",
-                   p(class="lead", "A Comprehensive Report"))
+                   p(class="lead",
+                     "A Comprehensive Report"
+                   )
+                )
             ),
             div(class = "col-5",
                 shinyjs::hidden(
