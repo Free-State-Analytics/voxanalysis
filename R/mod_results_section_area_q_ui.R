@@ -26,7 +26,7 @@ mod_results_section_area_q_ui <- function(id) {
                               div(class = "card-body m-auto",
                                 h5(class = "d-flex justify-content-between",
                                   "Area Q Plot",
-                                   tag_help_link(NS(id, "link"), page = "articles/datavizandcharts.html#area-q")),
+                                   tag_help_link(NS(id, "link"), page = "articles/datavizandcharts.html#area-q-plot")),
                                 p("The Area Q plot helps visualize variance."),
                                 p("A child with normal language development will have roughly equal points on each axis."),
                                 p("A child with abnormal language development will have unequal points on each axis.")
