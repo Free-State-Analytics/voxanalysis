@@ -10,6 +10,11 @@ mod_speaker_data_entry_ui <- function(id) {
         div(class = "card card-border pb-3 mt-3",
             div(class = "card-body px-4",
                 h4("Provide Speaker Info"),
+                h4(
+                  class = "d-flex justify-content-between",
+                  span("Provide Speaker Info"),
+                  tag_help_link(NS(id, "help_link"), page = "articles/generatingreports.html#provide-speaker-info")
+                ),
                 tag_speaker_input_form(id),
                 shinyjs::hidden(
                   p(id = NS(id, "warning_message"),
