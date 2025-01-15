@@ -6,7 +6,8 @@ articles:
   datamodel: datamodel.html
   datavizandcharts: datavizandcharts.html
   generatingreports: generatingreports.html
-last_built: 2025-01-11T16:23Z
+  generatingword: generatingword.html
+last_built: 2025-01-15T14:04Z
 urls:
   reference: https://free-state-analytics.github.io/voxanalysis/reference
   article: https://free-state-analytics.github.io/voxanalysis/articles
