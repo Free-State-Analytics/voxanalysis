@@ -30,7 +30,7 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="https://free-state-analytics.github.io/voxanalysis/">Home</a></li>
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
@@ -41,12 +41,13 @@
     <li><a class="dropdown-item" href="../articles/generatingword.html">How to Generate Word Doc Report</a></li>
   </ul>
 </li>
-<li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul>
 <ul class="navbar-nav">
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/Free-State-Analytics/voxanalysis"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -72,31 +73,59 @@
 <p>The <code>voxanalysis</code> package uses standardized data
 definitions, which are applied consistently across package documentation
 and the VOX Analysis Application.</p>
-<p><strong>VOX Analysis</strong>: A <em>Verbal Operant Experimental</em>
-Analysis assesses language development balance in a speaker to help
-identify autism spectrum disorder. In this process, a listener records
-responses during verbal episodes (often play therapy). These recordings
-are entered into the VOX Analysis Application, which then runs
-measurements and generates data visualizations to evaluate language
-development balance.</p>
-<p><strong>VOX Analysis Application</strong>: An R Shiny application
-included in the <code>voxanalysis</code> package. Users without R
-programming experience can use this application to record evaluation
-results and generate reports.</p>
-<p><strong>Evaluation</strong>: A play therapy session in which the
-listener engages with the speaker to elicit responses.</p>
-<p><strong>Speaker</strong>: The subject of the VOX Analysis, undergoing
-evaluation for autism spectrum disorder.</p>
-<p><strong>Listener</strong>: The individual who interacts with the
-speaker during the evaluation. This may be a behavioral analyst,
-therapist, or clinician trained to conduct the evaluation.</p>
-<p><strong>User</strong>: The individual using the VOX Analysis
-Application or functions within the <code>voxanalysis</code>
-package.</p>
-<p><strong>Referent</strong>: An object the listener interacts with
-during the analysis, typically a toy.</p>
-<p><strong>Response type,</strong> <em>(or verbal operant)</em>: A type
-of response, commonly abbreviated as “CLEaR,” which stands for:</p>
+<div class="section level5">
+<h5 id="vox-analysis">VOX Analysis<a class="anchor" aria-label="anchor" href="#vox-analysis"></a>
+</h5>
+<p>A <em>Verbal Operant Experimental</em> Analysis assesses language
+development balance in a speaker to help identify autism spectrum
+disorder. In this process, a listener records responses during verbal
+episodes (often play therapy). These recordings are entered into the VOX
+Analysis Application, which then runs measurements and generates data
+visualizations to evaluate language development balance.</p>
+</div>
+<div class="section level5">
+<h5 id="vox-analysis-application">VOX Analysis Application<a class="anchor" aria-label="anchor" href="#vox-analysis-application"></a>
+</h5>
+<p>An R Shiny application included in the <code>voxanalysis</code>
+package. Users without R programming experience can use this application
+to record evaluation results and generate reports.</p>
+</div>
+<div class="section level5">
+<h5 id="evaluation">Evaluation<a class="anchor" aria-label="anchor" href="#evaluation"></a>
+</h5>
+<p>A play therapy session in which the listener engages with the speaker
+to elicit responses.</p>
+</div>
+<div class="section level5">
+<h5 id="speaker">Speaker<a class="anchor" aria-label="anchor" href="#speaker"></a>
+</h5>
+<p>The subject of the VOX Analysis, undergoing evaluation for autism
+spectrum disorder.</p>
+</div>
+<div class="section level5">
+<h5 id="listener">Listener<a class="anchor" aria-label="anchor" href="#listener"></a>
+</h5>
+<p>The individual who interacts with the speaker during the evaluation.
+This may be a behavioral analyst, therapist, or clinician trained to
+conduct the evaluation.</p>
+</div>
+<div class="section level5">
+<h5 id="user">User<a class="anchor" aria-label="anchor" href="#user"></a>
+</h5>
+<p>The individual using the VOX Analysis Application or functions within
+the <code>voxanalysis</code> package.</p>
+</div>
+<div class="section level5">
+<h5 id="referrant">Referrant<a class="anchor" aria-label="anchor" href="#referrant"></a>
+</h5>
+<p>An object the listener interacts with during the analysis, typically
+a toy.</p>
+</div>
+<div class="section level5">
+<h5 id="response-type">Response Type<a class="anchor" aria-label="anchor" href="#response-type"></a>
+</h5>
+<p>Also known as a <em>(or verbal operant)</em>, this is a type of
+response, commonly abbreviated as “CLEaR,” which stands for:</p>
 <ul>
 <li>
 <strong>Conversing</strong>: The speaker’s ability to engage in
@@ -116,14 +145,22 @@ word (e.g., “Say ‘apple’…”).</li>
 something. The listener might remove a referent to prompt the speaker to
 request it back.</li>
 </ul>
-<p><strong>Response</strong>: A binary indicator (1 or 0) denoting
-whether the speaker responded to the listener’s prompt for a given
-response type.</p>
-<p><strong>Verbal Episode</strong>: A time period within the evaluation
-in which three referents are available to the speaker to elicit
-responses based on CLEaR response types. Each evaluation includes 2–4
-verbal episodes.</p>
-  </main>
+</div>
+<div class="section level5">
+<h5 id="response">Response<a class="anchor" aria-label="anchor" href="#response"></a>
+</h5>
+<p>A binary indicator (1 or 0) denoting whether the speaker responded to
+the listener’s prompt for a given response type.</p>
+</div>
+<div class="section level5">
+<h5 id="verbal-episode">Verbal Episode<a class="anchor" aria-label="anchor" href="#verbal-episode"></a>
+</h5>
+<p>A time period within the evaluation in which three referents are
+available to the speaker to elicit responses based on CLEaR response
+types. Each evaluation includes 2–4 verbal episodes.</p>
+</div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
