@@ -10,13 +10,15 @@ template:
 
 navbar:
   structure:
-    - "Home"
-    - text: "Reference"
-      href: "reference/index.html"
-    - text: "Articles"
-      href: "articles/index.html"
+    left: [home, articles, reference]
+    right: [search, github]
   components:
-    repo_link: yes
+    home:
+      text: "Home"
+      href: https://free-state-analytics.github.io/voxanalysis/
+    github:
+      icon: fa fab fa-github fa-lg
+      href: https://github.com/Free-State-Analytics/voxanalysis
 
 on:
   push:
