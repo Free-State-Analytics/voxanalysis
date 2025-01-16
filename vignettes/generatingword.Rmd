@@ -2,7 +2,7 @@
 title: "How to Generate Word Doc Report"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{How to Generate Reports}
+  %\VignetteIndexEntry{How to Generate Word Doc Report}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

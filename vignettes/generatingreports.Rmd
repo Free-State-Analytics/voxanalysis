@@ -2,7 +2,7 @@
 title: "How to Generate Shiny Report"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{How to Generate Reports}
+  %\VignetteIndexEntry{How to Generate Shiny Report}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
