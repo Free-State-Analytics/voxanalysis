@@ -63,7 +63,7 @@ The **Upload Data Set** prompt appears when the user indicated they wanted to up
 
 ![](images/gen_report_03.png){fig-align="center" width="380"}
 
-A user may also upload any data set, provided it follows the data model [guidelines](https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html). You can also [download this .csv file](assets/df_output_exportable_example.csv) for example.
+A user may also upload any data set, provided it follows the data model [guidelines](https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html). You can also [download this .csv file](data/df_output_exportable_example.csv) for example.
 
 Once the user has uploaded a .csv file, they will have the option to modify the speaker info.
 

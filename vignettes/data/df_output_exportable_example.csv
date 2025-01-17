@@ -1,8 +1,8 @@
-"","first_name","last_name","date_of_birth","language_spoken","gender","date_of_evaluation","referent","conversing","labeling","echoing","requesting"
-"1","John","Doe","2015-01-01","english","female",2024-08-14,"Apple",0,1,1,0
-"2","John","Doe","2015-01-01","english","female",2024-08-14,"Ball",0,0,0,0
-"3","John","Doe","2015-01-01","english","female",2024-08-14,"Tablet",0,0,1,1
-"4","John","Doe","2015-01-01","english","female",2024-08-14,"Pencil",0,1,1,1
-"5","John","Doe","2015-01-01","english","female",2024-08-14,"Army Man",0,0,1,0
-"6","John","Doe","2015-01-01","english","female",2024-08-14,"Mouse",1,1,1,1
-"7","John","Doe","2015-01-01","english","female",2024-08-14,"Ant",0,1,1,0
+"first_name","last_name","date_of_birth","language_spoken","gender","date_of_evaluation","referent","conversing","labeling","echoing","requesting"
+"John","Doe","2015-01-01","english","female",2024-08-14,"Apple",0,1,1,0
+"John","Doe","2015-01-01","english","female",2024-08-14,"Ball",0,0,0,0
+"John","Doe","2015-01-01","english","female",2024-08-14,"Tablet",0,0,1,1
+"John","Doe","2015-01-01","english","female",2024-08-14,"Pencil",0,1,1,1
+"John","Doe","2015-01-01","english","female",2024-08-14,"Army Man",0,0,1,0
+"John","Doe","2015-01-01","english","female",2024-08-14,"Mouse",1,1,1,1
+"John","Doe","2015-01-01","english","female",2024-08-14,"Ant",0,1,1,0
