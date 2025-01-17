@@ -33,7 +33,7 @@ There are four specific data sets that users will interact with, either directly
 * **Summary** - An aggregate of the Response data set, where a total count of positive responses by response type grouped by evaluation date.
 * **Upload & Export** - A combination of Response and Speaker. It is used by the application for uploading and exporting data.
 
-For VOX Analysis application users (non-R users), [Upload & Export](#dataupload) is the data structure to familiarize. The application will export data that follows this structure. If a user wants to modify or add data directly to this data set, they must ensure they follow the structure outlined in this page. Otherwise, the application will reject any attempt to upload the data set.
+For VOX Analysis application users (non-R users), [Upload & Export](#dataupload) is the data structure to familiarize. (You can [download this .csv file](assets/df_output_exportable_example.csv) for example.) The application will export data that follows this structure. If a user wants to modify or add data directly to this data set, they must ensure they follow the structure outlined in this page. Otherwise, the application will reject any attempt to upload the data set. 
 
 For R users, [Response](#responsedata), [Summary](#speakerdata), and [Speaker](#summarizedata) are useful data structures to familiarize. Nearly every function for variance calculations and data visualizations use these structures.
 
@@ -200,7 +200,7 @@ kableExtra::kable(col.names = c("Column Name", "Description"))
 
 **Note: application users MUST follow this structure when modifying .csv downloads.** The application exports this data in a way that it can be re-uploaded. This gives the user the ability to append new data overtime. If a user modifies column names, column order, or adds ill-formatted entries, the application will reject the .csv file when the user uploads it.
 
-When used as a parameter in `voxanalysis` functions, this data set is called `df_output_exportable`.
+When used as a parameter in `voxanalysis` functions, this data set is called `df_output_exportable`. You can also [download this .csv file](assets/df_output_exportable_example.csv) for example.
 
 A sample data set can be generated with:
 
