@@ -1,6 +1,8 @@
 ---
 title: "How to Generate Shiny Report"
 output: rmarkdown::html_vignette
+resource_files:
+  - data/df_output_exportable_example.csv
 vignette: >
   %\VignetteIndexEntry{How to Generate Shiny Report}
   %\VignetteEngine{knitr::rmarkdown}
