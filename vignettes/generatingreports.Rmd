@@ -61,7 +61,7 @@ The **Upload Data Set** prompt appears when the user indicated they wanted to up
 
 ![](images/gen_report_03.png){fig-align="center" width="380"}
 
-A user may also upload any data set, provided it follows the data model [guidelines](https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html).
+A user may also upload any data set, provided it follows the data model [guidelines](https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html). You can also [download this .csv file](assets/df_output_exportable_example.csv) for example.
 
 Once the user has uploaded a .csv file, they will have the option to modify the speaker info.
 
@@ -79,7 +79,7 @@ A user that chooses to append an existing .csv file with new data must specify t
 
 The **Provide Speaker Responses** prompt asks the user for the number of referents (i.e., toys) used in the evaluation. This will change the number of rows found in the input table below.
 
-The user will then need to provide unique referent names and the responses (1 = Positive Response, 0 = No Response) to those referents based on the verbal oeprant (CLEaR).
+The user will then need to provide unique referent names and the responses (1 = Positive Response, 0 = No Response) to those referents based on the verbal operant (CLEaR).
 
 ![](images/gen_report_06.png){fig-align="center" width="380"}
 
