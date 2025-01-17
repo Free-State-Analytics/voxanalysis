@@ -95,12 +95,12 @@ Speaker. It is used by the application for uploading and exporting
 data.</li>
 </ul>
 <p>For VOX Analysis application users (non-R users), <a href="#dataupload">Upload &amp; Export</a> is the data structure to
-familiarize. (You can <a href="assets/df_output_exportable_example.csv">download this .csv
-file</a> for example.) The application will export data that follows
-this structure. If a user wants to modify or add data directly to this
-data set, they must ensure they follow the structure outlined in this
-page. Otherwise, the application will reject any attempt to upload the
-data set.</p>
+familiarize. (You can <a href="data/df_output_exportable_example.csv">download this .csv file</a>
+for example.) The application will export data that follows this
+structure. If a user wants to modify or add data directly to this data
+set, they must ensure they follow the structure outlined in this page.
+Otherwise, the application will reject any attempt to upload the data
+set.</p>
 <p>For R users, <a href="#responsedata">Response</a>, <a href="#speakerdata">Summary</a>, and <a href="#summarizedata">Speaker</a> are useful data structures to
 familiarize. Nearly every function for variance calculations and data
 visualizations use these structures.</p>
@@ -360,8 +360,8 @@ append new data overtime. If a user modifies column names, column order,
 or adds ill-formatted entries, the application will reject the .csv file
 when the user uploads it.</p>
 <p>When used as a parameter in <code>voxanalysis</code> functions, this
-data set is called <code>df_output_exportable</code>. You can also <a href="assets/df_output_exportable_example.csv">download this .csv
-file</a> for example.</p>
+data set is called <code>df_output_exportable</code>. You can also <a href="data/df_output_exportable_example.csv">download this .csv file</a>
+for example.</p>
 <p>A sample data set can be generated with:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a></span><span class="op">)</span></span>
