@@ -7,6 +7,9 @@ template:
   bslib:
     base_font: {google: "Quicksand"}
     heading_font: {google: "Quicksand"}
+  params:
+    assets:
+      - inst/pkgdown/assets
 
 navbar:
   structure:
