@@ -70,7 +70,7 @@ assessment.
 A user can install `{voxanalysis}` with:
 
 ``` r
-devtools::install_github("Free-State-Analytics/voxanalysis")
+devtools::install_github("Free-State-Analytics/voxanalysis", ref = "dev")
 ```
 
 <br> <br>
