@@ -48,8 +48,10 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
           select(contains(c("referent", "conversing", "labeling", "echoing", "requesting"))) %>%
           pivot_longer(everything()) %>%
           filter(!grepl("referent", .data$name)) %>%
+          filter(.data$value != "") %>%
           filter(is.na(as.numeric(.data$value)) | as.numeric(.data$value) > 1 | as.numeric(.data$value) < 0)
       )
+
       for (i in 1:nrow(wrong_digits_check)) {
         updateTextInput(session, wrong_digits_check[i, "name"], value = "")
       }
