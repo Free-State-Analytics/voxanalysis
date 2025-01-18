@@ -31,7 +31,7 @@ mod_upload_data_set_ui <- function(id) {
                   p(id = NS(id, "wrong_date_format_message"),
                     class="text-warning-emphasis",
                     icon("circle-exclamation"),
-                    'All evaluation date entries must use "yyyy-mm-dd" format.'
+                    'All evaluation and birth date entries must use "yyyy-mm-dd" format.'
                   )
                 ),
                 shinyjs::hidden(
