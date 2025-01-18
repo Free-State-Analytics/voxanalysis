@@ -6,8 +6,8 @@ mod_starting_page_ui <- function(id) {
 
   tagList(
     div(class = "d-flex flex-row",
-        style = "height: 110vh;",
         div(class = "px-1 border-end",
+            style = "position: sticky; top: 0; height: 100vh;",
             div(class = "text-primary text-center mt-5",
                 div(class = "my-5",
                     actionButton(
@@ -101,7 +101,6 @@ mod_starting_page_ui <- function(id) {
 
     )
   )
-
 
 
 }
