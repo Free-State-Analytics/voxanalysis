@@ -62,7 +62,7 @@ Developed by Dr. Lee Mason and Dr. Alonzo Andrews, co-founders of Shapers at Wor
 A user can install `{voxanalysis}` with:
 
 ```{r, eval = FALSE}
-devtools::install_github("Free-State-Analytics/voxanalysis")
+devtools::install_github("Free-State-Analytics/voxanalysis", ref = "dev")
 ```
 
 <br>
