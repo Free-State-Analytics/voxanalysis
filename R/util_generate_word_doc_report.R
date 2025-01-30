@@ -7,6 +7,7 @@
 #' @param file_name A character string specifying the name of the exported file, including the `.docx` extension.
 #' @import quarto
 #' @import dplyr
+#' @import flextable
 #'
 #' @examples
 #' \dontrun{
@@ -29,6 +30,10 @@ util_generate_word_doc_report <- function(
     df_input_speaker_info = NULL,
     df_input_response,
     file_name) {
+
+  # if (requireNamespace("flextable", quietly = TRUE)) {
+  #   flextable::flextable(data.frame(x = 1)) # Minimal call
+  # }
 
   if (shiny::isRunning()) { ### Only run inside shiny app
     progress <- shiny::Progress$new()

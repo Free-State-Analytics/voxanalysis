@@ -16,6 +16,7 @@ Imports:
     bslib,
     config,
     dplyr,
+    flextable,
     ggplot2,
     ggradar,
     ggthemes,
