@@ -30,9 +30,20 @@ util_generate_word_doc_report <- function(
     df_input_response,
     file_name) {
 
+  if (shiny::isRunning()) { ### Only run inside shiny app
+    progress <- shiny::Progress$new()
+    progress$set(message = "Preparing report download...", value = 0)
+    Sys.sleep(1)
+  }
+
+
   df_summarized_response <- util_summarize_response(df_input_response) %>%
-      slice_max(.data$date_of_evaluation,
-                n = 2)
+    slice_max(.data$date_of_evaluation, n = 2)
+
+  if (shiny::isRunning()) { ### Only run inside shiny app
+    progress$set(message = "Compiling data...", value = 0.3)
+    Sys.sleep(1)
+  }
 
   params <- list(
     df_input_speaker_info = df_input_speaker_info,
@@ -40,11 +51,25 @@ util_generate_word_doc_report <- function(
     df_summarized_response = df_summarized_response
   )
 
+  qmd_file <- system.file("reports", "printable_report.qmd", package = "voxanalysis")
+
+  if (qmd_file == "") stop("Quarto file not found in installed package!")
+
+  if (shiny::isRunning()) { ### Only run inside shiny app
+    progress$set(message = "Rendering report...", detail = "(this may take up to a minute)", value = .5)
+  }
+
   quarto_render(
-    "inst/reports/printable_report.qmd",
+    qmd_file,
     execute_params = params,
     output_file = file_name
   )
+
+  if (shiny::isRunning()) { ### Only run inside shiny app
+    progress$set(message = "Downloading...", detail = "", value = .9)
+    Sys.sleep(1)
+    progress$set(message = "Download complete.", value = 1)
+  }
 
 }
 
