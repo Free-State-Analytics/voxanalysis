@@ -12,7 +12,7 @@ execute:
 ---
 
 ```{r results='asis'}
-devtools::load_all()
+library(voxanalysis)
 library(dplyr)
 library(flextable)
 ### quarto_render changes date fields to a numeric value. This explicitly returns them to a date value.
