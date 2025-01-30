@@ -7,6 +7,7 @@
 #' @param file_name A character string specifying the name of the exported file, including the `.docx` extension.
 #' @import quarto
 #' @import dplyr
+#' @import flextable
 #'
 #' @examples
 #' \dontrun{
