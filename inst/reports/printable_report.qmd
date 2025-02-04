@@ -46,7 +46,7 @@ The table below shows the way `r speaker_full_name` responded:
 
 ```{r}
 
-if (unique(df_input_response$date_of_evaluation) > 1) {
+if (length(unique(df_input_response$date_of_evaluation)) > 1) {
   data_to_pass <- df_input_response %>% 
     rename(`Evaluation Date` = "date_of_evaluation",
            Referent = "referent",
