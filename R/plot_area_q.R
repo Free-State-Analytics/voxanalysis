@@ -37,15 +37,17 @@ plot_area_q <- function(df_summarized_response, date_primary, ind_doc_version = 
            Requesting = "requesting",
            Conversing = "conversing")
 
+  print(dat_for_plot)
+
   if (nrow(dat_for_plot) != 1) {
     dat_for_plot <- dat_for_plot %>%
       mutate(priority = ifelse(.data$date_of_evaluation == as.Date(date_primary), 1, 2)) %>%
       arrange(desc(.data$priority)) %>%
       select(-"priority")
-    colors <- c("#33808040", "#338080E6")
+    colors <- c("#AFCFCF", "#439393")
     names(colors) <- c(dat_for_plot$date_of_evaluation[1], dat_for_plot$date_of_evaluation[2])
   } else {
-    colors <- "#338080E6"
+    colors <- "#439393"
   }
 
   if (ind_doc_version) {
