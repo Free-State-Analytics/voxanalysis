@@ -10,6 +10,7 @@ Authors@R:
 Description: An autism diagnosis application that evaluates the language
     development of a speaker.
 License: MIT + file LICENSE
+Depands: R (>= 4.4.2)
 Remotes:
     ricardo-bion/ggradar
 Imports: 
@@ -18,7 +19,7 @@ Imports:
     dplyr,
     flextable,
     ggplot2,
-    ggradar,
+    ggradar (>= 0.2),
     ggthemes,
     golem,
     gt,
