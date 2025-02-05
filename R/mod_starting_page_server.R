@@ -66,6 +66,26 @@ mod_starting_page_server <- function(id) {
 
     })
 
+    observeEvent(input$button_contact, {
+      showModal(modalDialog(
+        div(
+          h4("Contact Us"),
+          p("Email us at ", a("admin@shapersatwork.com", href = "mailto:admin@shapersatwork.com")),
+          actionButton(NS(id, "close_email"), "Close", class = "btn btn-primary")
+        ),
+        easyClose = TRUE,
+        footer = NULL
+      ))
+    })
+
+    observeEvent(input$close_email, {
+      removeModal()
+    })
+
+    observeEvent(input$button_report_bug, {
+      shinyjs::runjs("window.open('https://github.com/Free-State-Analytics/voxanalysis/issues/new?template=blank-issue.md', '_blank');")
+    })
+
 
   })
 }
