@@ -106,11 +106,6 @@ See <code><a href="../reference/plot_area_q.html">?plot_area_q</a></code> for mo
 <span>  ind_doc_version <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 <p><br></p>
-<pre><code><span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 5</span></span></span>
-<span><span class="co">#&gt;   date_of_evaluation Labeling Echoing Requesting Conversing</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> 2024-08-23                4       5          2          1</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> 2024-08-14                3       5          3          1</span></span></code></pre>
 <p><img src="datavizandcharts_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 <p><br><br></p>
 </div>
@@ -131,7 +126,7 @@ See <code><a href="../reference/plot_area_q.html">?plot_area_q</a></code> for mo
 the Area Q plot.</p>
 <p>They also can be generated with <code>calc_centroid</code>. See
 <code><a href="../reference/calc_centroid.html">?calc_centroid</a></code> for more documentation.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_response_example"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/calc_centroid.html">calc_centroid</a></span><span class="op">(</span>df_input_response <span class="op">=</span> <span class="va">df_input_response_example</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $centroid</span></span>
@@ -149,7 +144,7 @@ the Area Q plot.</p>
 </h3>
 <p><em>Note: further documentation is needed</em></p>
 <p>See <code><a href="../reference/plot_vox_line.html">?plot_vox_line</a></code> for more documentation.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_response_example"</span><span class="op">)</span></span>
 <span></span>
@@ -167,7 +162,7 @@ the Area Q plot.</p>
 </h3>
 <p><em>Note: further documentation is needed</em></p>
 <p>See <code><a href="../reference/plot_vox_piechart.html">?plot_vox_piechart</a></code> for more documentation.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example data</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_summarized_response_example"</span><span class="op">)</span></span>
@@ -191,7 +186,7 @@ the Area Q plot.</p>
 <p>The Speaker’s SCoRE is often paired with the pie chart, particularly
 on the summary reports. See <code>?calc_speakers_score</code> for more
 documentation.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_summarized_response_example"</span><span class="op">)</span></span>
 <span></span>
@@ -209,7 +204,7 @@ documentation.</p>
 </h3>
 <p><em>Note: further documentation is needed</em></p>
 <p>See <code><a href="../reference/table_cochrans_q_test.html">?table_cochrans_q_test</a></code> for more documentation.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example response data</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_input_response_example"</span><span class="op">)</span></span>
 <span></span>
@@ -226,7 +221,7 @@ documentation.</p>
 </h3>
 <p><em>Note: further documentation is needed</em></p>
 <p>See <code>?table_prompt_hieararchy</code> for more documentation.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load example data</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"df_summarized_response_example"</span><span class="op">)</span></span>
