@@ -37,8 +37,6 @@ plot_area_q <- function(df_summarized_response, date_primary, ind_doc_version = 
            Requesting = "requesting",
            Conversing = "conversing")
 
-  print(dat_for_plot)
-
   if (nrow(dat_for_plot) != 1) {
     dat_for_plot <- dat_for_plot %>%
       mutate(priority = ifelse(.data$date_of_evaluation == as.Date(date_primary), 1, 2)) %>%

@@ -14,35 +14,49 @@ mod_results_section_detailed_analysis_server <- function(
       }) %>%
         bindCache(df_input_response)
 
-      output$analysis_results_cochrans_q_table <- render_gt({
-        table_cochrans_q_test(df_input_response) %>%
-          gt() %>%
-          tab_style(
-            style = list(
-              cell_text(color = "#212529")
-            ),
-            locations = cells_body(
-              columns = everything()
+
+      if (util_check_for_ones_zeros(df_input_response, ind_check_only_for_zero = FALSE)) {
+        output$analysis_results_cochrans_ui <- renderUI({
+          tag_div_ones_zeros("Cochran's Q")
+        })
+      } else {
+        output$analysis_results_cochrans_q_table <- render_gt({
+
+          table_cochrans_q_test(df_input_response) %>%
+            gt() %>%
+            tab_style(
+              style = list(
+                cell_text(color = "#212529")
+              ),
+              locations = cells_body(
+                columns = everything()
+              )
+            ) %>%
+            tab_style(
+              style = list(
+                cell_text(align = "right", color = "#212529")
+              ),
+              locations = cells_body(
+                columns = 2
+              )
+            ) %>%
+            tab_options(
+              column_labels.hidden = TRUE,
+              table.width = pct(100),
+              table.background.color = "#FF000000",
+              table_body.hlines.color = "#FF000000"
             )
-          ) %>%
-          tab_style(
-            style = list(
-              cell_text(align = "right", color = "#212529")
-            ),
-            locations = cells_body(
-              columns = 2
-            )
-          ) %>%
-          tab_options(
-            column_labels.hidden = TRUE,
-            table.width = pct(100),
-            table.background.color = "#FF000000",
-            table_body.hlines.color = "#FF000000"
-          )
-      }, width = "100%") %>%
-        bindCache(df_input_response)
+        }, width = "100%") %>%
+          bindCache(df_input_response)
+      }
+
+
+
 
       output$analysis_results_speakers_score <- renderUI({
+        if (util_check_for_ones_zeros(df_input_response, ind_check_only_for_zero = TRUE)) {
+          return(tag_div_ones_zeros("Speaker's score"))
+        }
         tag_kpi(calc_speakers_SCoRE(df_summarized_response), "Speaker's Score")
       }) %>%
         bindCache(df_summarized_response)
@@ -53,6 +67,10 @@ mod_results_section_detailed_analysis_server <- function(
         bindCache(df_summarized_response)
 
       output$analysis_results_hierarchy <- renderUI({
+
+        if (util_check_for_ones_zeros(df_input_response, ind_check_only_for_zero = FALSE)) {
+          return(tag_div_ones_zeros("Prompt hierarchy table"))
+        }
 
         tag_table_prompt_hierarchy(
           table_prompt_hierarchy(df_summarized_response)

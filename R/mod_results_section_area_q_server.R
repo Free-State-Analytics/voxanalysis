@@ -48,15 +48,19 @@ mod_results_section_area_q_server <- function(
 
     output$centroids <- renderUI({
 
+      if (util_check_for_ones_zeros(df_input_response, ind_check_only_for_zero = TRUE)) {
+        return(tag_div_ones_zeros())
+      }
+
       centroids_metrics <- calc_centroid(df_input_response %>%
                                            filter(.data$date_of_evaluation == as.Date(date_primary)))
 
       div(class = "info-div",
-        tag_kpi(paste0("(", centroids_metrics$centroid[1], ", ", centroids_metrics$centroid[2], ")"), "Centroid"),
-        br(),
-        tag_kpi(centroids_metrics$distance, "Centroidal distance"),
-        br(),
-        tag_kpi(centroids_metrics$moment, "First moment of area (Q)")
+          tag_kpi(paste0("(", centroids_metrics$centroid[1], ", ", centroids_metrics$centroid[2], ")"), "Centroid"),
+          br(),
+          tag_kpi(centroids_metrics$distance, "Centroidal distance"),
+          br(),
+          tag_kpi(centroids_metrics$moment, "First moment of area (Q)")
       )
 
     }) %>%
