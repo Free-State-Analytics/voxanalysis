@@ -81,6 +81,10 @@ plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_ve
      ggthemes::theme_pander(
        base_size = 7,
        nomargin = FALSE
+     ) +
+     theme(
+       plot.title = element_text(size = 10),
+       plot.subtitle = element_text(size = 7)
      )
  } else {
    p <- p +
@@ -101,7 +105,7 @@ plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_ve
   if (!ind_hide_heading) {
     p <- p +
       labs(title = "VOX Chart",
-              subtitle = "Results by Verbal Episode")
+           subtitle = "Results by Verbal Episode")
   }
 
   return(p)
