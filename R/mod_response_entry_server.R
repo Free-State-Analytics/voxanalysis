@@ -10,7 +10,6 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
 
 
     df_input_response <- reactive({
-
       df_input_response <- reactiveValuesToList(input) %>%
         as.data.frame() %>%
         select(contains(c("referent_input", "conversing", "labeling", "echoing", "requesting")))
@@ -23,18 +22,22 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
         arrange(.data$row_number)
 
       if (is.null(df_input_response_previous)) {
-        df_input_response <- df_input_response %>%
-          mutate(date_of_evaluation = as.Date(unique(df_input_speaker_info$date_of_evaluation))) %>%
-          mutate(across(c( "conversing", "labeling", "echoing", "requesting"), as.numeric)) %>%
-          select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting") %>%
-          as.data.frame()
+        suppressWarnings(
+          df_input_response <- df_input_response %>%
+            mutate(date_of_evaluation = as.Date(unique(df_input_speaker_info$date_of_evaluation))) %>%
+            mutate(across(c( "conversing", "labeling", "echoing", "requesting"), as.numeric)) %>%
+            select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting") %>%
+            as.data.frame()
+        )
 
       } else {
-        df_input_response <- df_input_response %>%
-          mutate(date_of_evaluation = as.Date(df_input_speaker_info$date_of_evaluation)) %>%
-          mutate(across(c( "conversing", "labeling", "echoing", "requesting"), as.numeric)) %>%
-          select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting") %>%
-          as.data.frame()
+        suppressWarnings(
+          df_input_response <- df_input_response %>%
+            mutate(date_of_evaluation = as.Date(df_input_speaker_info$date_of_evaluation)) %>%
+            mutate(across(c( "conversing", "labeling", "echoing", "requesting"), as.numeric)) %>%
+            select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting") %>%
+            as.data.frame()
+        )
       }
 
       return(df_input_response)
