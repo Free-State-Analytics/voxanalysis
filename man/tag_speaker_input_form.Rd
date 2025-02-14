@@ -8,6 +8,8 @@ tag_speaker_input_form(ns_prefix, ind_evaluation_date = TRUE)
 }
 \arguments{
 \item{ns_prefix}{A character string representing the namespace prefix to be applied to each input field's ID.}
+
+\item{ind_evaluation_date}{A TRUE or FALSE indicator to show the evaluation date in the form.}
 }
 \value{
 A tagList containing multiple Shiny input elements with namespaced IDs, including:

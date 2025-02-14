@@ -10,20 +10,21 @@ Authors@R:
 Description: An autism diagnosis application that evaluates the language
     development of a speaker.
 License: MIT + file LICENSE
+Depands: R (>= 4.4.2)
 Remotes:
     ricardo-bion/ggradar
 Imports: 
     bslib,
     config,
     dplyr,
+    flextable,
     ggplot2,
-    ggradar,
+    ggradar (>= 0.2),
     ggthemes,
     golem,
     gt,
     jsonlite,
     magrittr,
-    pkgload,
     quarto,
     shiny,
     shinycssloaders,
@@ -44,5 +45,5 @@ Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 LazyData: true
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 URL: https://free-state-analytics.github.io/voxanalysis/

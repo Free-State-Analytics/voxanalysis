@@ -6,8 +6,8 @@ mod_starting_page_ui <- function(id) {
 
   tagList(
     div(class = "d-flex flex-row",
-        style = "height: 110vh;",
         div(class = "px-1 border-end",
+            style = "position: sticky; top: 0; height: 100vh;",
             div(class = "text-primary text-center mt-5",
                 div(class = "my-5",
                     actionButton(
@@ -32,17 +32,28 @@ mod_starting_page_ui <- function(id) {
                   )
                 ),
                 div(class = "my-5",
-                  actionButton(
-                    NS(id, "button_report_bug"),
-                    div(
-                      span(style = "font-size: 25px;",
-                           icon("bug")),
-                      p("Report Issue")
-                    ),
-                    class = "btn-sm btn-outline-primary border border-0",
-                    onclick = "window.location.href = 'mailto:taylor.rodgers@freestateanalytics.com?subject=Bug Report for VOX Analysis&body=Please describe the issue here...';"
-                  )
+                    actionButton(
+                      NS(id, "button_report_bug"),
+                      div(
+                        span(style = "font-size: 25px;",
+                             icon("bug")),
+                        p("Open Issue")
+                      ),
+                      class = "btn-sm btn-outline-primary border border-0"
+                    )
                 ),
+                div(class = "my-5",
+                    actionButton(
+                      NS(id, "button_contact"),
+                      div(
+                        span(style = "font-size: 25px;",
+                             icon("envelope")),
+                        p("Contact Us")
+                      ),
+                      class = "btn-sm btn-outline-primary border border-0",
+                      #onclick = "window.location.href = 'mailto:admin@spahersatwork.com?bcc=taylor.rodgers@freestateanalytics.com&subject=Bug Report for VOX Analysis&body=Please describe the issue here...';"
+                    )
+                )
             )
         ),
         div(id = NS(id, "div_select_a_path"),
@@ -101,7 +112,6 @@ mod_starting_page_ui <- function(id) {
 
     )
   )
-
 
 
 }

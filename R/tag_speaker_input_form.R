@@ -4,6 +4,7 @@
 #' The IDs are dynamically generated based on a provided namespace prefix, allowing these inputs to be used within a Shiny module or application with a consistent naming structure.
 #'
 #' @param ns_prefix A character string representing the namespace prefix to be applied to each input field's ID.
+#' @param ind_evaluation_date A TRUE or FALSE indicator to show the evaluation date in the form.
 #'
 #' @return A tagList containing multiple Shiny input elements with namespaced IDs, including:
 #' \itemize{

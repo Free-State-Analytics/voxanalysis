@@ -12,7 +12,7 @@ execute:
 ---
 
 ```{r results='asis'}
-devtools::load_all()
+library(voxanalysis)
 library(dplyr)
 library(flextable)
 ### quarto_render changes date fields to a numeric value. This explicitly returns them to a date value.
@@ -46,7 +46,7 @@ The table below shows the way `r speaker_full_name` responded:
 
 ```{r}
 
-if (unique(df_input_response$date_of_evaluation) > 1) {
+if (length(unique(df_input_response$date_of_evaluation)) > 1) {
   data_to_pass <- df_input_response %>% 
     rename(`Evaluation Date` = "date_of_evaluation",
            Referent = "referent",

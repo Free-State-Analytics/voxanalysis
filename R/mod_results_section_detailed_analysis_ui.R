@@ -42,6 +42,7 @@ mod_results_section_detailed_analysis_ui <- function(id) {
                           ),
                       div(class = "row d-flex align-items-center h-100",
                           div(
+                            uiOutput(NS(id, "analysis_results_cochrans_ui")),
                             tag_spinner(
                               gt_output(NS(id, "analysis_results_cochrans_q_table"))
                             ),

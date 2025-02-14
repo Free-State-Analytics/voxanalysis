@@ -42,12 +42,13 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
         }
 
         ### Check that date formats are correct
-        ind_wrong_date_format <- util_check_date_format(result$df_to_upload$date_of_evaluation)
-        if (!ind_wrong_date_format) {
+        ind_wrong_date_format <- util_check_date_format(result$df_to_upload$date_of_evaluation) && util_check_date_format(result$df_to_upload$date_of_birth)
+        if (!any(ind_wrong_date_format)) {
           shinyjs::hide("div_update_speaker_data")
           shinyjs::show("wrong_date_format_message")
           return()
         }
+
         ## Check date all other fields
         check_data_upload <- util_check_data_upload(result$df_to_upload)
 

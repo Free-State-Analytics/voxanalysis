@@ -16,27 +16,47 @@ knitr::opts_chunk$set(
 
 The `voxanalysis` package uses standardized data definitions, which are applied consistently across package documentation and the VOX Analysis Application.
 
-**VOX Analysis**: A *Verbal Operant Experimental* Analysis assesses language development balance in a speaker to help identify autism spectrum disorder. In this process, a listener records responses during verbal episodes (often play therapy). These recordings are entered into the VOX Analysis Application, which then runs measurements and generates data visualizations to evaluate language development balance.
+##### VOX Analysis
 
-**VOX Analysis Application**: An R Shiny application included in the `voxanalysis` package. Users without R programming experience can use this application to record evaluation results and generate reports.
+A *Verbal Operant Experimental* Analysis assesses language development balance in a speaker to help identify autism spectrum disorder. In this process, a listener records responses during verbal episodes (often play therapy). These recordings are entered into the VOX Analysis Application, which then runs measurements and generates data visualizations to evaluate language development balance.
 
-**Evaluation**: A play therapy session in which the listener engages with the speaker to elicit responses.
+##### VOX Analysis Application
 
-**Speaker**: The subject of the VOX Analysis, undergoing evaluation for autism spectrum disorder.
+An R Shiny application included in the `voxanalysis` package. Users without R programming experience can use this application to record evaluation results and generate reports.
 
-**Listener**: The individual who interacts with the speaker during the evaluation. This may be a behavioral analyst, therapist, or clinician trained to conduct the evaluation.
+##### Evaluation
 
-**User**: The individual using the VOX Analysis Application or functions within the `voxanalysis` package.
+A play therapy session in which the listener engages with the speaker to elicit responses.
 
-**Referent**: An object the listener interacts with during the analysis, typically a toy.
+##### Speaker
 
-**Response type,** *(or verbal operant)*: A type of response, commonly abbreviated as "CLEaR," which stands for:
+The subject of the VOX Analysis, undergoing evaluation for autism spectrum disorder.
+
+##### Listener
+
+The individual who interacts with the speaker during the evaluation. This may be a behavioral analyst, therapist, or clinician trained to conduct the evaluation.
+
+##### User
+
+The individual using the VOX Analysis Application or functions within the `voxanalysis` package.
+
+##### Referrant
+
+An object the listener interacts with during the analysis, typically a toy.
+
+##### Response Type
+
+Also known as a *(or verbal operant)*, this is a type of response, commonly abbreviated as "CLEaR," which stands for:
 
 - **Conversing**: The speaker's ability to engage in conversation with the listener. For instance, the listener might prompt the speaker to finish a sentence (e.g., "You eat an...") or answer a question (e.g., "What do you eat?").
 - **Labeling**: The speaker's ability to name an object. For example, the listener might ask the speaker to identify a referent (e.g., "What are you holding?").
 - **Echoing**: The speaker's ability to repeat a phrase spoken by the listener. The listener might prompt the speaker to echo a word (e.g., "Say 'apple'...").
 - **Requesting**: The speaker's ability to ask for something. The listener might remove a referent to prompt the speaker to request it back.
 
-**Response**: A binary indicator (1 or 0) denoting whether the speaker responded to the listener’s prompt for a given response type.
+##### Response
 
-**Verbal Episode**: A time period within the evaluation in which three referents are available to the speaker to elicit responses based on CLEaR response types. Each evaluation includes 2–4 verbal episodes.
+A binary indicator (1 or 0) denoting whether the speaker responded to the listener’s prompt for a given response type.
+
+##### Verbal Episode
+
+A time period within the evaluation in which three referents are available to the speaker to elicit responses based on CLEaR response types. Each evaluation includes 2–4 verbal episodes.
