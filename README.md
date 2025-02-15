@@ -49,7 +49,7 @@ speaker’s language skills.
 
 <div style="flex: 1; text-align: center;">
 
-<img src="man/figures/main_app.gif" alt="Main App GIF" style="max-width: 80%; margin-top: 50px; height: auto;">
+<img src="man/figures/main_app.gif" alt="Main App GIF" style="max-width: 90%; margin-top: 5px; height: auto;">
 
 </div>
 
