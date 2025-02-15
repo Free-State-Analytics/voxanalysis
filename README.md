@@ -43,6 +43,18 @@ evaluation data to generate comprehensive reports, complete with data
 visualizations and variance measures, offering insight into the
 speaker’s language skills.
 
+</p>
+
+</div>
+
+<div style="flex: 1; text-align: center;">
+
+<img src="man/figures/main_app.gif" alt="Main App GIF" style="max-width: 80%; margin-top: 50px; height: auto;">
+
+</div>
+
+</div>
+
 Developed by Dr. Lee Mason and Dr. Alonzo Andrews, co-founders of
 Shapers at Work, `{voxanalysis}` is grounded in their expertise in
 verbal behavior and autism assessment. Shapers at Work is a consulting
@@ -51,18 +63,6 @@ diagnosis.
 
 (Read more on the VOX Analysis process
 [here](https://www.verbalbehavior.org/vox).)
-
-</p>
-
-</div>
-
-<div style="flex: 1; text-align: center;">
-
-<img src="man/figures/main_app.gif" alt="Main App GIF" style="max-width: 85%; height: auto;">
-
-</div>
-
-</div>
 
 <br> <br>
 
