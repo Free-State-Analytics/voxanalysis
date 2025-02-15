@@ -22,25 +22,35 @@ was designed to assess language development in individuals with autism.
 
 <p>
 
-#### Austism and VOX Analysis
+#### Austism and the VOX Analysis
 
 Autism spectrum disorder often presents unique language development
-patterns. For instance, an individual with autism may excel at
-requesting an object but struggle with responding to questions.
+patterns.
 
-In contrast, people without autism typically exhibit balanced language
-skills, where abilities like requesting and responding are more evenly
-developed.
+For example, an individual with autism may excel at making requests but
+struggle with responding to questions, whereas neurotypical individuals
+tend to develop these skills more evenly.
 
-VOX Analysis leverages in-person evaluations (e.g., play therapy) to
-measure these variations in development. During evaluations, a clinician
-(the “listener”) elicits verbal responses from the individual (the
-“speaker”).
+Using the VOX Analysis Framework, the listener (i.e., the clinician) can
+elicit verbal responses from the speaker (i.e., the patient) through
+structured play-based interactions.
 
-By documenting these interactions, clinicians can use `{voxanalysis}` to
-produce comprehensive reports, complete with data visualizations and
-variance measures, that offer insights into the speaker’s language
-skills and patterns.
+However, documenting these interactions alone does not lead to a
+conclusive diagnosis.
+
+Using the `{voxanalysis}` package, behavioral analysts can analyze
+evaluation data to generate comprehensive reports, complete with data
+visualizations and variance measures, offering insight into the
+speaker’s language skills.
+
+Developed by Dr. Lee Mason and Dr. Alonzo Andrews, co-founders of
+Shapers at Work, `{voxanalysis}` is grounded in their expertise in
+verbal behavior and autism assessment. Shapers at Work is a consulting
+firm dedicated to training specialists in behavioral analysis and autism
+diagnosis.
+
+(Read more on the VOX Analysis process
+[here](https://www.verbalbehavior.org/vox).)
 
 </p>
 
@@ -48,20 +58,21 @@ skills and patterns.
 
 <div style="flex: 1; text-align: center;">
 
-<img src="man/figures/main_app.gif" alt="Main App GIF" style="max-width: 100%; height: auto;">
+<img src="man/figures/main_app.gif" alt="Main App GIF" style="max-width: 85%; height: auto;">
 
 </div>
 
 </div>
 
-Developed by Dr. Lee Mason and Dr. Alonzo Andrews, co-founders of
-Shapers at Work, `{voxanalysis}` is rooted in their expertise in verbal
-behavior and autism diagnosis. Shapers at Work is a consulting firm
-dedicated to training specialists in behavioral analysis and autism
-assessment.
+<br> <br>
 
-(Read more on the VOX Analysis process
-[here](https://www.verbalbehavior.org/vox).)
+## Enterprise Deployment
+
+Any R user can download and run the app using the `{voxanalysis}`
+package. However, many clinics and behavioral specialists may not be
+familiar with R. We recommending contacting either
+<taylor.rodgers@freestateanalytics.com> or <leemason@gmail.com> for help
+deploying or using application.
 
 <br> <br>
 
@@ -77,19 +88,20 @@ devtools::install_github("Free-State-Analytics/voxanalysis", ref = "dev")
 
 ## Running Reports
 
-The easiest way to generate a report is by using the VOX Analysis
-Application, a Shiny app included with {voxanalysis}.
-
-To launch the application, run:
+An R user can generate the interactive VOX Analysis Application with the
+following:
 
 ``` r
 voxanalysis::run_app()
 ```
 
-For users familiar with R, `{voxanalysis}` also supports generating a
-report in MS Word format.
+For more experienced R users, they can generate an MS Word report wih
+the following:
 
 ``` r
+# Load package
+library(voxanalysis)
+
 # Load example data for report generation
 data("df_input_speaker_info_example")
 data("df_input_response_example")
@@ -108,7 +120,7 @@ guide.
 
 <br> <br>
 
-## Data Visualizations and Individual Metrics
+## Generate Individual Data Visualizations and Calculations
 
 Advanced R users can use the individual functions within `{voxanalysis}`
 for data visualizations and calculations. These components are designed
@@ -132,13 +144,17 @@ plot_vox_line(
 
 <br>
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="77%" style="display: block; margin: auto;" />
 
-<br>
+<br> <br>
 
 For more details on available visualization and metric functions, see
 [VOX Visualizations and
 Metrics](https://free-state-analytics.github.io/voxanalysis/articles/datavizandcharts.html).
+
+Advanced R users should also familiarize themselves with the [data
+model](https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html)
+to use these functions appropriately.
 
 <br> <br>
 
@@ -148,21 +164,42 @@ The `{voxanalysis}` package was developed by Lee Mason, Alonzo Andrews,
 and Taylor Rodgers. It was a partnership between their respective
 companies, Shapers at Work and Free State Analytics.
 
-#### Dr. Lee Mason - VOX Analysis Researcher
+#### Lee Mason, PhD, BCBA-D, LBA-TX - VOX Analysis Researcher
 
-Dr. Mason is a behavioral specialist in verbal behavior and co-founder
-of Shapers at Work. \[Bio coming soon\]
+Dr. Lee Mason is an Applied Behavior Analyst at Cook Children’s Health
+Care System and an Associate Professor of Medical Education at the
+Burnett School of Medicine, Texas Christian University. With over two
+decades of experience, he has worked in a variety of settings, including
+recreational, residential, educational, and clinical environments,
+supporting individuals with disabilities.
 
-#### Dr. Alonzo Andrews - VOX Analysis Researcher
+Dr. Mason earned his special education teaching certificate from Stephen
+F. Austin State University in 2004 and began his teaching career in
+rural East Texas public schools. He later earned a PhD in Education from
+Utah State University. His dissertation, *A Behavioral Phenomenological
+Investigation of Multi-User Virtual Learning Environments*, was awarded
+the Outstanding Paper honor by the Society for Information Technology
+and Teacher Education.
 
-Dr. Andrews served as the director of the Autism Treatment Center in San
-Antonio for 24 years, where he led the delivery of behavioral services
-for individuals with autism spectrum disorders. His work included
-developing residential programs for children and adults, operating a
-state-certified private school, and providing outpatient rehabilitation
-therapies. Currently, he provides behavioral consultation for a school
-district in San Antonio and has been teaching courses at the University
-of Texas at San Antonio since 2013.
+Dr. Mason was on the faculty at the University of Texas at San Antonio
+(UTSA) for eight years, where he taught courses on evidence-based
+practices for students with autism. In 2013, he founded the UTSA Autism
+Research Center, which received an Exemplary Program Award from the
+American Council on Rural Special Education. His research on language
+assessment and intervention for children with autism from diverse
+cultural and linguistic backgrounds earned him the President’s
+Distinguished Diversity Award at UTSA.
+
+#### Alonzo Andrews, PhD, BCBA, LBA-TX - VOX Analysis Researcher
+
+Dr. Alonzo Andrews served as the director of the Autism Treatment Center
+in San Antonio for 24 years, where he led the delivery of behavioral
+services for individuals with autism spectrum disorders. His work
+included developing residential programs for children and adults,
+operating a state-certified private school, and providing outpatient
+rehabilitation therapies. Currently, he provides behavioral consultation
+for a school district in San Antonio and has been teaching courses at
+the University of Texas at San Antonio since 2013.
 
 Alonzo has co-authored numerous publications in esteemed journals,
 including *The Journal of Autism and Developmental Disorders*, The
@@ -175,11 +212,28 @@ training program for caregivers of children with autism, reflecting his
 commitment to advancing both research and practical applications in the
 field.
 
-#### Taylor Rodgers - Project Manager & Package Developer
+#### Taylor Rodgers, MS - Project Manager & Package Developer
 
-Taylor Rodgers is an R Shiny developer and project manager. He is
-available for R Shiny consulting and training. Contact
-<taylor@taylorrodgers.com>
+Taylor Rodgers is an analytics product developer and founder of Free
+State Analytics.
+
+Taylor has worked as a data scientist in a variety of industries ranging
+from IT development, health care, senior living, marketing, and
+manufacturing.
+
+Taylor enjoys writing, statistics, programming, and learning about a
+variety of subjects. This has given him a unique opportunity to
+translate complexity into clarity with data related projects, as well as
+being a reliable project manager where communication skills are
+paramount.
+
+Taylor has written two data science books, *Data Work: A Jargon-Free
+Guide to Managing Successful Data Teams* and *R Programming in Plain
+English.*
+
+Taylor earned his Masters in Applied Statistics from the University of
+Kansas Medical School and his Bachelors of Arts in Economics from the
+University of Kansas.
 
 <br> <br>
 
@@ -190,6 +244,6 @@ available for R Shiny consulting and training. Contact
 
 **VOX Analysis Setup & Support**: For assistance with setup or
 customization of the VOX Analysis Application, contact Taylor Rodgers
-(<taylor@taylorrodgers.com>).
+(<taylor.rodgers@freestateanalytics.com>).
 
 <br> <br> <br> <br>
