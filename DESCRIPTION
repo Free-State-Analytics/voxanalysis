@@ -35,6 +35,7 @@ Imports:
     utils
 Suggests: 
     knitr,
+    cowplot,
     rmarkdown,
     kableExtra,
     spelling,
