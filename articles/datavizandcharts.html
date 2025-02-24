@@ -57,7 +57,7 @@
 
 
 
-
+<script src="datavizandcharts_files/kePrint-0.0.1/kePrint.js"></script><link href="datavizandcharts_files/lightable-0.0.1/lightable.css" rel="stylesheet">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
@@ -87,6 +87,7 @@ individually without the report.</p>
 visualizations, and tables using the Shiny application or the
 <code>util_generate_word_doc_report</code> function. Instructions for
 generating a report can be found <a href="./generatingreports.html">here</a>.</p>
+<p><br><br></p>
 </div>
 <div class="section level3">
 <h3 id="using-the-voxanalysis-package-directly">Using the <code>{voxanalysis}</code> Package Directly<a class="anchor" aria-label="anchor" href="#using-the-voxanalysis-package-directly"></a>
@@ -118,11 +119,11 @@ and requesting with the listener.</p>
 <p><img src="datavizandcharts_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
 <p><br></p>
 <p>An R user can generate Area Q Chart using the
-<code>plot_area_q</code> function. The function requires a
-<code>data.frame</code> called <code>df_summarized_response</code> that
-follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#summarizedata">Summary
-Data</a> data model. An example of this <code>data.frame</code> can be
-seen with <code>data("df_summarized_response_example")</code>.</p>
+<code>plot_area_q</code> function.</p>
+<p>The function requires a parameter called
+<code>df_summarized_response</code> that follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#summarizedata">Summary
+Data</a> data model. An example of this data frame can be seen with
+<code>data("df_summarized_response_example")</code>.</p>
 <p>Note that this function can accept only two distinct
 <code>date_of_evalution</code> entry inside
 <code>df_summarized_response</code>. The user will need to set the
@@ -163,37 +164,61 @@ unique <code>date_of_evaluation</code>.</p>
 <p>The results for these calculations vary based on whether a speaker
 has autism.</p>
 <p><br></p>
-<table class="table">
-<thead><tr class="header">
-<th align="left">Measure</th>
-<th align="left">With Autism</th>
-<th align="left">Without Autism</th>
+<table class="table table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+Measure
+</th>
+<th style="text-align:left;">
+With Autism
+</th>
+<th style="text-align:left;">
+Without Autism
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">centroid</td>
-<td align="left">(1.33, -2.67)</td>
-<td align="left">(-0.67, 0)</td>
+<tr>
+<td style="text-align:left;">
+centroid
+</td>
+<td style="text-align:left;">
+(1.33, -2.67)
+</td>
+<td style="text-align:left;">
+(-0.67, 0)
+</td>
 </tr>
-<tr class="even">
-<td align="left">distance</td>
-<td align="left">3</td>
-<td align="left">1</td>
+<tr>
+<td style="text-align:left;">
+distance
+</td>
+<td style="text-align:left;">
+3
+</td>
+<td style="text-align:left;">
+1
+</td>
 </tr>
-<tr class="odd">
-<td align="left">moment</td>
-<td align="left">648</td>
-<td align="left">1980</td>
+<tr>
+<td style="text-align:left;">
+moment
+</td>
+<td style="text-align:left;">
+648
+</td>
+<td style="text-align:left;">
+1980
+</td>
 </tr>
 </tbody>
 </table>
 <p><br></p>
 <p>An R user can generate the Area Q Metrics using the
-<code>calc_centroid</code> function. The function requires a
-<code>data.frame</code> called <code>df_input_response</code> that
-follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#speakerdata">Speaker
-Data</a> data model. An example of this <code>data.frame</code> can be
-seen with <code>data("df_input_response_example")</code>.</p>
+<code>calc_centroid</code> function.</p>
+<p>The function requires a parameter called
+<code>df_input_response</code> that follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#speakerdata">Speaker
+Data</a> data model. An example of this data frame can be seen with
+<code>data("df_input_response_example")</code>.</p>
 <p>Note that this function can accept only one distinct
 <code>date_of_evalution</code> entry inside the
 <code>df_input_response</code>.</p>
@@ -215,11 +240,11 @@ and one without.</p>
 <p><img src="datavizandcharts_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
 <p><br></p>
 <p>An R user can generate the VOX Line Chart using the
-<code>plot_vox_line</code> function. The function requires a
-<code>data.frame</code> called <code>df_input_response</code> that
-follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#speakerdata">Speaker
-Data</a> data model. An example of this <code>data.frame</code> can be
-seen with <code>data("df_input_response_example")</code>.</p>
+<code>plot_vox_line</code> function.</p>
+<p>The function requires a parameter called
+<code>df_input_response</code> that follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#speakerdata">Speaker
+Data</a> data model. An example of this data frame can be seen with
+<code>data("df_input_response_example")</code>.</p>
 <p>Note that this function can accept only one distinct
 <code>date_of_evalution</code> entry inside the
 <code>df_input_response</code>.</p>
@@ -252,11 +277,11 @@ balance in language development.</p>
 <p><img src="datavizandcharts_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
 <p><br></p>
 <p>An R user can generate VOX Piechart using the
-<code>plot_vox_piechart</code> function. The function requires a
-<code>data.frame</code> called <code>df_summarized_response</code> that
-follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#summarizedata">Summary
-Data</a> data model. An example of this <code>data.frame</code> can be
-seen with <code>data("df_summarized_response_example")</code>.</p>
+<code>plot_vox_piechart</code> function.</p>
+<p>The function requires a parameter called
+<code>df_summarized_response</code> that follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#summarizedata">Summary
+Data</a> data model. An example of this data frame can be seen with
+<code>data("df_summarized_response_example")</code>.</p>
 <p>Note that this function can accept only one distinct
 <code>date_of_evalution</code> entry inside the
 <code>df_summarized_response</code>.</p>
@@ -288,26 +313,33 @@ seen with <code>data("df_summarized_response_example")</code>.</p>
 <p>Down below, there is a Speaker’s SCoRE for a speaker with autism and
 a speaker without autism.</p>
 <p><br></p>
-<table class="table">
-<thead><tr class="header">
-<th align="right">With Autism</th>
-<th align="right">Without Autism</th>
+<table class="table table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:right;">
+With Autism
+</th>
+<th style="text-align:right;">
+Without Autism
+</th>
 </tr></thead>
-<tbody><tr class="odd">
-<td align="right">0.6</td>
-<td align="right">0.92</td>
+<tbody><tr>
+<td style="text-align:right;">
+0.6
+</td>
+<td style="text-align:right;">
+0.92
+</td>
 </tr></tbody>
 </table>
 <p><br></p>
 <p>An R user can generate Speaker’s SCoRE using the
-<code>calc_speakers_score</code> function. The function requires a
-<code>data.frame</code> called <code>df_summarized_response</code> that
-follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#summarizedata">Summary
-Data</a> data model. An example of this <code>data.frame</code> can be
-seen with <code>data("df_summarized_response_example")</code>. Note that
-this function can accept only one distinct
-<code>date_of_evalution</code> entry inside the
-<code>df_summarized_response</code>.</p>
+<code>calc_speakers_score</code> function.</p>
+<p>The function requires a parameter called
+<code>df_summarized_response</code> that follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#summarizedata">Summary
+Data</a> data model. An example of this data frame can be seen with
+<code>data("df_summarized_response_example")</code>. Note that this
+function can accept only one distinct <code>date_of_evalution</code>
+entry inside the <code>df_summarized_response</code>.</p>
 <p>See <code>?calc_speakers_score</code> and
 <code><a href="../reference/df_summarized_response_example.html">?df_summarized_response_example</a></code> for more details.</p>
 <p><br></p>
@@ -332,39 +364,63 @@ this function can accept only one distinct
 <p>Down below are Cochran’s Q Test metrics for a speaker with autism and
 a speaker without autism.</p>
 <p><br></p>
-<table class="table">
-<thead><tr class="header">
-<th align="left">Measure</th>
-<th align="right">With Autism</th>
-<th align="right">Without Autism</th>
+<table class="table table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:left;">
+Measure
+</th>
+<th style="text-align:right;">
+With Autism
+</th>
+<th style="text-align:right;">
+Without Autism
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">Cochran’s Q</td>
-<td align="right">7.5000</td>
-<td align="right">0.8200</td>
+<tr>
+<td style="text-align:left;">
+Cochran’s Q
+</td>
+<td style="text-align:right;">
+7.5000
+</td>
+<td style="text-align:right;">
+0.8200
+</td>
 </tr>
-<tr class="even">
-<td align="left">Chance-corrected R</td>
-<td align="right">0.1875</td>
-<td align="right">-0.0952</td>
+<tr>
+<td style="text-align:left;">
+Chance-corrected R
+</td>
+<td style="text-align:right;">
+0.1875
+</td>
+<td style="text-align:right;">
+-0.0952
+</td>
 </tr>
-<tr class="odd">
-<td align="left">P-value</td>
-<td align="right">0.0600</td>
-<td align="right">0.8500</td>
+<tr>
+<td style="text-align:left;">
+P-value
+</td>
+<td style="text-align:right;">
+0.0600
+</td>
+<td style="text-align:right;">
+0.8500
+</td>
 </tr>
 </tbody>
 </table>
 <p><br></p>
 <p>An R user can generate the Cochran’s Q Test using the
-<code>table_cochrans_q_test</code> function. The function requires a
-<code>data.frame</code> called <code>df_input_response</code> that
-follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#speakerdata">Speaker
-Data</a> data model. An example of this <code>data.frame</code> can be
-seen with <code>data("df_input_response_example")</code>. Note that this
-function can accept only one distinct <code>date_of_evalution</code>
-entry inside the <code>df_input_response</code>.</p>
+<code>table_cochrans_q_test</code> function.</p>
+<p>The function requires a parameter called
+<code>df_input_response</code> that follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#speakerdata">Speaker
+Data</a> data model. An example of this data frame can be seen with
+<code>data("df_input_response_example")</code>. Note that this function
+can accept only one distinct <code>date_of_evalution</code> entry inside
+the <code>df_input_response</code>.</p>
 <p>See <code><a href="../reference/table_cochrans_q_test.html">?table_cochrans_q_test</a></code> and
 <code><a href="../reference/df_input_response_example.html">?df_input_response_example</a></code> for more details.</p>
 <p><br></p>
@@ -383,122 +439,272 @@ entry inside the <code>df_input_response</code>.</p>
 <p>The table below shows a speaker with autism. The clinician would
 start an intervention by focusing on…</p>
 <p><br></p>
-<table class="table">
-<thead><tr class="header">
-<th align="right">Percent</th>
-<th align="left">Conversing</th>
-<th align="left">Labeling</th>
-<th align="left">Echoing</th>
-<th align="left">Requesting</th>
+<table class="table table" style="margin-left: auto; margin-right: auto;">
+<thead><tr>
+<th style="text-align:right;">
+Percent
+</th>
+<th style="text-align:left;">
+Conversing
+</th>
+<th style="text-align:left;">
+Labeling
+</th>
+<th style="text-align:left;">
+Echoing
+</th>
+<th style="text-align:left;">
+Requesting
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="right">100.0</td>
-<td align="left">CELR</td>
-<td align="left">LERC</td>
-<td align="left">ELRC</td>
-<td align="left">RELC</td>
+<tr>
+<td style="text-align:right;">
+100.0
+</td>
+<td style="text-align:left;">
+CELR
+</td>
+<td style="text-align:left;">
+LERC
+</td>
+<td style="text-align:left;">
+ELRC
+</td>
+<td style="text-align:left;">
+RELC
+</td>
 </tr>
-<tr class="even">
-<td align="right">91.7</td>
-<td align="left">-</td>
-<td align="left">LER</td>
-<td align="left">ELR</td>
-<td align="left">REL</td>
+<tr>
+<td style="text-align:right;">
+91.7
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+LER
+</td>
+<td style="text-align:left;">
+ELR
+</td>
+<td style="text-align:left;">
+REL
+</td>
 </tr>
-<tr class="odd">
-<td align="right">83.3</td>
-<td align="left">CEL</td>
-<td align="left">LEC</td>
-<td align="left">ELC</td>
-<td align="left">-</td>
+<tr>
+<td style="text-align:right;">
+83.3
+</td>
+<td style="text-align:left;">
+CEL
+</td>
+<td style="text-align:left;">
+LEC
+</td>
+<td style="text-align:left;">
+ELC
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
 </tr>
-<tr class="even">
-<td align="right">75.0</td>
-<td align="left">-</td>
-<td align="left">LE</td>
-<td align="left">EL</td>
-<td align="left">-</td>
+<tr>
+<td style="text-align:right;">
+75.0
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+LE
+</td>
+<td style="text-align:left;">
+EL
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
 </tr>
-<tr class="odd">
-<td align="right">66.7</td>
-<td align="left">CER</td>
-<td align="left">-</td>
-<td align="left">ERC</td>
-<td align="left">REC</td>
+<tr>
+<td style="text-align:right;">
+66.7
+</td>
+<td style="text-align:left;">
+CER
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+ERC
+</td>
+<td style="text-align:left;">
+REC
+</td>
 </tr>
-<tr class="even">
-<td align="right">58.4</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">ER</td>
-<td align="left">RE</td>
+<tr>
+<td style="text-align:right;">
+58.4
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+ER
+</td>
+<td style="text-align:left;">
+RE
+</td>
 </tr>
-<tr class="odd">
-<td align="right">58.3</td>
-<td align="left">CLR</td>
-<td align="left">LRC</td>
-<td align="left">-</td>
-<td align="left">RLC</td>
+<tr>
+<td style="text-align:right;">
+58.3
+</td>
+<td style="text-align:left;">
+CLR
+</td>
+<td style="text-align:left;">
+LRC
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+RLC
+</td>
 </tr>
-<tr class="even">
-<td align="right">50.0</td>
-<td align="left">CE</td>
-<td align="left">LR</td>
-<td align="left">EC</td>
-<td align="left">RL</td>
+<tr>
+<td style="text-align:right;">
+50.0
+</td>
+<td style="text-align:left;">
+CE
+</td>
+<td style="text-align:left;">
+LR
+</td>
+<td style="text-align:left;">
+EC
+</td>
+<td style="text-align:left;">
+RL
+</td>
 </tr>
-<tr class="odd">
-<td align="right">41.7</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">E</td>
-<td align="left">-</td>
+<tr>
+<td style="text-align:right;">
+41.7
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+E
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
 </tr>
-<tr class="even">
-<td align="right">41.6</td>
-<td align="left">CL</td>
-<td align="left">LC</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<tr>
+<td style="text-align:right;">
+41.6
+</td>
+<td style="text-align:left;">
+CL
+</td>
+<td style="text-align:left;">
+LC
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
 </tr>
-<tr class="odd">
-<td align="right">33.3</td>
-<td align="left">-</td>
-<td align="left">L</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<tr>
+<td style="text-align:right;">
+33.3
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+L
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
 </tr>
-<tr class="even">
-<td align="right">25.0</td>
-<td align="left">CR</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">RC</td>
+<tr>
+<td style="text-align:right;">
+25.0
+</td>
+<td style="text-align:left;">
+CR
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+RC
+</td>
 </tr>
-<tr class="odd">
-<td align="right">16.7</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">R</td>
+<tr>
+<td style="text-align:right;">
+16.7
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+R
+</td>
 </tr>
-<tr class="even">
-<td align="right">8.3</td>
-<td align="left">C</td>
-<td align="left">-</td>
-<td align="left">-</td>
-<td align="left">-</td>
+<tr>
+<td style="text-align:right;">
+8.3
+</td>
+<td style="text-align:left;">
+C
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
+<td style="text-align:left;">
+<ul><li></ul>
+</td>
 </tr>
 </tbody>
 </table>
 <p><br></p>
 <p>An R user can generate the Prompt Hierarchy using the
-<code>table_prompt_hieararchy</code> function. The function requires a
-<code>data.frame</code> called <code>df_summarized_response</code> that
-follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#summarizedata">Summary
-Data</a> data model. An example of this <code>data.frame</code> can be
-seen with <code>data("df_summarized_response_example")</code>.</p>
+<code>table_prompt_hieararchy</code> function.</p>
+<p>The function requires a parameter called
+<code>df_summarized_response</code> that follows the <a href="https://free-state-analytics.github.io/voxanalysis/articles/datamodel.html#summarizedata">Summary
+Data</a> data model. An example of this data frame can be seen with
+<code>data("df_summarized_response_example")</code>.</p>
 <p>Note that this function can accept only one distinct
 <code>date_of_evalution</code> entry inside the
 <code>df_summarized_response</code>.</p>
