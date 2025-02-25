@@ -76,45 +76,50 @@ be finished in the next two weeks.</em></p>
 <div class="section level3">
 <h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h3>
-<p>The <code>voxanalysis</code> packages provides many distinct data
+<p>The VOX Analysis Application and Package provide many distinct data
 visualizations and measures of variability to assist a user in
 diagnosing a speaker with autism spectrum disorder.</p>
-<p>This article provides descriptions for the various measures, data
-visualizations, and tables used in VOX Analysis. It also provides (as an
+<p>This article provides descriptions for these various measures, data
+visualizations, and tables found in the reports. It also provides (as an
 extra resource) instructions for R users to produce these resources
-individually without the report.</p>
+using the `{voxanalysis} package, without needing to access the
+application.</p>
 <p>A user can generate a summary report with these measures, data
-visualizations, and tables using the Shiny application or the
-<code>util_generate_word_doc_report</code> function. Instructions for
-generating a report can be found <a href="./generatingreports.html">here</a>.</p>
+visualizations, and tables with the instructions found <a href="./generatingreports.html">here</a>.</p>
 <p><br><br></p>
 </div>
 <div class="section level3">
-<h3 id="using-the-voxanalysis-package-directly">Using the <code>{voxanalysis}</code> Package Directly<a class="anchor" aria-label="anchor" href="#using-the-voxanalysis-package-directly"></a>
+<h3 id="optional-use-voxanalysis-package">Optional: Use <code>{voxanalysis}</code> Package<a class="anchor" aria-label="anchor" href="#optional-use-voxanalysis-package"></a>
 </h3>
-<p>Though the VOX Application is the recommended way for users to
+<p>Though the VOX Application is the recommended way for most users to
 generate reports, R users can generate the same statistical measures,
-data visualizations, and tables found in the reprot using the
-<a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package directly.</p>
+data visualizations, and tables found in the report using the
+<a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package directly. Psychometricians and
+researchers may find this approach more preferable.</p>
 <p>The package’s R functions use the following prefixes:</p>
 <ul>
-<li><p><strong>calc_</strong>, which returns a vector or list with the
-measure of interest</p></li>
-<li><p><strong>plot_</strong>, which returns a data
+<li><p><strong>calc_</strong> functions return a vector or list with the
+measure(s) of interest</p></li>
+<li><p><strong>plot_</strong> functions return a data
 visualization</p></li>
-<li><p><strong>table_</strong>, which returns a data.frame</p></li>
+<li><p><strong>table_</strong> functions return a data.frame</p></li>
 </ul>
 <p><br><br></p>
 </div>
 <div class="section level3">
 <h3 id="area-q-plot">Area Q Plot<a class="anchor" aria-label="anchor" href="#area-q-plot"></a>
 </h3>
-<p>The Area Q plot shows X….</p>
-<p>Down below are two Area Q plots showing a speaker with and without
-autism. The one on the left is a speaker with autism, because there is a
-balance between the four <a href="https://free-state-analytics.github.io/voxanalysis/articles/datadefinitions.html#response-type">response
-types</a>. The speaker with autism shows is not as strong in conversing
-and requesting with the listener.</p>
+<p>The Area Q plot shows a visual representation of the speaker’s verbal
+repertoire, illustrating the balance (or lack thereof) across the four
+<a href="https://free-state-analytics.github.io/voxanalysis/articles/datadefinitions.html#response-type">response
+types</a> (conversing, labeling, echoing, and requesting).</p>
+<p>The two Area Q plots below show two different speakers. The one on
+the left shows a speaker with a verbal repertoire more typical of a
+person with autism, because there is an imbalance between the four
+response types. The labeling and echoing of the speaker with autism is
+disproportionately strong compared to conversing and requesting. The
+speaker on the right shows relative balance in all four response types,
+which is tyipcial of someone without autism.</p>
 <p><br></p>
 <p><img src="datavizandcharts_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
 <p><br></p>
@@ -151,18 +156,29 @@ unique <code>date_of_evaluation</code>.</p>
 <div class="section level3">
 <h3 id="area-q-metrics">Area Q Metrics<a class="anchor" aria-label="anchor" href="#area-q-metrics"></a>
 </h3>
-<p><em>Note: further documentation is needed</em></p>
 <p>The Area Q plot can be supplemented by additional metrics:</p>
 <ol style="list-style-type: decimal">
-<li>Centroid, <em>need definition or description</em>
-</li>
-<li>Centroidal Distance, <em>need definition or description</em>
-</li>
-<li>Moment of Area Q, <em>need definition or description</em>
-</li>
+<li>
+<strong>Centroid</strong> is the geometric center of all four points
+drawn by the plot</li>
+<li>
+<strong>Centroidal Distance</strong> is the distant of the centroid
+from the chart’s origin (0, 0)</li>
+<li>
+<strong>Moment of Area Q</strong> is the area of the polygon
+displayed on the chart</li>
 </ol>
 <p>The results for these calculations vary based on whether a speaker
 has autism.</p>
+<p>A centroidal distance closer to 0 is typical of person without
+autism, whereas a centroidal distance further from 0 indicates greater
+disproportionality their verbal repertoire. If the VOX Analysis contains
+12 referents, the maximum centroidal distance possible is 6, which
+indicates a far higher chance that the speaker has autism.</p>
+<p>Moment of Area Q represents the size of the speaker’s language
+repertoire, as shown on the Area Q plot. A larger number is more typical
+of a person without autism, while a smaller number is more typical of a
+speaker with autism.</p>
 <p><br></p>
 <table class="table table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
@@ -182,10 +198,10 @@ Without Autism
 centroid
 </td>
 <td style="text-align:left;">
-(1.33, -2.67)
+( x = 1.33, y = -2.67)
 </td>
 <td style="text-align:left;">
-(-0.67, 0)
+( x = -0.67, y =0)
 </td>
 </tr>
 <tr>
@@ -233,9 +249,17 @@ Data</a> data model. An example of this data frame can be seen with
 <div class="section level3">
 <h3 id="vox-line-chart">VOX Line Chart<a class="anchor" aria-label="anchor" href="#vox-line-chart"></a>
 </h3>
-<p>The VOX line chart shows…</p>
-<p>Down below shows the VOX line chart for two speakers, one with autism
-and one without.</p>
+<p>The VOX line chart shows the response types over verbal episodes.
+Since each verbal episode attempts to solicit a particular response from
+the speaker, this tells the clinician or behavioral analyst how those
+response vary over the session.</p>
+<p>The two VOX line charts below show two speakers. The speaker on the
+left is more typical of a person with autism. There is more dispersion
+in their response types, which continues across all verbal episodes. The
+speaker on the right is more typical of a person without autism. There
+is more clustering and overlapping of the lines, indicating more
+variability <em>within</em> a response type, as opposed to variability
+<em>between</em> response types.</p>
 <p><br></p>
 <p><img src="datavizandcharts_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
 <p><br></p>
@@ -267,12 +291,18 @@ Data</a> data model. An example of this data frame can be seen with
 <div class="section level3">
 <h3 id="vox-pie-chart">VOX Pie Chart<a class="anchor" aria-label="anchor" href="#vox-pie-chart"></a>
 </h3>
-<p>The VOX pie chart shows…</p>
-<p>Down below shows the VOX pie chart for two speakers, one with autism
-and one without. The speaker in the left chart shows an imbalance in
-their response types. They are strong in echoing and labeling, but
-weaker in conversing and requesting. The speaker on the right has more
-balance in language development.</p>
+<p>The VOX Pie Chart shows a visual representation of the speaker’s
+verbal repertoire, illustrating the balance (or lack thereof) across the
+four <a href="https://free-state-analytics.github.io/voxanalysis/articles/datadefinitions.html#response-type">response
+types</a> (conversing, labeling, echoing, and requesting). The pie chart
+is similar to the Area Q plot, although it is easier for lay people to
+understand and uses a different set of metrics.</p>
+<p>The two VOX Pie Charts below show two different speakers. The speaker
+on the left is more typical of a person with autism. The labeling and
+echoing of the speaker with autism is disproportionately strong compared
+to conversing and requesting. The speaker on the right shows relative
+balance in all four response types, which is more typical of someone
+without autism.</p>
 <p><br></p>
 <p><img src="datavizandcharts_files/figure-html/unnamed-chunk-10-1.png" width="700"></p>
 <p><br></p>
@@ -307,11 +337,14 @@ Data</a> data model. An example of this data frame can be seen with
 <div class="section level3">
 <h3 id="speakers-score">Speaker’s SCoRE<a class="anchor" aria-label="anchor" href="#speakers-score"></a>
 </h3>
-<p>The Speaker’s SCoRE is…</p>
-<p>The Speaker’s SCoRE provides a measure with the
-<code>plot_vox_piechart</code>.</p>
-<p>Down below, there is a Speaker’s SCoRE for a speaker with autism and
-a speaker without autism.</p>
+<p>The Speaker’s SCoRE, which stands for <em>Speech Coefficient of
+Reliability and Engagement</em>, quantifies the findings of the VOX Pie
+Chart to indicate balance or imbalance. The measure provides a range
+from 0 to 1, with 0 being functionally non-verbal and 1 representing a
+fluent verbal repertoire.</p>
+<p>There are two Speaker’s SCoREs show below. The SCoRE on the left is
+more typical of a person with autism. The SCoRE on the right is more
+typical of a person without autism and verbally fluent.</p>
 <p><br></p>
 <table class="table table" style="margin-left: auto; margin-right: auto;">
 <thead><tr>
@@ -331,6 +364,13 @@ Without Autism
 </td>
 </tr></tbody>
 </table>
+<p><br></p>
+<p>Down below is a guide of Speaker’s SCoREs and how they can help a
+behavioral analyst with diagnosis.</p>
+<p><br></p>
+<div style="text-align: center; font-size: 24px; font-weight: bold; color: gray;">
+<p>Coming Soon…</p>
+</div>
 <p><br></p>
 <p>An R user can generate Speaker’s SCoRE using the
 <code>calc_speakers_score</code> function.</p>
@@ -360,7 +400,7 @@ entry inside the <code>df_summarized_response</code>.</p>
 <div class="section level3">
 <h3 id="cochrans-q-test-table">Cochran’s Q Test Table<a class="anchor" aria-label="anchor" href="#cochrans-q-test-table"></a>
 </h3>
-<p>Cochran’s Q Test…</p>
+<p>Cochran’s Q Test looks at the natural variability</p>
 <p>Down below are Cochran’s Q Test metrics for a speaker with autism and
 a speaker without autism.</p>
 <p><br></p>
