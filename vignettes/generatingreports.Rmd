@@ -25,7 +25,7 @@ The `voxanalysis` package provides the user two ways to generate a report:
 -   The R Shiny application
 -   Word Doc generation
 
-We recommend non-R users rely on the R Shiny application. In addition to generate clean reports and analysis, the application provides user-friendly prompts to help users enter and save data. A user's IT team can help install the application or you can reach out to taylor.rodgers@freestateanaltyics.com to gain access to a hosted solution.
+We recommend non-R users rely on the R Shiny application. In addition to generating clean reports and analysis, the application provides user-friendly prompts to help users enter and save data. A user's IT team can help install the application or you can reach out to taylor.rodgers@freestateanaltyics.com to gain access to a hosted solution.
 
 R users can use the `{voxanalysis}` package to both use the Shiny application, produce individual metrics and data visualizations, and generate a Word Doc version of the report directly. The instructions for generating a Word Doc report can be found [here](./generatingword.html).
 
