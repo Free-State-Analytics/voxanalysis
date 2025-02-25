@@ -32,8 +32,6 @@ navbar:
           href: articles/datadefinitions.html
         - text: "Data Model"
           href: articles/datamodel.html
-        - text: "Data Visualization & Charts"
-          href: articles/datavizandcharts.html
 
 on:
   push:
