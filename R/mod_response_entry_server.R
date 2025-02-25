@@ -61,14 +61,31 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
     }, ignoreNULL = TRUE)
 
     observeEvent(df_input_response(), {
-      check_for_button_enable <- df_input_response() %>%
+
+      ### Check for duplicate referents
+      check_for_duplicate_referents <- df_input_response() %>%
+        filter(.data$referent != "") %>%
+        group_by(.data$referent) %>%
+        summarize(n = n())
+      check_for_duplicate_referents <- check_for_duplicate_referents %>% filter(.data$n > 1)
+      check_for_duplicate_referents <- nrow(check_for_duplicate_referents) > 0
+
+      ### Check for missing values
+      check_for_missing_values <- df_input_response() %>%
         filter(.data$referent == "" |
                  is.na(.data$conversing) |
                  is.na(.data$labeling) |
                  is.na(.data$echoing) |
                  is.na(.data$requesting))
-      check_for_button_enable <- nrow(check_for_button_enable) > 0
-      if (check_for_button_enable) {
+      check_for_missing_values <- nrow(check_for_missing_values) > 0
+
+      if (check_for_duplicate_referents) {
+        shinyjs::show("duplicate_referent_message")
+      } else {
+        shinyjs::hide("duplicate_referent_message")
+      }
+
+      if (check_for_missing_values | check_for_duplicate_referents) {
         shinyjs::disable("button_generate")
       } else {
         shinyjs::enable("button_generate")

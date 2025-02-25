@@ -22,6 +22,13 @@ mod_response_entry_ui <- function(id) {
               # p(style = "font-weight: 300;",
               #  "Each response must be 1 or 0."),
               uiOutput(NS(id, "referent_response")),
+              shinyjs::hidden(
+                p(id = NS(id, "duplicate_referent_message"),
+                  class="text-warning-emphasis",
+                  icon("circle-exclamation"),
+                  'Two referents have the same name. Please rename one to proceed.'
+                )
+              ),
               shinyjs::disabled(
                 actionButton(NS(id, "button_generate"),
                              "Run Report",

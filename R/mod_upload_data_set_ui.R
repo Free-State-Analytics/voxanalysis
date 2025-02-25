@@ -35,6 +35,13 @@ mod_upload_data_set_ui <- function(id) {
                   )
                 ),
                 shinyjs::hidden(
+                  p(id = NS(id, "duplicate_referent_message"),
+                    class="text-warning-emphasis",
+                    icon("circle-exclamation"),
+                    'Two referents have the same name. Please rename one in your data set to proceed.'
+                  )
+                ),
+                shinyjs::hidden(
                   div(id = NS(id, "div_update_speaker_data"),
                       class = "mb-3",
                       mod_speaker_data_info_ui(NS(id, "speaker_info"))
