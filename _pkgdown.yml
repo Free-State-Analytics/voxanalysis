@@ -19,6 +19,21 @@ navbar:
     github:
       icon: fa fab fa-github fa-lg
       href: https://github.com/Free-State-Analytics/voxanalysis
+    articles:
+      text: "Articles"
+      menu:
+        - text: "Data Visualization & Charts"
+          href: articles/datavizandcharts.html
+        - text: "How to Generate Shiny Report"
+          href: articles/generatingreports.html
+        - text: "How to Generate Word Doc Report"
+          href: articles/generatingword.html
+        - text: "Data Definitions"
+          href: articles/datadefinitions.html
+        - text: "Data Model"
+          href: articles/datamodel.html
+        - text: "Data Visualization & Charts"
+          href: articles/datavizandcharts.html
 
 on:
   push:
