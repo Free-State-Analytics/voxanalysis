@@ -5,7 +5,10 @@ Authors@R:
   c(
     person("Taylor", "Rodgers", ,"taylor.rodgers@freestateanalytics.com", role = c("aut", "cre")),
     person("Lee", "Mason", , "Lee.Mason@cookchildrens.org", role = c("aut", "cph")),
-    person("Alonzo", "Andrews", , "Alonzo.Andrews@utsa.edu",  role = "ctb") 
+    person("Alonzo", "Andrews", , "Alonzo.Andrews@utsa.edu",  role = "ctb"),
+    person("Jasmine", "Daly", , "jasmine@dalyanalytics.com", role = "ctb", comment = "User testing and bug reports"),
+    person("Samuel B.", "Harti", , "sbharti@uab.edu", role = "ctb", comment = "User testing and bug reports"),
+    person("Thomas", "Wells", , "thomascwells@gmail.com", role = "ctb", comment = "User testing and bug reports")
   )
 Description: An autism diagnosis application that evaluates the language
     development of a speaker.
