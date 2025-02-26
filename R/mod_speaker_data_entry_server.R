@@ -7,9 +7,10 @@ mod_speaker_data_entry_server <- function(
 
   moduleServer(id, function(input, output, session) {
 
-    df_input_speaker_info <- reactive({
+    df_input_speaker_info <- eventReactive(reactiveValuesToList(input), {
 
       if (length(input$date_of_evaluation) < 1 | length(input$date_of_birth) < 1) {
+        shinyjs::disable("button_continue")
         return()
       }
 
@@ -47,7 +48,6 @@ mod_speaker_data_entry_server <- function(
         filter(.data$name %in% c("first_name", "last_name")) %>%
         filter(.data$value == "" |
                  is.null(.data$value))
-
       if (nrow(missing_entries) == 0) {
         shinyjs::enable("button_continue")
         return()
