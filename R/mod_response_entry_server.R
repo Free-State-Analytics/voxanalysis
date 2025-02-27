@@ -45,11 +45,8 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
               starting_referent_order <- df_input_response_previous %>%
                 filter(.data$date_of_evaluation == df_input_speaker_info$date_of_evaluation) %>%
                 pull(.data$referent_order)
-              print(starting_referent_order)
               starting_referent_order <- max(starting_referent_order) + 1
-              print(starting_referent_order)
               ending_referent_order <- nrow(df_input_response) + starting_referent_order - 1
-              print(ending_referent_order)
 
               df_input_response <- df_input_response %>%
                 mutate(referent_order = starting_referent_order:ending_referent_order) %>%
