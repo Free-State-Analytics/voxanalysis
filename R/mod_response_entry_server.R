@@ -26,7 +26,8 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
           df_input_response <- df_input_response %>%
             mutate(date_of_evaluation = as.Date(unique(df_input_speaker_info$date_of_evaluation))) %>%
             mutate(across(c( "conversing", "labeling", "echoing", "requesting"), as.numeric)) %>%
-            select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting") %>%
+            mutate(referent_order = 1:nrow(df_input_response)) %>%
+            select("date_of_evaluation", "referent", "referent_order", "conversing", "labeling", "echoing", "requesting") %>%
             as.data.frame()
         )
 
@@ -35,7 +36,8 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
           df_input_response <- df_input_response %>%
             mutate(date_of_evaluation = as.Date(df_input_speaker_info$date_of_evaluation)) %>%
             mutate(across(c( "conversing", "labeling", "echoing", "requesting"), as.numeric)) %>%
-            select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting") %>%
+            mutate(referent_order = 1:nrow(df_input_response)) %>%
+            select("date_of_evaluation", "referent", "referent_order", "conversing", "labeling", "echoing", "requesting") %>%
             as.data.frame()
         )
       }
@@ -101,7 +103,11 @@ mod_response_entry_server <- function(id, df_input_speaker_info, df_input_respon
         df_input_response_to_pass <- rbind(
           df_input_response_to_pass,
           df_input_response_previous
-        )
+        ) %>%
+          group_by(.data$date_of_evaluation) %>%
+          mutate(referent_order = row_number()) %>%
+          ungroup() %>%
+          as.data.frame()
       }
       util_shiny_remove_and_hide_flex("data_entry_card")
       # shinyjs::hide("data_entry_card")

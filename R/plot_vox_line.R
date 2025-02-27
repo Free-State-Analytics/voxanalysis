@@ -22,6 +22,7 @@
 plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_version = FALSE) {
 
   response_inputs <- df_input_response %>%
+    arrange(.data$referent_order) %>%
     transmute(
       .data$referent,
       Conversing = .data$conversing,

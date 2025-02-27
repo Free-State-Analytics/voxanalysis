@@ -96,8 +96,19 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
 
 
         rv$df_input_response <- result$df_to_upload %>%
-          mutate(date_of_evaluation = as.Date(.data$date_of_evaluation)) %>%
-          select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
+          mutate(date_of_evaluation = as.Date(.data$date_of_evaluation))
+
+        ### Add referent order if it does not exist
+        if (!"referent_order" %in% colnames(rv$df_input_response)) {
+          rv$df_input_response <- rv$df_input_response %>%
+            group_by(.data$date_of_evaluation) %>%
+            mutate(referent_order = row_number()) %>%
+            ungroup() %>%
+            as.data.frame()
+        }
+
+        rv$df_input_response <- rv$df_input_response %>%
+          select("date_of_evaluation", "referent", "referent_order", "conversing", "labeling", "echoing", "requesting")
         ## Sometimes, the date that's uploaded is read as a character, causing disruption in future modules
 
         ### If the birthday is NA, we need to supply a date for the app to work.
@@ -163,7 +174,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
                     animType = "fade")
 
       df_input_response_previous <- rv$df_input_response %>%
-        select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
+        select("date_of_evaluation", "referent", "referent_order", "conversing", "labeling", "echoing", "requesting")
 
       mod_evaluation_date_entry_server(
         "upload_to_data_entry",
