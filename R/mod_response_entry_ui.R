@@ -29,6 +29,15 @@ mod_response_entry_ui <- function(id) {
                   'Two referents have the same name. Please rename one to proceed.'
                 )
               ),
+              shinyjs::hidden(
+                div(id = NS(id, "prevoius_data_duplicate_referent_message"),
+                  class="text-warning-emphasis",
+                  p(icon("circle-exclamation"),
+                    'The referent(s) ', em(class="text-warning", textOutput(outputId = NS(id, "duplicate_referent_values"), inline = TRUE)), ' appear multiple times for this evaluation date in your data upload.'),
+                  p('This will cause inaccurate VOX Analysis results unless the names are changed.'),
+                  p('Change the referent name(s) above to something else, or add a number (e.g., "[referent name] 2") to differentiate them.')
+                  )
+              ),
               shinyjs::disabled(
                 actionButton(NS(id, "button_generate"),
                              "Run Report",
