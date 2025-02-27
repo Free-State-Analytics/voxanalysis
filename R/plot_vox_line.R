@@ -21,14 +21,25 @@
 
 plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_version = FALSE) {
 
-  response_inputs <- df_input_response %>%
-    arrange(.data$referent_order) %>%
-    transmute(
-      .data$referent,
-      Conversing = .data$conversing,
-      Labeling = .data$labeling,
-      Echoing = .data$echoing,
-      Requesting = .data$requesting)
+  if ("referent_order" %in% colnames(df_input_response)) {
+    response_inputs <- df_input_response %>%
+      arrange(.data$referent_order) %>%
+      transmute(
+        .data$referent,
+        Conversing = .data$conversing,
+        Labeling = .data$labeling,
+        Echoing = .data$echoing,
+        Requesting = .data$requesting)
+  } else {
+    response_inputs <- df_input_response %>%
+      transmute(
+        .data$referent,
+        Conversing = .data$conversing,
+        Labeling = .data$labeling,
+        Echoing = .data$echoing,
+        Requesting = .data$requesting)
+  }
+
 
   row_count <- nrow(response_inputs)
 
