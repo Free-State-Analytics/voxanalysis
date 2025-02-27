@@ -88,7 +88,7 @@ plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_ve
      geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
      scale_color_manual(values = plot_color_mapping, name = NULL) +
      scale_fill_manual(values = plot_color_mapping, name = NULL)+
-     expand_limits(y = 0)+
+     expand_limits(y = 0, x = 0)+
      xlab(NULL) +
      ylab("Response") +
      ggthemes::theme_pander(
@@ -106,7 +106,7 @@ plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_ve
      geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
      scale_color_manual(values = plot_color_mapping, name = NULL) +
      scale_fill_manual(values = plot_color_mapping, name = NULL) +
-     expand_limits(y = 0) +
+     expand_limits(y = 0, x = 0) +
      xlab(NULL) +
      ylab("Response") +
      ggthemes::theme_pander(
