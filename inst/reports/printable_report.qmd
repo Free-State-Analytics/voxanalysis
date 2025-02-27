@@ -15,6 +15,9 @@ execute:
 library(voxanalysis)
 library(dplyr)
 library(flextable)
+### Many calculations on here need to filter to the current evaluation. This provides a date filter from df_input_speaker_info$date_of_evaluation
+present_evaluation_date <- as.Date(params$df_input_speaker_info$date_of_evaluation, origin = "1970-01-01")
+
 ### quarto_render changes date fields to a numeric value. This explicitly returns them to a date value.
 df_input_response <- params$df_input_response %>% 
   as.data.frame() %>%
@@ -23,12 +26,12 @@ df_summarized_response <- params$df_summarized_response %>%
   as.data.frame() %>%
   mutate(date_of_evaluation = as.Date(date_of_evaluation, origin = "1970-01-01"))
 speaker_full_name <- paste0(params$df_input_speaker_info$first_name, " ", params$df_input_speaker_info$last_name)
-centroids <- calc_centroid(df_input_response)
+centroids <- calc_centroid(df_input_response %>% filter(.data$date_of_evaluation == present_evaluation_date))
 ```
 
 ### `r speaker_full_name`'s VOX Analysis
 
-*Evaluation date: `r as.Date(max(params$df_input_response$date_of_evaluation), origin = "1970-01-01")`*
+*Evaluation date: `r present_evaluation_date`*
 
 The VOX analysis (*verbal operant experimental*) evaluates the language repertoire for `r speaker_full_name`, in order to provide an accurate autism spectrum disorder diagnosis.
 
@@ -48,6 +51,7 @@ The table below shows the way `r speaker_full_name` responded:
 
 if (length(unique(df_input_response$date_of_evaluation)) > 1) {
   data_to_pass <- df_input_response %>% 
+    arrange(desc(.data$date_of_evaluation), .data$referent_order) %>%
     rename(`Evaluation Date` = "date_of_evaluation",
            `Referent Order`  = "referent_order",
            Referent = "referent",
@@ -88,7 +92,7 @@ The Area Q plot helps visualize variance. A speaker with normal language develop
 #| fig-align: center
 plot_area_q(
   df_summarized_response = df_summarized_response,
-  date_primary = max(df_summarized_response$date_of_evaluation),
+  date_primary = present_evaluation_date,
   ind_doc_version = TRUE)
 ```
 
@@ -99,8 +103,9 @@ The VOX Chart shows the responses based on the verbal episode. A speaker with no
 ```{r}
 #| fig-height: 2.5
 #| fig-align: center
+
 plot_vox_line(
-  df_input_response = df_input_response,
+  df_input_response = df_input_response %>% filter(.data$date_of_evaluation == present_evaluation_date),
   ind_hide_heading = FALSE,
   ind_doc_version = TRUE)
 ```
@@ -113,7 +118,7 @@ Cochran's Q is a statistical test is used to verify whether the speaker has a ba
 flextable(
   table_cochrans_q_test(
     df_input_response = df_input_response %>%
-      filter(.data$date_of_evaluation == max(.data$date_of_evaluation))
+      filter(.data$date_of_evaluation == present_evaluation_date)
     )
   , cwidth = 1.5
 ) %>%
@@ -123,7 +128,7 @@ flextable(
 
 ### SCoRE
 
-The speaker has a SCoRE of **`r calc_speakers_SCoRE(df_summarized_response = df_summarized_response)`**.
+The speaker has a SCoRE of **`r calc_speakers_SCoRE(df_summarized_response = df_summarized_response %>% filter(.data$date_of_evaluation == present_evaluation_date))`**.
 
 *Stimulus Control Ratio Equation (SCoRE)* measures the proportionality of the speaker's repertoire on a scale of 0 to 1. A higher number indicates balanced language assessment.
 
@@ -135,7 +140,7 @@ The pie chart below further illustrates this balance or imbalance.
 #| fig-align: center
 plot_vox_piechart(
   df_summarized_response = df_summarized_response %>%
-    filter(.data$date_of_evaluation == max(.data$date_of_evaluation)),
+    filter(.data$date_of_evaluation == present_evaluation_date),
   ind_doc_version = TRUE
 )
 ```
@@ -146,7 +151,7 @@ plot_vox_piechart(
 flextable(
   table_prompt_hierarchy(
     df_summarized_response = df_summarized_response %>%
-      filter(.data$date_of_evaluation == max(.data$date_of_evaluation))
+      filter(.data$date_of_evaluation == present_evaluation_date)
   ),
   cwidth = 1.1
 ) %>%
