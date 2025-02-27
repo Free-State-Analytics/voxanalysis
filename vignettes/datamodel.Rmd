@@ -52,11 +52,12 @@ The Response data set provides speaker responses from the evaluation. Each entry
 
 ```{r, echo = FALSE}
 data.frame(
-  name = c("date_of_evaluation", "referent", "conversing",
+  name = c("date_of_evaluation", "referent", "referent_order", "conversing",
            "labeling", "echoing", "requesting"),
   Description = c(
     "The date of the evaluation",
     "The object a listener interacts with during the evaluation",
+    "The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes",
     "Binary indicator for conversational response (1 = Yes, 0 = No)",
     "Binary indicator for labeling the referent (1 = Yes, 0 = No)",
     "Binary indicator for echoing the referent's name (1 = Yes, 0 = No)",
@@ -179,7 +180,7 @@ The Upload & Export data set consolidates information about the speaker and thei
 ```{r, echo = FALSE}
 data.frame(
   name = c("first_name", "last_name", "date_of_birth", "language_spoken",
-           "gender", "date_of_evaluation", "referent", "conversing",
+           "gender", "date_of_evaluation", "referent", "referent_order", "conversing",
            "labeling", "echoing", "requesting"),
   Description = c(
     "The speaker's first name",
@@ -189,6 +190,7 @@ data.frame(
     "The speaker's gender (optional)",
     "The date of the evaluation",
     "The object a listener interacts with during the evaluation",
+    "The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes.",
     "Binary indicator for conversational response (1 = Yes, 0 = No)",
     "Binary indicator for labeling the referent (1 = Yes, 0 = No)",
     "Binary indicator for echoing the referent's name (1 = Yes, 0 = No)",

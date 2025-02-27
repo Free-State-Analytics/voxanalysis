@@ -5,7 +5,7 @@
 \alias{df_output_exportable_example}
 \title{Export Data Structure (Example)}
 \format{
-A data frame with 11 columns:
+A data frame with 12 columns:
 \describe{
   \item{first_name}{The speaker's first name.}
   \item{last_name}{The speaker's last name.}
@@ -14,6 +14,7 @@ A data frame with 11 columns:
   \item{gender}{The speaker's gender.}
   \item{date_of_evaluation}{The date on which the evaluation was conducted.}
   \item{referent}{The name of the referent associated with the response, representing the object or entity involved in the verbal episode.}
+  \item{referent_order}{The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes.}
   \item{conversing}{Binary indicator showing if the speaker provided a conversational response to the referent (1 = Yes, 0 = No).}
   \item{labeling}{Binary indicator showing if the speaker could label the referent (1 = Yes, 0 = No).}
   \item{echoing}{Binary indicator showing if the speaker could repeat the referent's name (1 = Yes, 0 = No).}

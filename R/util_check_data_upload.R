@@ -25,6 +25,14 @@ util_check_data_upload <- function(df_input_response) {
 
   req(df_input_response)
 
+  ### Check that referent order is numeric (if exists)
+  if ("referent_order" %in% colnames(df_input_response)) {
+    check_referent_order <- is.numeric(df_input_response$referent_order)
+  } else {
+    check_referent_order <- TRUE
+  }
+
+
   ### This checks that all the required columns are present and that we can continue with further checks
   columns_to_check <- c("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
   check_required_columns <- df_input_response %>% select(any_of(columns_to_check))
@@ -46,7 +54,7 @@ util_check_data_upload <- function(df_input_response) {
     check_binary_entries <- length(check_binary_entries) == 0
 
     ### If all the quality checks are good, it returns "good". If not, we return "bad"
-    if (first_col_character & last_col_numeric & check_binary_entries) {
+    if (first_col_character & last_col_numeric & check_binary_entries & check_referent_order) {
       return("Good")
     } else {
       return("Bad")

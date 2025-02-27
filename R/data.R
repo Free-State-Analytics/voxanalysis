@@ -3,10 +3,11 @@
 #' @description
 #' This data set provides an example structure for `df_input_response`, a core data frame in the VOX Analysis process used to record speaker responses during language assessments. Each entry is a binary indicator (1 or 0) that denotes whether the speaker responded to a given referent across different verbal operants.
 #'
-#' @format A data frame with 7 rows and 6 variables:
+#' @format A data frame with 6 rows and 7 variables:
 #' \describe{
 #'   \item{date_of_evaluation}{The date on which the evaluation took place.}
 #'   \item{referent}{The name of the referent associated with the response, representing the object or entity involved in the verbal episode.}
+#'   \item{referent_order}{The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes.}
 #'   \item{conversing}{Binary indicator showing if the speaker provided a conversational response to the referent (1 = Yes, 0 = No).}
 #'   \item{labeling}{Binary indicator showing if the speaker could label the referent (1 = Yes, 0 = No).}
 #'   \item{echoing}{Binary indicator showing if the speaker could repeat the referent's name (1 = Yes, 0 = No).}
@@ -25,10 +26,11 @@
 #'
 #' Each entry is a binary indicator (1 or 0), representing whether the speaker responded to a specific referent for each verbal operant.
 #'
-#' @format A data frame with 7 rows and 6 variables:
+#' @format A data frame with 18 rows and 7 variables:
 #' \describe{
 #'   \item{date_of_evaluation}{The date on which the evaluation was conducted.}
 #'   \item{referent}{The name of the referent associated with the response, representing the object or entity involved in the verbal episode.}
+#'   \item{referent_order}{The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes.}
 #'   \item{conversing}{Binary indicator showing if the speaker provided a conversational response to the referent (1 = Yes, 0 = No).}
 #'   \item{labeling}{Binary indicator showing if the speaker could label the referent (1 = Yes, 0 = No).}
 #'   \item{echoing}{Binary indicator showing if the speaker could repeat the referent's name (1 = Yes, 0 = No).}
@@ -45,7 +47,7 @@
 #' @description
 #' This data set represents the structure required for exporting evaluation data. Any data re-imported into the application to append new records must follow this format to ensure compatibility and accurate processing.
 #'
-#' @format A data frame with 11 columns:
+#' @format A data frame with 12 columns:
 #' \describe{
 #'   \item{first_name}{The speaker's first name.}
 #'   \item{last_name}{The speaker's last name.}
@@ -54,6 +56,7 @@
 #'   \item{gender}{The speaker's gender.}
 #'   \item{date_of_evaluation}{The date on which the evaluation was conducted.}
 #'   \item{referent}{The name of the referent associated with the response, representing the object or entity involved in the verbal episode.}
+#'   \item{referent_order}{The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes.}
 #'   \item{conversing}{Binary indicator showing if the speaker provided a conversational response to the referent (1 = Yes, 0 = No).}
 #'   \item{labeling}{Binary indicator showing if the speaker could label the referent (1 = Yes, 0 = No).}
 #'   \item{echoing}{Binary indicator showing if the speaker could repeat the referent's name (1 = Yes, 0 = No).}

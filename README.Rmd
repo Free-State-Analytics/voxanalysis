@@ -71,6 +71,9 @@ Any R user can download and run the app using the `{voxanalysis}` package. Howev
 A user can install `{voxanalysis}` with:
 
 ```{r, eval = FALSE}
+## {devtools} package is required
+install.packages("devtools")
+
 devtools::install_github("Free-State-Analytics/voxanalysis", ref = "dev")
 ```
 
