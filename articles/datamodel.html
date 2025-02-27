@@ -38,7 +38,7 @@
     <li><a class="dropdown-item" href="../articles/generatingreports.html">How to Generate Shiny Report</a></li>
     <li><a class="dropdown-item" href="../articles/generatingword.html">How to Generate Word Doc Report</a></li>
     <li><a class="dropdown-item" href="../articles/datadefinitions.html">Data Definitions</a></li>
-    <li><a class="dropdown-item" href="../articles/datamodel.html">Data Model</a></li>
+    <li><a class="dropdown-item" href="../articles/datamodel.html">Data Structure Guidelines</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
@@ -119,8 +119,8 @@ set may contain multiple evaluations, distinguished by
 <p><br></p>
 <table class="table">
 <colgroup>
-<col width="21%">
-<col width="78%">
+<col width="12%">
+<col width="87%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">Column Name</th>
@@ -137,21 +137,27 @@ set may contain multiple evaluations, distinguished by
 evaluation</td>
 </tr>
 <tr class="odd">
+<td align="left">referent_order</td>
+<td align="left">The order the referent appeared in the session.
+Required for data visualizations and calculations regarding specific
+verbal episodes</td>
+</tr>
+<tr class="even">
 <td align="left">conversing</td>
 <td align="left">Binary indicator for conversational response (1 = Yes,
 0 = No)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">labeling</td>
 <td align="left">Binary indicator for labeling the referent (1 = Yes, 0
 = No)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">echoing</td>
 <td align="left">Binary indicator for echoing the referent’s name (1 =
 Yes, 0 = No)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">requesting</td>
 <td align="left">Binary indicator for requesting the referent’s name (1
 = Yes, 0 = No)</td>
@@ -292,8 +298,8 @@ together, for ease-of-export by the application user.</p>
 <p><br></p>
 <table class="table">
 <colgroup>
-<col width="21%">
-<col width="78%">
+<col width="12%">
+<col width="87%">
 </colgroup>
 <thead><tr class="header">
 <th align="left">Column Name</th>
@@ -331,21 +337,27 @@ together, for ease-of-export by the application user.</p>
 evaluation</td>
 </tr>
 <tr class="even">
+<td align="left">referent_order</td>
+<td align="left">The order the referent appeared in the session.
+Required for data visualizations and calculations regarding specific
+verbal episodes.</td>
+</tr>
+<tr class="odd">
 <td align="left">conversing</td>
 <td align="left">Binary indicator for conversational response (1 = Yes,
 0 = No)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">labeling</td>
 <td align="left">Binary indicator for labeling the referent (1 = Yes, 0
 = No)</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">echoing</td>
 <td align="left">Binary indicator for echoing the referent’s name (1 =
 Yes, 0 = No)</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">requesting</td>
 <td align="left">Binary indicator for requesting the referent’s name (1
 = Yes, 0 = No)</td>

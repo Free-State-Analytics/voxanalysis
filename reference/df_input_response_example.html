@@ -22,7 +22,7 @@
     <li><a class="dropdown-item" href="../articles/generatingreports.html">How to Generate Shiny Report</a></li>
     <li><a class="dropdown-item" href="../articles/generatingword.html">How to Generate Word Doc Report</a></li>
     <li><a class="dropdown-item" href="../articles/datadefinitions.html">Data Definitions</a></li>
-    <li><a class="dropdown-item" href="../articles/datamodel.html">Data Model</a></li>
+    <li><a class="dropdown-item" href="../articles/datamodel.html">Data Structure Guidelines</a></li>
   </ul></li>
 <li class="active nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
@@ -52,11 +52,14 @@
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A data frame with 7 rows and 6 variables:</p><dl><dt>date_of_evaluation</dt>
+    <p>A data frame with 6 rows and 7 variables:</p><dl><dt>date_of_evaluation</dt>
 <dd><p>The date on which the evaluation took place.</p></dd>
 
   <dt>referent</dt>
 <dd><p>The name of the referent associated with the response, representing the object or entity involved in the verbal episode.</p></dd>
+
+  <dt>referent_order</dt>
+<dd><p>The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes.</p></dd>
 
   <dt>conversing</dt>
 <dd><p>Binary indicator showing if the speaker provided a conversational response to the referent (1 = Yes, 0 = No).</p></dd>
