@@ -79,48 +79,124 @@ plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_ve
 
   by_session$type <- factor(by_session$type, levels = c("Conversing", "Labeling", "Echoing", "Requesting"))
 
-  p <- ggplot(by_session, aes(.data$session, y = .data$value))
+  p <- ggplot(by_session, aes(.data$session, y = .data$value)) +
+    geom_rect(
+      aes(xmin = 0, xmax = 4, ymin = 0, ymax = max(by_session$value) + .85),
+      linewidth = 1,
+      alpha = .05,
+      fill = "#D3D3D3"
+    )+
+    geom_text(
+      data = by_session %>% filter(value == max(value)),
+      aes(x = 2, y = value + .5, label = "Episode #1"),
+      family = "Lato"
+    ) +
+    geom_rect(
+      aes(xmin = 4, xmax = 8, ymin = 0, ymax = max(value) + .85),
+      linewidth = 1,
+      alpha = .15,
 
- if (ind_doc_version) {
-   p <- p +
-     geom_line(aes(color = .data$type), linewidth = .75) +
-     geom_point(aes(fill = .data$type), size = 5, pch = 21, color = "white", stroke = 1) +
-     geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
-     scale_color_manual(values = plot_color_mapping, name = NULL) +
-     scale_fill_manual(values = plot_color_mapping, name = NULL)+
-     expand_limits(y = 0, x = 0)+
-     xlab(NULL) +
-     ylab("Response") +
-     ggthemes::theme_pander(
-       base_size = 7,
-       nomargin = FALSE
-     ) +
-     theme(
-       plot.title = element_text(size = 10),
-       plot.subtitle = element_text(size = 7)
-     )
- } else {
-   p <- p +
-     geom_line(aes(color = .data$type), linewidth = 2) +
-     geom_point(aes(fill = .data$type), size = 7, pch = 21, color = "white", stroke = 1) +
-     geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
-     scale_color_manual(values = plot_color_mapping, name = NULL) +
-     scale_fill_manual(values = plot_color_mapping, name = NULL) +
-     expand_limits(y = 0, x = 0) +
-     xlab(NULL) +
-     ylab("Response") +
-     ggthemes::theme_pander(
-     #  base_family = "Lato",
-       nomargin = FALSE
-     )
- }
+      fill = "#D3D3D3"
+    ) +
+    geom_text(
+      data = by_session %>% filter(value == max(value)),
+      aes(x = 6, y = value + .5, label = "Episode #2"),
+      family = "Lato"
+    )
 
+  if (max(by_session$session) > 8) {
+    p <- p +
+      geom_rect(
+        aes(xmin = 8, xmax = 12, ymin = 0, ymax = max(value) + .85),
+        linewidth = 1,
+        alpha = .05,
+
+        fill = "#D3D3D3"
+      ) +
+      geom_text(
+        data = by_session %>% filter(value == max(value)),
+        aes(x = 10, y = value + .5, label = "Episode #3"),
+        family = "Lato"
+      )
+  }
+
+  if (max(by_session$session) > 12) {
+    p <- p +
+      geom_rect(
+        aes(xmin = 12, xmax = 16, ymin = 0, ymax = max(value) + .85),
+        linewidth = 1,
+        alpha = .15,
+
+        fill = "#D3D3D3"
+      ) +
+      geom_text(
+        data = by_session %>% filter(value == max(value)),
+        aes(x = 14, y = value + .5, label = "Episode #4"),
+        family = "Lato"
+      )
+  }
+
+  p <- p +
+    geom_line(aes(color = .data$type), linewidth = 2) +
+    geom_point(aes(fill = .data$type), size = 7, pch = 21, color = "white", stroke = 1) +
+    geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
+    scale_color_manual(values = plot_color_mapping, name = NULL) +
+    scale_fill_manual(values = plot_color_mapping, name = NULL) +
+    expand_limits(x = 0,  y = 0) +
+    coord_cartesian(ylim = c(0, max(by_session$value)), clip = "off") +
+    xlab("Session") +
+    ylab("Response") +
+    hrbrthemes::theme_ipsum(
+      base_family = "Lato",
+      plot_title_margin = 5,
+      subtitle_margin = 70,
+      plot_margin = margin(30, 30, 30, 30)
+    )
+
+
+ # if (ind_doc_version) {
+ #   p <- p +
+ #     geom_line(aes(color = .data$type), linewidth = .75) +
+ #     geom_point(aes(fill = .data$type), size = 5, pch = 21, color = "white", stroke = 1) +
+ #     geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
+ #     scale_color_manual(values = plot_color_mapping, name = NULL) +
+ #     scale_fill_manual(values = plot_color_mapping, name = NULL)+
+ #     # expand_limits(x = 0, y = 0)+
+ #     coord_cartesian(ylim = c(0, max(by_session$value)), clip = "off") +
+ #     xlab("Session") +
+ #     ylab("Response") +
+ #     hrbrthemes::theme_ipsum(
+ #       base_family = "Lato",
+ #       plot_margin = margin(50, 30, 30, 30)
+ #     ) +
+ #     theme(
+ #       plot.title = element_text(size = 10),
+ #       plot.subtitle = element_text(size = 7)
+ #     )
+ # } else {
+ #   p <- p +
+ #     geom_line(aes(color = .data$type), linewidth = 2) +
+ #     geom_point(aes(fill = .data$type), size = 7, pch = 21, color = "white", stroke = 1) +
+ #     geom_text(aes(label = .data$value), colour = "white", fontface = "bold") +
+ #     scale_color_manual(values = plot_color_mapping, name = NULL) +
+ #     scale_fill_manual(values = plot_color_mapping, name = NULL) +
+ #     expand_limits(x = 0,  y = 0) +
+ #     coord_cartesian(ylim = c(0, max(by_session$value)), clip = "off") +
+ #     xlab("Session") +
+ #     ylab("Response") +
+ #     hrbrthemes::theme_ipsum(
+ #       base_family = "Lato",
+ #       plot_margin = margin(50, 30, 30, 30)
+ #     )
+ # }
 
   if (!ind_hide_heading) {
     p <- p +
       labs(title = "VOX Chart",
            subtitle = "Results by Verbal Episode")
   }
+
+  ### add background
 
   return(p)
 
