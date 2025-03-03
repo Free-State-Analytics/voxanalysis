@@ -22,7 +22,7 @@ mod_results_primary_ui(id)
 This Shiny module provides a user interface and server function to generate a summary report based on response inputs. It is designed to work independently of other modules, allowing users to create a comprehensive summary report for a VOX Analysis session.
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+if (interactive()) {
   # Load example data
   data("df_input_speaker_info_example")
   data("df_input_response_example")
@@ -43,8 +43,11 @@ This Shiny module provides a user interface and server function to generate a su
 
   # Run the Shiny app
   shinyApp(ui, server)
+}
 
+if (interactive()) {
   # Alternative example using a pre-built app function
   run_example_results_app()
-\dontshow{\}) # examplesIf}
+}
+
 }

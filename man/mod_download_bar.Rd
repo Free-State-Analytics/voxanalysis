@@ -29,7 +29,7 @@ mod_download_bar_ui(id)
 A Shiny module that provides a download interface, allowing users to export data and generate a Word document report. This module is useful for users needing an easily accessible download bar to retrieve their VOX Analysis results in structured formats for further analysis or reporting.
 }
 \examples{
-\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+if (interactive()) {
   # Load example data
   data("df_input_speaker_info_example")
   data("df_input_response_example")
@@ -52,5 +52,6 @@ A Shiny module that provides a download interface, allowing users to export data
 
   # Run the Shiny app
   shinyApp(ui, server)
-\dontshow{\}) # examplesIf}
+}
+
 }
