@@ -196,14 +196,19 @@ The two VOX line charts below show two speakers. The speaker on the left is more
 plot_grid(
   plot_vox_line(
     df_autism,
-    ind_hide_heading = FALSE
-  ) + theme(plot.margin = margin(t = 40),
-            legend.position = "bottom",
-            legend.text = element_text(size = 8)),
+    ind_hide_heading = TRUE,
+    ind_doc_version = TRUE
+  ) +
+    theme(legend.position = "bottom")
+  ,
+  # + theme(#plot.margin = margin(t = 60, r = 30, l = 30, b= 30),
+  #           legend.position = "bottom",
+  #           legend.text = element_text(size = 8)),
   plot_vox_line(
     df_wo_autism,
-    ind_hide_heading = FALSE
-  ) + theme(plot.margin = margin(t = 40, b = 42.25),
+    ind_hide_heading = TRUE,
+    ind_doc_version = TRUE
+  ) + theme(plot.margin = margin(t = 50, r = 30, l = 30, b = 30+ 42.25),
             legend.position = "none"),
   labels = c("With Autism", "Without Autism")
 )
@@ -229,8 +234,7 @@ data("df_input_response_example")
 # Generate a VOX line chart across verbal episodes
 plot_vox_line(
   df_input_response = df_input_response_example,
-  ind_hide_heading = FALSE,
-  ind_doc_version = FALSE)
+  ind_hide_heading = FALSE)
 ```
 
 <br>
@@ -243,7 +247,7 @@ data("df_input_response_example")
 plot_vox_line(
   df_input_response = df_input_response_example,
   ind_hide_heading = FALSE,
-  ind_doc_version = FALSE)
+  ind_doc_version = TRUE)
 ```
 
 <br>
@@ -345,10 +349,16 @@ Down below is a guide of Speaker's SCoREs and how they can help a behavioral ana
 
 <br>
 
-<div style="text-align: center; font-size: 24px; font-weight: bold; color: gray;">
-  Coming Soon...
-</div>
+```{r, echo = FALSE} 
 
+data.frame(
+  SCoRE = c("0 to .19", ".20 to .49", ".50 to .79", ".80 to 1.00"),
+  Intepretation = c("Emergent", "Pratical", "Moderate", "Strong")
+) %>% 
+  kableExtra::kable() %>%
+  kable_styling(position = "center")
+
+```
 
 <br>
 
