@@ -90,21 +90,21 @@ to generating clean reports and analysis, the application provides
 user-friendly prompts to help users enter and save data. A user’s IT
 team can help install the application or you can reach out to <a href="mailto:taylor.rodgers@freestateanaltyics.com" class="email">taylor.rodgers@freestateanaltyics.com</a> to gain access
 to a hosted solution.</p>
-<p>R users can use the <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package to both use
-the Shiny application, produce individual metrics and data
-visualizations, and generate a Word Doc version of the report directly.
-The instructions for generating a Word Doc report can be found <a href="./generatingword.html">here</a>.</p>
-<div class="section level2">
-<h2 id="r-shiny-application">R Shiny Application<a class="anchor" aria-label="anchor" href="#r-shiny-application"></a>
-</h2>
+<p>R users can use the <a href="https://free-state-analytics.github.io/voxanalysis/">voxanalysis</a> package to use the
+Shiny application, produce individual metrics and data visualizations,
+and generate a Word Doc version of the report directly. The instructions
+for generating a Word Doc report can be found <a href="./generatingword.html">here</a>.</p>
+<div class="section level3">
+<h3 id="r-shiny-application">R Shiny Application<a class="anchor" aria-label="anchor" href="#r-shiny-application"></a>
+</h3>
 <p>To launch the application, open the version deployed on Shiny Server.
 R users who install the package can simply run:
 <code><a href="../reference/run_app.html">voxanalysis::run_app()</a></code>.</p>
 <p>The home screen below will appear:</p>
 <p><img src="images%2Fgen_report_00.png"></p>
-<div class="section level3">
-<h3 id="select-data-upload-method">Select Data Upload Method<a class="anchor" aria-label="anchor" href="#select-data-upload-method"></a>
-</h3>
+<div class="section level4">
+<h4 id="select-data-upload-method">Select Data Upload Method<a class="anchor" aria-label="anchor" href="#select-data-upload-method"></a>
+</h4>
 <p>The first menu let’s you decide how to enter the speaker’s data.
 There are three options:</p>
 <ol style="list-style-type: decimal">
@@ -122,9 +122,9 @@ speaker’s data with new responses.</li>
 </ol>
 <p><img src="images%2Fgen_report_01.png" fig-align="center" width="480"></p>
 </div>
-<div class="section level3">
-<h3 id="provide-speaker-info">Provide Speaker Info<a class="anchor" aria-label="anchor" href="#provide-speaker-info"></a>
-</h3>
+<div class="section level4">
+<h4 id="provide-speaker-info">Provide Speaker Info<a class="anchor" aria-label="anchor" href="#provide-speaker-info"></a>
+</h4>
 <p>The <strong>Provide Speaker Info</strong> prompt is asking for the
 speaker’s information, such as first name, last name, birth date, and
 evaluation date. Language spoken and gender are optional.</p>
@@ -132,9 +132,9 @@ evaluation date. Language spoken and gender are optional.</p>
 or .csv exports.</p>
 <p><img src="images%2Fgen_report_02.png" fig-align="center" width="350"></p>
 </div>
-<div class="section level3">
-<h3 id="upload-data-set">Upload Data Set<a class="anchor" aria-label="anchor" href="#upload-data-set"></a>
-</h3>
+<div class="section level4">
+<h4 id="upload-data-set">Upload Data Set<a class="anchor" aria-label="anchor" href="#upload-data-set"></a>
+</h4>
 <p>The <strong>Upload Data Set</strong> prompt appears when the user
 indicated they wanted to upload a data set.</p>
 <p><img src="images%2Fgen_report_03.png" fig-align="center" width="380"></p>
@@ -151,18 +151,18 @@ can select <strong>Download Report</strong> for a Word Doc or select
 application. Otherwise, they can hit <strong>Continue</strong> to move
 onto the <strong>Provide Speaker Responses</strong> prompt.</p>
 </div>
-<div class="section level3">
-<h3 id="provide-evaluation-date">Provide Evaluation Date<a class="anchor" aria-label="anchor" href="#provide-evaluation-date"></a>
-</h3>
+<div class="section level4">
+<h4 id="provide-evaluation-date">Provide Evaluation Date<a class="anchor" aria-label="anchor" href="#provide-evaluation-date"></a>
+</h4>
 <p>A user that chooses to append an existing .csv file with new data
 must specify the evaluation date for the new response entries. This
 ensure that the report can tell which responses should be analyzed
 together or separately, based on the date.</p>
 <p><img src="images%2Fgen_report_05.png" fig-align="center" width="480"></p>
 </div>
-<div class="section level3">
-<h3 id="provide-speaker-responses">Provide Speaker Responses<a class="anchor" aria-label="anchor" href="#provide-speaker-responses"></a>
-</h3>
+<div class="section level4">
+<h4 id="provide-speaker-responses">Provide Speaker Responses<a class="anchor" aria-label="anchor" href="#provide-speaker-responses"></a>
+</h4>
 <p>The <strong>Provide Speaker Responses</strong> prompt asks the user
 for the number of referents (i.e., toys) used in the evaluation. This
 will change the number of rows found in the input table below.</p>
@@ -171,20 +171,29 @@ responses (1 = Positive Response, 0 = No Response) to those referents
 based on the verbal operant (CLEaR).</p>
 <p><img src="images%2Fgen_report_06.png" fig-align="center" width="380"></p>
 </div>
-<div class="section level3">
-<h3 id="results-summary-page">Results Summary Page<a class="anchor" aria-label="anchor" href="#results-summary-page"></a>
-</h3>
+<div class="section level4">
+<h4 id="results-summary-page">Results Summary Page<a class="anchor" aria-label="anchor" href="#results-summary-page"></a>
+</h4>
 <p>The <strong>Results Summary Page</strong> provides the VOX Analysis
 results for the speakers responses the user provided.</p>
-<p>The user will have the option to <strong>Download Report</strong> to
-download a Word Doc version, or they can select <strong>Save
-Data</strong>, which allows them to download the data set they had
-previously entered.</p>
+<p>At the bottom of the screen, t# Load example data sets
+data(“df_input_speaker_info_example”)
+data(“df_input_response_example”)</p>
+</div>
+</div>
+<div class="section level2">
+<h2 id="generate-a-word-document-report">Generate a Word document report<a class="anchor" aria-label="anchor" href="#generate-a-word-document-report"></a>
+</h2>
+<p>util_generate_word_doc_report( df_input_speaker_info =
+df_input_speaker_info_example, df_input_response =
+df_input_response_example, file_name = “test.docx” )he user can select
+<strong>Download Report</strong> to download a Word Doc version, or they
+can select <strong>Save Data</strong>, which allows them to download the
+data set they had previously entered.</p>
 <p><em>Note: Exporting a data set from the Results Summary page ensures
 the data is structured in a way that it can be re-uploaded, re-analyzed,
 or appended in the future.</em></p>
 <p><img src="images%2Fmain_app.gif" fig-align="center" width="480"></p>
-</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

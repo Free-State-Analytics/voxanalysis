@@ -64,7 +64,7 @@
 
 
 
-
+<script src="datamodel_files/kePrint-0.0.1/kePrint.js"></script><link href="datamodel_files/lightable-0.0.1/lightable.css" rel="stylesheet">
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
@@ -111,7 +111,7 @@ set.</p>
 <p>For R users, <a href="#responsedata">Response</a>, <a href="#speakerdata">Summary</a>, and <a href="#summarizedata">Speaker</a> are useful data structures to
 familiarize. Nearly every function for variance calculations and data
 visualizations use these structures.</p>
-<p>See <a href="https://free-state-analytics.github.io/voxanalysis/articles/datadictionary.html">Data
+<p>See <a href="https://free-state-analytics.github.io/voxanalysis/articles/datadefinitions.html">Data
 Definitions</a> to understand keywords found in this page.</p>
 <p><br><br></p>
 </div>
@@ -125,49 +125,71 @@ set may contain multiple evaluations, distinguished by
 <code>date_of_evaluation</code>.</p>
 <p><br></p>
 <table class="table">
-<colgroup>
-<col width="12%">
-<col width="87%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Column Name</th>
-<th align="left">Description</th>
+<thead><tr>
+<th style="text-align:left;">
+Column Name
+</th>
+<th style="text-align:left;">
+Description
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">date_of_evaluation</td>
-<td align="left">The date of the evaluation</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+date_of_evaluation
+</td>
+<td style="text-align:left;">
+The date of the evaluation
+</td>
 </tr>
-<tr class="even">
-<td align="left">referent</td>
-<td align="left">The object a listener interacts with during the
-evaluation</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+referent
+</td>
+<td style="text-align:left;">
+The object a listener interacts with during the evaluation
+</td>
 </tr>
-<tr class="odd">
-<td align="left">referent_order</td>
-<td align="left">The order the referent appeared in the session.
-Required for data visualizations and calculations regarding specific
-verbal episodes</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+referent_order
+</td>
+<td style="text-align:left;">
+The order the referent appeared in the session. Required for data
+visualizations and calculations regarding specific verbal episodes
+</td>
 </tr>
-<tr class="even">
-<td align="left">conversing</td>
-<td align="left">Binary indicator for conversational response (1 = Yes,
-0 = No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+conversing
+</td>
+<td style="text-align:left;">
+Binary indicator for conversational response (1 = Yes, 0 = No)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">labeling</td>
-<td align="left">Binary indicator for labeling the referent (1 = Yes, 0
-= No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+labeling
+</td>
+<td style="text-align:left;">
+Binary indicator for labeling the referent (1 = Yes, 0 = No)
+</td>
 </tr>
-<tr class="even">
-<td align="left">echoing</td>
-<td align="left">Binary indicator for echoing the referent’s name (1 =
-Yes, 0 = No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+echoing
+</td>
+<td style="text-align:left;">
+Binary indicator for echoing the referent’s name (1 = Yes, 0 = No)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">requesting</td>
-<td align="left">Binary indicator for requesting the referent’s name (1
-= Yes, 0 = No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+requesting
+</td>
+<td style="text-align:left;">
+Binary indicator for requesting the referent’s name (1 = Yes, 0 = No)
+</td>
 </tr>
 </tbody>
 </table>
@@ -188,31 +210,54 @@ data set is called <code>df_input_response</code>.</p>
 speaker, such as name and date of birth.</p>
 <p><br></p>
 <table class="table">
-<thead><tr class="header">
-<th align="left">Column Name</th>
-<th align="left">Description</th>
+<thead><tr>
+<th style="text-align:left;">
+Column Name
+</th>
+<th style="text-align:left;">
+Description
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">first_name</td>
-<td align="left">The speaker’s first name</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+first_name
+</td>
+<td style="text-align:left;">
+The speaker’s first name
+</td>
 </tr>
-<tr class="even">
-<td align="left">last_name</td>
-<td align="left">The speaker’s last name</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+last_name
+</td>
+<td style="text-align:left;">
+The speaker’s last name
+</td>
 </tr>
-<tr class="odd">
-<td align="left">date_of_birth</td>
-<td align="left">The speaker’s date of birth</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+date_of_birth
+</td>
+<td style="text-align:left;">
+The speaker’s date of birth
+</td>
 </tr>
-<tr class="even">
-<td align="left">language_spoken</td>
-<td align="left">The language spoken during the evaluation
-(optional)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+language_spoken
+</td>
+<td style="text-align:left;">
+The language spoken during the evaluation (optional)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">gender</td>
-<td align="left">The speaker’s gender (optional)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+gender
+</td>
+<td style="text-align:left;">
+The speaker’s gender (optional)
+</td>
 </tr>
 </tbody>
 </table>
@@ -237,38 +282,54 @@ plot functions and other analyses to assess patterns in response types
 over time.</p>
 <p><br></p>
 <table class="table">
-<colgroup>
-<col width="21%">
-<col width="78%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Column Name</th>
-<th align="left">Description</th>
+<thead><tr>
+<th style="text-align:left;">
+Column Name
+</th>
+<th style="text-align:left;">
+Description
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">date_of_evaluation</td>
-<td align="left">The date of the evaluation</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+date_of_evaluation
+</td>
+<td style="text-align:left;">
+The date of the evaluation
+</td>
 </tr>
-<tr class="even">
-<td align="left">conversing</td>
-<td align="left">Binary indicator for conversational response (1 = Yes,
-0 = No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+conversing
+</td>
+<td style="text-align:left;">
+Binary indicator for conversational response (1 = Yes, 0 = No)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">labeling</td>
-<td align="left">Binary indicator for labeling the referent (1 = Yes, 0
-= No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+labeling
+</td>
+<td style="text-align:left;">
+Binary indicator for labeling the referent (1 = Yes, 0 = No)
+</td>
 </tr>
-<tr class="even">
-<td align="left">echoing</td>
-<td align="left">Binary indicator for echoing the referent’s name (1 =
-Yes, 0 = No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+echoing
+</td>
+<td style="text-align:left;">
+Binary indicator for echoing the referent’s name (1 = Yes, 0 = No)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">requesting</td>
-<td align="left">Binary indicator for requesting the referent’s name (1
-= Yes, 0 = No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+requesting
+</td>
+<td style="text-align:left;">
+Binary indicator for requesting the referent’s name (1 = Yes, 0 = No)
+</td>
 </tr>
 </tbody>
 </table>
@@ -304,70 +365,111 @@ speaker and their responses. It merges the Speaker and Response data set
 together, for ease-of-export by the application user.</p>
 <p><br></p>
 <table class="table">
-<colgroup>
-<col width="12%">
-<col width="87%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Column Name</th>
-<th align="left">Description</th>
+<thead><tr>
+<th style="text-align:left;">
+Column Name
+</th>
+<th style="text-align:left;">
+Description
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">first_name</td>
-<td align="left">The speaker’s first name</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+first_name
+</td>
+<td style="text-align:left;">
+The speaker’s first name
+</td>
 </tr>
-<tr class="even">
-<td align="left">last_name</td>
-<td align="left">The speaker’s last name</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+last_name
+</td>
+<td style="text-align:left;">
+The speaker’s last name
+</td>
 </tr>
-<tr class="odd">
-<td align="left">date_of_birth</td>
-<td align="left">The speaker’s date of birth</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+date_of_birth
+</td>
+<td style="text-align:left;">
+The speaker’s date of birth
+</td>
 </tr>
-<tr class="even">
-<td align="left">language_spoken</td>
-<td align="left">The language spoken during the evaluation
-(optional)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+language_spoken
+</td>
+<td style="text-align:left;">
+The language spoken during the evaluation (optional)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">gender</td>
-<td align="left">The speaker’s gender (optional)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+gender
+</td>
+<td style="text-align:left;">
+The speaker’s gender (optional)
+</td>
 </tr>
-<tr class="even">
-<td align="left">date_of_evaluation</td>
-<td align="left">The date of the evaluation</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+date_of_evaluation
+</td>
+<td style="text-align:left;">
+The date of the evaluation
+</td>
 </tr>
-<tr class="odd">
-<td align="left">referent</td>
-<td align="left">The object a listener interacts with during the
-evaluation</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+referent
+</td>
+<td style="text-align:left;">
+The object a listener interacts with during the evaluation
+</td>
 </tr>
-<tr class="even">
-<td align="left">referent_order</td>
-<td align="left">The order the referent appeared in the session.
-Required for data visualizations and calculations regarding specific
-verbal episodes.</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+referent_order
+</td>
+<td style="text-align:left;">
+The order the referent appeared in the session. Required for data
+visualizations and calculations regarding specific verbal episodes.
+</td>
 </tr>
-<tr class="odd">
-<td align="left">conversing</td>
-<td align="left">Binary indicator for conversational response (1 = Yes,
-0 = No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+conversing
+</td>
+<td style="text-align:left;">
+Binary indicator for conversational response (1 = Yes, 0 = No)
+</td>
 </tr>
-<tr class="even">
-<td align="left">labeling</td>
-<td align="left">Binary indicator for labeling the referent (1 = Yes, 0
-= No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+labeling
+</td>
+<td style="text-align:left;">
+Binary indicator for labeling the referent (1 = Yes, 0 = No)
+</td>
 </tr>
-<tr class="odd">
-<td align="left">echoing</td>
-<td align="left">Binary indicator for echoing the referent’s name (1 =
-Yes, 0 = No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+echoing
+</td>
+<td style="text-align:left;">
+Binary indicator for echoing the referent’s name (1 = Yes, 0 = No)
+</td>
 </tr>
-<tr class="even">
-<td align="left">requesting</td>
-<td align="left">Binary indicator for requesting the referent’s name (1
-= Yes, 0 = No)</td>
+<tr>
+<td style="text-align:left;width: 10em; ">
+requesting
+</td>
+<td style="text-align:left;">
+Binary indicator for requesting the referent’s name (1 = Yes, 0 = No)
+</td>
 </tr>
 </tbody>
 </table>
