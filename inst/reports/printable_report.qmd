@@ -101,12 +101,13 @@ plot_area_q(
 The VOX Chart shows the responses based on the verbal episode. A speaker with normal language development will have relatively straight lines that overlap one another most of the time.
 
 ```{r}
-#| fig-height: 2.5
+#| fig-height: 4
+#| fig-width: 8
 #| fig-align: center
+#| out.width: "100%"
 
 plot_vox_line(
   df_input_response = df_input_response %>% filter(.data$date_of_evaluation == present_evaluation_date),
-  ind_hide_heading = FALSE,
   ind_doc_version = TRUE)
 ```
 
