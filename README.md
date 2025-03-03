@@ -98,7 +98,7 @@ following:
 voxanalysis::run_app()
 ```
 
-For more experienced R users, they can generate an MS Word report wih
+For more experienced R users, they can generate an MS Word report with
 the following:
 
 ``` r
@@ -147,7 +147,7 @@ plot_vox_line(
 
 <br>
 
-<img src="man/figures/README-unnamed-chunk-6-1.png" width="77%" style="display: block; margin: auto;" />
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="85%" style="display: block; margin: auto;" />
 
 <br> <br>
 

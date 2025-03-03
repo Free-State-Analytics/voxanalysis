@@ -40,7 +40,7 @@ The individual who interacts with the speaker during the evaluation. This may be
 
 The individual using the VOX Analysis Application or functions within the `voxanalysis` package.
 
-#### Referrant
+#### Referent
 
 An object the listener interacts with during the analysis, typically a toy.
 

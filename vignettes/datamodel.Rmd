@@ -39,7 +39,7 @@ For VOX Analysis application users (non-R users), [Upload & Export](#dataupload)
 
 For R users, [Response](#responsedata), [Summary](#speakerdata), and [Speaker](#summarizedata) are useful data structures to familiarize. Nearly every function for variance calculations and data visualizations use these structures.
 
-See [Data Definitions](https://free-state-analytics.github.io/voxanalysis/articles/datadictionary.html) to understand keywords found in this page.
+See [Data Definitions](https://free-state-analytics.github.io/voxanalysis/articles/datadefinitions.html) to understand keywords found in this page.
 
 <br>
 <br>
@@ -64,7 +64,8 @@ data.frame(
     "Binary indicator for requesting the referent's name (1 = Yes, 0 = No)"
   )
 ) %>%
-kableExtra::kable(col.names = c("Column Name", "Description"))
+kableExtra::kable(col.names = c("Column Name", "Description")) %>%
+  kableExtra::column_spec(column = 1, width = "10em")
 ```
 
 <br>
@@ -101,7 +102,8 @@ data.frame(
     "The speaker's gender (optional)"
   )
 ) %>%
-kableExtra::kable(col.names = c("Column Name", "Description"))
+kableExtra::kable(col.names = c("Column Name", "Description")) %>%
+  kableExtra::column_spec(column = 1, width = "10em")
 ```
 
 <br>
@@ -138,7 +140,8 @@ data.frame(
     "Binary indicator for requesting the referent's name (1 = Yes, 0 = No)"
   )
 ) %>%
-kableExtra::kable(col.names = c("Column Name", "Description"))
+kableExtra::kable(col.names = c("Column Name", "Description")) %>%
+  kableExtra::column_spec(column = 1, width = "10em")
 ```
 
 <br>
@@ -197,7 +200,8 @@ data.frame(
     "Binary indicator for requesting the referent's name (1 = Yes, 0 = No)"
   )
 ) %>%
-kableExtra::kable(col.names = c("Column Name", "Description"))
+kableExtra::kable(col.names = c("Column Name", "Description")) %>%
+  kableExtra::column_spec(column = 1, width = "10em")
 ```
 
 <br>
