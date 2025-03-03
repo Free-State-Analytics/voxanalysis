@@ -43,7 +43,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
 
         ### Check for duplicate referents
         ind_duplicate_referent <- result$df_to_upload %>%
-          group_by(date_of_evaluation, referent) %>%
+          group_by(.data$date_of_evaluation, .data$referent) %>%
           summarize(n = n()) %>%
           filter(n > 1)
         ind_duplicate_referent <- nrow(ind_duplicate_referent) > 0

@@ -5,7 +5,7 @@
 \title{Render Word Document Report}
 \usage{
 util_generate_word_doc_report(
-  df_input_speaker_info = NULL,
+  df_input_speaker_info,
   df_input_response,
   file_name
 )

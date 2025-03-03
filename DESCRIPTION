@@ -39,6 +39,7 @@ Imports:
 Suggests: 
     knitr,
     cowplot,
+    extrafont,
     rmarkdown,
     kableExtra,
     spelling,
