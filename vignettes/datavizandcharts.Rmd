@@ -199,11 +199,7 @@ plot_grid(
     ind_hide_heading = TRUE,
     ind_doc_version = TRUE
   ) +
-    theme(legend.position = "bottom")
-  ,
-  # + theme(#plot.margin = margin(t = 60, r = 30, l = 30, b= 30),
-  #           legend.position = "bottom",
-  #           legend.text = element_text(size = 8)),
+    theme(legend.position = "bottom"),
   plot_vox_line(
     df_wo_autism,
     ind_hide_heading = TRUE,

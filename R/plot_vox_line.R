@@ -81,28 +81,28 @@ plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_ve
 
   p <- ggplot(by_session, aes(.data$session, y = .data$value)) +
     geom_rect(
-      data = by_session %>% filter(value == max(value)),
+      data = by_session %>% filter(value == max(value)) %>% slice_head(),
       aes(xmin = 0, xmax = 4, ymin = 0, ymax = value + .35),
       linewidth = 1,
       alpha = .15,
       fill = "#D3D3D3"
     )+
     geom_text(
-      data = by_session %>% filter(value == max(value)),
+      data = by_session %>% filter(value == max(value)) %>% slice_head(),
       aes(x = 2, y = value + .5, label = "Episode #1"),
       family = "Lato",
       size.unit = "pt",
       size = ifelse(ind_doc_version, 10, 13)
     ) +
     geom_rect(
-      data = by_session %>% filter(value == max(value)),
+      data = by_session %>% filter(value == max(value)) %>% slice_head(),
       aes(xmin = 4, xmax = 8, ymin = 0, ymax = value + .35),
       linewidth = 1,
       alpha = .25,
       fill = "#D3D3D3"
     ) +
     geom_text(
-      data = by_session %>% filter(value == max(value)),
+      data = by_session %>% filter(value == max(value)) %>% slice_head(),
       aes(x = 6, y = value + .5, label = "Episode #2"),
       family = "Lato",
       size.unit = "pt",
@@ -112,14 +112,14 @@ plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_ve
   if (max(by_session$session) > 8) {
     p <- p +
       geom_rect(
-        data = by_session %>% filter(value == max(value)),
+        data = by_session %>% filter(value == max(value)) %>% slice_head(),
         aes(xmin = 8, xmax = 12, ymin = 0, ymax = value + .35),
         linewidth = 1,
         alpha = .15,
         fill = "#D3D3D3"
       ) +
       geom_text(
-        data = by_session %>% filter(value == max(value)),
+        data = by_session %>% filter(value == max(value)) %>% slice_head(),
         aes(x = 10, y = value + .5, label = "Episode #3"),
         family = "Lato",
         size.unit = "pt",
@@ -130,14 +130,14 @@ plot_vox_line <- function(df_input_response, ind_hide_heading = TRUE, ind_doc_ve
   if (max(by_session$session) > 12) {
     p <- p +
       geom_rect(
-        data = by_session %>% filter(value == max(value)),
+        data = by_session %>% filter(value == max(value)) %>% slice_head(),
         aes(xmin = 12, xmax = 16, ymin = 0, ymax = value + .35),
         linewidth = 1,
         alpha = .25,
         fill = "#D3D3D3"
       ) +
       geom_text(
-        data = by_session %>% filter(value == max(value)),
+        data = by_session %>% filter(value == max(value)) %>% slice_head(),
         aes(x = 14, y = value + .5, label = "Episode #4"),
         family = "Lato",
         size.unit = "pt",
