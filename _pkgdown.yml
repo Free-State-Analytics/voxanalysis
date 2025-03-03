@@ -32,7 +32,7 @@ navbar:
           href: articles/generatingword.html
         - text: "Data Definitions"
           href: articles/datadefinitions.html
-        - text: "Data Model"
+        - text: "Data Structure Guidelines"
           href: articles/datamodel.html
 
 on:

@@ -41,6 +41,13 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
           return()
         }
 
+        ### Check for duplicate referents
+        ind_duplicate_referent <- result$df_to_upload %>%
+          group_by(date_of_evaluation, referent) %>%
+          summarize(n = n()) %>%
+          filter(n > 1)
+        ind_duplicate_referent <- nrow(ind_duplicate_referent) > 0
+
         ### Check that date formats are correct
         ind_wrong_date_format <- util_check_date_format(result$df_to_upload$date_of_evaluation) && util_check_date_format(result$df_to_upload$date_of_birth)
         if (!any(ind_wrong_date_format)) {
@@ -55,30 +62,53 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
         if (check_data_upload == "Bad") {
           shinyjs::hide("div_update_speaker_data")
           shinyjs::hide("wrong_date_format_message")
+          shinyjs::hide("duplicate_referent_message")
           shinyjs::show("error_message")
+          return()
+        }
+
+        if (ind_duplicate_referent) {
+          shinyjs::hide("div_update_speaker_data")
+          shinyjs::hide("wrong_date_format_message")
+          shinyjs::hide("error_message")
+          shinyjs::show("duplicate_referent_message")
           return()
         }
 
         if (ind_add_new_data) {
           shinyjs::hide("error_message")
           shinyjs::hide("wrong_date_format_message")
+          shinyjs::hide("duplicate_referent_message")
           shinyjs::show("button_continue",
                         anim = TRUE,
                         animType = "fade")
         }
 
-
         if (!ind_add_new_data) {
           shinyjs::hide("error_message")
           shinyjs::hide("wrong_date_format_message")
+          shinyjs::hide("duplicate_referent_message")
           shinyjs::show("div_run_report_buttons",
                         anim = TRUE,
                         animType = "fade")
         }
 
+
+
         rv$df_input_response <- result$df_to_upload %>%
-          mutate(date_of_evaluation = as.Date(.data$date_of_evaluation)) %>%
-          select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
+          mutate(date_of_evaluation = as.Date(.data$date_of_evaluation))
+
+        ### Add referent order if it does not exist
+        if (!"referent_order" %in% colnames(rv$df_input_response)) {
+          rv$df_input_response <- rv$df_input_response %>%
+            group_by(.data$date_of_evaluation) %>%
+            mutate(referent_order = row_number()) %>%
+            ungroup() %>%
+            as.data.frame()
+        }
+
+        rv$df_input_response <- rv$df_input_response %>%
+          select("date_of_evaluation", "referent", "referent_order", "conversing", "labeling", "echoing", "requesting")
         ## Sometimes, the date that's uploaded is read as a character, causing disruption in future modules
 
         ### If the birthday is NA, we need to supply a date for the app to work.
@@ -144,7 +174,7 @@ mod_upload_data_set_server <- function(id, ind_add_new_data = FALSE) {
                     animType = "fade")
 
       df_input_response_previous <- rv$df_input_response %>%
-        select("date_of_evaluation", "referent", "conversing", "labeling", "echoing", "requesting")
+        select("date_of_evaluation", "referent", "referent_order", "conversing", "labeling", "echoing", "requesting")
 
       mod_evaluation_date_entry_server(
         "upload_to_data_entry",

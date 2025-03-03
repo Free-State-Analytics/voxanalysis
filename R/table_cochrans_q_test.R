@@ -18,6 +18,10 @@
 
 table_cochrans_q_test <- function(df_input_response) {
 
+  if (length(unique(df_input_response$referent)) < nrow(df_input_response) ) {
+    stop("Cochran's Q cannot be calculated. There are duplicate referent values found in the data set.")
+  }
+
   chance_corrected <- calc_chance_corrected(df_input_response)
 
   dat <- df_input_response %>%

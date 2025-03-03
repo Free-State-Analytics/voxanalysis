@@ -69,9 +69,10 @@ util_download_handler_dataset <- function(df_input_speaker_info, df_input_respon
       progress <- shiny::Progress$new()
       progress$set(message = "Preparing download...", value = 0)
 
-      df_output_exportable <- crossing(
+      df_output_exportable <- expand_grid(
         df_input_speaker_info %>% select(-"date_of_evaluation"),
         df_input_response)
+
       write.csv(df_output_exportable,
                 file,
                 row.names=FALSE)
