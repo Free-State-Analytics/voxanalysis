@@ -23,7 +23,7 @@ Imports:
     flextable,
     ggplot2,
     ggradar (>= 0.2),
-    ggthemes,
+    hrbrthemes,
     golem,
     gt,
     jsonlite,
