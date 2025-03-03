@@ -188,7 +188,7 @@ calc_centroid(df_input_response = df_input_response_example)
 
 The VOX line chart shows the response types over verbal episodes. Since each verbal episode attempts to solicit a particular response from the speaker, this tells the clinician or behavioral analyst how those response vary over the session.
 
-The two VOX line charts below show two speakers. The speaker on the left is more typical of a person with autism. There is more dispersion in their response types, which continues across all verbal episodes. The speaker on the right is more typical of a person without autism. There is more clustering and overlapping of the lines, indicating more variability *within* a response type, as opposed to variability *between* response types.
+The two VOX line charts below show two speakers. The speaker on the left is more typical of a person with autism. There is more dispersion in their response types, which continues across all verbal episodes. The speaker on the right is more typical of a person without autism. There is more clustering and overlapping of the lines, indicating more flexibility *within* a response type, as opposed to variability *between* response types.
 
 <br>
 
@@ -199,11 +199,7 @@ plot_grid(
     ind_hide_heading = TRUE,
     ind_doc_version = TRUE
   ) +
-    theme(legend.position = "bottom")
-  ,
-  # + theme(#plot.margin = margin(t = 60, r = 30, l = 30, b= 30),
-  #           legend.position = "bottom",
-  #           legend.text = element_text(size = 8)),
+    theme(legend.position = "bottom"),
   plot_vox_line(
     df_wo_autism,
     ind_hide_heading = TRUE,
