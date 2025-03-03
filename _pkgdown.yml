@@ -7,6 +7,10 @@ template:
   bslib:
     base_font: {google: "Quicksand"}
     heading_font: {google: "Quicksand"}
+  includes:
+    after:
+      - robots.txt
+      - googlee8c9603e5ef1ca93.html
 authors:
   email: true
 development:

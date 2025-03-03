@@ -81,6 +81,9 @@ deploying or using application.
 A user can install `{voxanalysis}` with:
 
 ``` r
+## {devtools} package is required
+install.packages("devtools")
+
 devtools::install_github("Free-State-Analytics/voxanalysis", ref = "dev")
 ```
 
