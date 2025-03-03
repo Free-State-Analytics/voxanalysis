@@ -27,7 +27,7 @@ The `voxanalysis` package provides the user two ways to generate a report:
 
 We recommend non-R users rely on the R Shiny application. In addition to generating clean reports and analysis, the application provides user-friendly prompts to help users enter and save data. A user's IT team can help install the application or you can reach out to taylor.rodgers@freestateanaltyics.com to gain access to a hosted solution.
 
-R users can use the `{voxanalysis}` package to both use the Shiny application, produce individual metrics and data visualizations, and generate a Word Doc version of the report directly. The instructions for generating a Word Doc report can be found [here](./generatingword.html).
+R users can use the `{voxanalysis}` package to use the Shiny application, produce individual metrics and data visualizations, and generate a Word Doc version of the report directly. The instructions for generating a Word Doc report can be found [here](./generatingword.html).
 
 ## R Shiny Application
 
@@ -87,7 +87,16 @@ The user will then need to provide unique referent names and the responses (1 = 
 
 The **Results Summary Page** provides the VOX Analysis results for the speakers responses the user provided.
 
-The user will have the option to **Download Report** to download a Word Doc version, or they can select **Save Data**, which allows them to download the data set they had previously entered.
+At the bottom of the screen, t# Load example data sets
+data("df_input_speaker_info_example")
+data("df_input_response_example")
+
+# Generate a Word document report
+util_generate_word_doc_report(
+  df_input_speaker_info = df_input_speaker_info_example,
+  df_input_response = df_input_response_example,
+  file_name = "test.docx"
+)he user can select **Download Report** to download a Word Doc version, or they can select **Save Data**, which allows them to download the data set they had previously entered.
 
 *Note: Exporting a data set from the Results Summary page ensures the data is structured in a way that it can be re-uploaded, re-analyzed, or appended in the future.*
 

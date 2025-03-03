@@ -88,7 +88,7 @@ An R user can generate the interactive VOX Analysis Application with the followi
 voxanalysis::run_app()
 ```
 
-For more experienced R users, they can generate an MS Word report wih the following:
+For more experienced R users, they can generate an MS Word report with the following:
 
 ```{r, eval = FALSE}
 # Load package
@@ -132,7 +132,7 @@ plot_vox_line(
 
 <br>
 
-```{r, fig.width = 8, fig.height = 8 * 0.5,  out.width="77%", fig.align = "center", echo = FALSE}
+```{r, fig.width = 8, fig.height = 8 * 0.75,  out.width="85%", fig.align = "center", echo = FALSE}
 library(voxanalysis)
 
 # Load example data
