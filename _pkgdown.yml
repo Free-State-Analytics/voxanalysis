@@ -9,6 +9,9 @@ template:
     heading_font: {google: "Quicksand"}
 authors:
   email: true
+development:
+  mode: auto
+
 
 navbar:
   structure:
