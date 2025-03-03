@@ -65,7 +65,7 @@ data.frame(
   )
 ) %>%
 kableExtra::kable(col.names = c("Column Name", "Description")) %>%
-  kableExtra::column_spec(column = 1, width = "10em")
+  kableExtra::column_spec(column = 1, width = "12em")
 ```
 
 <br>
@@ -103,7 +103,7 @@ data.frame(
   )
 ) %>%
 kableExtra::kable(col.names = c("Column Name", "Description")) %>%
-  kableExtra::column_spec(column = 1, width = "10em")
+  kableExtra::column_spec(column = 1, width = "12em")
 ```
 
 <br>
@@ -141,7 +141,7 @@ data.frame(
   )
 ) %>%
 kableExtra::kable(col.names = c("Column Name", "Description")) %>%
-  kableExtra::column_spec(column = 1, width = "10em")
+  kableExtra::column_spec(column = 1, width = "12em")
 ```
 
 <br>
@@ -201,7 +201,7 @@ data.frame(
   )
 ) %>%
 kableExtra::kable(col.names = c("Column Name", "Description")) %>%
-  kableExtra::column_spec(column = 1, width = "10em")
+  kableExtra::column_spec(column = 1, width = "12em")
 ```
 
 <br>
