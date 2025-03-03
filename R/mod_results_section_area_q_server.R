@@ -30,8 +30,8 @@ mod_results_section_area_q_server <- function(
 
       if (input$filter_secondary_date == "None") {
         data_to_return <- df_input_response %>%
-          filter(.data$date_of_evaluation == as.Date(date_primary)) %>%
-          util_summarize_response(.)
+          filter(.data$date_of_evaluation == as.Date(date_primary))
+        data_to_return <- util_summarize_response(data_to_return)
       } else {
         data_to_return <- util_summarize_response(
           df_input_response %>%

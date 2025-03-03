@@ -26,7 +26,7 @@ mod_response_entry_ui(id)
 This Shiny module provides a user interface and server function that allows users to enter speaker data for a VOX Analysis and generate a corresponding report. The module is designed to streamline data entry and report generation within the analysis workflow.
 }
 \examples{
-if (interactive()) {
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
   # Load example speaker information data
   data("df_input_speaker_info_example")
 
@@ -43,11 +43,8 @@ if (interactive()) {
 
   # Run the Shiny app
   shinyApp(ui, server)
-}
 
-if (interactive()) {
   # Alternative example using a pre-built app function
   run_example_measurement_entry_app()
-}
-
+\dontshow{\}) # examplesIf}
 }

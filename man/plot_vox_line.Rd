@@ -13,7 +13,7 @@ plot_vox_line(
 \arguments{
 \item{df_input_response}{A `data.frame` containing referent names and their associated responses, typically recorded by the listener. For example data, run `data("df_input_response_example")` or `data("df_input_response_previous_example")`.}
 
-\item{ind_hide_heading}{Logical. If `TRUE`, hides the heading on the chart. Defaults to `TRUE`.}
+\item{ind_hide_heading}{Logical. If `TRUE`, hides the heading on the chart. Defaults to `TRUE`. Does not apply if `ind_doc-version` is set to `TRUE`.}
 
 \item{ind_doc_version}{Logical (`TRUE` or `FALSE`): Indicates whether a plot needs to be optimized for inclusion in a Word document. If `TRUE`, font sizes and other aesthetics will be adjusted to enhance Word document readability.}
 }
