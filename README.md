@@ -8,7 +8,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 <br>
 
-## VOX Analysis Application & Package
+## VOX Analysis Application & Package <img src = "inst/pkgdown/assets/logo.png" align = "right" width = "120"/>
 
 The `{voxanalysis}` package enables behavioral specialists to generate
 detailed reports and analyses using the VOX Analysis framework, which
