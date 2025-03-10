@@ -7,7 +7,7 @@
 
 plot_color_mapping <- c(
     "Conversing" = "#748282ff",
-    "Labeling" = "#A4B5C2ff",
-    "Echoing" = "#545343ff",
-    "Requesting" = "#2FC1D3"
+    "Labeling" = "#2aac37", #"#A4B5C2ff",
+    "Echoing" = "#186041",
+    "Requesting" = "#2792da"
   )

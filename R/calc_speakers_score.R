@@ -1,4 +1,4 @@
-#' Calculate the Speaker's SCoRE (Speech Coefficient of Reliability and Engagement)
+#' Calculate the Speaker's SCoRE (Stimulus Control Ratio Equation)
 #'
 #' @description
 #' This function calculates the Speaker's SCoRE, a metric used in VOX Analysis to evaluate the balance of language development. SCoRE reflects the consistency and reliability of the speaker's responses (e.g., Conversing, Labeling, Echoing, and Requesting) within an evaluation session. This score aids the listener or user in analyzing the speaker's engagement with each verbal operant during verbal episodes.

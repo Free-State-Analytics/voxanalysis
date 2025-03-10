@@ -42,10 +42,10 @@ plot_area_q <- function(df_summarized_response, date_primary, ind_doc_version = 
       mutate(priority = ifelse(.data$date_of_evaluation == as.Date(date_primary), 1, 2)) %>%
       arrange(desc(.data$priority)) %>%
       select(-"priority")
-    colors <- c("#AFCFCF", "#439393")
+    colors <- c("#2aac37", "#186041")
     names(colors) <- c(dat_for_plot$date_of_evaluation[1], dat_for_plot$date_of_evaluation[2])
   } else {
-    colors <- "#439393"
+    colors <- "#186041"
   }
 
   if (ind_doc_version) {
