@@ -8,7 +8,8 @@ Authors@R:
     person("Alonzo", "Andrews", , "Alonzo.Andrews@utsa.edu",  role = "ctb"),
     person("Samuel", "Bharti", , "sbharti@uab.edu", role = "ctb", comment = "User testing and bug reports"),
     person("Jasmine", "Daly", , "jasmine@dalyanalytics.com", role = "ctb", comment = "User testing and bug reports"),
-    person("Thomas", "Wells", , "thomascwells@gmail.com", role = "ctb", comment = "User testing and bug reports")
+    person("Thomas", "Wells", , "thomascwells@gmail.com", role = "ctb", comment = "User testing and bug reports"),
+    person("Alison", "Burkett", , "akburket@outlook.com", role = "ctb", comment = "Hexigon logo design")
   )
 Description: An autism diagnosis application that evaluates the language
     development of a speaker.
