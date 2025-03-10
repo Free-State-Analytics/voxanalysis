@@ -19,7 +19,7 @@ output: github_document
 
 <br>
 
-## VOX Analysis Application & Package <img src = "logo.png" align = "right" width = "120"/>
+## VOX Analysis Application & Package <img src = "man/figures/logo.png" align = "right" width = "120"/>
 
 The `{voxanalysis}` package enables behavioral specialists to generate detailed reports and analyses using the VOX Analysis framework, which was designed to assess language development in individuals with autism.
 
