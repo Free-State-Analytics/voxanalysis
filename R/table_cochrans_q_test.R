@@ -35,7 +35,7 @@ table_cochrans_q_test <- function(df_input_response) {
 
   data.frame(
     label = c("Cochran's Q", "Chance-corrected R", "P-value"),
-    value = c(round(coch$statistic, 2), chance_corrected, round(coch$p.value,2))
+    value = c(round(coch$statistic, 4), round(chance_corrected, 4), round(coch$p.value,4))
   )
 
 

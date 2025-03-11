@@ -32,8 +32,6 @@ df_wo_autism$requesting <- c(1, 1, 1, 0, 1, 1)
 
 ```
 
-*Note: This page is in the process of being written. Some sections may be incomplete. Apologies for any confusion. We expect this page to be finished in the next two weeks.*
-
 ### Introduction
 
 The VOX Analysis Application and Package provide many distinct data visualizations and measures of variability to assist a user in diagnosing a speaker with autism spectrum disorder.
@@ -320,7 +318,7 @@ plot_vox_piechart(
 
 ### Speaker's SCoRE
 
-The Speaker's SCoRE, which stands for *Speech Coefficient of Reliability and Engagement*, quantifies the findings of the VOX Pie Chart to indicate balance or imbalance. The measure provides a range from 0 to 1, with 0 being functionally non-verbal and 1 representing a fluent verbal repertoire.
+The Speaker's SCoRE, which stands for *Stimulus Control Ratio Equation*, quantifies the findings of the VOX Pie Chart to indicate balance or imbalance. The measure provides a range from 0 to 1, with 0 being functionally non-verbal and 1 representing a fluent verbal repertoire.
 
 There are two Speaker's SCoREs show below. The SCoRE on the left is more typical of a person with autism. The SCoRE on the right is more typical of a person without autism and verbally fluent.
 
@@ -385,7 +383,7 @@ calc_speakers_SCoRE(df_summarized_response = df_summarized_response)
 
 ### Cochran's Q Test Table
 
-Cochran's Q Test looks at the natural variability 
+Cochran’s Q test is used to identify stimulus overselectivity in the speaking repertoire. While some natural variability across the four speaking domains is expected, Cochran’s Q test is used to shown when the differences across domains is statistically significant. In such cases, it may be useful to remove the significantly smaller domains from the prompt hierarchy, as they may not contribute meaningfully.
 
 Down below are Cochran's Q Test metrics for a speaker with autism and a speaker without autism.
 
@@ -429,7 +427,7 @@ table_cochrans_q_test(df_input_response = df_input_response_example)
 
 ### Hierarchy Table
 
-The Hierarchy Table is...
+The Hierarchy Table provides an individualized prompting strategy for error-less language learning. Using the most-to-least prompting strategy shown in the table provides a means of language acquisition through abstraction. Convergent multiple control is used to increase the probability of a response. The unnecessary domains are then mixed and varied until the response is emitted purely under its corresponding controlling relation.
 
 The table below shows a speaker with autism. The clinician would start an intervention by focusing on...
 

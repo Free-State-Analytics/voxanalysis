@@ -42,10 +42,10 @@ plot_area_q <- function(df_summarized_response, date_primary, ind_doc_version = 
       mutate(priority = ifelse(.data$date_of_evaluation == as.Date(date_primary), 1, 2)) %>%
       arrange(desc(.data$priority)) %>%
       select(-"priority")
-    colors <- c("#AFCFCF", "#439393")
+    colors <- c("#918d8c", "#73d461")
     names(colors) <- c(dat_for_plot$date_of_evaluation[1], dat_for_plot$date_of_evaluation[2])
   } else {
-    colors <- "#439393"
+    colors <- "#73d461"
   }
 
   if (ind_doc_version) {
@@ -63,6 +63,7 @@ plot_area_q <- function(df_summarized_response, date_primary, ind_doc_version = 
         legend.text.size = 9,
         grid.label.size = 2,
         group.colours = colors,
+        gridline.mid.colour = "grey",
         legend.position = "bottom"
       )
     } else {
@@ -74,6 +75,7 @@ plot_area_q <- function(df_summarized_response, date_primary, ind_doc_version = 
         grid.max = grid_size,
         axis.label.size = 3.5,
         group.colours = colors,
+        gridline.mid.colour = "grey",
         legend.position = "bottom")
 
     }

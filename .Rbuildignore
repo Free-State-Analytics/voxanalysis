@@ -19,3 +19,6 @@ $run_dev.*
 ^app\.R$
 ^rsconnect$
 ^\.rscignore$
+^voxanalysis\.Rcheck$
+^voxanalysis.*\.tar\.gz$
+^voxanalysis.*\.tgz$

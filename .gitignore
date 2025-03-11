@@ -12,3 +12,6 @@ docs
 /rsconnect
 renv.lock
 /R/_disable_autoload.R
+voxanalysis.Rcheck/
+voxanalysis*.tar.gz
+voxanalysis*.tgz
