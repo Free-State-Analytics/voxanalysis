@@ -5,10 +5,11 @@
 \alias{df_input_response_previous_example}
 \title{Previous Response Inputs (Example Data)}
 \format{
-A data frame with 7 rows and 6 variables:
+A data frame with 18 rows and 7 variables:
 \describe{
   \item{date_of_evaluation}{The date on which the evaluation was conducted.}
   \item{referent}{The name of the referent associated with the response, representing the object or entity involved in the verbal episode.}
+  \item{referent_order}{The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes.}
   \item{conversing}{Binary indicator showing if the speaker provided a conversational response to the referent (1 = Yes, 0 = No).}
   \item{labeling}{Binary indicator showing if the speaker could label the referent (1 = Yes, 0 = No).}
   \item{echoing}{Binary indicator showing if the speaker could repeat the referent's name (1 = Yes, 0 = No).}

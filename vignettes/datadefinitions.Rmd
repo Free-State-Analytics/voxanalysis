@@ -16,35 +16,35 @@ knitr::opts_chunk$set(
 
 The `voxanalysis` package uses standardized data definitions, which are applied consistently across package documentation and the VOX Analysis Application.
 
-##### VOX Analysis
+#### VOX Analysis
 
 A *Verbal Operant Experimental* Analysis assesses language development balance in a speaker to help identify autism spectrum disorder. In this process, a listener records responses during verbal episodes (often play therapy). These recordings are entered into the VOX Analysis Application, which then runs measurements and generates data visualizations to evaluate language development balance.
 
-##### VOX Analysis Application
+#### VOX Analysis Application
 
 An R Shiny application included in the `voxanalysis` package. Users without R programming experience can use this application to record evaluation results and generate reports.
 
-##### Evaluation
+#### Evaluation
 
 A play therapy session in which the listener engages with the speaker to elicit responses.
 
-##### Speaker
+#### Speaker
 
 The subject of the VOX Analysis, undergoing evaluation for autism spectrum disorder.
 
-##### Listener
+#### Listener
 
 The individual who interacts with the speaker during the evaluation. This may be a behavioral analyst, therapist, or clinician trained to conduct the evaluation.
 
-##### User
+#### User
 
 The individual using the VOX Analysis Application or functions within the `voxanalysis` package.
 
-##### Referrant
+#### Referent
 
 An object the listener interacts with during the analysis, typically a toy.
 
-##### Response Type
+#### Response Type
 
 Also known as a *(or verbal operant)*, this is a type of response, commonly abbreviated as "CLEaR," which stands for:
 
@@ -53,10 +53,10 @@ Also known as a *(or verbal operant)*, this is a type of response, commonly abbr
 - **Echoing**: The speaker's ability to repeat a phrase spoken by the listener. The listener might prompt the speaker to echo a word (e.g., "Say 'apple'...").
 - **Requesting**: The speaker's ability to ask for something. The listener might remove a referent to prompt the speaker to request it back.
 
-##### Response
+#### Response
 
 A binary indicator (1 or 0) denoting whether the speaker responded to the listener’s prompt for a given response type.
 
-##### Verbal Episode
+#### Verbal Episode
 
 A time period within the evaluation in which three referents are available to the speaker to elicit responses based on CLEaR response types. Each evaluation includes 2–4 verbal episodes.

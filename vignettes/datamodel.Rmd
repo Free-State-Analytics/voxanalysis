@@ -39,7 +39,7 @@ For VOX Analysis application users (non-R users), [Upload & Export](#dataupload)
 
 For R users, [Response](#responsedata), [Summary](#speakerdata), and [Speaker](#summarizedata) are useful data structures to familiarize. Nearly every function for variance calculations and data visualizations use these structures.
 
-See [Data Definitions](https://free-state-analytics.github.io/voxanalysis/articles/datadictionary.html) to understand keywords found in this page.
+See [Data Definitions](https://free-state-analytics.github.io/voxanalysis/articles/datadefinitions.html) to understand keywords found in this page.
 
 <br>
 <br>
@@ -52,18 +52,20 @@ The Response data set provides speaker responses from the evaluation. Each entry
 
 ```{r, echo = FALSE}
 data.frame(
-  name = c("date_of_evaluation", "referent", "conversing",
+  name = c("date_of_evaluation", "referent", "referent_order", "conversing",
            "labeling", "echoing", "requesting"),
   Description = c(
     "The date of the evaluation",
     "The object a listener interacts with during the evaluation",
+    "The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes",
     "Binary indicator for conversational response (1 = Yes, 0 = No)",
     "Binary indicator for labeling the referent (1 = Yes, 0 = No)",
     "Binary indicator for echoing the referent's name (1 = Yes, 0 = No)",
     "Binary indicator for requesting the referent's name (1 = Yes, 0 = No)"
   )
 ) %>%
-kableExtra::kable(col.names = c("Column Name", "Description"))
+kableExtra::kable(col.names = c("Column Name", "Description")) %>%
+  kableExtra::column_spec(column = 1, width = "12em")
 ```
 
 <br>
@@ -100,7 +102,8 @@ data.frame(
     "The speaker's gender (optional)"
   )
 ) %>%
-kableExtra::kable(col.names = c("Column Name", "Description"))
+kableExtra::kable(col.names = c("Column Name", "Description")) %>%
+  kableExtra::column_spec(column = 1, width = "12em")
 ```
 
 <br>
@@ -137,7 +140,8 @@ data.frame(
     "Binary indicator for requesting the referent's name (1 = Yes, 0 = No)"
   )
 ) %>%
-kableExtra::kable(col.names = c("Column Name", "Description"))
+kableExtra::kable(col.names = c("Column Name", "Description")) %>%
+  kableExtra::column_spec(column = 1, width = "12em")
 ```
 
 <br>
@@ -179,7 +183,7 @@ The Upload & Export data set consolidates information about the speaker and thei
 ```{r, echo = FALSE}
 data.frame(
   name = c("first_name", "last_name", "date_of_birth", "language_spoken",
-           "gender", "date_of_evaluation", "referent", "conversing",
+           "gender", "date_of_evaluation", "referent", "referent_order", "conversing",
            "labeling", "echoing", "requesting"),
   Description = c(
     "The speaker's first name",
@@ -189,13 +193,15 @@ data.frame(
     "The speaker's gender (optional)",
     "The date of the evaluation",
     "The object a listener interacts with during the evaluation",
+    "The order the referent appeared in the session. Required for data visualizations and calculations regarding specific verbal episodes.",
     "Binary indicator for conversational response (1 = Yes, 0 = No)",
     "Binary indicator for labeling the referent (1 = Yes, 0 = No)",
     "Binary indicator for echoing the referent's name (1 = Yes, 0 = No)",
     "Binary indicator for requesting the referent's name (1 = Yes, 0 = No)"
   )
 ) %>%
-kableExtra::kable(col.names = c("Column Name", "Description"))
+kableExtra::kable(col.names = c("Column Name", "Description")) %>%
+  kableExtra::column_spec(column = 1, width = "12em")
 ```
 
 <br>

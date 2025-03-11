@@ -30,7 +30,7 @@ golem_add_external_resources <- function() {
   )
 
   tags$head(
-    favicon(),
+    favicon(), #"Vox-RGB.png", resources_path = "app/www"
     bundle_resources(
       path = app_sys("app/www"),
       app_title = "voxanalysis"

@@ -94,12 +94,8 @@ table_prompt_hierarchy <- function(df_summarized_response) {
 
       for (n in 1:length(cols_to_filter)) {
         matcher <- data_to_return %>%
-          select("Percent", cols_to_filter[n]) %>%
-          as.data.frame()
-        to_match <- data_to_return[,2]
-          mutate(matcher = str_detect(to_match, missing_initials$initials[m])) %>%
-            pull(matcher)
-
+          pull(cols_to_filter[n])
+        matcher <- str_detect(matcher, missing_initials$initials[m])
         data_to_return <- data_to_return[!matcher,]
       }
 

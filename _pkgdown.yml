@@ -7,6 +7,22 @@ template:
   bslib:
     base_font: {google: "Quicksand"}
     heading_font: {google: "Quicksand"}
+  includes:
+    in_header: |
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-65151TFP9L"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-65151TFP9L');
+      </script>
+authors:
+  email: true
+development:
+  mode: auto
+
 
 navbar:
   structure:
@@ -19,14 +35,27 @@ navbar:
     github:
       icon: fa fab fa-github fa-lg
       href: https://github.com/Free-State-Analytics/voxanalysis
+    articles:
+      text: "Articles"
+      menu:
+        - text: "Data Visualization & Charts"
+          href: articles/datavizandcharts.html
+        - text: "How to Generate Shiny Report"
+          href: articles/generatingreports.html
+        - text: "How to Generate Word Doc Report"
+          href: articles/generatingword.html
+        - text: "Data Definitions"
+          href: articles/datadefinitions.html
+        - text: "Data Structure Guidelines"
+          href: articles/datamodel.html
 
 on:
   push:
     branches:
-      - dev
+      - main
   pull_request:
     branches:
-      - dev
+      - main
 
 jobs:
   build:

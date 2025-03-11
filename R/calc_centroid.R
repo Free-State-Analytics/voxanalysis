@@ -46,8 +46,14 @@ calc_centroid <- function(df_input_response) {
 
   centx <- as.vector(round(xcor, 2))
   centy <- as.vector(round(ycor, 2))
-  centdis <- as.vector(round(round(sqrt(xcor^2 + ycor^2), 2)))
+  centdis <- as.vector(round(sqrt(xcor^2 + ycor^2), 2))
   moment <- as.vector(round(area *(12 - centdis), 2))
+
+  ### replace with 0 if nan
+  centx <- ifelse(is.nan(centx), 0, centx)
+  centy <- ifelse(is.nan(centy), 0, centy)
+  centdis <- ifelse(is.nan(centdis), 0, centdis)
+  moment <- ifelse(is.nan(moment), 0, moment)
 
   return(
     list(centroid = c(centx, centy),

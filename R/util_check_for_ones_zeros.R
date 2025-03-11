@@ -49,12 +49,11 @@ util_check_for_ones_zeros <- function(df_input_response, ind_check_only_for_zero
   req(df_input_response)
 
   total_positives <- df_input_response %>%
-    select(.data$conversing,
-           .data$labeling,
-           .data$echoing,
-           .data$requesting) %>%
-    as.matrix %>%
-    sum(.)
+    select("conversing",
+           "labeling",
+           "echoing",
+           "requesting")
+  total_positives <- sum(as.matrix(total_positives))
 
   if (ind_check_only_for_zero) {
     check_df_input_response <- total_positives == 0
