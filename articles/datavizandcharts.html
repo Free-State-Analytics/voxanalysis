@@ -82,9 +82,6 @@
 
     
     
-<p><em>Note: This page is in the process of being written. Some sections
-may be incomplete. Apologies for any confusion. We expect this page to
-be finished in the next two weeks.</em></p>
 <div class="section level3">
 <h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
 </h3>
@@ -221,10 +218,10 @@ centroid
 distance
 </td>
 <td style="text-align:left;">
-3
+2.98
 </td>
 <td style="text-align:left;">
-1
+0.67
 </td>
 </tr>
 <tr>
@@ -232,10 +229,10 @@ distance
 moment
 </td>
 <td style="text-align:left;">
-648
+649.44
 </td>
 <td style="text-align:left;">
-1980
+2039.4
 </td>
 </tr>
 </tbody>
@@ -348,11 +345,11 @@ Data</a> data model. An example of this data frame can be seen with
 <div class="section level3">
 <h3 id="speakers-score">Speaker’s SCoRE<a class="anchor" aria-label="anchor" href="#speakers-score"></a>
 </h3>
-<p>The Speaker’s SCoRE, which stands for <em>Speech Coefficient of
-Reliability and Engagement</em>, quantifies the findings of the VOX Pie
-Chart to indicate balance or imbalance. The measure provides a range
-from 0 to 1, with 0 being functionally non-verbal and 1 representing a
-fluent verbal repertoire.</p>
+<p>The Speaker’s SCoRE, which stands for <em>Stimulus Control Ratio
+Equation</em>, quantifies the findings of the VOX Pie Chart to indicate
+balance or imbalance. The measure provides a range from 0 to 1, with 0
+being functionally non-verbal and 1 representing a fluent verbal
+repertoire.</p>
 <p>There are two Speaker’s SCoREs show below. The SCoRE on the left is
 more typical of a person with autism. The SCoRE on the right is more
 typical of a person without autism and verbally fluent.</p>
@@ -452,7 +449,12 @@ entry inside the <code>df_summarized_response</code>.</p>
 <div class="section level3">
 <h3 id="cochrans-q-test-table">Cochran’s Q Test Table<a class="anchor" aria-label="anchor" href="#cochrans-q-test-table"></a>
 </h3>
-<p>Cochran’s Q Test looks at the natural variability</p>
+<p>Cochran’s Q test is used to identify stimulus overselectivity in the
+speaking repertoire. While some natural variability across the four
+speaking domains is expected, Cochran’s Q test is used to shown when the
+differences across domains is statistically significant. In such cases,
+it may be useful to remove the significantly smaller domains from the
+prompt hierarchy, as they may not contribute meaningfully.</p>
 <p>Down below are Cochran’s Q Test metrics for a speaker with autism and
 a speaker without autism.</p>
 <p><br></p>
@@ -477,7 +479,7 @@ Cochran’s Q
 7.5000
 </td>
 <td style="text-align:right;">
-0.8200
+0.8182
 </td>
 </tr>
 <tr>
@@ -496,10 +498,10 @@ Chance-corrected R
 P-value
 </td>
 <td style="text-align:right;">
-0.0600
+0.0576
 </td>
 <td style="text-align:right;">
-0.8500
+0.8451
 </td>
 </tr>
 </tbody>
@@ -527,7 +529,13 @@ the <code>df_input_response</code>.</p>
 <div class="section level3">
 <h3 id="hierarchy-table">Hierarchy Table<a class="anchor" aria-label="anchor" href="#hierarchy-table"></a>
 </h3>
-<p>The Hierarchy Table is…</p>
+<p>The Hierarchy Table provides an individualized prompting strategy for
+error-less language learning. Using the most-to-least prompting strategy
+shown in the table provides a means of language acquisition through
+abstraction. Convergent multiple control is used to increase the
+probability of a response. The unnecessary domains are then mixed and
+varied until the response is emitted purely under its corresponding
+controlling relation.</p>
 <p>The table below shows a speaker with autism. The clinician would
 start an intervention by focusing on…</p>
 <p><br></p>
