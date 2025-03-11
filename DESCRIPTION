@@ -1,6 +1,6 @@
 Package: voxanalysis
 Title: VOX Analysis
-Version: 0.0.0.9000
+Version: 1.0.0
 Authors@R: 
   c(
     person("Taylor", "Rodgers", ,"taylor.rodgers@freestateanalytics.com", role = c("aut", "cre"), comment = "Project manager, product developer, R shiny and package developer"),
