@@ -28,12 +28,12 @@ tag_table_response_results <- function(df_input_response) {
   tag_to_return <- tags$table(
      class = "table border",
      tags$thead(class = "table-input",
-       tags$tr(class = "table-input border bg-primary-subtle",
-         tags$th(scope="col", class = "ps-3 text-body", "Referent Name"),
-         tags$th(scope="col", class = "text-center text-body", "Conversing"),
-         tags$th(scope="col", class = "text-center text-body", "Labeling"),
-         tags$th(scope="col", class = "text-center text-body", "Echoing"),
-         tags$th(scope="col", class = "text-center text-body", "Requesting"))
+       tags$tr(class = "table-input border bg-primary",
+         tags$th(scope="col", class = "ps-3 text-white", "Referent Name"),
+         tags$th(scope="col", class = "text-center text-white", "Conversing"),
+         tags$th(scope="col", class = "text-center text-white", "Labeling"),
+         tags$th(scope="col", class = "text-center text-white", "Echoing"),
+         tags$th(scope="col", class = "text-center text-white", "Requesting"))
      ),
      tags$tbody(class = "tbody matrix-input", body_creation)
   )

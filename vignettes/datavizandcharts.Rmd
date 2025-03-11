@@ -32,8 +32,6 @@ df_wo_autism$requesting <- c(1, 1, 1, 0, 1, 1)
 
 ```
 
-*Note: This page is in the process of being written. Some sections may be incomplete. Apologies for any confusion. We expect this page to be finished in the next two weeks.*
-
 ### Introduction
 
 The VOX Analysis Application and Package provide many distinct data visualizations and measures of variability to assist a user in diagnosing a speaker with autism spectrum disorder.

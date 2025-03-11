@@ -5,9 +5,17 @@
 #'
 #' @export
 
+# plot_color_mapping <- c(
+#     "Conversing" = "#748282ff",
+#     "Labeling" = "#2aac37", #"#A4B5C2ff",
+#     "Echoing" = "#186041",
+#     "Requesting" = "#2792da"
+#   )
+
+
 plot_color_mapping <- c(
-    "Conversing" = "#748282ff",
-    "Labeling" = "#2aac37", #"#A4B5C2ff",
-    "Echoing" = "#186041",
-    "Requesting" = "#2792da"
-  )
+  "Conversing" = "#2bac36",
+  "Labeling" = "#73d461",
+  "Echoing" = "#165178",
+  "Requesting" = "#2693db"
+)
