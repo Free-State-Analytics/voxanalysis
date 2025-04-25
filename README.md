@@ -22,7 +22,7 @@ was designed to assess language development in individuals with autism.
 
 <p>
 
-#### Austism and the VOX Analysis
+#### Autism and the VOX Analysis
 
 Autism spectrum disorder often presents unique language development
 patterns.
@@ -193,10 +193,10 @@ assessment and intervention for children with autism from diverse
 cultural and linguistic backgrounds earned him the President’s
 Distinguished Diversity Award at UTSA.
 
-#### Alonzo Andrews, PhD, BCBA, LBA-TX - VOX Analysis Researcher
+#### Alonzo Andrews, MA, BCBA, LBA-TX - VOX Analysis Researcher
 
-Dr. Alonzo Andrews served as the director of the Autism Treatment Center
-in San Antonio for 24 years, where he led the delivery of behavioral
+Alonzo Andrews served as the director of the Autism Treatment Center in
+San Antonio for 24 years, where he led the delivery of behavioral
 services for individuals with autism spectrum disorders. His work
 included developing residential programs for children and adults,
 operating a state-certified private school, and providing outpatient
